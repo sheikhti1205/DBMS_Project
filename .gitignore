@@ -1,0 +1,13 @@
+# Windows / Drive noise
+desktop.ini
+Thumbs.db
+*.gsheet
+
+# Python
+__pycache__/
+*.pyc
+
+# Office temp files
+~$*.xlsx
+~$*.xls
+~$*.docx
