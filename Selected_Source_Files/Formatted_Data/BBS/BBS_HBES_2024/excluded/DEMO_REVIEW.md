@@ -17,6 +17,6 @@ This `demo` folder is a small test of the grouped-row approach for Google Sheets
 
 ## Demo contents
 
-- `BBS_HBES_2024_demo_grouped.xlsx`
+- Excel workbook now lives at `Selected_Source_Files/Data_Sheets/BBS/BBS_HBES_2024/excluded/BBS_HBES_2024_demo_grouped.xlsx`
 - `Table_Groups/`
 - `Graph_Groups/`

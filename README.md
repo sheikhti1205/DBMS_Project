@@ -4,9 +4,10 @@ Bangladesh environment DBMS project materials organized under `Selected_Source_F
 
 ## Main contents
 
-- `Selected_Source_Files/Govt`
-- `Selected_Source_Files/Non-Govt`
-- `Selected_Source_Files/Formatted_Data`
+- `Selected_Source_Files/Data_Sheets` — centralized Excel workbook folder organized by source name.
+- `Selected_Source_Files/Govt` — non-Excel government source materials and supporting files.
+- `Selected_Source_Files/Non-Govt` — non-Excel non-government source materials and supporting files.
+- `Selected_Source_Files/Formatted_Data` — non-Excel formatted outputs, graph assets, tables/images, and supporting notes.
 
 ## Notes
 
