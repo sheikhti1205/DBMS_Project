@@ -1,0 +1,2360 @@
+WQ_Station_Name,Year,Parameter_Type,Value,Block
+Mirpur Bridge,2018,Biochemical Oxygen Demand,9.47,B23
+Hajaribag,2018,Biochemical Oxygen Demand,8.51,B23
+Kamrangir Char,2018,Biochemical Oxygen Demand,8.01,B23
+Chadnighat,2018,Biochemical Oxygen Demand,9.5,B23
+Sadar Ghat,2018,Biochemical Oxygen Demand,8.05,B23
+Pagla,2018,Biochemical Oxygen Demand,9.05,B23
+Bangladesg China Frendship Bridge,2018,Biochemical Oxygen Demand,8.83,B23
+Demra Ghat,2018,Biochemical Oxygen Demand,7.19,B23
+Ghorashal F.F.,2018,Biochemical Oxygen Demand,7.93,B23
+Near ACI Factory,2018,Biochemical Oxygen Demand,18.4,B23
+Neaer Kanchpur Bridge,2018,Biochemical Oxygen Demand,8.4,B23
+Near Jaber & Jubair Fabrics Ltd. Tongi,2018,Biochemical Oxygen Demand,28.54,B23
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2018,Biochemical Oxygen Demand,28.43,B23
+"Near Damra University College, Demra, Dhaka",2018,Biochemical Oxygen Demand,12.14,B23
+"Near Balu Bridge, 300 feet Road, Dhaka",2018,Biochemical Oxygen Demand,9.1,B23
+"Near Fulpukuria Dyeing Ltd. Pagar, Tongi",2018,Biochemical Oxygen Demand,3.3,B23
+"South Side of Tongi Rail Bridge, Pagar, Tongi",2018,Biochemical Oxygen Demand,31.34,B23
+New Gabtoli Bridge,2018,Biochemical Oxygen Demand,11.51,B23
+Mirpur Diabary BIWTA Landing Station,2018,Biochemical Oxygen Demand,13.33,B23
+Ashulia BIWTA Landing Station,2018,Biochemical Oxygen Demand,12.89,B23
+Tongi Istima Mat,2018,Biochemical Oxygen Demand,18.1,B23
+"North Side of Tongi Bridge, Pagar",2018,Biochemical Oxygen Demand,19.84,B23
+CETP (Up),2018,Biochemical Oxygen Demand,5.63,B23
+CETP (Dr),2018,Biochemical Oxygen Demand,36.77,B23
+CETP (DN),2018,Biochemical Oxygen Demand,10.55,B23
+M.B,2018,Biochemical Oxygen Demand,5.43,B23
+Hamayatpur,2018,Biochemical Oxygen Demand,33,B23
+Mymensingh,2018,Biochemical Oxygen Demand,2.2,B23
+Near Jamuna Fertilizer Factory,2018,Biochemical Oxygen Demand,16,B23
+"Fulchari Ghat, Gibanda (US)",2018,Biochemical Oxygen Demand,2.3,B23
+"Fulchari Ghat, Gibanda (DS)",2018,Biochemical Oxygen Demand,2.21,B23
+"Shariakandi Groin Badth, Bogra (US)",2018,Biochemical Oxygen Demand,2.29,B23
+"Shariakandi Groin Badth, Bogra (DS)",2018,Biochemical Oxygen Demand,2.27,B23
+Near Banabandhu Bridge (US),2018,Biochemical Oxygen Demand,2.15,B23
+Near Banabandhu Bridge (DS),2018,Biochemical Oxygen Demand,2.1,B23
+"Bheutha Ghat, Manikgonj",2018,Biochemical Oxygen Demand,3.08,B23
+Bhairob Bazar,2018,Biochemical Oxygen Demand,1.2,B23
+Meghna Ghat,2018,Biochemical Oxygen Demand,3.17,B23
+N. S. P. M,2018,Biochemical Oxygen Demand,4.91,B23
+Mawa Ghat,2018,Biochemical Oxygen Demand,1.5,B23
+Shimulia Ghat,2018,Biochemical Oxygen Demand,0.6,B23
+Pakshi Ghat (US),2018,Biochemical Oxygen Demand,2.33,B23
+Pakshi Ghat (DS),2018,Biochemical Oxygen Demand,2.27,B23
+Baro kuti Ghat (U.S),2018,Biochemical Oxygen Demand,2.2,B23
+Baro kuti Ghat (D.S),2018,Biochemical Oxygen Demand,2.15,B23
+Khulna (O.S),2018,Biochemical Oxygen Demand,0.96,B23
+Khulna (M.S),2018,Biochemical Oxygen Demand,0.96,B23
+Noapara Ghat (S),2018,Biochemical Oxygen Demand,0.88,B23
+Noapara Ghat (M),2018,Biochemical Oxygen Demand,0.87,B23
+Noapara Ghat (O),2018,Biochemical Oxygen Demand,0.87,B23
+Fultala Ghat(S),2018,Biochemical Oxygen Demand,1,B23
+Fultala Ghat (M),2018,Biochemical Oxygen Demand,0.98,B23
+Fultala Ghat (O),2018,Biochemical Oxygen Demand,0.95,B23
+Charerhat Ghat (S),2018,Biochemical Oxygen Demand,0.85,B23
+Charerhat Ghat (O),2018,Biochemical Oxygen Demand,0.85,B23
+Kustia (S.P),2018,Biochemical Oxygen Demand,1.3,B23
+Kustia (M.P),2018,Biochemical Oxygen Demand,1.35,B23
+Kustia (O.P),2018,Biochemical Oxygen Demand,1.32,B23
+Magura (S.P),2018,Biochemical Oxygen Demand,1.33,B23
+Magura (M.P),2018,Biochemical Oxygen Demand,1.35,B23
+Magura (O.P),2018,Biochemical Oxygen Demand,1.36,B23
+"Pipe Ghat,(M.P)",2018,Biochemical Oxygen Demand,0.84,B23
+"Pipe Ghat, (U.S)",2018,Biochemical Oxygen Demand,0.75,B23
+"PipeGhat, (D.S)",2018,Biochemical Oxygen Demand,0.98,B23
+Bagerhat (O.S),2018,Biochemical Oxygen Demand,0.75,B23
+Bagerhat (M.S),2018,Biochemical Oxygen Demand,0.7,B23
+Bagerhat (O.S),2018,Biochemical Oxygen Demand,0.7,B23
+Mongla Poart (S.P),2018,Biochemical Oxygen Demand,1.02,B23
+Mongla Poart (M.P),2018,Biochemical Oxygen Demand,1.01,B23
+Mongla Poart (O.P),2018,Biochemical Oxygen Demand,1,B23
+Rupsha Ghat (S),2018,Biochemical Oxygen Demand,0.96,B23
+Rupsha Ghat (M),2018,Biochemical Oxygen Demand,0.95,B23
+Rupsha Ghat (O),2018,Biochemical Oxygen Demand,0.92,B23
+Labanchara Ghat (S),2018,Biochemical Oxygen Demand,1.07,B23
+Labanchara Ghat (M),2018,Biochemical Oxygen Demand,1.01,B23
+Labanchara Ghat (O),2018,Biochemical Oxygen Demand,1.01,B23
+Kaliganj (S.P),2018,Biochemical Oxygen Demand,0.97,B23
+Kaliganj (M.P),2018,Biochemical Oxygen Demand,0.97,B23
+Kaliganj (O.P),2018,Biochemical Oxygen Demand,0.97,B23
+Launch Ghat (S),2018,Biochemical Oxygen Demand,2.14,B23
+Launch Ghat (M),2018,Biochemical Oxygen Demand,2.1,B23
+Dopdopia Kheyaghat (S),2018,Biochemical Oxygen Demand,2.12,B23
+Dopdopia Kheyaghat (M),2018,Biochemical Oxygen Demand,2.16,B23
+Beltola Fery Gaht (S),2018,Biochemical Oxygen Demand,2,B23
+Beltola Fery Gaht (M),2018,Biochemical Oxygen Demand,2.15,B23
+Vadura Launch Ghat (S),2018,Biochemical Oxygen Demand,1.95,B23
+Vadura Launch Ghat (M),2018,Biochemical Oxygen Demand,2.22,B23
+Jhalkathi L.G (S),2018,Biochemical Oxygen Demand,2.1,B23
+Jhalkathi L.G (M),2018,Biochemical Oxygen Demand,2.25,B23
+Patuakhali Launch Ghat (S),2018,Biochemical Oxygen Demand,2.01,B23
+Patuakhali Launch Ghat (M),2018,Biochemical Oxygen Demand,2.2,B23
+"Near Dutta Bari Bridge, Bogra (Up stream)",2018,Biochemical Oxygen Demand,4.25,B23
+"Near Dutta Bari Bridge, Bogra (Down stream)",2018,Biochemical Oxygen Demand,4.2,B23
+"Near Foteh Ali Bridge, Bogra (Up stream)",2018,Biochemical Oxygen Demand,4.15,B23
+"Near Foteh Ali Bridge, Bogra (Down stream)",2018,Biochemical Oxygen Demand,4.13,B23
+"Near Matidali Bridge, Bogra (Up stream)",2018,Biochemical Oxygen Demand,4.04,B23
+"Near Matidali Bridge, Bogra (Down stream)",2018,Biochemical Oxygen Demand,4.01,B23
+"Near S.P Bridge, Bogra (Up stream)",2018,Biochemical Oxygen Demand,4.34,B23
+"Near S.P Bridge, Bogra (Down stream)",2018,Biochemical Oxygen Demand,4.35,B23
+"Shahjadpur, Sirajgonj (Up stream)",2018,Biochemical Oxygen Demand,2.21,B23
+"Shahjadpur, Sirajgonj (Down stream)",2018,Biochemical Oxygen Demand,2.2,B23
+Near Tista Bridge (U.S),2018,Biochemical Oxygen Demand,2.25,B23
+Near Tista Bridge (D.S),2018,Biochemical Oxygen Demand,2.18,B23
+Mendibag Point,2018,Biochemical Oxygen Demand,2.05,B23
+Kin Bridge Point,2018,Biochemical Oxygen Demand,2.04,B23
+Sheaik Ghat,2018,Biochemical Oxygen Demand,2.02,B23
+Chhatak,2018,Biochemical Oxygen Demand,2.2,B23
+Fenchuganj Point,2018,Biochemical Oxygen Demand,1.98,B23
+Mirpur Bridge,2019,Biochemical Oxygen Demand,10.82,B23
+Hajaribag,2019,Biochemical Oxygen Demand,10.49,B23
+Kamrangir Char,2019,Biochemical Oxygen Demand,10.03,B23
+Chadnighat,2019,Biochemical Oxygen Demand,10.15,B23
+Sadar Ghat,2019,Biochemical Oxygen Demand,10.88,B23
+Pagla,2019,Biochemical Oxygen Demand,8.7,B23
+Bangladesg China Frendship Bridge,2019,Biochemical Oxygen Demand,12.07,B23
+Demra Ghat,2019,Biochemical Oxygen Demand,10.28,B23
+Ghorashal F.F.,2019,Biochemical Oxygen Demand,4.89,B23
+Near ACI Factory,2019,Biochemical Oxygen Demand,7.67,B23
+Near Jaber & Jubair Fabrics Ltd. Tongi,2019,Biochemical Oxygen Demand,15.4,B23
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2019,Biochemical Oxygen Demand,15.55,B23
+"Near Damra University College, Demra, Dhaka",2019,Biochemical Oxygen Demand,17.43,B23
+"Near Balu Bridge, 300 feet Road, Dhaka",2019,Biochemical Oxygen Demand,17.49,B23
+New Gabtoli Bridge,2019,Biochemical Oxygen Demand,11.72,B23
+Mirpur Diabary BIWTA Landing Station,2019,Biochemical Oxygen Demand,13.45,B23
+Ashulia BIWTA Landing Station,2019,Biochemical Oxygen Demand,15.67,B23
+Tongi Istima Mat,2019,Biochemical Oxygen Demand,17.58,B23
+CETP (Up),2019,Biochemical Oxygen Demand,2.72,B23
+CETP (Dr),2019,Biochemical Oxygen Demand,5.44,B23
+CETP (DN),2019,Biochemical Oxygen Demand,2.84,B23
+Mymensingh,2019,Biochemical Oxygen Demand,2.43,B23
+Bhadurabad Ghat,2019,Biochemical Oxygen Demand,2.1,B23
+Near Jamuna Fertilizer Factory,2019,Biochemical Oxygen Demand,3,B23
+"Fulchari Ghat, Gibanda (US)",2019,Biochemical Oxygen Demand,2.24,B23
+"Fulchari Ghat, Gibanda (DS)",2019,Biochemical Oxygen Demand,2.23,B23
+"Shariakandi Groin Badth, Bogra (US)",2019,Biochemical Oxygen Demand,2.18,B23
+"Shariakandi Groin Badth, Bogra (DS)",2019,Biochemical Oxygen Demand,2.18,B23
+Near Banabandhu Bridge (US),2019,Biochemical Oxygen Demand,2.18,B23
+Near Banabandhu Bridge (DS),2019,Biochemical Oxygen Demand,2.19,B23
+"Bheutha Ghat, Manikgonj",2019,Biochemical Oxygen Demand,3.67,B23
+Bhairob Bazar,2019,Biochemical Oxygen Demand,3.48,B23
+Meghna Ghat,2019,Biochemical Oxygen Demand,4.14,B23
+N. S. P. M,2019,Biochemical Oxygen Demand,8.44,B23
+Mawa Ghat,2019,Biochemical Oxygen Demand,2.26,B23
+Shimulia Ghat,2019,Biochemical Oxygen Demand,2.9,B23
+Pakshi Ghat (US),2019,Biochemical Oxygen Demand,2.22,B23
+Pakshi Ghat (DS),2019,Biochemical Oxygen Demand,2.18,B23
+Baro kuti Ghat (U.S),2019,Biochemical Oxygen Demand,2.27,B23
+Baro kuti Ghat (D.S),2019,Biochemical Oxygen Demand,2.25,B23
+Noapara Ghat (S),2019,Biochemical Oxygen Demand,0.84,B23
+Noapara Ghat (M),2019,Biochemical Oxygen Demand,0.85,B23
+Noapara Ghat (O),2019,Biochemical Oxygen Demand,0.85,B23
+Fultala Ghat(S),2019,Biochemical Oxygen Demand,0.9,B23
+Fultala Ghat (M),2019,Biochemical Oxygen Demand,0.91,B23
+Fultala Ghat (O),2019,Biochemical Oxygen Demand,0.93,B23
+Kustia (S.P),2019,Biochemical Oxygen Demand,1.12,B23
+Kustia (M.P),2019,Biochemical Oxygen Demand,1.08,B23
+Kustia (O.P),2019,Biochemical Oxygen Demand,1.08,B23
+Magura (S.P),2019,Biochemical Oxygen Demand,0.91,B23
+Magura (M.P),2019,Biochemical Oxygen Demand,0.91,B23
+Magura (O.P),2019,Biochemical Oxygen Demand,0.9,B23
+"Pipe Ghat,(M.P)",2019,Biochemical Oxygen Demand,0.6,B23
+"Pipe Ghat, (U.S)",2019,Biochemical Oxygen Demand,0.64,B23
+"PipeGhat, (D.S)",2019,Biochemical Oxygen Demand,0.57,B23
+Bagerhat (O.S),2019,Biochemical Oxygen Demand,0.67,B23
+Bagerhat (M.S),2019,Biochemical Oxygen Demand,0.71,B23
+Bagerhat (O.S),2019,Biochemical Oxygen Demand,0.63,B23
+Mongla Poart (S.P),2019,Biochemical Oxygen Demand,0.91,B23
+Mongla Poart (M.P),2019,Biochemical Oxygen Demand,0.95,B23
+Mongla Poart (O.P),2019,Biochemical Oxygen Demand,0.93,B23
+Rupsha Ghat (S),2019,Biochemical Oxygen Demand,1.15,B23
+Rupsha Ghat (M),2019,Biochemical Oxygen Demand,1.17,B23
+Rupsha Ghat (O),2019,Biochemical Oxygen Demand,1.12,B23
+Labanchara Ghat (S),2019,Biochemical Oxygen Demand,1.18,B23
+Labanchara Ghat (M),2019,Biochemical Oxygen Demand,1.18,B23
+Labanchara Ghat (O),2019,Biochemical Oxygen Demand,1.15,B23
+Kaliganj (S.P),2019,Biochemical Oxygen Demand,1.09,B23
+Kaliganj (M.P),2019,Biochemical Oxygen Demand,1.07,B23
+Kaliganj (O.P),2019,Biochemical Oxygen Demand,1.1,B23
+Launch Ghat (S),2019,Biochemical Oxygen Demand,1.99,B23
+Launch Ghat (M),2019,Biochemical Oxygen Demand,2,B23
+Dopdopia Kheyaghat (S),2019,Biochemical Oxygen Demand,2.09,B23
+Dopdopia Kheyaghat (M),2019,Biochemical Oxygen Demand,2.07,B23
+Beltola Fery Gaht (S),2019,Biochemical Oxygen Demand,2.04,B23
+Beltola Fery Gaht (M),2019,Biochemical Oxygen Demand,2.04,B23
+Vadura Launch Ghat (S),2019,Biochemical Oxygen Demand,1.98,B23
+Vadura Launch Ghat (M),2019,Biochemical Oxygen Demand,2.03,B23
+Jhalkathi L.G (S),2019,Biochemical Oxygen Demand,2.01,B23
+Jhalkathi L.G (M),2019,Biochemical Oxygen Demand,2.09,B23
+Patuakhali Launch Ghat (S),2019,Biochemical Oxygen Demand,1.95,B23
+Patuakhali Launch Ghat (M),2019,Biochemical Oxygen Demand,2.05,B23
+"Near Dutta Bari Bridge, Bogra (Up stream)",2019,Biochemical Oxygen Demand,5.06,B23
+"Near Dutta Bari Bridge, Bogra (Down stream)",2019,Biochemical Oxygen Demand,5.08,B23
+"Near Foteh Ali Bridge, Bogra (Up stream)",2019,Biochemical Oxygen Demand,4.98,B23
+"Near Foteh Ali Bridge, Bogra (Down stream)",2019,Biochemical Oxygen Demand,5.01,B23
+"Near Matidali Bridge, Bogra (Up stream)",2019,Biochemical Oxygen Demand,4.62,B23
+"Near Matidali Bridge, Bogra (Down stream)",2019,Biochemical Oxygen Demand,4.58,B23
+"Near S.P Bridge, Bogra (Up stream)",2019,Biochemical Oxygen Demand,5.03,B23
+"Near S.P Bridge, Bogra (Down stream)",2019,Biochemical Oxygen Demand,5.03,B23
+"Shahjadpur, Sirajgonj (Up stream)",2019,Biochemical Oxygen Demand,2.64,B23
+"Shahjadpur, Sirajgonj (Down stream)",2019,Biochemical Oxygen Demand,2.66,B23
+Near Tista Bridge (U.S),2019,Biochemical Oxygen Demand,2.2,B23
+Near Tista Bridge (D.S),2019,Biochemical Oxygen Demand,2.18,B23
+Mendibag Point,2019,Biochemical Oxygen Demand,2.96,B23
+Kin Bridge Point,2019,Biochemical Oxygen Demand,3.16,B23
+Sheaik Ghat,2019,Biochemical Oxygen Demand,3.24,B23
+Chhatak,2019,Biochemical Oxygen Demand,2.1,B23
+Kazir Bazar,2019,Biochemical Oxygen Demand,3.23,B23
+Kushiyara Point,2019,Biochemical Oxygen Demand,2.8,B23
+Mirpur Bridge,2020,Biochemical Oxygen Demand,12.58,B23
+Hajaribag,2020,Biochemical Oxygen Demand,13.53,B23
+Kamrangir Char,2020,Biochemical Oxygen Demand,13.17,B23
+Chadnighat,2020,Biochemical Oxygen Demand,14.7,B23
+Sadar Ghat,2020,Biochemical Oxygen Demand,13.4,B23
+Pagla,2020,Biochemical Oxygen Demand,14.32,B23
+Bangladesg China Frendship Bridge,2020,Biochemical Oxygen Demand,13.97,B23
+Demra Ghat,2020,Biochemical Oxygen Demand,15.68,B23
+Ghorashal F.F.,2020,Biochemical Oxygen Demand,9.69,B23
+Near ACI Factory,2020,Biochemical Oxygen Demand,21.68,B23
+Neaer Kanchpur Bridge,2020,Biochemical Oxygen Demand,10.8,B23
+Near Jaber & Jubair Fabrics Ltd. Tongi,2020,Biochemical Oxygen Demand,23.25,B23
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2020,Biochemical Oxygen Demand,22.67,B23
+"Near Damra University College, Demra, Dhaka",2020,Biochemical Oxygen Demand,19.98,B23
+"Near Balu Bridge, 300 feet Road, Dhaka",2020,Biochemical Oxygen Demand,20.83,B23
+"Near Fulpukuria Dyeing Ltd. Pagar, Tongi",2020,Biochemical Oxygen Demand,30,B23
+New Gabtoli Bridge,2020,Biochemical Oxygen Demand,14.98,B23
+Mirpur Diabary BIWTA Landing Station,2020,Biochemical Oxygen Demand,17.13,B23
+Ashulia BIWTA Landing Station,2020,Biochemical Oxygen Demand,22.6,B23
+Tongi Istima Mat,2020,Biochemical Oxygen Demand,19.2,B23
+"North Side of Tongi Bridge, Pagar",2020,Biochemical Oxygen Demand,25.97,B23
+Muktarpur Bridge,2020,Biochemical Oxygen Demand,7,B23
+Mymensingh,2020,Biochemical Oxygen Demand,10.5,B23
+Near Jamuna Fertilizer Factory,2020,Biochemical Oxygen Demand,8,B23
+Near Bangabandhu Bridge (US),2020,Biochemical Oxygen Demand,2.3,B23
+Near Bangabandhu Bridge (US),2020,Biochemical Oxygen Demand,2.28,B23
+"Fulchari Ghat, Gibanda (US)",2020,Biochemical Oxygen Demand,2.24,B23
+"Fulchari Ghat, Gibanda (DS)",2020,Biochemical Oxygen Demand,2.22,B23
+Shariakandi Groin Badth (US),2020,Biochemical Oxygen Demand,2.23,B23
+Shariakandi Groin Badth (DS),2020,Biochemical Oxygen Demand,2.24,B23
+"Bheutha Ghat, Manikgonj",2020,Biochemical Oxygen Demand,3.67,B23
+Bhairob Bazar,2020,Biochemical Oxygen Demand,3.48,B23
+Meghna Ghat,2020,Biochemical Oxygen Demand,4.14,B23
+N. S. P. M,2020,Biochemical Oxygen Demand,8.44,B23
+Mawa Ghat,2020,Biochemical Oxygen Demand,5.82,B23
+Shimulia Ghat,2020,Biochemical Oxygen Demand,12.5,B23
+Pakshi Ghat (US),2020,Biochemical Oxygen Demand,2.26,B23
+Pakshi Ghat (DS),2020,Biochemical Oxygen Demand,2.23,B23
+Baro kuti Ghat (U.S),2020,Biochemical Oxygen Demand,2.33,B23
+Baro kuti Ghat (D.S),2020,Biochemical Oxygen Demand,2.31,B23
+CUFL Side Anowara,2020,Biochemical Oxygen Demand,628.42,B23
+"TSP Side, Patenga",2020,Biochemical Oxygen Demand,457.83,B23
+KAFCO side,2020,Biochemical Oxygen Demand,504.17,B23
+15 no Ghat,2020,Biochemical Oxygen Demand,155,B23
+Karnafully Mohona,2020,Biochemical Oxygen Demand,673,B23
+1km Straight from patenga sea beach,2020,Biochemical Oxygen Demand,786.17,B23
+Patenga charpara,2020,Biochemical Oxygen Demand,580.75,B23
+1km Straight from CEPZ,2020,Biochemical Oxygen Demand,615.25,B23
+Vatiyari Shipyard Area,2020,Biochemical Oxygen Demand,327.89,B23
+Noapara Ghat (S),2020,Biochemical Oxygen Demand,1.5,B23
+Noapara Ghat (M),2020,Biochemical Oxygen Demand,1.5,B23
+Noapara Ghat (O),2020,Biochemical Oxygen Demand,1.5,B23
+Fultala Ghat(S),2020,Biochemical Oxygen Demand,1.57,B23
+Fultala Ghat (M),2020,Biochemical Oxygen Demand,1.57,B23
+Fultala Ghat (O),2020,Biochemical Oxygen Demand,1.57,B23
+Kustia (S.P),2020,Biochemical Oxygen Demand,1.52,B23
+Kustia (M.P),2020,Biochemical Oxygen Demand,1.52,B23
+Kustia (O.P),2020,Biochemical Oxygen Demand,1.52,B23
+Magura (S.P),2020,Biochemical Oxygen Demand,1.22,B23
+Magura (M.P),2020,Biochemical Oxygen Demand,1.2,B23
+Magura (O.P),2020,Biochemical Oxygen Demand,1.22,B23
+Pipe Ghat (M.P),2020,Biochemical Oxygen Demand,0.7,B23
+Pipe Ghat (U.S),2020,Biochemical Oxygen Demand,0.44,B23
+Pipe Ghat (D.S),2020,Biochemical Oxygen Demand,0.56,B23
+Bagerhat (O.S),2020,Biochemical Oxygen Demand,1.56,B23
+Bagerhat (M.S),2020,Biochemical Oxygen Demand,1.58,B23
+Bagerhat (O.S),2020,Biochemical Oxygen Demand,1.54,B23
+Mongla Poart (S.P),2020,Biochemical Oxygen Demand,1.52,B23
+Mongla Poart (M.P),2020,Biochemical Oxygen Demand,1.52,B23
+Mongla Poart (O.P),2020,Biochemical Oxygen Demand,1.52,B23
+Rupsha Ghat (S),2020,Biochemical Oxygen Demand,1.3,B23
+Rupsha Ghat (M),2020,Biochemical Oxygen Demand,1.32,B23
+Rupsha Ghat (O),2020,Biochemical Oxygen Demand,1.28,B23
+Labanchara Ghat (S),2020,Biochemical Oxygen Demand,1.47,B23
+Labanchara Ghat (M),2020,Biochemical Oxygen Demand,1.47,B23
+Labanchara Ghat (O),2020,Biochemical Oxygen Demand,1.45,B23
+Kaliganj (S.P),2020,Biochemical Oxygen Demand,1.24,B23
+Kaliganj (M.P),2020,Biochemical Oxygen Demand,1.22,B23
+Kaliganj (O.P),2020,Biochemical Oxygen Demand,1.24,B23
+Launch Ghat (S),2020,Biochemical Oxygen Demand,2.56,B23
+Launch Ghat (M),2020,Biochemical Oxygen Demand,2.58,B23
+Dopdopia Kheyaghat (S),2020,Biochemical Oxygen Demand,2.43,B23
+Dopdopia Kheyaghat (M),2020,Biochemical Oxygen Demand,2.41,B23
+Beltola Fery Gaht (S),2020,Biochemical Oxygen Demand,2.48,B23
+Beltola Fery Gaht (M),2020,Biochemical Oxygen Demand,2.55,B23
+Vadura Launch Ghat (S),2020,Biochemical Oxygen Demand,2.87,B23
+Vadura Launch Ghat (M),2020,Biochemical Oxygen Demand,3.03,B23
+Jhalkathi L.G (S),2020,Biochemical Oxygen Demand,2.1,B23
+Jhalkathi L.G (M),2020,Biochemical Oxygen Demand,1.95,B23
+Patuakhali Launch Ghat (S),2020,Biochemical Oxygen Demand,2.6,B23
+Patuakhali Launch Ghat (M),2020,Biochemical Oxygen Demand,2.4,B23
+"Near Dutta Bari Bridge, Bogura (Upstream)",2020,Biochemical Oxygen Demand,5.36,B23
+"Near Dutta Bari Bridge, Bogura (Downstream)",2020,Biochemical Oxygen Demand,5.36,B23
+"Near Foteh Ali Bridge, Bogura (Upstream)",2020,Biochemical Oxygen Demand,5.27,B23
+"Near Foteh Ali Bridge, Bogura (Downstream)",2020,Biochemical Oxygen Demand,5.27,B23
+"Near Matidali Bridge, Bogura (Upstream)",2020,Biochemical Oxygen Demand,4.93,B23
+"Near Matidali Bridge, Bogura (Downstream)",2020,Biochemical Oxygen Demand,4.93,B23
+"Near S.P Bridge, Bogura (Upstream)",2020,Biochemical Oxygen Demand,5.52,B23
+"Near S.P Bridge, Bogura (Downstream)",2020,Biochemical Oxygen Demand,5.52,B23
+"Shahjadpur, Sirajganj (Upstream)",2020,Biochemical Oxygen Demand,2.26,B23
+"Shahjadpur, Sirajganj (Downstream)",2020,Biochemical Oxygen Demand,2.28,B23
+Near Tista Bridge (U.S),2020,Biochemical Oxygen Demand,2.26,B23
+Near Tista Bridge (D.S),2020,Biochemical Oxygen Demand,2.24,B23
+Mendibag Point,2020,Biochemical Oxygen Demand,2.02,B23
+Kin Bridge Point,2020,Biochemical Oxygen Demand,2.28,B23
+Sheaik Ghat,2020,Biochemical Oxygen Demand,2.27,B23
+Chhatak,2020,Biochemical Oxygen Demand,2.14,B23
+Fenchuganj Point,2020,Biochemical Oxygen Demand,2.57,B23
+Mirpur Bridge,2021,Biochemical Oxygen Demand,19.56,B23
+Mohammadpur,2021,Biochemical Oxygen Demand,5.8,B23
+Bosila Bridge,2021,Biochemical Oxygen Demand,22.92,B23
+Hajaribag,2021,Biochemical Oxygen Demand,17.3,B23
+Satmosjid Road,2021,Biochemical Oxygen Demand,17.78,B23
+Chadnighat,2021,Biochemical Oxygen Demand,19.44,B23
+Sadarghat,2021,Biochemical Oxygen Demand,6,B23
+B.C.F.B,2021,Biochemical Oxygen Demand,18.9,B23
+Pagla,2021,Biochemical Oxygen Demand,17.16,B23
+Fatullah,2021,Biochemical Oxygen Demand,6,B23
+Port Road,2021,Biochemical Oxygen Demand,17.31,B23
+Majira Demra Ghat,2021,Biochemical Oxygen Demand,13.88,B23
+Murapara (Rupgonj),2021,Biochemical Oxygen Demand,9.56,B23
+Gorashal,2021,Biochemical Oxygen Demand,8.83,B23
+Trimohoni Bridge,2021,Biochemical Oxygen Demand,28.58,B23
+Jolshiri Abason,2021,Biochemical Oxygen Demand,11.31,B23
+Turag Bridge,2021,Biochemical Oxygen Demand,17.91,B23
+Ashulia,2021,Biochemical Oxygen Demand,16.22,B23
+Kaliakoir,2021,Biochemical Oxygen Demand,14.36,B23
+Vawal,2021,Biochemical Oxygen Demand,17.69,B23
+Nama Bazar,2021,Biochemical Oxygen Demand,15.09,B23
+Mukterpur,2021,Biochemical Oxygen Demand,14.89,B23
+Ruhitpur,2021,Biochemical Oxygen Demand,10.29,B23
+Hazratpur,2021,Biochemical Oxygen Demand,10.57,B23
+Alipur,2021,Biochemical Oxygen Demand,12,B23
+Sirajnagor,2021,Biochemical Oxygen Demand,8.4,B23
+Utorro Mitra,2021,Biochemical Oxygen Demand,9.17,B23
+Pathorghata,2021,Biochemical Oxygen Demand,8.5,B23
+"Rail Bridge, Shamvoganj",2021,Biochemical Oxygen Demand,4.5,B23
+JamalpurRail Bridge,2021,Biochemical Oxygen Demand,5.75,B23
+Sarkarkhana,2021,Biochemical Oxygen Demand,11.5,B23
+Kakua,2021,Biochemical Oxygen Demand,8.33,B23
+Jamuna Eco Park (UP),2021,Biochemical Oxygen Demand,2.28,B23
+Jamuna Eco Park (DN),2021,Biochemical Oxygen Demand,2.28,B23
+Shariakandi Kheya Ghat Growin Bandh (UP),2021,Biochemical Oxygen Demand,2.31,B23
+Shariakandi Kheya Ghat Growin Bandh (DN),2021,Biochemical Oxygen Demand,2.31,B23
+Horipur Kheya Ghat (UP),2021,Biochemical Oxygen Demand,2.23,B23
+Horipur Kheya Ghat (DN),2021,Biochemical Oxygen Demand,2.23,B23
+Mohonganj (DN),2021,Biochemical Oxygen Demand,2.22,B23
+Mohonganj (UP),2021,Biochemical Oxygen Demand,2.22,B23
+"Bheutha Ghat, Manikganj",2021,Biochemical Oxygen Demand,5.25,B23
+Meghna Ghat,2021,Biochemical Oxygen Demand,7.38,B23
+Bairob Ferry Ghat,2021,Biochemical Oxygen Demand,6.22,B23
+Narshingdi Launch Ghat,2021,Biochemical Oxygen Demand,9.87,B23
+Shajalal Paper,2021,Biochemical Oxygen Demand,20,B23
+Annando Bazar,2021,Biochemical Oxygen Demand,4.25,B23
+Bish Nondi Ghat,2021,Biochemical Oxygen Demand,7.525,B23
+Josldia,2021,Biochemical Oxygen Demand,5,B23
+Sitardor,2021,Biochemical Oxygen Demand,4,B23
+Kandipara,2021,Biochemical Oxygen Demand,4,B23
+Khoiria,2021,Biochemical Oxygen Demand,4,B23
+Shimolia,2021,Biochemical Oxygen Demand,1,B23
+Gordhor Bazar,2021,Biochemical Oxygen Demand,2,B23
+Mawa ferry Ghat,2021,Biochemical Oxygen Demand,11.5,B23
+Barha Ghat,2021,Biochemical Oxygen Demand,8,B23
+CUFL,2021,Biochemical Oxygen Demand,75.64,B23
+TSP,2021,Biochemical Oxygen Demand,83.27,B23
+Shikalbaha,2021,Biochemical Oxygen Demand,16,B23
+Kalurghat Bridge,2021,Biochemical Oxygen Demand,5.64,B23
+Mariam Nagar,2021,Biochemical Oxygen Demand,5.36,B23
+Karnafully Paper,2021,Biochemical Oxygen Demand,11.27,B23
+Maduna Ghat,2021,Biochemical Oxygen Demand,5.83,B23
+Garduara Sluice gate,2021,Biochemical Oxygen Demand,5.08,B23
+Halda Bridge,2021,Biochemical Oxygen Demand,4.92,B23
+"Basundia Bazar, Aladipur",2021,Biochemical Oxygen Demand,2.6,B23
+Noapara Ferry Ghat Abhaynagar,2021,Biochemical Oxygen Demand,2.28,B23
+Noapara Jafarpur,2021,Biochemical Oxygen Demand,2.78,B23
+"Fultala Ghat, Dhulgram",2021,Biochemical Oxygen Demand,4.01,B23
+Kamarkhali Bridge,2021,Biochemical Oxygen Demand,2.03,B23
+Dorshona Railway Junction,2021,Biochemical Oxygen Demand,2.33,B23
+Dhalaitala,2021,Biochemical Oxygen Demand,3.5,B23
+Shoshan Ghat,2021,Biochemical Oxygen Demand,7.8,B23
+Buro Moulavir Darga,2021,Biochemical Oxygen Demand,57,B23
+Doshgate Jalma,2021,Biochemical Oxygen Demand,36,B23
+Rampal Power Plant,2021,Biochemical Oxygen Demand,1.67,B23
+Banishanta,2021,Biochemical Oxygen Demand,2.11,B23
+Batiaghata By Pass,2021,Biochemical Oxygen Demand,2.6,B23
+"Gilatola, Nadan Pratap (M)",2021,Biochemical Oxygen Demand,1.57,B23
+Kalibari Ghat (M),2021,Biochemical Oxygen Demand,3.03,B23
+"Charer Hat, Sulpur Aijgati (M)",2021,Biochemical Oxygen Demand,1.75,B23
+Rupsa Ghat (M),2021,Biochemical Oxygen Demand,2.57,B23
+Uzirpur,2021,Biochemical Oxygen Demand,7.07,B23
+Kaliganj Bazar,2021,Biochemical Oxygen Demand,7.7,B23
+Boshontopur,2021,Biochemical Oxygen Demand,6,B23
+Dottobari Bridge (UP),2021,Biochemical Oxygen Demand,4.89,B23
+Dottobari Bridge (Down),2021,Biochemical Oxygen Demand,4.89,B23
+Aziz Ahmed Taki Road (UP),2021,Biochemical Oxygen Demand,4.77,B23
+Aziz Ahmed Taki Road (Down),2021,Biochemical Oxygen Demand,4.77,B23
+Sultanganj- Gabtoli (UP),2021,Biochemical Oxygen Demand,4.85,B23
+Sultanganj- Gabtoli (DN),2021,Biochemical Oxygen Demand,4.85,B23
+Teesta Bridge (Up),2021,Biochemical Oxygen Demand,2.25,B23
+Teesta Bridge (Dn),2021,Biochemical Oxygen Demand,2.25,B23
+Nohali Sapmari (Up),2021,Biochemical Oxygen Demand,2.22,B23
+Nohali Sapmari (Dn),2021,Biochemical Oxygen Demand,2.22,B23
+Teesta Barrage (Up),2021,Biochemical Oxygen Demand,2.27,B23
+Teesta Barrage (Dn),2021,Biochemical Oxygen Demand,2.27,B23
+Mendibag Point,2021,Biochemical Oxygen Demand,2.66,B23
+Kin Bridge Point,2021,Biochemical Oxygen Demand,1.7,B23
+Sheaik Ghat,2021,Biochemical Oxygen Demand,2.8,B23
+Chhatak,2021,Biochemical Oxygen Demand,2.71,B23
+Fcnchuganj Bridge Point,2021,Biochemical Oxygen Demand,2.94,B23
+Mirpur Bridge,2022,Biochemical Oxygen Demand,14.13,B23
+Bosila Bridge,2022,Biochemical Oxygen Demand,12.83,B23
+Hajaribag,2022,Biochemical Oxygen Demand,12.8,B23
+Satmosjid Road,2022,Biochemical Oxygen Demand,14.13,B23
+Chadnighat,2022,Biochemical Oxygen Demand,13.98,B23
+Bangladesg China Friendship Bridge,2022,Biochemical Oxygen Demand,14.75,B23
+Fatullah,2022,Biochemical Oxygen Demand,13.5,B23
+Port Road,2022,Biochemical Oxygen Demand,10.35,B23
+Table Majhira Demra Ghat,2022,Biochemical Oxygen Demand,10.24,B23
+Murapara (Rupganj),2022,Biochemical Oxygen Demand,8.98,B23
+Gorashal Fertilizer,2022,Biochemical Oxygen Demand,5.72,B23
+Trimohoni Bridge,2022,Biochemical Oxygen Demand,31.44,B23
+Jolshiri Abason,2022,Biochemical Oxygen Demand,14.75,B23
+Turag Bridge,2022,Biochemical Oxygen Demand,11.37,B23
+Ashulia,2022,Biochemical Oxygen Demand,13.22,B23
+Kaliakoir,2022,Biochemical Oxygen Demand,6.7,B23
+Vawal,2022,Biochemical Oxygen Demand,5.45,B23
+Nama Bazar,2022,Biochemical Oxygen Demand,10.53,B23
+Mukterpur,2022,Biochemical Oxygen Demand,8.26,B23
+Pathorghata,2022,Biochemical Oxygen Demand,9.24,B23
+Ruhitpur,2022,Biochemical Oxygen Demand,6.91,B23
+Hazratpur,2022,Biochemical Oxygen Demand,7.13,B23
+Utorro Mitra,2022,Biochemical Oxygen Demand,5.22,B23
+Mymensingh,2022,Biochemical Oxygen Demand,7.2,B23
+Jamalpur Bridge,2022,Biochemical Oxygen Demand,4,B23
+Jamalpur Rail Bridge,2022,Biochemical Oxygen Demand,1.8,B23
+Jamuna Eco Park (U),2022,Biochemical Oxygen Demand,2.33,B23
+Jamuna Eco Park (D),2022,Biochemical Oxygen Demand,2.33,B23
+Shariakandi Groin badth (U),2022,Biochemical Oxygen Demand,2.4,B23
+Shariakandi Groin badth (D),2022,Biochemical Oxygen Demand,2.4,B23
+Mohonganj (U),2022,Biochemical Oxygen Demand,2.23,B23
+Mohonganj (D),2022,Biochemical Oxygen Demand,2.23,B23
+Horipur Kheya Ghat (U),2022,Biochemical Oxygen Demand,2.38,B23
+Horipur Kheya Ghat (D),2022,Biochemical Oxygen Demand,2.38,B23
+Kakua,2022,Biochemical Oxygen Demand,3.15,B23
+Tarakandi (D),2022,Biochemical Oxygen Demand,5.4,B23
+Tarakandi (U),2022,Biochemical Oxygen Demand,4,B23
+"Bheutha Ghat, Manikganj",2022,Biochemical Oxygen Demand,6,B23
+Meghna Ghat,2022,Biochemical Oxygen Demand,4.15,B23
+Bisnondi,2022,Biochemical Oxygen Demand,5.1,B23
+Norsingdi Launch Terminal,2022,Biochemical Oxygen Demand,6.93,B23
+Anondo Bazar,2022,Biochemical Oxygen Demand,4.74,B23
+Bhairob Bazar,2022,Biochemical Oxygen Demand,3.44,B23
+Mawa Ghat,2022,Biochemical Oxygen Demand,5.4,B23
+Barha Ghat,2022,Biochemical Oxygen Demand,6.18,B23
+CUFL,2022,Biochemical Oxygen Demand,11.35,B23
+TSP,2022,Biochemical Oxygen Demand,8.96,B23
+Shikalbaha,2022,Biochemical Oxygen Demand,4.69,B23
+Kalurghat Bridge,2022,Biochemical Oxygen Demand,3.83,B23
+Mariam Nagar,2022,Biochemical Oxygen Demand,3.64,B23
+Karnaphuli Paper,2022,Biochemical Oxygen Demand,4.09,B23
+Maduna Ghat,2022,Biochemical Oxygen Demand,12.99,B23
+Garduara Sluice Gate,2022,Biochemical Oxygen Demand,12.1,B23
+Halda Bridge,2022,Biochemical Oxygen Demand,12.15,B23
+Basundia Bazar,2022,Biochemical Oxygen Demand,3.5,B23
+Noapara Ferry Ghat,2022,Biochemical Oxygen Demand,1.8,B23
+Noapara,2022,Biochemical Oxygen Demand,1.6,B23
+Fultala Ghat,2022,Biochemical Oxygen Demand,1.7,B23
+Shoshan Ghat,2022,Biochemical Oxygen Demand,7.8,B23
+Buro Moulavir Darga,2022,Biochemical Oxygen Demand,57,B23
+Doshgate Jalma,2022,Biochemical Oxygen Demand,36,B23
+Rupsa Ghat (M),2022,Biochemical Oxygen Demand,7.5,B23
+Kalibari Ghat (M),2022,Biochemical Oxygen Demand,2.1,B23
+Charer Hat (M),2022,Biochemical Oxygen Demand,1.3,B23
+Gilatala,2022,Biochemical Oxygen Demand,1.4,B23
+Kaliganj Bazar,2022,Biochemical Oxygen Demand,1.3,B23
+Boshontopur,2022,Biochemical Oxygen Demand,1.3,B23
+Gobindakathi,2022,Biochemical Oxygen Demand,1.3,B23
+"Dutta Bari Bridge, Bogura (Upstream)",2022,Biochemical Oxygen Demand,3.03,B23
+"Dutta Bari Bridge, Bogura (Downstream)",2022,Biochemical Oxygen Demand,3.03,B23
+Aziz Ahmed Taki Road (Upstream),2022,Biochemical Oxygen Demand,3.07,B23
+Aziz Ahmed Taki Road (Downstream),2022,Biochemical Oxygen Demand,3.07,B23
+"Dutta Bari Bridge, Bogura (Upstream)",2022,Biochemical Oxygen Demand,3.03,B23
+"Dutta Bari Bridge, Bogura (Downstream)",2022,Biochemical Oxygen Demand,3.03,B23
+Aziz Ahmed Taki Road (Upstream),2022,Biochemical Oxygen Demand,3.07,B23
+Aziz Ahmed Taki Road (Downstream),2022,Biochemical Oxygen Demand,3.07,B23
+Mendibag Point,2022,Biochemical Oxygen Demand,2.1,B23
+Kin Bridge Point,2022,Biochemical Oxygen Demand,2.3,B23
+Sheaik Ghat,2022,Biochemical Oxygen Demand,2.8,B23
+Chhatak,2022,Biochemical Oxygen Demand,2.5,B23
+Fenchuganj Bridge Point,2022,Biochemical Oxygen Demand,2.3,B23
+Fenchuganj Fertilizer Industry Point,2022,Biochemical Oxygen Demand,2.6,B23
+Mirpur Bridge,2023,Biochemical Oxygen Demand,9.56,B23
+Bosila Bridge,2023,Biochemical Oxygen Demand,9,B23
+Hajaribag,2023,Biochemical Oxygen Demand,13,B23
+Satmosjid Road,2023,Biochemical Oxygen Demand,10.67,B23
+Chadnighat,2023,Biochemical Oxygen Demand,12.22,B23
+Bangladesg China Friendship Bridge,2023,Biochemical Oxygen Demand,12.33,B23
+Fatullah,2023,Biochemical Oxygen Demand,9.44,B23
+Port Road,2023,Biochemical Oxygen Demand,10.36,B23
+Majhira Demra Ghat,2023,Biochemical Oxygen Demand,14.56,B23
+Murapara (Rupganj),2023,Biochemical Oxygen Demand,44.16,B23
+Gorashal Fertilizer,2023,Biochemical Oxygen Demand,4.4,B23
+Trimohoni Bridge,2023,Biochemical Oxygen Demand,29.73,B23
+Jolshiri Abason,2023,Biochemical Oxygen Demand,9.89,B23
+Turag Bridge,2023,Biochemical Oxygen Demand,14.07,B23
+Ashulia,2023,Biochemical Oxygen Demand,12.35,B23
+Kaliakoir,2023,Biochemical Oxygen Demand,5.17,B23
+Vawal,2023,Biochemical Oxygen Demand,6.17,B23
+Nama Bazar,2023,Biochemical Oxygen Demand,9.41,B23
+Mukterpur,2023,Biochemical Oxygen Demand,8,B23
+Pathorghata,2023,Biochemical Oxygen Demand,4.3,B23
+Ruhitpur,2023,Biochemical Oxygen Demand,2.85,B23
+Hazratpur,2023,Biochemical Oxygen Demand,3.88,B23
+Utorro Mitra,2023,Biochemical Oxygen Demand,5.5,B23
+Mymensingh,2023,Biochemical Oxygen Demand,8,B23
+"Rail Bridge, Shamvoganj",2023,Biochemical Oxygen Demand,5.05,B23
+Jamuna Eco Park (Up),2023,Biochemical Oxygen Demand,2.33,B23
+Jamuna Eco Park (Dn),2023,Biochemical Oxygen Demand,2.33,B23
+Shariakandi Kheya Ghat (Up),2023,Biochemical Oxygen Demand,2.32,B23
+Shariakandi Kheya Ghat (Dn),2023,Biochemical Oxygen Demand,2.32,B23
+Mohonganj (Up),2023,Biochemical Oxygen Demand,2.31,B23
+Mohonganj (Dn),2023,Biochemical Oxygen Demand,2.31,B23
+Horipur Kheya Ghat (Up),2023,Biochemical Oxygen Demand,2.38,B23
+Horipur Kheya Ghat (Dn),2023,Biochemical Oxygen Demand,2.38,B23
+Kakua,2023,Biochemical Oxygen Demand,2.2,B23
+Tarakandi,2023,Biochemical Oxygen Demand,3.4,B23
+"Bheutha Ghat, Manikganj",2023,Biochemical Oxygen Demand,6.6,B23
+Meghna Ghat,2023,Biochemical Oxygen Demand,4.43,B23
+Bisnondi Ferry Ghat,2023,Biochemical Oxygen Demand,3.17,B23
+Norsingdi Launch Ghat,2023,Biochemical Oxygen Demand,3.22,B23
+Anondo Bazar,2023,Biochemical Oxygen Demand,4.48,B23
+Bhairob Bazar,2023,Biochemical Oxygen Demand,7.5,B23
+Mawa Ghat,2023,Biochemical Oxygen Demand,2.2,B23
+Barha Ghat,2023,Biochemical Oxygen Demand,3.53,B23
+CUFL,2023,Biochemical Oxygen Demand,6.75,B23
+TSP,2023,Biochemical Oxygen Demand,6.08,B23
+Shikalbaha,2023,Biochemical Oxygen Demand,4.83,B23
+Kalurghat Bridge,2023,Biochemical Oxygen Demand,4.42,B23
+Mariam Nagar,2023,Biochemical Oxygen Demand,4.42,B23
+Karnaphuli Paper,2023,Biochemical Oxygen Demand,4.17,B23
+Maduna Ghat,2023,Biochemical Oxygen Demand,3.92,B23
+Garduara Sluice Gate,2023,Biochemical Oxygen Demand,3.83,B23
+Halda Bridge,2023,Biochemical Oxygen Demand,3.5,B23
+Basundia Bazar,2023,Biochemical Oxygen Demand,7.99,B23
+"Noapara Ferry Ghat, Abhaynagar",2023,Biochemical Oxygen Demand,13.5,B23
+Noapara Jafarpur,2023,Biochemical Oxygen Demand,13.9,B23
+"Fultala Ghat, Dhulgram",2023,Biochemical Oxygen Demand,12.07,B23
+Kamarkhali Bridge,2023,Biochemical Oxygen Demand,5.39,B23
+"Pipe Ghat, (M.P)",2023,Biochemical Oxygen Demand,26.78,B23
+Dhalaitala,2023,Biochemical Oxygen Demand,4.57,B23
+Shoshan Ghat,2023,Biochemical Oxygen Demand,21.17,B23
+Buro Moulavir Darga,2023,Biochemical Oxygen Demand,17.39,B23
+Doshgate Jalma,2023,Biochemical Oxygen Demand,23.86,B23
+Rampal Power Plant,2023,Biochemical Oxygen Demand,11.5,B23
+Banishanta,2023,Biochemical Oxygen Demand,15.15,B23
+Batiaghata By Pass,2023,Biochemical Oxygen Demand,8.02,B23
+Rupsa Ghat (M),2023,Biochemical Oxygen Demand,26.8,B23
+Kalibari Ghat (M),2023,Biochemical Oxygen Demand,20.44,B23
+Charer Hat Sulpur Aijgati (M),2023,Biochemical Oxygen Demand,10.27,B23
+"Gilatala, Nadan Pratap (M)",2023,Biochemical Oxygen Demand,6.42,B23
+Kaliganj Bazar,2023,Biochemical Oxygen Demand,6.01,B23
+Boshontopur,2023,Biochemical Oxygen Demand,6.06,B23
+Uzirpur,2023,Biochemical Oxygen Demand,5.69,B23
+Dutta Bari Bridge (Up),2023,Biochemical Oxygen Demand,3.99,B23
+Dutta Bari Bridge (Down),2023,Biochemical Oxygen Demand,3.99,B23
+Aziz Ahmed Taki Road (Up),2023,Biochemical Oxygen Demand,3.99,B23
+Aziz Ahmed Taki Road (Down),2023,Biochemical Oxygen Demand,3.99,B23
+Sardah (Up),2023,Biochemical Oxygen Demand,2.37,B23
+Sardah (Down),2023,Biochemical Oxygen Demand,2.37,B23
+Nurullapur (Up),2023,Biochemical Oxygen Demand,2.29,B23
+Nurullapur (Down),2023,Biochemical Oxygen Demand,2.29,B23
+Kanchan Park (Up),2023,Biochemical Oxygen Demand,2.33,B23
+Kanchan Park (Down),2023,Biochemical Oxygen Demand,2.33,B23
+Mendibag Point,2023,Biochemical Oxygen Demand,2.45,B23
+Kin Bridge Point,2023,Biochemical Oxygen Demand,3.25,B23
+Sheaik Ghat,2023,Biochemical Oxygen Demand,3.4,B23
+Chhatak,2023,Biochemical Oxygen Demand,3,B23
+Fenchuganj Bridge Point,2023,Biochemical Oxygen Demand,2.8,B23
+Fenchuganj Fertilizer Industry Point,2023,Biochemical Oxygen Demand,20.5,B23
+Mirpur Bridge,2018,Chemical Oxygen Demand,38.36,B25
+Hajaribag,2018,Chemical Oxygen Demand,34,B25
+Kamrangir Char,2018,Chemical Oxygen Demand,31.54,B25
+Chadnighat,2018,Chemical Oxygen Demand,30,B25
+Sadar Ghat,2018,Chemical Oxygen Demand,27.81,B25
+Pagla,2018,Chemical Oxygen Demand,35.37,B25
+Bangladesg China Frendship Bridge,2018,Chemical Oxygen Demand,32.18,B25
+Demra Ghat,2018,Chemical Oxygen Demand,28.74,B25
+Ghorashal F.F.,2018,Chemical Oxygen Demand,33.5,B25
+Near ACI Factory,2018,Chemical Oxygen Demand,63.66,B25
+Neaer Kanchpur Bridge,2018,Chemical Oxygen Demand,24,B25
+Near Jaber & Jubair Fabrics Ltd. Tongi,2018,Chemical Oxygen Demand,87.28,B25
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2018,Chemical Oxygen Demand,94.77,B25
+"Near Damra University College, Demra, Dhaka",2018,Chemical Oxygen Demand,48.42,B25
+"Near Balu Bridge, 300 feet Road, Dhaka",2018,Chemical Oxygen Demand,32.25,B25
+"Near Fulpukuria Dyeing Ltd. Pagar, Tongi",2018,Chemical Oxygen Demand,10,B25
+"South Side of Tongi Rail Bridge, Pagar, Tongi",2018,Chemical Oxygen Demand,99.44,B25
+New Gabtoli Bridge,2018,Chemical Oxygen Demand,35.63,B25
+Mirpur Diabary BIWTA Landing Station,2018,Chemical Oxygen Demand,48.72,B25
+Ashulia BIWTA Landing Station,2018,Chemical Oxygen Demand,47.27,B25
+Tongi Istima Mat,2018,Chemical Oxygen Demand,54.18,B25
+"North Side of Tongi Bridge, Pagar",2018,Chemical Oxygen Demand,64,B25
+CETP (Up),2018,Chemical Oxygen Demand,25,B25
+CETP (Dr),2018,Chemical Oxygen Demand,118.87,B25
+CETP (DN),2018,Chemical Oxygen Demand,30.37,B25
+M.B,2018,Chemical Oxygen Demand,21.83,B25
+Hamayatpur,2018,Chemical Oxygen Demand,107.44,B25
+Mymensingh,2018,Chemical Oxygen Demand,13.33,B25
+"Bheutha Ghat, Manikgonj",2018,Chemical Oxygen Demand,12.16,B25
+Bhairob Bazar,2018,Chemical Oxygen Demand,13,B25
+Meghna Ghat,2018,Chemical Oxygen Demand,13.42,B25
+N. S. P. M,2018,Chemical Oxygen Demand,17.71,B25
+CUFL,2018,Chemical Oxygen Demand,214.33,B25
+TSP,2018,Chemical Oxygen Demand,214.33,B25
+Mohona,2018,Chemical Oxygen Demand,48,B25
+"Pipe Ghat,(M.P)",2018,Chemical Oxygen Demand,59,B25
+"Pipe Ghat, (U.S)",2018,Chemical Oxygen Demand,0,B25
+"PipeGhat, (D.S)",2018,Chemical Oxygen Demand,313,B25
+Mendibag Point,2018,Chemical Oxygen Demand,12.25,B25
+Kin Bridge Point,2018,Chemical Oxygen Demand,13.22,B25
+Sheaik Ghat,2018,Chemical Oxygen Demand,14.45,B25
+Chhatak,2018,Chemical Oxygen Demand,17.6,B25
+Fenchuganj Point,2018,Chemical Oxygen Demand,11,B25
+Mirpur Bridge,2019,Chemical Oxygen Demand,38.08,B25
+Hajaribag,2019,Chemical Oxygen Demand,34.83,B25
+Kamrangir Char,2019,Chemical Oxygen Demand,37.25,B25
+Chadnighat,2019,Chemical Oxygen Demand,38.83,B25
+Sadar Ghat,2019,Chemical Oxygen Demand,46.81,B25
+Pagla,2019,Chemical Oxygen Demand,44.5,B25
+Bangladesg China Frendship Bridge,2019,Chemical Oxygen Demand,42,B25
+Demra Ghat,2019,Chemical Oxygen Demand,38.4,B25
+Ghorashal F.F.,2019,Chemical Oxygen Demand,20.6,B25
+Near ACI Factory,2019,Chemical Oxygen Demand,33.7,B25
+Neaer Kanchpur Bridge,2019,Chemical Oxygen Demand,38.4,B25
+Near Jaber & Jubair Fabrics Ltd. Tongi,2019,Chemical Oxygen Demand,62.3,B25
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2019,Chemical Oxygen Demand,53.64,B25
+"Near Damra University College, Demra, Dhaka",2019,Chemical Oxygen Demand,67.74,B25
+"Near Balu Bridge, 300 feet Road, Dhaka",2019,Chemical Oxygen Demand,83.42,B25
+New Gabtoli Bridge,2019,Chemical Oxygen Demand,60.91,B25
+Mirpur Diabary BIWTA Landing Station,2019,Chemical Oxygen Demand,67.73,B25
+Ashulia BIWTA Landing Station,2019,Chemical Oxygen Demand,54.82,B25
+Tongi Istima Mat,2019,Chemical Oxygen Demand,57.7,B25
+"North Side of Tongi Bridge, Pagar",2019,Chemical Oxygen Demand,60.91,B25
+CETP (Up),2019,Chemical Oxygen Demand,12,B25
+CETP (Dr),2019,Chemical Oxygen Demand,24.4,B25
+CETP (DN),2019,Chemical Oxygen Demand,15.8,B25
+CUFL,2019,Chemical Oxygen Demand,581,B25
+TSP,2019,Chemical Oxygen Demand,450.17,B25
+"Karnafully River Chaktai Khal, ctg",2019,Chemical Oxygen Demand,164.5,B25
+Karnafully Mohona,2019,Chemical Oxygen Demand,762.67,B25
+1km Straight from patenga sea beach,2019,Chemical Oxygen Demand,766.67,B25
+Patenga charpara,2019,Chemical Oxygen Demand,653.67,B25
+1km Straight from CEPZ,2019,Chemical Oxygen Demand,743.33,B25
+Vattiyari shipyard area,2019,Chemical Oxygen Demand,491.67,B25
+Mohona,2019,Chemical Oxygen Demand,43,B25
+Mendibag Point,2019,Chemical Oxygen Demand,11.4,B25
+Kin Bridge Point,2019,Chemical Oxygen Demand,11.6,B25
+Sheaik Ghat,2019,Chemical Oxygen Demand,14.8,B25
+Chhatak,2019,Chemical Oxygen Demand,10,B25
+Kazir Bazar,2019,Chemical Oxygen Demand,10.33,B25
+Kushiyara Point,2019,Chemical Oxygen Demand,14.67,B25
+Mirpur Bridge,2020,Chemical Oxygen Demand,41.92,B25
+Hajaribag,2020,Chemical Oxygen Demand,41.58,B25
+Kamrangir Char,2020,Chemical Oxygen Demand,49.83,B25
+Chadnighat,2020,Chemical Oxygen Demand,57.5,B25
+Sadar Ghat,2020,Chemical Oxygen Demand,47.5,B25
+Pagla,2020,Chemical Oxygen Demand,49.42,B25
+Bangladesg China Frendship Bridge,2020,Chemical Oxygen Demand,53.92,B25
+Demra Ghat,2020,Chemical Oxygen Demand,49.4,B25
+Ghorashal F.F.,2020,Chemical Oxygen Demand,41,B25
+Near ACI Factory,2020,Chemical Oxygen Demand,73.9,B25
+Neaer Kanchpur Bridge,2020,Chemical Oxygen Demand,46,B25
+Near Jaber & Jubair Fabrics Ltd. Tongi,2020,Chemical Oxygen Demand,84.08,B25
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2020,Chemical Oxygen Demand,99.75,B25
+"Near Damra University College, Demra, Dhaka",2020,Chemical Oxygen Demand,69.75,B25
+"Near Balu Bridge, 300 feet Road, Dhaka",2020,Chemical Oxygen Demand,70,B25
+New Gabtoli Bridge,2020,Chemical Oxygen Demand,50.5,B25
+Mirpur Diabary BIWTA Landing Station,2020,Chemical Oxygen Demand,53,B25
+Ashulia BIWTA Landing Station,2020,Chemical Oxygen Demand,67.05,B25
+Tongi Istima Mat,2020,Chemical Oxygen Demand,66,B25
+"North Side of Tongi Bridge, Pagar",2020,Chemical Oxygen Demand,84.75,B25
+Muktarpur Bridge,2020,Chemical Oxygen Demand,28.25,B25
+CUFL Side Anowara,2020,Chemical Oxygen Demand,581,B25
+"TSP Side, Patenga",2020,Chemical Oxygen Demand,450.17,B25
+KAFCO side,2020,Chemical Oxygen Demand,164.5,B25
+15 no Ghat,2020,Chemical Oxygen Demand,766.67,B25
+Karnafully Mohona,2020,Chemical Oxygen Demand,653.67,B25
+1km Straight from patenga sea beach,2020,Chemical Oxygen Demand,743.33,B25
+Patenga charpara,2020,Chemical Oxygen Demand,491.67,B25
+Mohona,2020,Chemical Oxygen Demand,54.83,B25
+Madari Khal (middle point),2020,Chemical Oxygen Demand,43.17,B25
+Boraikhali,2020,Chemical Oxygen Demand,88,B25
+Madarikhal (Breeding Point),2020,Chemical Oxygen Demand,56,B25
+Noya Khal (Outside),2020,Chemical Oxygen Demand,108,B25
+Mendibag Point,2020,Chemical Oxygen Demand,10.45,B25
+Kin Bridge Point,2020,Chemical Oxygen Demand,11.67,B25
+Sheaik Ghat,2020,Chemical Oxygen Demand,11.73,B25
+Chhatak,2020,Chemical Oxygen Demand,9.75,B25
+Fenchuganj Point,2020,Chemical Oxygen Demand,10.57,B25
+Mirpur Bridge,2021,Chemical Oxygen Demand,64.9,B25
+Mohammadpur,2021,Chemical Oxygen Demand,43,B25
+Bosila Bridge,2021,Chemical Oxygen Demand,56.9,B25
+Hajaribag,2021,Chemical Oxygen Demand,57.3,B25
+Satmosjid Road,2021,Chemical Oxygen Demand,57.4,B25
+Chadnighat,2021,Chemical Oxygen Demand,58.9,B25
+Sadarghat,2021,Chemical Oxygen Demand,63,B25
+B.C.F.B,2021,Chemical Oxygen Demand,63.3,B25
+Pagla,2021,Chemical Oxygen Demand,57.8,B25
+Fatullah,2021,Chemical Oxygen Demand,50,B25
+Port Road,2021,Chemical Oxygen Demand,58.57,B25
+Majira Demra Ghat,2021,Chemical Oxygen Demand,41.44,B25
+Murapara (Rupgonj),2021,Chemical Oxygen Demand,34.89,B25
+Gorashal,2021,Chemical Oxygen Demand,29.33,B25
+Trimohoni Bridge,2021,Chemical Oxygen Demand,93.44,B25
+Jolshiri Abason,2021,Chemical Oxygen Demand,42.22,B25
+Turag Bridge,2021,Chemical Oxygen Demand,63.67,B25
+Ashulia,2021,Chemical Oxygen Demand,50.22,B25
+Kaliakoir,2021,Chemical Oxygen Demand,38.11,B25
+Vawal,2021,Chemical Oxygen Demand,61.78,B25
+Nama Bazar,2021,Chemical Oxygen Demand,52.89,B25
+Mukterpur,2021,Chemical Oxygen Demand,54.56,B25
+Ruhitpur,2021,Chemical Oxygen Demand,34.86,B25
+Hazratpur,2021,Chemical Oxygen Demand,38.29,B25
+Alipur,2021,Chemical Oxygen Demand,44,B25
+Sirajnagor,2021,Chemical Oxygen Demand,34,B25
+Utorro Mitra,2021,Chemical Oxygen Demand,28.83,B25
+Pathorghata,2021,Chemical Oxygen Demand,23.25,B25
+CUFL,2021,Chemical Oxygen Demand,286.55,B25
+TSP,2021,Chemical Oxygen Demand,308.82,B25
+Shikalbaha,2021,Chemical Oxygen Demand,53.64,B25
+Kalurghat Bridge,2021,Chemical Oxygen Demand,19.09,B25
+Mariam Nagar,2021,Chemical Oxygen Demand,17.73,B25
+Karnafully Paper,2021,Chemical Oxygen Demand,40.09,B25
+Maduna Ghat,2021,Chemical Oxygen Demand,22.42,B25
+Garduara Sluice gate,2021,Chemical Oxygen Demand,19.25,B25
+Halda Bridge,2021,Chemical Oxygen Demand,17.83,B25
+Mendibag Point,2021,Chemical Oxygen Demand,16.25,B25
+Kin Bridge Point,2021,Chemical Oxygen Demand,12,B25
+Sheaik Ghat,2021,Chemical Oxygen Demand,18.58,B25
+Chhatak,2021,Chemical Oxygen Demand,18,B25
+Fcnchuganj Bridge Point,2021,Chemical Oxygen Demand,18.25,B25
+Mirpur Bridge,2022,Chemical Oxygen Demand,56,B25
+Bosila Bridge,2022,Chemical Oxygen Demand,42.25,B25
+Hajaribag,2022,Chemical Oxygen Demand,62.83,B25
+Satmosjid Road,2022,Chemical Oxygen Demand,59.17,B25
+Chadnighat,2022,Chemical Oxygen Demand,46.25,B25
+Bangladesg China Friendship Bridge,2022,Chemical Oxygen Demand,44.75,B25
+Fatullah,2022,Chemical Oxygen Demand,43.83,B25
+Port Road,2022,Chemical Oxygen Demand,34.58,B25
+Table Majhira Demra Ghat,2022,Chemical Oxygen Demand,44.42,B25
+Murapara (Rupganj),2022,Chemical Oxygen Demand,34.83,B25
+Gorashal Fertilizer,2022,Chemical Oxygen Demand,17.33,B25
+Trimohoni Bridge,2022,Chemical Oxygen Demand,89.5,B25
+Jolshiri Abason,2022,Chemical Oxygen Demand,63.42,B25
+Turag Bridge,2022,Chemical Oxygen Demand,45.33,B25
+Ashulia,2022,Chemical Oxygen Demand,45.33,B25
+Kaliakoir,2022,Chemical Oxygen Demand,36.5,B25
+Vawal,2022,Chemical Oxygen Demand,31,B25
+Nama Bazar,2022,Chemical Oxygen Demand,35.08,B25
+Mukterpur,2022,Chemical Oxygen Demand,22.58,B25
+Pathorghata,2022,Chemical Oxygen Demand,29.89,B25
+Ruhitpur,2022,Chemical Oxygen Demand,28,B25
+Hazratpur,2022,Chemical Oxygen Demand,31.13,B25
+Utorro Mitra,2022,Chemical Oxygen Demand,20.22,B25
+Meghna Ghat,2022,Chemical Oxygen Demand,17.71,B25
+Bisnondi,2022,Chemical Oxygen Demand,22.29,B25
+Norsingdi Launch Terminal,2022,Chemical Oxygen Demand,21.14,B25
+Anondo Bazar,2022,Chemical Oxygen Demand,24.43,B25
+Bhairob Bazar,2022,Chemical Oxygen Demand,21.29,B25
+CUFL,2022,Chemical Oxygen Demand,53.25,B25
+TSP,2022,Chemical Oxygen Demand,44.25,B25
+Shikalbaha,2022,Chemical Oxygen Demand,13.18,B25
+Kalurghat Bridge,2022,Chemical Oxygen Demand,11.42,B25
+Mariam Nagar,2022,Chemical Oxygen Demand,11.09,B25
+Karnaphuli Paper,2022,Chemical Oxygen Demand,12.18,B25
+Maduna Ghat,2022,Chemical Oxygen Demand,12.99,B25
+Garduara Sluice Gate,2022,Chemical Oxygen Demand,12.1,B25
+Halda Bridge,2022,Chemical Oxygen Demand,12.15,B25
+Launch Ghat (S),2022,Chemical Oxygen Demand,9.5,B25
+Launch Ghat (M),2022,Chemical Oxygen Demand,-44,B25
+Kaower Char (S),2022,Chemical Oxygen Demand,111,B25
+Kaower Char (M),2022,Chemical Oxygen Demand,409,B25
+Dopdopia Kheyaghat (S),2022,Chemical Oxygen Demand,276,B25
+Dopdopia Kheyaghat (M),2022,Chemical Oxygen Demand,230.5,B25
+Vadura Launch Ghat (S),2022,Chemical Oxygen Demand,128,B25
+Vadura Launch Ghat (M),2022,Chemical Oxygen Demand,112,B25
+Gabkhan Lounch Terminal (S),2022,Chemical Oxygen Demand,55.57,B25
+Gabkhan Lounch Terminal (M),2022,Chemical Oxygen Demand,57.73,B25
+Mendibag Point,2022,Chemical Oxygen Demand,11,B25
+Kin Bridge Point,2022,Chemical Oxygen Demand,13,B25
+Sheaik Ghat,2022,Chemical Oxygen Demand,15,B25
+Chhatak,2022,Chemical Oxygen Demand,10,B25
+Fenchuganj Bridge Point,2022,Chemical Oxygen Demand,15,B25
+Fenchuganj Fertilizer Industry Point,2022,Chemical Oxygen Demand,14,B25
+Mirpur Bridge,2023,Chemical Oxygen Demand,37.33,B25
+Bosila Bridge,2023,Chemical Oxygen Demand,36.11,B25
+Hajaribag,2023,Chemical Oxygen Demand,39.11,B25
+Satmosjid Road,2023,Chemical Oxygen Demand,53.44,B25
+Chadnighat,2023,Chemical Oxygen Demand,31.56,B25
+Bangladesg China Friendship Bridge,2023,Chemical Oxygen Demand,46.56,B25
+Fatullah,2023,Chemical Oxygen Demand,33.22,B25
+Port Road,2023,Chemical Oxygen Demand,42.67,B25
+Majhira Demra Ghat,2023,Chemical Oxygen Demand,36.44,B25
+Murapara (Rupganj),2023,Chemical Oxygen Demand,28,B25
+Gorashal Fertilizer,2023,Chemical Oxygen Demand,17.75,B25
+Trimohoni Bridge,2023,Chemical Oxygen Demand,76.25,B25
+Jolshiri Abason,2023,Chemical Oxygen Demand,33.38,B25
+Turag Bridge,2023,Chemical Oxygen Demand,33.25,B25
+Ashulia,2023,Chemical Oxygen Demand,26.11,B25
+Kaliakoir,2023,Chemical Oxygen Demand,20.44,B25
+Vawal,2023,Chemical Oxygen Demand,21.78,B25
+Nama Bazar,2023,Chemical Oxygen Demand,31.39,B25
+Mukterpur,2023,Chemical Oxygen Demand,18,B25
+Pathorghata,2023,Chemical Oxygen Demand,23.38,B25
+Ruhitpur,2023,Chemical Oxygen Demand,21,B25
+Hazratpur,2023,Chemical Oxygen Demand,34,B25
+Utorro Mitra,2023,Chemical Oxygen Demand,17,B25
+CUFL,2023,Chemical Oxygen Demand,39.08,B25
+TSP,2023,Chemical Oxygen Demand,32.58,B25
+Shikalbaha,2023,Chemical Oxygen Demand,14.75,B25
+Kalurghat Bridge,2023,Chemical Oxygen Demand,12.67,B25
+Mariam Nagar,2023,Chemical Oxygen Demand,14.92,B25
+Karnaphuli Paper,2023,Chemical Oxygen Demand,14.42,B25
+Maduna Ghat,2023,Chemical Oxygen Demand,9.83,B25
+Garduara Sluice Gate,2023,Chemical Oxygen Demand,9.17,B25
+Halda Bridge,2023,Chemical Oxygen Demand,8.92,B25
+Mendibag Point,2023,Chemical Oxygen Demand,10.45,B25
+Kin Bridge Point,2023,Chemical Oxygen Demand,11.67,B25
+Sheaik Ghat,2023,Chemical Oxygen Demand,11.73,B25
+Chhatak,2023,Chemical Oxygen Demand,9.75,B25
+Mirpur Bridge,2018,pH,7.62,B26
+Hajaribag,2018,pH,7.46,B26
+Kamrangir Char,2018,pH,7.45,B26
+Chadnighat,2018,pH,7.35,B26
+Sadar Ghat,2018,pH,7.45,B26
+Pagla,2018,pH,7.44,B26
+Bangladesg China Frendship Bridge,2018,pH,7.42,B26
+Demra Ghat,2018,pH,7.71,B26
+Ghorashal F.F.,2018,pH,7.56,B26
+Near ACI Factory,2018,pH,7.11,B26
+Neaer Kanchpur Bridge,2018,pH,7.59,B26
+Near Jaber & Jubair Fabrics Ltd. Tongi,2018,pH,7.78,B26
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2018,pH,7.41,B26
+"Near Damra University College, Demra, Dhaka",2018,pH,7.63,B26
+"Near Balu Bridge, 300 feet Road, Dhaka",2018,pH,7.43,B26
+"Near Fulpukuria Dyeing Ltd. Pagar, Tongi",2018,pH,7.83,B26
+"South Side of Tongi Rail Bridge, Pagar, Tongi",2018,pH,7.76,B26
+New Gabtoli Bridge,2018,pH,7.4,B26
+Mirpur Diabary BIWTA Landing Station,2018,pH,7.49,B26
+Ashulia BIWTA Landing Station,2018,pH,7.55,B26
+Tongi Istima Mat,2018,pH,7.5,B26
+"North Side of Tongi Bridge, Pagar",2018,pH,7.63,B26
+CETP (Up),2018,pH,7.83,B26
+CETP (Dr),2018,pH,7.86,B26
+CETP (DN),2018,pH,7.75,B26
+M.B,2018,pH,7.43,B26
+Hamayatpur,2018,pH,8,B26
+Mymensingh,2018,pH,7.83,B26
+Bhadurabad Ghat,2018,pH,8.43,B26
+Near Jamuna Fertilizer Factory,2018,pH,8,B26
+"Fulchari Ghat, Gibanda (US)",2018,pH,7.52,B26
+"Fulchari Ghat, Gibanda (DS)",2018,pH,7.51,B26
+"Shariakandi Groin Badth, Bogra (US)",2018,pH,7.49,B26
+"Shariakandi Groin Badth, Bogra (DS)",2018,pH,7.49,B26
+Near Banabandhu Bridge (US),2018,pH,7.5,B26
+Near Banabandhu Bridge (DS),2018,pH,7.5,B26
+"Bheutha Ghat, Manikgonj",2018,pH,7.19,B26
+Bhairob Bazar,2018,pH,7.37,B26
+Meghna Ghat,2018,pH,7.03,B26
+N. S. P. M,2018,pH,6.92,B26
+Mawa Ghat,2018,pH,7.67,B26
+Shimulia Ghat,2018,pH,7.85,B26
+Pakshi Ghat (US),2018,pH,7.48,B26
+Pakshi Ghat (DS),2018,pH,7.47,B26
+Baro kuti Ghat (U.S),2018,pH,7.48,B26
+Baro kuti Ghat (D.S),2018,pH,7.49,B26
+CUFL,2018,pH,7.58,B26
+TSP,2018,pH,7.37,B26
+"Karnafully River Chaktai Khal, ctg",2018,pH,7.73,B26
+Mohona,2018,pH,7.41,B26
+Khulna (O.S),2018,pH,7.62,B26
+Khulna (M.S),2018,pH,7.64,B26
+Noapara Ghat (S),2018,pH,5.59,B26
+Noapara Ghat (M),2018,pH,5.57,B26
+Noapara Ghat (O),2018,pH,5.73,B26
+Fultala Ghat(S),2018,pH,5.75,B26
+Fultala Ghat (M),2018,pH,5.75,B26
+Charerhat Ghat (M),2018,pH,5.77,B26
+Charerhat Ghat (O),2018,pH,5.77,B26
+Kustia (S.P),2018,pH,7.7,B26
+Kustia (M.P),2018,pH,7.7,B26
+Kustia (O.P),2018,pH,7.7,B26
+Magura (S.P),2018,pH,7.71,B26
+Magura (M.P),2018,pH,7.7,B26
+Magura (O.P),2018,pH,7.71,B26
+"Pipe Ghat,(M.P)",2018,pH,6.96,B26
+"Pipe Ghat, (U.S)",2018,pH,6.96,B26
+"PipeGhat, (D.S)",2018,pH,6.87,B26
+Bagerhat (O.S),2018,pH,7.46,B26
+Bagerhat (M.S),2018,pH,7.47,B26
+Bagerhat (O.S),2018,pH,7.47,B26
+Gallamari Bridge (S),2018,pH,7.62,B26
+Gallamari Bridge (M),2018,pH,7.64,B26
+Gallamari Bridge (O),2018,pH,7.62,B26
+Mongla Poart (S.P),2018,pH,7.79,B26
+Mongla Poart (M.P),2018,pH,7.8,B26
+Mongla Poart (O.P),2018,pH,7.8,B26
+Rupsha Ghat (S),2018,pH,7.79,B26
+Rupsha Ghat (M),2018,pH,7.8,B26
+Rupsha Ghat (O),2018,pH,7.79,B26
+Labanchara Ghat (S),2018,pH,7.8,B26
+Labanchara Ghat (M),2018,pH,7.81,B26
+Labanchara Ghat (O),2018,pH,7.8,B26
+Kaliganj (S.P),2018,pH,7.57,B26
+Kaliganj (M.P),2018,pH,7.56,B26
+Kaliganj (O.P),2018,pH,7.58,B26
+Launch Ghat (S),2018,pH,7.63,B26
+Launch Ghat (M),2018,pH,7.63,B26
+Dopdopia Kheyaghat (S),2018,pH,7.7,B26
+Dopdopia Kheyaghat (M),2018,pH,7.71,B26
+Beltola Fery Gaht (S),2018,pH,7.65,B26
+Beltola Fery Gaht (M),2018,pH,7.63,B26
+Vadura Launch Ghat (S),2018,pH,7.37,B26
+Vadura Launch Ghat (M),2018,pH,7.35,B26
+Jhalkathi L.G (S),2018,pH,7.42,B26
+Jhalkathi L.G (M),2018,pH,7.4,B26
+Patuakhali Launch Ghat (S),2018,pH,7.39,B26
+Patuakhali Launch Ghat (M),2018,pH,7.37,B26
+"Near Dutta Bari Bridge, Bogra (Up stream)",2018,pH,6.9,B26
+"Near Dutta Bari Bridge, Bogra (Down stream)",2018,pH,6.9,B26
+"Near Foteh Ali Bridge, Bogra (Up stream)",2018,pH,6.89,B26
+"Near Foteh Ali Bridge, Bogra (Down stream)",2018,pH,6.89,B26
+"Near Matidali Bridge, Bogra (Up stream)",2018,pH,6.94,B26
+"Near Matidali Bridge, Bogra (Down stream)",2018,pH,6.94,B26
+"Near S.P Bridge, Bogra (Up stream)",2018,pH,6.87,B26
+"Near S.P Bridge, Bogra (Down stream)",2018,pH,6.87,B26
+"Shahjadpur, Sirajgonj (Up stream)",2018,pH,7.51,B26
+"Shahjadpur, Sirajgonj (Down stream)",2018,pH,7.5,B26
+Near Tista Bridge (U.S),2018,pH,7.52,B26
+Near Tista Bridge (D.S),2018,pH,7.51,B26
+Mendibag Point,2018,pH,8.05,B26
+Kin Bridge Point,2018,pH,8.17,B26
+Sheaik Ghat,2018,pH,8.05,B26
+Chhatak,2018,pH,8.08,B26
+Fenchuganj Point,2018,pH,7.97,B26
+Mirpur Bridge,2019,pH,7.4,B26
+Hajaribag,2019,pH,7.34,B26
+Kamrangir Char,2019,pH,7.35,B26
+Chadnighat,2019,pH,7.29,B26
+Sadar Ghat,2019,pH,7.3,B26
+Pagla,2019,pH,7.21,B26
+Bangladesg China Frendship Bridge,2019,pH,7.3,B26
+Demra Ghat,2019,pH,7.16,B26
+Ghorashal F.F.,2019,pH,6.57,B26
+Near ACI Factory,2019,pH,7.2,B26
+Neaer Kanchpur Bridge,2019,pH,6.51,B26
+Near Jaber & Jubair Fabrics Ltd. Tongi,2019,pH,7.48,B26
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2019,pH,7.42,B26
+"Near Damra University College, Demra, Dhaka",2019,pH,7.38,B26
+"Near Balu Bridge, 300 feet Road, Dhaka",2019,pH,7.39,B26
+New Gabtoli Bridge,2019,pH,7.23,B26
+Mirpur Diabary BIWTA Landing Station,2019,pH,7.17,B26
+Ashulia BIWTA Landing Station,2019,pH,7.4,B26
+Tongi Istima Mat,2019,pH,7.35,B26
+CETP (Up),2019,pH,7.83,B26
+CETP (Dr),2019,pH,7.86,B26
+CETP (DN),2019,pH,7.75,B26
+M.B,2019,pH,7.43,B26
+Mymensingh,2019,pH,7.83,B26
+Bhadurabad Ghat,2019,pH,8.27,B26
+Near Jamuna Fertilizer Factory,2019,pH,7.93,B26
+"Fulchari Ghat, Gibanda (US)",2019,pH,7.48,B26
+"Fulchari Ghat, Gibanda (DS)",2019,pH,7.48,B26
+"Shariakandi Groin Badth, Bogra (US)",2019,pH,7.53,B26
+"Shariakandi Groin Badth, Bogra (DS)",2019,pH,7.52,B26
+Near Banabandhu Bridge (US),2019,pH,7.46,B26
+Near Banabandhu Bridge (DS),2019,pH,7.47,B26
+"Bheutha Ghat, Manikgonj",2019,pH,7.54,B26
+Bhairob Bazar,2019,pH,7.28,B26
+Meghna Ghat,2019,pH,7.06,B26
+N. S. P. M,2019,pH,7.13,B26
+Mawa Ghat,2019,pH,7.65,B26
+Shimulia Ghat,2019,pH,7.26,B26
+Pakshi Ghat (US),2019,pH,7.63,B26
+Pakshi Ghat (DS),2019,pH,7.63,B26
+Baro kuti Ghat (U.S),2019,pH,7.56,B26
+Baro kuti Ghat (D.S),2019,pH,7.55,B26
+CUFL,2019,pH,7.71,B26
+TSP,2019,pH,7.82,B26
+"Karnafully River Chaktai Khal, ctg",2019,pH,7.64,B26
+Karnafully Mohona,2019,pH,7.72,B26
+1km Straight from patenga sea beach,2019,pH,7.84,B26
+Patenga charpara,2019,pH,7.65,B26
+1km Straight from CEPZ,2019,pH,7.81,B26
+Vattiyari shipyard area,2019,pH,7.59,B26
+Mohona,2019,pH,7.66,B26
+Khulna (O.S),2019,pH,7.63,B26
+Khulna (M.S),2019,pH,7.62,B26
+Noapara Ghat (S),2019,pH,7.81,B26
+Noapara Ghat (M),2019,pH,7.8,B26
+Noapara Ghat (O),2019,pH,7.81,B26
+Fultala Ghat(S),2019,pH,7.68,B26
+Fultala Ghat (M),2019,pH,7.69,B26
+Fultala Ghat (O),2019,pH,7.77,B26
+Kustia (M.P),2019,pH,7.74,B26
+Kustia (O.P),2019,pH,7.75,B26
+Magura (S.P),2019,pH,7.55,B26
+Magura (M.P),2019,pH,7.55,B26
+Magura (O.P),2019,pH,7.55,B26
+"Pipe Ghat,(M.P)",2019,pH,7.08,B26
+"Pipe Ghat, (U.S)",2019,pH,6.86,B26
+"PipeGhat, (D.S)",2019,pH,6.79,B26
+Bagerhat (O.S),2019,pH,7.42,B26
+Bagerhat (M.S),2019,pH,7.43,B26
+Bagerhat (O.S),2019,pH,7.43,B26
+Gallamari Bridge (S),2019,pH,7.67,B26
+Gallamari Bridge (M),2019,pH,7.67,B26
+Gallamari Bridge (O),2019,pH,7.67,B26
+Mongla Poart (S.P),2019,pH,7.91,B26
+Mongla Poart (M.P),2019,pH,7.92,B26
+Mongla Poart (O.P),2019,pH,7.91,B26
+Rupsha Ghat (S),2019,pH,7.93,B26
+Rupsha Ghat (M),2019,pH,7.93,B26
+Rupsha Ghat (O),2019,pH,7.93,B26
+Labanchara Ghat (S),2019,pH,7.93,B26
+Labanchara Ghat (M),2019,pH,8.12,B26
+Labanchara Ghat (O),2019,pH,7.94,B26
+Kaliganj (S.P),2019,pH,7.72,B26
+Kaliganj (M.P),2019,pH,7.73,B26
+Kaliganj (O.P),2019,pH,7.72,B26
+Launch Ghat (S),2019,pH,7.62,B26
+Launch Ghat (M),2019,pH,7.63,B26
+Dopdopia Kheyaghat (S),2019,pH,7.71,B26
+Dopdopia Kheyaghat (M),2019,pH,7.71,B26
+Beltola Fery Gaht (S),2019,pH,7.64,B26
+Beltola Fery Gaht (M),2019,pH,7.65,B26
+Vadura Launch Ghat (S),2019,pH,7.52,B26
+Vadura Launch Ghat (M),2019,pH,7.5,B26
+Jhalkathi L.G (S),2019,pH,7.72,B26
+Jhalkathi L.G (M),2019,pH,7.6,B26
+Patuakhali Launch Ghat (S),2019,pH,7.62,B26
+Patuakhali Launch Ghat (M),2019,pH,7.58,B26
+"Near Dutta Bari Bridge, Bogra (Up stream)",2019,pH,7.13,B26
+"Near Dutta Bari Bridge, Bogra (Down stream)",2019,pH,7.13,B26
+"Near Foteh Ali Bridge, Bogra (Up stream)",2019,pH,7.11,B26
+"Near Foteh Ali Bridge, Bogra (Down stream)",2019,pH,7.11,B26
+"Near Matidali Bridge, Bogra (Up stream)",2019,pH,7.17,B26
+"Near Matidali Bridge, Bogra (Down stream)",2019,pH,7.17,B26
+"Near S.P Bridge, Bogra (Up stream)",2019,pH,7.08,B26
+"Near S.P Bridge, Bogra (Down stream)",2019,pH,7.08,B26
+"Shahjadpur, Sirajgonj (Up stream)",2019,pH,7.41,B26
+"Shahjadpur, Sirajgonj (Down stream)",2019,pH,7.41,B26
+Near Tista Bridge (U.S),2019,pH,7.57,B26
+Near Tista Bridge (D.S),2019,pH,7.57,B26
+Mendibag Point,2019,pH,8.04,B26
+Kin Bridge Point,2019,pH,7.68,B26
+Sheaik Ghat,2019,pH,7.5,B26
+Chhatak,2019,pH,7.9,B26
+Kazir Bazar,2019,pH,7.73,B26
+Kushiyara Point,2019,pH,7.63,B26
+Mirpur Bridge,2020,pH,6.69,B26
+Hajaribag,2020,pH,7.26,B26
+Kamrangir Char,2020,pH,7.26,B26
+Chadnighat,2020,pH,7.19,B26
+Sadar Ghat,2020,pH,7.2,B26
+Pagla,2020,pH,7.18,B26
+Bangladesg China Frendship Bridge,2020,pH,7.18,B26
+Demra Ghat,2020,pH,7.27,B26
+Ghorashal F.F.,2020,pH,7.37,B26
+Near ACI Factory,2020,pH,7.32,B26
+Neaer Kanchpur Bridge,2020,pH,7.23,B26
+Near Jaber & Jubair Fabrics Ltd. Tongi,2020,pH,7.48,B26
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2020,pH,7.42,B26
+"Near Damra University College, Demra, Dhaka",2020,pH,7.38,B26
+"Near Balu Bridge, 300 feet Road, Dhaka",2020,pH,7.39,B26
+New Gabtoli Bridge,2020,pH,7.23,B26
+Mirpur Diabary BIWTA Landing Station,2020,pH,7.17,B26
+Ashulia BIWTA Landing Station,2020,pH,7.4,B26
+Tongi Istima Mat,2020,pH,7.35,B26
+Muktarpur Bridge,2020,pH,7.59,B26
+Mymensingh,2020,pH,7.93,B26
+Near Jamuna Fertilizer Factory,2020,pH,7.32,B26
+Near Bangabandhu Bridge (US),2020,pH,7.66,B26
+Near Bangabandhu Bridge (US),2020,pH,7.65,B26
+"Fulchari Ghat, Gibanda (US)",2020,pH,7.66,B26
+"Fulchari Ghat, Gibanda (DS)",2020,pH,7.66,B26
+Shariakandi Groin Badth (US),2020,pH,7.58,B26
+Shariakandi Groin Badth (DS),2020,pH,7.58,B26
+"Bheutha Ghat, Manikgonj",2020,pH,7.54,B26
+Bhairob Bazar,2020,pH,7.28,B26
+Meghna Ghat,2020,pH,7.06,B26
+N. S. P. M,2020,pH,7.13,B26
+Mawa Ghat,2020,pH,7.8,B26
+Shimulia Ghat,2020,pH,7.89,B26
+Pakshi Ghat (US),2020,pH,7.7,B26
+Pakshi Ghat (DS),2020,pH,7.7,B26
+Baro kuti Ghat (U.S),2020,pH,7.7,B26
+Baro kuti Ghat (D.S),2020,pH,7.7,B26
+CUFL Side Anowara,2020,pH,7.65,B26
+"TSP Side, Patenga",2020,pH,7.54,B26
+KAFCO side,2020,pH,7.83,B26
+15 no Ghat,2020,pH,7.92,B26
+Karnafully Mohona,2020,pH,7.63,B26
+1km Straight from patenga sea beach,2020,pH,7.68,B26
+Patenga charpara,2020,pH,7.57,B26
+1km Straight from CEPZ,2020,pH,7.63,B26
+Vatiyari Shipyard Area,2020,pH,7.73,B26
+Mohona,2020,pH,7.81,B26
+Madari Khal (middle point),2020,pH,7.48,B26
+Boraikhali,2020,pH,7.02,B26
+Madarikhal (Breeding Point),2020,pH,6.48,B26
+Noya Khal (Outside),2020,pH,7.1,B26
+Khulna (O.S),2020,pH,7.83,B26
+Khulna (M.S),2020,pH,7.83,B26
+Noapara Ghat (S),2020,pH,8.09,B26
+Noapara Ghat (M),2020,pH,8.09,B26
+Noapara Ghat (O),2020,pH,8.09,B26
+Fultala Ghat(S),2020,pH,8.24,B26
+Fultala Ghat (M),2020,pH,8.25,B26
+Fultala Ghat (O),2020,pH,8.25,B26
+Kustia (S.P),2020,pH,8,B26
+Kustia (M.P),2020,pH,8.01,B26
+Kustia (O.P),2020,pH,8,B26
+Magura (S.P),2020,pH,8.11,B26
+Magura (M.P),2020,pH,8.12,B26
+Magura (O.P),2020,pH,8.12,B26
+Pipe Ghat (M.P),2020,pH,8.11,B26
+Pipe Ghat (U.S),2020,pH,8.1,B26
+Pipe Ghat (D.S),2020,pH,8.07,B26
+Bagerhat (O.S),2020,pH,7.78,B26
+Bagerhat (M.S),2020,pH,7.78,B26
+Bagerhat (O.S),2020,pH,7.78,B26
+Gallamari Bridge (S),2020,pH,7.77,B26
+Gallamari Bridge (M),2020,pH,7.77,B26
+Gallamari Bridge (O),2020,pH,7.66,B26
+Mongla Poart (S.P),2020,pH,8.23,B26
+Mongla Poart (M.P),2020,pH,8.23,B26
+Mongla Poart (O.P),2020,pH,8.23,B26
+Rupsha Ghat (S),2020,pH,7.85,B26
+Rupsha Ghat (M),2020,pH,7.85,B26
+Rupsha Ghat (O),2020,pH,7.83,B26
+Labanchara Ghat (S),2020,pH,7.84,B26
+Labanchara Ghat (M),2020,pH,8.03,B26
+Labanchara Ghat (O),2020,pH,8.04,B26
+Kaliganj (S.P),2020,pH,8.17,B26
+Kaliganj (M.P),2020,pH,8.17,B26
+Kaliganj (O.P),2020,pH,8.17,B26
+Launch Ghat (S),2020,pH,7.59,B26
+Launch Ghat (M),2020,pH,7.53,B26
+Dopdopia Kheyaghat (S),2020,pH,7.33,B26
+Dopdopia Kheyaghat (M),2020,pH,7.29,B26
+Beltola Fery Gaht (S),2020,pH,7.72,B26
+Beltola Fery Gaht (M),2020,pH,7.6,B26
+Vadura Launch Ghat (S),2020,pH,7.67,B26
+Vadura Launch Ghat (M),2020,pH,7.67,B26
+Jhalkathi L.G (S),2020,pH,7.45,B26
+Jhalkathi L.G (M),2020,pH,7.55,B26
+Patuakhali Launch Ghat (S),2020,pH,7.67,B26
+Patuakhali Launch Ghat (M),2020,pH,7.8,B26
+"Near Dutta Bari Bridge, Bogura (Upstream)",2020,pH,7.06,B26
+"Near Dutta Bari Bridge, Bogura (Downstream)",2020,pH,7.06,B26
+"Near Foteh Ali Bridge, Bogura (Upstream)",2020,pH,7.1,B26
+"Near Foteh Ali Bridge, Bogura (Downstream)",2020,pH,7.1,B26
+"Near Matidali Bridge, Bogura (Upstream)",2020,pH,7.09,B26
+"Near Matidali Bridge, Bogura (Downstream)",2020,pH,7.09,B26
+"Near S.P Bridge, Bogura (Upstream)",2020,pH,7.02,B26
+"Near S.P Bridge, Bogura (Downstream)",2020,pH,7.03,B26
+"Shahjadpur, Sirajganj (Upstream)",2020,pH,7.54,B26
+"Shahjadpur, Sirajganj (Downstream)",2020,pH,7.54,B26
+Near Tista Bridge (U.S),2020,pH,7.71,B26
+Near Tista Bridge (D.S),2020,pH,7.71,B26
+Mendibag Point,2020,pH,6.99,B26
+Kin Bridge Point,2020,pH,7.02,B26
+Sheaik Ghat,2020,pH,7.14,B26
+Chhatak,2020,pH,6.83,B26
+Fenchuganj Point,2020,pH,6.94,B26
+Mirpur Bridge,2021,pH,7.18,B26
+Mohammadpur,2021,pH,7.48,B26
+Bosila Bridge,2021,pH,7.25,B26
+Hajaribag,2021,pH,7.24,B26
+Satmosjid Road,2021,pH,7.33,B26
+Chadnighat,2021,pH,7.26,B26
+Sadarghat,2021,pH,7.44,B26
+B.C.F.B,2021,pH,7.26,B26
+Pagla,2021,pH,7.35,B26
+Fatullah,2021,pH,7.47,B26
+Port Road,2021,pH,7.2,B26
+Majira Demra Ghat,2021,pH,7.11,B26
+Murapara (Rupgonj),2021,pH,7.21,B26
+Gorashal,2021,pH,7.19,B26
+Trimohoni Bridge,2021,pH,7.02,B26
+Jolshiri Abason,2021,pH,7.05,B26
+Turag Bridge,2021,pH,7.27,B26
+Ashulia,2021,pH,7.22,B26
+Kaliakoir,2021,pH,7.21,B26
+Vawal,2021,pH,7.16,B26
+Nama Bazar,2021,pH,7.14,B26
+Mukterpur,2021,pH,7.14,B26
+Ruhitpur,2021,pH,7.8,B26
+Hazratpur,2021,pH,7.86,B26
+Alipur,2021,pH,7.86,B26
+Sirajnagor,2021,pH,7.86,B26
+Utorro Mitra,2021,pH,7.14,B26
+Pathorghata,2021,pH,7.2,B26
+"Rail Bridge, Shamvoganj",2021,pH,7.85,B26
+JamalpurRail Bridge,2021,pH,7.41,B26
+Sarkarkhana,2021,pH,7.46,B26
+Kakua,2021,pH,7.35,B26
+Jamuna Eco Park (UP),2021,pH,7.57,B26
+Jamuna Eco Park (DN),2021,pH,7.57,B26
+Shariakandi Kheya Ghat Growin Bandh (UP),2021,pH,7.54,B26
+Shariakandi Kheya Ghat Growin Bandh (DN),2021,pH,7.55,B26
+Horipur Kheya Ghat (UP),2021,pH,7.79,B26
+Horipur Kheya Ghat (DN),2021,pH,7.79,B26
+Mohonganj (DN),2021,pH,7.61,B26
+Mohonganj (UP),2021,pH,7.61,B26
+"Bheutha Ghat, Manikganj",2021,pH,7.42,B26
+Meghna Ghat,2021,pH,7.16,B26
+Bairob Ferry Ghat,2021,pH,7.34,B26
+Narshingdi Launch Ghat,2021,pH,7.78,B26
+Shajalal Paper,2021,pH,7.53,B26
+Annando Bazar,2021,pH,7.12,B26
+Bish Nondi Ghat,2021,pH,7.285,B26
+Josldia,2021,pH,7.75,B26
+Sitardor,2021,pH,7.8,B26
+Kandipara,2021,pH,7.84,B26
+Khoiria,2021,pH,7.94,B26
+Shimolia,2021,pH,7.99,B26
+Gordhor Bazar,2021,pH,8.02,B26
+Mawa ferry Ghat,2021,pH,7.2,B26
+Barha Ghat,2021,pH,7.61,B26
+CUFL,2021,pH,7.65,B26
+TSP,2021,pH,7.54,B26
+Shikalbaha,2021,pH,7.83,B26
+Kalurghat Bridge,2021,pH,7.37,B26
+Mariam Nagar,2021,pH,7.92,B26
+Karnafully Paper,2021,pH,7.63,B26
+Maduna Ghat,2021,pH,7.85,B26
+Garduara Sluice gate,2021,pH,7.84,B26
+Halda Bridge,2021,pH,7.89,B26
+"Basundia Bazar, Aladipur",2021,pH,8.23,B26
+Noapara Ferry Ghat Abhaynagar,2021,pH,8.14,B26
+Noapara Jafarpur,2021,pH,8.1,B26
+"Fultala Ghat, Dhulgram",2021,pH,8.36,B26
+Kamarkhali Bridge,2021,pH,8.54,B26
+Dorshona Railway Junction,2021,pH,8.32,B26
+Dhalaitala,2021,pH,7.86,B26
+Shoshan Ghat,2021,pH,7.92,B26
+Buro Moulavir Darga,2021,pH,7.84,B26
+Doshgate Jalma,2021,pH,7.83,B26
+Rampal Power Plant,2021,pH,8.19,B26
+Banishanta,2021,pH,8.14,B26
+Batiaghata By Pass,2021,pH,8.22,B26
+"Gilatola, Nadan Pratap (M)",2021,pH,8.1,B26
+Kalibari Ghat (M),2021,pH,8.09,B26
+"Charer Hat, Sulpur Aijgati (M)",2021,pH,8.38,B26
+Rupsa Ghat (M),2021,pH,8.29,B26
+Uzirpur,2021,pH,5.01,B26
+Kaliganj Bazar,2021,pH,5.64,B26
+Boshontopur,2021,pH,4.8,B26
+Launch Ghat (S),2021,pH,7.73,B26
+Launch Ghat (M),2021,pH,7.69,B26
+Kaower Char (S),2021,pH,7.94,B26
+Kaower Char (M),2021,pH,7.99,B26
+Dopdopia Kheyaghat (S),2021,pH,7.98,B26
+Dopdopia Kheyaghat (M),2021,pH,7.96,B26
+Vadura Launch Ghat (S),2021,pH,7.92,B26
+Vadura Launch Ghat (M),2021,pH,7.96,B26
+Patuakhali Launch Ghat (S),2021,pH,8.04,B26
+Patuakhali Launch Ghat (M),2021,pH,7.93,B26
+Dottobari Bridge (UP),2021,pH,7.08,B26
+Dottobari Bridge (Down),2021,pH,7.08,B26
+Aziz Ahmed Taki Road (UP),2021,pH,7.07,B26
+Aziz Ahmed Taki Road (Down),2021,pH,7.07,B26
+Sultanganj- Gabtoli (UP),2021,pH,7.03,B26
+Sultanganj- Gabtoli (DN),2021,pH,7.03,B26
+Teesta Bridge (Up),2021,pH,7.94,B26
+Teesta Bridge (Dn),2021,pH,14.4,B26
+Nohali Sapmari (Up),2021,pH,7.72,B26
+Nohali Sapmari (Dn),2021,pH,7.72,B26
+Teesta Barrage (Up),2021,pH,8.09,B26
+Teesta Barrage (Dn),2021,pH,8.09,B26
+Mendibag Point,2021,pH,6.68,B26
+Kin Bridge Point,2021,pH,6.61,B26
+Sheaik Ghat,2021,pH,6.73,B26
+Chhatak,2021,pH,6.85,B26
+Fcnchuganj Bridge Point,2021,pH,7.17,B26
+Mirpur Bridge,2022,pH,7.26,B26
+Bosila Bridge,2022,pH,7.25,B26
+Hajaribag,2022,pH,7.29,B26
+Satmosjid Road,2022,pH,7.15,B26
+Chadnighat,2022,pH,7.17,B26
+Bangladesg China Friendship Bridge,2022,pH,7.16,B26
+Fatullah,2022,pH,7.23,B26
+Port Road,2022,pH,7.36,B26
+Table Majhira Demra Ghat,2022,pH,7.32,B26
+Murapara (Rupganj),2022,pH,7.4,B26
+Gorashal Fertilizer,2022,pH,7.43,B26
+Trimohoni Bridge,2022,pH,7.1,B26
+Jolshiri Abason,2022,pH,7.18,B26
+Turag Bridge,2022,pH,7.61,B26
+Ashulia,2022,pH,7.48,B26
+Kaliakoir,2022,pH,7.58,B26
+Vawal,2022,pH,7.34,B26
+Nama Bazar,2022,pH,7.44,B26
+Mukterpur,2022,pH,7.21,B26
+Pathorghata,2022,pH,7.42,B26
+Ruhitpur,2022,pH,7.57,B26
+Hazratpur,2022,pH,7.59,B26
+Utorro Mitra,2022,pH,7.62,B26
+Mymensingh,2022,pH,7.97,B26
+Jamalpur Bridge,2022,pH,7.34,B26
+Jamalpur Rail Bridge,2022,pH,7.93,B26
+Jamuna Eco Park (U),2022,pH,7.53,B26
+Jamuna Eco Park (D),2022,pH,7.53,B26
+Shariakandi Groin badth (U),2022,pH,7.52,B26
+Shariakandi Groin badth (D),2022,pH,7.52,B26
+Mohonganj (U),2022,pH,7.55,B26
+Mohonganj (D),2022,pH,7.55,B26
+Horipur Kheya Ghat (U),2022,pH,7.67,B26
+Horipur Kheya Ghat (D),2022,pH,7.67,B26
+Kakua,2022,pH,7.96,B26
+Tarakandi (D),2022,pH,7.72,B26
+Tarakandi (U),2022,pH,7.8,B26
+"Bheutha Ghat, Manikganj",2022,pH,7.53,B26
+Meghna Ghat,2022,pH,7.04,B26
+Bisnondi,2022,pH,7.24,B26
+Norsingdi Launch Terminal,2022,pH,7.41,B26
+Anondo Bazar,2022,pH,7.13,B26
+Bhairob Bazar,2022,pH,7.15,B26
+Mawa Ghat,2022,pH,7.85,B26
+Barha Ghat,2022,pH,7.85,B26
+CUFL,2022,pH,7.25,B26
+TSP,2022,pH,7.33,B26
+Shikalbaha,2022,pH,7.55,B26
+Kalurghat Bridge,2022,pH,7.48,B26
+Mariam Nagar,2022,pH,7.47,B26
+Karnaphuli Paper,2022,pH,7.55,B26
+Maduna Ghat,2022,pH,7.38,B26
+Garduara Sluice Gate,2022,pH,7.51,B26
+Halda Bridge,2022,pH,7.48,B26
+Basundia Bazar,2022,pH,8.26,B26
+Noapara Ferry Ghat,2022,pH,8.19,B26
+Noapara,2022,pH,8.09,B26
+Fultala Ghat,2022,pH,7.55,B26
+Shoshan Ghat,2022,pH,7.92,B26
+Buro Moulavir Darga,2022,pH,7.84,B26
+Doshgate Jalma,2022,pH,7.83,B26
+Rampal Power Plant,2022,pH,7.6,B26
+Banishanta,2022,pH,7.52,B26
+Batiaghata By Pass,2022,pH,7.46,B26
+Rupsa Ghat (M),2022,pH,8.11,B26
+Kalibari Ghat (M),2022,pH,8.09,B26
+Charer Hat (M),2022,pH,8.06,B26
+Gilatala,2022,pH,8.01,B26
+Kaliganj Bazar,2022,pH,7.73,B26
+Boshontopur,2022,pH,7.75,B26
+Gobindakathi,2022,pH,7.75,B26
+Launch Ghat (S),2022,pH,8.45,B26
+Launch Ghat (M),2022,pH,7.73,B26
+Kaower Char (S),2022,pH,7.8,B26
+Kaower Char (M),2022,pH,7.65,B26
+Dopdopia Kheyaghat (S),2022,pH,7.95,B26
+Dopdopia Kheyaghat (M),2022,pH,7.75,B26
+Vadura Launch Ghat (S),2022,pH,8.77,B26
+Vadura Launch Ghat (M),2022,pH,8.43,B26
+Gabkhan Lounch Terminal (S),2022,pH,8.87,B26
+Gabkhan Lounch Terminal (M),2022,pH,9.25,B26
+Patuakhali Launch Ghat (S),2022,pH,9.01,B26
+Patuakhali Launch Ghat (M),2022,pH,8.62,B26
+"Dutta Bari Bridge, Bogura (Upstream)",2022,pH,7.17,B26
+"Dutta Bari Bridge, Bogura (Downstream)",2022,pH,7.17,B26
+Aziz Ahmed Taki Road (Upstream),2022,pH,7.16,B26
+Aziz Ahmed Taki Road (Downstream),2022,pH,7.16,B26
+"Dutta Bari Bridge, Bogura (Upstream)",2022,pH,7.17,B26
+"Dutta Bari Bridge, Bogura (Downstream)",2022,pH,7.17,B26
+Aziz Ahmed Taki Road (Upstream),2022,pH,7.16,B26
+Aziz Ahmed Taki Road (Downstream),2022,pH,7.16,B26
+Mendibag Point,2022,pH,6.61,B26
+Kin Bridge Point,2022,pH,6.68,B26
+Sheaik Ghat,2022,pH,6.67,B26
+Chhatak,2022,pH,6.84,B26
+Fenchuganj Bridge Point,2022,pH,6.89,B26
+Fenchuganj Fertilizer Industry Point,2022,pH,8.5,B26
+Mirpur Bridge,2023,pH,3.34,B26
+Bosila Bridge,2023,pH,2.49,B26
+Hajaribag,2023,pH,2.68,B26
+Satmosjid Road,2023,pH,2.61,B26
+Chadnighat,2023,pH,1.7,B26
+Bangladesg China Friendship Bridge,2023,pH,1.99,B26
+Fatullah,2023,pH,2.19,B26
+Port Road,2023,pH,1.76,B26
+Majhira Demra Ghat,2023,pH,1.83,B26
+Murapara (Rupganj),2023,pH,3.25,B26
+Gorashal Fertilizer,2023,pH,4.2,B26
+Trimohoni Bridge,2023,pH,0.47,B26
+Jolshiri Abason,2023,pH,3.15,B26
+Turag Bridge,2023,pH,2.8,B26
+Ashulia,2023,pH,2.78,B26
+Kaliakoir,2023,pH,5.63,B26
+Vawal,2023,pH,4.83,B26
+Nama Bazar,2023,pH,3.29,B26
+Mukterpur,2023,pH,1.97,B26
+Pathorghata,2023,pH,5.68,B26
+Ruhitpur,2023,pH,5.9,B26
+Hazratpur,2023,pH,6.31,B26
+Utorro Mitra,2023,pH,5.47,B26
+Mymensingh,2023,pH,5,B26
+"Rail Bridge, Shamvoganj",2023,pH,4.37,B26
+Jamuna Eco Park (Up),2023,pH,7.57,B26
+Jamuna Eco Park (Dn),2023,pH,7.57,B26
+Shariakandi Kheya Ghat (Up),2023,pH,7.49,B26
+Shariakandi Kheya Ghat (Dn),2023,pH,7.49,B26
+Mohonganj (Up),2023,pH,7.55,B26
+Mohonganj (Dn),2023,pH,7.55,B26
+Horipur Kheya Ghat (Up),2023,pH,7.52,B26
+Horipur Kheya Ghat (Dn),2023,pH,7.52,B26
+Kakua,2023,pH,7.45,B26
+Tarakandi,2023,pH,6.95,B26
+"Bheutha Ghat, Manikganj",2023,pH,6.03,B26
+Meghna Ghat,2023,pH,4.95,B26
+Bisnondi Ferry Ghat,2023,pH,5.62,B26
+Norsingdi Launch Ghat,2023,pH,3.78,B26
+Anondo Bazar,2023,pH,6.04,B26
+Bhairob Bazar,2023,pH,6.09,B26
+Mawa Ghat,2023,pH,7.93,B26
+Barha Ghat,2023,pH,7.57,B26
+CUFL,2023,pH,7.65,B26
+TSP,2023,pH,7.52,B26
+Shikalbaha,2023,pH,7.35,B26
+Kalurghat Bridge,2023,pH,7.57,B26
+Mariam Nagar,2023,pH,7.46,B26
+Karnaphuli Paper,2023,pH,7.56,B26
+Maduna Ghat,2023,pH,7.03,B26
+Garduara Sluice Gate,2023,pH,7.13,B26
+Halda Bridge,2023,pH,6.83,B26
+Basundia Bazar,2023,pH,5.33,B26
+"Noapara Ferry Ghat, Abhaynagar",2023,pH,5.87,B26
+Noapara Jafarpur,2023,pH,5.99,B26
+"Fultala Ghat, Dhulgram",2023,pH,5.93,B26
+Kamarkhali Bridge,2023,pH,6.81,B26
+"Pipe Ghat, (M.P)",2023,pH,4.52,B26
+Dhalaitala,2023,pH,6.65,B26
+Shoshan Ghat,2023,pH,0.1,B26
+Buro Moulavir Darga,2023,pH,0,B26
+Doshgate Jalma,2023,pH,3.32,B26
+Rampal Power Plant,2023,pH,6.75,B26
+Banishanta,2023,pH,6.71,B26
+Batiaghata By Pass,2023,pH,6.71,B26
+Rupsa Ghat (M),2023,pH,6.54,B26
+Kalibari Ghat (M),2023,pH,5.98,B26
+Charer Hat Sulpur Aijgati (M),2023,pH,6.32,B26
+"Gilatala, Nadan Pratap (M)",2023,pH,5.55,B26
+Kaliganj Bazar,2023,pH,5.85,B26
+Boshontopur,2023,pH,6.26,B26
+Uzirpur,2023,pH,6.23,B26
+Launch Ghat (S),2023,pH,6.93,B26
+Launch Ghat (M),2023,pH,6.97,B26
+Kaower Char (S),2023,pH,6.91,B26
+Kaower Char (M),2023,pH,6.65,B26
+Dopdopia Kheyaghat (S),2023,pH,7.36,B26
+Dopdopia Kheyaghat (M),2023,pH,6.84,B26
+Vadura Launch Ghat (S),2023,pH,6.99,B26
+Vadura Launch Ghat (M),2023,pH,6.04,B26
+Patuakhali Launch Ghat (S),2023,pH,7.14,B26
+Patuakhali Launch Ghat (M),2023,pH,6.59,B26
+Dutta Bari Bridge (Up),2023,pH,3.54,B26
+Dutta Bari Bridge (Down),2023,pH,3.54,B26
+Aziz Ahmed Taki Road (Up),2023,pH,3.54,B26
+Aziz Ahmed Taki Road (Down),2023,pH,3.54,B26
+Sardah (Up),2023,pH,7.51,B26
+Sardah (Down),2023,pH,7.51,B26
+Nurullapur (Up),2023,pH,7.59,B26
+Nurullapur (Down),2023,pH,7.59,B26
+Kanchan Park (Up),2023,pH,7.45,B26
+Kanchan Park (Down),2023,pH,7.45,B26
+Mendibag Point,2023,pH,7.19,B26
+Kin Bridge Point,2023,pH,7.23,B26
+Sheaik Ghat,2023,pH,7.24,B26
+Chhatak,2023,pH,7.74,B26
+Fenchuganj Bridge Point,2023,pH,7.66,B26
+Fenchuganj Fertilizer Industry Point,2023,pH,8.79,B26
+CUFL,2018,Salinity,9.13,B27
+TSP,2018,Salinity,8.71,B27
+WASA I.P Mohara,2018,Salinity,0.04,B27
+Modunaghat Side,2018,Salinity,0.1,B27
+Mohona,2018,Salinity,0.04,B27
+Khulna (O.S),2018,Salinity,1.59,B27
+Khulna (M.S),2018,Salinity,1.63,B27
+Noapara Ghat (S),2018,Salinity,3.81,B27
+Noapara Ghat (M),2018,Salinity,3.82,B27
+Noapara Ghat (O),2018,Salinity,3.83,B27
+Fultala Ghat(S),2018,Salinity,3.89,B27
+Fultala Ghat (M),2018,Salinity,3.9,B27
+Fultala Ghat (O),2018,Salinity,3.89,B27
+Kustia (S.P),2018,Salinity,0.28,B27
+Kustia (M.P),2018,Salinity,0.28,B27
+Kustia (O.P),2018,Salinity,0.27,B27
+Magura (S.P),2018,Salinity,0.27,B27
+Magura (M.P),2018,Salinity,0.26,B27
+Magura (O.P),2018,Salinity,0.27,B27
+"Pipe Ghat,(M.P)",2018,Salinity,0.23,B27
+"Pipe Ghat, (U.S)",2018,Salinity,0.16,B27
+"PipeGhat, (D.S)",2018,Salinity,0.18,B27
+Bagerhat (O.S),2018,Salinity,0.2,B27
+Bagerhat (M.S),2018,Salinity,0.22,B27
+Bagerhat (O.S),2018,Salinity,0.22,B27
+Gallamari Bridge (S),2018,Salinity,1.02,B27
+Gallamari Bridge (M),2018,Salinity,1.04,B27
+Gallamari Bridge (O),2018,Salinity,1.04,B27
+Mongla Poart (S.P),2018,Salinity,5.23,B27
+Mongla Poart (M.P),2018,Salinity,5.22,B27
+Mongla Poart (O.P),2018,Salinity,5.23,B27
+Rupsha Ghat (S),2018,Salinity,4.15,B27
+Rupsha Ghat (M),2018,Salinity,4.15,B27
+Rupsha Ghat (O),2018,Salinity,4.15,B27
+Labanchara Ghat (S),2018,Salinity,4.19,B27
+Labanchara Ghat (M),2018,Salinity,4.19,B27
+Labanchara Ghat (O),2018,Salinity,4.19,B27
+Kaliganj (S.P),2018,Salinity,6.25,B27
+Kaliganj (M.P),2018,Salinity,6.23,B27
+Kaliganj (O.P),2018,Salinity,6.25,B27
+Mirpur Bridge,2018,Dissolved Oxygen,2.64,B28
+Hajaribag,2018,Dissolved Oxygen,2.4,B28
+Kamrangir Char,2018,Dissolved Oxygen,1.99,B28
+Chadnighat,2018,Dissolved Oxygen,2.11,B28
+Sadar Ghat,2018,Dissolved Oxygen,1.9,B28
+Pagla,2018,Dissolved Oxygen,1.04,B28
+Bangladesg China Frendship Bridge,2018,Dissolved Oxygen,1.66,B28
+Demra Ghat,2018,Dissolved Oxygen,3.77,B28
+Ghorashal F.F.,2018,Dissolved Oxygen,4.36,B28
+Near ACI Factory,2018,Dissolved Oxygen,1.53,B28
+Neaer Kanchpur Bridge,2018,Dissolved Oxygen,3.4,B28
+Near Jaber & Jubair Fabrics Ltd. Tongi,2018,Dissolved Oxygen,1.84,B28
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2018,Dissolved Oxygen,2,B28
+"Near Damra University College, Demra, Dhaka",2018,Dissolved Oxygen,2.46,B28
+"Near Balu Bridge, 300 feet Road, Dhaka",2018,Dissolved Oxygen,1.88,B28
+"Near Fulpukuria Dyeing Ltd. Pagar, Tongi",2018,Dissolved Oxygen,5.3,B28
+"South Side of Tongi Rail Bridge, Pagar, Tongi",2018,Dissolved Oxygen,1.93,B28
+New Gabtoli Bridge,2018,Dissolved Oxygen,2.95,B28
+Mirpur Diabary BIWTA Landing Station,2018,Dissolved Oxygen,2.97,B28
+Ashulia BIWTA Landing Station,2018,Dissolved Oxygen,3.41,B28
+Tongi Istima Mat,2018,Dissolved Oxygen,2.98,B28
+"North Side of Tongi Bridge, Pagar",2018,Dissolved Oxygen,3.66,B28
+CETP (Up),2018,Dissolved Oxygen,4.13,B28
+CETP (Dr),2018,Dissolved Oxygen,2.24,B28
+CETP (DN),2018,Dissolved Oxygen,3.37,B28
+M.B,2018,Dissolved Oxygen,3.31,B28
+Hamayatpur,2018,Dissolved Oxygen,4.11,B28
+Mymensingh,2018,Dissolved Oxygen,6.4,B28
+Bhadurabad Ghat,2018,Dissolved Oxygen,7.31,B28
+Near Jamuna Fertilizer Factory,2018,Dissolved Oxygen,6.91,B28
+"Fulchari Ghat, Gibanda (US)",2018,Dissolved Oxygen,7.12,B28
+"Fulchari Ghat, Gibanda (DS)",2018,Dissolved Oxygen,7.07,B28
+"Shariakandi Groin Badth, Bogra (US)",2018,Dissolved Oxygen,7.18,B28
+"Shariakandi Groin Badth, Bogra (DS)",2018,Dissolved Oxygen,7.16,B28
+Near Banabandhu Bridge (US),2018,Dissolved Oxygen,7.2,B28
+Near Banabandhu Bridge (DS),2018,Dissolved Oxygen,7.08,B28
+"Bheutha Ghat, Manikgonj",2018,Dissolved Oxygen,7.52,B28
+Bhairob Bazar,2018,Dissolved Oxygen,7,B28
+Meghna Ghat,2018,Dissolved Oxygen,6.14,B28
+N. S. P. M,2018,Dissolved Oxygen,5.32,B28
+Mawa Ghat,2018,Dissolved Oxygen,7.4,B28
+Shimulia Ghat,2018,Dissolved Oxygen,7.6,B28
+Pakshi Ghat (US),2018,Dissolved Oxygen,7.16,B28
+Pakshi Ghat (DS),2018,Dissolved Oxygen,7.13,B28
+Baro kuti Ghat (U.S),2018,Dissolved Oxygen,7.25,B28
+Baro kuti Ghat (D.S),2018,Dissolved Oxygen,7.14,B28
+CUFL,2018,Dissolved Oxygen,6.7,B28
+TSP,2018,Dissolved Oxygen,6.7,B28
+"Karnafully River Chaktai Khal, ctg",2018,Dissolved Oxygen,5.93,B28
+Mohona,2018,Dissolved Oxygen,6.23,B28
+Khulna (O.S),2018,Dissolved Oxygen,5.36,B28
+Khulna (M.S),2018,Dissolved Oxygen,5.39,B28
+Noapara Ghat (S),2018,Dissolved Oxygen,7.72,B28
+Noapara Ghat (M),2018,Dissolved Oxygen,7.75,B28
+Noapara Ghat (O),2018,Dissolved Oxygen,7.74,B28
+Fultala Ghat(S),2018,Dissolved Oxygen,7.75,B28
+Fultala Ghat (M),2018,Dissolved Oxygen,7.76,B28
+Fultala Ghat (O),2018,Dissolved Oxygen,7.75,B28
+Kustia (S.P),2018,Dissolved Oxygen,5.34,B28
+Kustia (M.P),2018,Dissolved Oxygen,5.37,B28
+Kustia (O.P),2018,Dissolved Oxygen,5.35,B28
+Magura (S.P),2018,Dissolved Oxygen,5.3,B28
+Magura (M.P),2018,Dissolved Oxygen,5.32,B28
+Magura (O.P),2018,Dissolved Oxygen,5.33,B28
+"Pipe Ghat,(M.P)",2018,Dissolved Oxygen,4.49,B28
+"Pipe Ghat, (U.S)",2018,Dissolved Oxygen,4.6,B28
+"PipeGhat, (D.S)",2018,Dissolved Oxygen,4.4,B28
+Bagerhat (O.S),2018,Dissolved Oxygen,5.05,B28
+Bagerhat (M.S),2018,Dissolved Oxygen,5.09,B28
+Bagerhat (O.S),2018,Dissolved Oxygen,5.06,B28
+Gallamari Bridge (S),2018,Dissolved Oxygen,1.16,B28
+Gallamari Bridge (M),2018,Dissolved Oxygen,1.17,B28
+Gallamari Bridge (O),2018,Dissolved Oxygen,1.16,B28
+Mongla Poart (S.P),2018,Dissolved Oxygen,6.14,B28
+Mongla Poart (M.P),2018,Dissolved Oxygen,6.17,B28
+Mongla Poart (O.P),2018,Dissolved Oxygen,6.15,B28
+Rupsha Ghat (S),2018,Dissolved Oxygen,5.87,B28
+Rupsha Ghat (M),2018,Dissolved Oxygen,5.92,B28
+Rupsha Ghat (O),2018,Dissolved Oxygen,5.92,B28
+Labanchara Ghat (S),2018,Dissolved Oxygen,5.9,B28
+Labanchara Ghat (M),2018,Dissolved Oxygen,5.94,B28
+Labanchara Ghat (O),2018,Dissolved Oxygen,5.85,B28
+Kaliganj (S.P),2018,Dissolved Oxygen,5.23,B28
+Kaliganj (M.P),2018,Dissolved Oxygen,5.29,B28
+Kaliganj (O.P),2018,Dissolved Oxygen,5.25,B28
+Launch Ghat (S),2018,Dissolved Oxygen,5.73,B28
+Launch Ghat (M),2018,Dissolved Oxygen,5.72,B28
+Dopdopia Kheyaghat (S),2018,Dissolved Oxygen,5.74,B28
+Dopdopia Kheyaghat (M),2018,Dissolved Oxygen,5.75,B28
+Beltola Fery Gaht (S),2018,Dissolved Oxygen,5.84,B28
+Beltola Fery Gaht (M),2018,Dissolved Oxygen,5.81,B28
+Vadura Launch Ghat (S),2018,Dissolved Oxygen,5.95,B28
+Vadura Launch Ghat (M),2018,Dissolved Oxygen,5.72,B28
+Jhalkathi L.G (S),2018,Dissolved Oxygen,5.73,B28
+Jhalkathi L.G (M),2018,Dissolved Oxygen,5.56,B28
+Patuakhali Launch Ghat (S),2018,Dissolved Oxygen,5.78,B28
+Patuakhali Launch Ghat (M),2018,Dissolved Oxygen,5.62,B28
+"Near Dutta Bari Bridge, Bogra (Up stream)",2018,Dissolved Oxygen,3.19,B28
+"Near Dutta Bari Bridge, Bogra (Down stream)",2018,Dissolved Oxygen,3.15,B28
+"Near Foteh Ali Bridge, Bogra (Up stream)",2018,Dissolved Oxygen,3.12,B28
+"Near Foteh Ali Bridge, Bogra (Down stream)",2018,Dissolved Oxygen,3.12,B28
+"Near Matidali Bridge, Bogra (Up stream)",2018,Dissolved Oxygen,3.44,B28
+"Near Matidali Bridge, Bogra (Down stream)",2018,Dissolved Oxygen,3.42,B28
+"Near S.P Bridge, Bogra (Up stream)",2018,Dissolved Oxygen,3,B28
+"Near S.P Bridge, Bogra (Down stream)",2018,Dissolved Oxygen,2.98,B28
+"Shahjadpur, Sirajgonj (Up stream)",2018,Dissolved Oxygen,7.18,B28
+"Shahjadpur, Sirajgonj (Down stream)",2018,Dissolved Oxygen,7.18,B28
+Near Tista Bridge (U.S),2018,Dissolved Oxygen,7.23,B28
+Near Tista Bridge (D.S),2018,Dissolved Oxygen,7.2,B28
+Mendibag Point,2018,Dissolved Oxygen,6.94,B28
+Kin Bridge Point,2018,Dissolved Oxygen,6.86,B28
+Sheaik Ghat,2018,Dissolved Oxygen,6.91,B28
+Chhatak,2018,Dissolved Oxygen,6.76,B28
+Fenchuganj Point,2018,Dissolved Oxygen,6.92,B28
+Mirpur Bridge,2019,Dissolved Oxygen,2.13,B28
+Hajaribag,2019,Dissolved Oxygen,1.63,B28
+Kamrangir Char,2019,Dissolved Oxygen,1.58,B28
+Chadnighat,2019,Dissolved Oxygen,1.22,B28
+Sadar Ghat,2019,Dissolved Oxygen,1.46,B28
+Pagla,2019,Dissolved Oxygen,2.23,B28
+Bangladesg China Frendship Bridge,2019,Dissolved Oxygen,1.27,B28
+Demra Ghat,2019,Dissolved Oxygen,2.46,B28
+Ghorashal F.F.,2019,Dissolved Oxygen,4.84,B28
+Near ACI Factory,2019,Dissolved Oxygen,2.69,B28
+Near Jaber & Jubair Fabrics Ltd. Tongi,2019,Dissolved Oxygen,1.87,B28
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2019,Dissolved Oxygen,1.55,B28
+"Near Damra University College, Demra, Dhaka",2019,Dissolved Oxygen,1.1,B28
+"Near Balu Bridge, 300 feet Road, Dhaka",2019,Dissolved Oxygen,1.18,B28
+New Gabtoli Bridge,2019,Dissolved Oxygen,2.19,B28
+Mirpur Diabary BIWTA Landing Station,2019,Dissolved Oxygen,1.59,B28
+Ashulia BIWTA Landing Station,2019,Dissolved Oxygen,2.75,B28
+Tongi Istima Mat,2019,Dissolved Oxygen,2.72,B28
+"North Side of Tongi Bridge, Pagar",2019,Dissolved Oxygen,2.98,B28
+CETP (Up),2019,Dissolved Oxygen,4.22,B28
+CETP (Dr),2019,Dissolved Oxygen,3.52,B28
+CETP (DN),2019,Dissolved Oxygen,3.82,B28
+Mymensingh,2019,Dissolved Oxygen,6.66,B28
+Bhadurabad Ghat,2019,Dissolved Oxygen,6.2,B28
+Near Jamuna Fertilizer Factory,2019,Dissolved Oxygen,5.6,B28
+"Fulchari Ghat, Gibanda (US)",2019,Dissolved Oxygen,7.28,B28
+"Fulchari Ghat, Gibanda (DS)",2019,Dissolved Oxygen,7.24,B28
+"Shariakandi Groin Badth, Bogra (US)",2019,Dissolved Oxygen,7.14,B28
+"Shariakandi Groin Badth, Bogra (DS)",2019,Dissolved Oxygen,7.13,B28
+Near Banabandhu Bridge (US),2019,Dissolved Oxygen,7.27,B28
+Near Banabandhu Bridge (DS),2019,Dissolved Oxygen,7.28,B28
+"Bheutha Ghat, Manikgonj",2019,Dissolved Oxygen,6.26,B28
+Bhairob Bazar,2019,Dissolved Oxygen,5.52,B28
+Meghna Ghat,2019,Dissolved Oxygen,5.53,B28
+N. S. P. M,2019,Dissolved Oxygen,4.4,B28
+Mawa Ghat,2019,Dissolved Oxygen,7.27,B28
+Shimulia Ghat,2019,Dissolved Oxygen,7.1,B28
+Pakshi Ghat (US),2019,Dissolved Oxygen,7.22,B28
+Pakshi Ghat (DS),2019,Dissolved Oxygen,7.23,B28
+Baro kuti Ghat (U.S),2019,Dissolved Oxygen,7.31,B28
+Baro kuti Ghat (D.S),2019,Dissolved Oxygen,7.29,B28
+CUFL,2019,Dissolved Oxygen,7.22,B28
+TSP,2019,Dissolved Oxygen,6.92,B28
+"Karnafully River Chaktai Khal, ctg",2019,Dissolved Oxygen,5.17,B28
+Karnafully Mohona,2019,Dissolved Oxygen,7.74,B28
+1km Straight from patenga sea beach,2019,Dissolved Oxygen,7.66,B28
+Patenga charpara,2019,Dissolved Oxygen,7.31,B28
+1km Straight from CEPZ,2019,Dissolved Oxygen,7.44,B28
+Vattiyari shipyard area,2019,Dissolved Oxygen,7.25,B28
+Mohona,2019,Dissolved Oxygen,5.92,B28
+Khulna (O.S),2019,Dissolved Oxygen,6.05,B28
+Khulna (M.S),2019,Dissolved Oxygen,6.04,B28
+Noapara Ghat (S),2019,Dissolved Oxygen,6.22,B28
+Noapara Ghat (M),2019,Dissolved Oxygen,6.19,B28
+Noapara Ghat (O),2019,Dissolved Oxygen,6.19,B28
+Fultala Ghat(S),2019,Dissolved Oxygen,6.09,B28
+Fultala Ghat (M),2019,Dissolved Oxygen,6.1,B28
+Fultala Ghat (O),2019,Dissolved Oxygen,6.14,B28
+Kustia (S.P),2019,Dissolved Oxygen,6.59,B28
+Kustia (M.P),2019,Dissolved Oxygen,6.62,B28
+Kustia (O.P),2019,Dissolved Oxygen,6.58,B28
+Magura (S.P),2019,Dissolved Oxygen,6.27,B28
+Magura (M.P),2019,Dissolved Oxygen,6.24,B28
+Magura (O.P),2019,Dissolved Oxygen,6.25,B28
+"Pipe Ghat,(M.P)",2019,Dissolved Oxygen,5.17,B28
+"Pipe Ghat, (U.S)",2019,Dissolved Oxygen,4.6,B28
+"PipeGhat, (D.S)",2019,Dissolved Oxygen,5,B28
+Bagerhat (O.S),2019,Dissolved Oxygen,5.63,B28
+Bagerhat (M.S),2019,Dissolved Oxygen,5.66,B28
+Bagerhat (O.S),2019,Dissolved Oxygen,5.61,B28
+Gallamari Bridge (S),2019,Dissolved Oxygen,1.91,B28
+Gallamari Bridge (M),2019,Dissolved Oxygen,1.91,B28
+Gallamari Bridge (O),2019,Dissolved Oxygen,1.89,B28
+Mongla Poart (S.P),2019,Dissolved Oxygen,6.7,B28
+Mongla Poart (M.P),2019,Dissolved Oxygen,6.72,B28
+Mongla Poart (O.P),2019,Dissolved Oxygen,6.72,B28
+Rupsha Ghat (S),2019,Dissolved Oxygen,6.66,B28
+Rupsha Ghat (M),2019,Dissolved Oxygen,6.67,B28
+Rupsha Ghat (O),2019,Dissolved Oxygen,6.64,B28
+Labanchara Ghat (S),2019,Dissolved Oxygen,6.45,B28
+Labanchara Ghat (M),2019,Dissolved Oxygen,6.46,B28
+Labanchara Ghat (O),2019,Dissolved Oxygen,6.43,B28
+Kaliganj (S.P),2019,Dissolved Oxygen,5.59,B28
+Kaliganj (M.P),2019,Dissolved Oxygen,5.6,B28
+Kaliganj (O.P),2019,Dissolved Oxygen,5.61,B28
+Launch Ghat (S),2019,Dissolved Oxygen,5.99,B28
+Launch Ghat (M),2019,Dissolved Oxygen,6.02,B28
+Dopdopia Kheyaghat (S),2019,Dissolved Oxygen,5.95,B28
+Dopdopia Kheyaghat (M),2019,Dissolved Oxygen,6.01,B28
+Beltola Fery Gaht (S),2019,Dissolved Oxygen,6.14,B28
+Beltola Fery Gaht (M),2019,Dissolved Oxygen,6.04,B28
+Vadura Launch Ghat (S),2019,Dissolved Oxygen,5.77,B28
+Vadura Launch Ghat (M),2019,Dissolved Oxygen,5.67,B28
+Jhalkathi L.G (S),2019,Dissolved Oxygen,6.01,B28
+Jhalkathi L.G (M),2019,Dissolved Oxygen,5.89,B28
+Patuakhali Launch Ghat (S),2019,Dissolved Oxygen,6.23,B28
+Patuakhali Launch Ghat (M),2019,Dissolved Oxygen,6.1,B28
+"Near Dutta Bari Bridge, Bogra (Up stream)",2019,Dissolved Oxygen,3.8,B28
+"Near Dutta Bari Bridge, Bogra (Down stream)",2019,Dissolved Oxygen,3.78,B28
+"Near Foteh Ali Bridge, Bogra (Up stream)",2019,Dissolved Oxygen,3.64,B28
+"Near Foteh Ali Bridge, Bogra (Down stream)",2019,Dissolved Oxygen,3.64,B28
+"Near Matidali Bridge, Bogra (Up stream)",2019,Dissolved Oxygen,3.98,B28
+"Near Matidali Bridge, Bogra (Down stream)",2019,Dissolved Oxygen,3.98,B28
+"Near S.P Bridge, Bogra (Up stream)",2019,Dissolved Oxygen,3.6,B28
+"Near S.P Bridge, Bogra (Down stream)",2019,Dissolved Oxygen,3.61,B28
+"Shahjadpur, Sirajgonj (Up stream)",2019,Dissolved Oxygen,7.13,B28
+"Shahjadpur, Sirajgonj (Down stream)",2019,Dissolved Oxygen,7.13,B28
+Near Tista Bridge (U.S),2019,Dissolved Oxygen,7.13,B28
+Near Tista Bridge (D.S),2019,Dissolved Oxygen,7.14,B28
+Mendibag Point,2019,Dissolved Oxygen,6.72,B28
+Kin Bridge Point,2019,Dissolved Oxygen,6.46,B28
+Sheaik Ghat,2019,Dissolved Oxygen,6.18,B28
+Chhatak,2019,Dissolved Oxygen,6.9,B28
+Kazir Bazar,2019,Dissolved Oxygen,7.4,B28
+Kushiyara Point,2019,Dissolved Oxygen,6.73,B28
+"Table 1.59a: Freshwater Quality by District/Station, 2020-2023",2019,Dissolved Oxygen,2020,B28
+Mirpur Bridge,2020,Dissolved Oxygen,2.83,B28
+Hajaribag,2020,Dissolved Oxygen,2.64,B28
+Kamrangir Char,2020,Dissolved Oxygen,2.52,B28
+Chadnighat,2020,Dissolved Oxygen,2.12,B28
+Sadar Ghat,2020,Dissolved Oxygen,1.99,B28
+Pagla,2020,Dissolved Oxygen,2.15,B28
+Bangladesg China Frendship Bridge,2020,Dissolved Oxygen,2.16,B28
+Demra Ghat,2020,Dissolved Oxygen,1.65,B28
+Ghorashal F.F.,2020,Dissolved Oxygen,3.67,B28
+Near ACI Factory,2020,Dissolved Oxygen,0.95,B28
+Neaer Kanchpur Bridge,2020,Dissolved Oxygen,3.56,B28
+Near Jaber & Jubair Fabrics Ltd. Tongi,2020,Dissolved Oxygen,2.33,B28
+"Near Hossain Dyeing Ltd. Pagar, Tongi",2020,Dissolved Oxygen,2.21,B28
+"Near Damra University College, Demra, Dhaka",2020,Dissolved Oxygen,1.66,B28
+"Near Balu Bridge, 300 feet Road, Dhaka",2020,Dissolved Oxygen,2.14,B28
+New Gabtoli Bridge,2020,Dissolved Oxygen,2.87,B28
+Mirpur Diabary BIWTA Landing Station,2020,Dissolved Oxygen,2.68,B28
+Ashulia BIWTA Landing Station,2020,Dissolved Oxygen,2.79,B28
+Tongi Istima Mat,2020,Dissolved Oxygen,2.52,B28
+"North Side of Tongi Bridge, Pagar",2020,Dissolved Oxygen,3.18,B28
+Muktarpur Bridge,2020,Dissolved Oxygen,3.13,B28
+Mymensingh,2020,Dissolved Oxygen,8.75,B28
+Near Jamuna Fertilizer Factory,2020,Dissolved Oxygen,9.23,B28
+Near Bangabandhu Bridge (US),2020,Dissolved Oxygen,7.58,B28
+Near Bangabandhu Bridge (US),2020,Dissolved Oxygen,7.58,B28
+"Fulchari Ghat, Gibanda (US)",2020,Dissolved Oxygen,7.56,B28
+"Fulchari Ghat, Gibanda (DS)",2020,Dissolved Oxygen,7.53,B28
+Shariakandi Groin Badth (US),2020,Dissolved Oxygen,7.52,B28
+Shariakandi Groin Badth (DS),2020,Dissolved Oxygen,7.54,B28
+"Bheutha Ghat, Manikgonj",2020,Dissolved Oxygen,6.26,B28
+Bhairob Bazar,2020,Dissolved Oxygen,5.52,B28
+Meghna Ghat,2020,Dissolved Oxygen,5.53,B28
+N. S. P. M,2020,Dissolved Oxygen,4.4,B28
+Mawa Ghat,2020,Dissolved Oxygen,7.5,B28
+Shimulia Ghat,2020,Dissolved Oxygen,8.15,B28
+Pakshi Ghat (US),2020,Dissolved Oxygen,7.53,B28
+Pakshi Ghat (DS),2020,Dissolved Oxygen,7.53,B28
+Baro kuti Ghat (U.S),2020,Dissolved Oxygen,7.53,B28
+Baro kuti Ghat (D.S),2020,Dissolved Oxygen,7.56,B28
+CUFL Side Anowara,2020,Dissolved Oxygen,7.21,B28
+"TSP Side, Patenga",2020,Dissolved Oxygen,6.46,B28
+KAFCO side,2020,Dissolved Oxygen,7.55,B28
+15 no Ghat,2020,Dissolved Oxygen,5.99,B28
+Karnafully Mohona,2020,Dissolved Oxygen,7.67,B28
+1km Straight from patenga sea beach,2020,Dissolved Oxygen,7.63,B28
+Patenga charpara,2020,Dissolved Oxygen,7.35,B28
+1km Straight from CEPZ,2020,Dissolved Oxygen,7.62,B28
+Vatiyari Shipyard Area,2020,Dissolved Oxygen,7.33,B28
+Mohona,2020,Dissolved Oxygen,6.54,B28
+Madari Khal (middle point),2020,Dissolved Oxygen,5.87,B28
+Boraikhali,2020,Dissolved Oxygen,7.79,B28
+Madarikhal (Breeding Point),2020,Dissolved Oxygen,7.63,B28
+Noya Khal (Outside),2020,Dissolved Oxygen,0.66,B28
+Khulna (O.S),2020,Dissolved Oxygen,5.29,B28
+Khulna (M.S),2020,Dissolved Oxygen,5.3,B28
+Noapara Ghat (S),2020,Dissolved Oxygen,4.76,B28
+Noapara Ghat (M),2020,Dissolved Oxygen,4.76,B28
+Noapara Ghat (O),2020,Dissolved Oxygen,4.76,B28
+Fultala Ghat(S),2020,Dissolved Oxygen,6.86,B28
+Fultala Ghat (M),2020,Dissolved Oxygen,6.86,B28
+Fultala Ghat (O),2020,Dissolved Oxygen,6.86,B28
+Kustia (S.P),2020,Dissolved Oxygen,5.98,B28
+Kustia (M.P),2020,Dissolved Oxygen,5.95,B28
+Kustia (O.P),2020,Dissolved Oxygen,5.97,B28
+Magura (S.P),2020,Dissolved Oxygen,6.75,B28
+Magura (M.P),2020,Dissolved Oxygen,6.71,B28
+Magura (O.P),2020,Dissolved Oxygen,6.73,B28
+Pipe Ghat (M.P),2020,Dissolved Oxygen,6.4,B28
+Pipe Ghat (U.S),2020,Dissolved Oxygen,5,B28
+Pipe Ghat (D.S),2020,Dissolved Oxygen,4.72,B28
+Bagerhat (O.S),2020,Dissolved Oxygen,6.64,B28
+Bagerhat (M.S),2020,Dissolved Oxygen,6.64,B28
+Bagerhat (O.S),2020,Dissolved Oxygen,6.64,B28
+Gallamari Bridge (S),2020,Dissolved Oxygen,1.89,B28
+Gallamari Bridge (M),2020,Dissolved Oxygen,1.89,B28
+Gallamari Bridge (O),2020,Dissolved Oxygen,1.89,B28
+Mongla Poart (S.P),2020,Dissolved Oxygen,6.59,B28
+Mongla Poart (M.P),2020,Dissolved Oxygen,6.59,B28
+Mongla Poart (O.P),2020,Dissolved Oxygen,6.59,B28
+Rupsha Ghat (S),2020,Dissolved Oxygen,6.77,B28
+Rupsha Ghat (M),2020,Dissolved Oxygen,6.77,B28
+Rupsha Ghat (O),2020,Dissolved Oxygen,6.77,B28
+Labanchara Ghat (S),2020,Dissolved Oxygen,7.34,B28
+Labanchara Ghat (M),2020,Dissolved Oxygen,7.34,B28
+Labanchara Ghat (O),2020,Dissolved Oxygen,7.34,B28
+Kaliganj (S.P),2020,Dissolved Oxygen,6.66,B28
+Kaliganj (M.P),2020,Dissolved Oxygen,6.66,B28
+Kaliganj (O.P),2020,Dissolved Oxygen,6.66,B28
+Launch Ghat (S),2020,Dissolved Oxygen,6,B28
+Launch Ghat (M),2020,Dissolved Oxygen,5.93,B28
+Dopdopia Kheyaghat (S),2020,Dissolved Oxygen,6.21,B28
+Dopdopia Kheyaghat (M),2020,Dissolved Oxygen,6.21,B28
+Beltola Fery Gaht (S),2020,Dissolved Oxygen,6.45,B28
+Beltola Fery Gaht (M),2020,Dissolved Oxygen,6.28,B28
+Vadura Launch Ghat (S),2020,Dissolved Oxygen,6.1,B28
+Vadura Launch Ghat (M),2020,Dissolved Oxygen,6.1,B28
+Jhalkathi L.G (S),2020,Dissolved Oxygen,7.2,B28
+Jhalkathi L.G (M),2020,Dissolved Oxygen,7.05,B28
+Patuakhali Launch Ghat (S),2020,Dissolved Oxygen,6.63,B28
+Patuakhali Launch Ghat (M),2020,Dissolved Oxygen,6.7,B28
+"Near Dutta Bari Bridge, Bogura (Upstream)",2020,Dissolved Oxygen,3.73,B28
+"Near Dutta Bari Bridge, Bogura (Downstream)",2020,Dissolved Oxygen,3.7,B28
+"Near Foteh Ali Bridge, Bogura (Upstream)",2020,Dissolved Oxygen,3.57,B28
+"Near Foteh Ali Bridge, Bogura (Downstream)",2020,Dissolved Oxygen,3.57,B28
+"Near Matidali Bridge, Bogura (Upstream)",2020,Dissolved Oxygen,4.02,B28
+"Near Matidali Bridge, Bogura (Downstream)",2020,Dissolved Oxygen,4.03,B28
+"Near S.P Bridge, Bogura (Upstream)",2020,Dissolved Oxygen,3.41,B28
+"Near S.P Bridge, Bogura (Downstream)",2020,Dissolved Oxygen,3.41,B28
+"Shahjadpur, Sirajganj (Upstream)",2020,Dissolved Oxygen,7.46,B28
+"Shahjadpur, Sirajganj (Downstream)",2020,Dissolved Oxygen,7.46,B28
+Near Tista Bridge (U.S),2020,Dissolved Oxygen,7.57,B28
+Near Tista Bridge (D.S),2020,Dissolved Oxygen,7.57,B28
+Mendibag Point,2020,Dissolved Oxygen,7.14,B28
+Kin Bridge Point,2020,Dissolved Oxygen,7.21,B28
+Sheaik Ghat,2020,Dissolved Oxygen,6.97,B28
+Chhatak,2020,Dissolved Oxygen,7,B28
+Fenchuganj Point,2020,Dissolved Oxygen,6.93,B28
+Mirpur Bridge,2021,Dissolved Oxygen,2.27,B28
+Mohammadpur,2021,Dissolved Oxygen,0.7,B28
+Bosila Bridge,2021,Dissolved Oxygen,2.15,B28
+Hajaribag,2021,Dissolved Oxygen,2.09,B28
+Satmosjid Road,2021,Dissolved Oxygen,1.5,B28
+Chadnighat,2021,Dissolved Oxygen,1.66,B28
+Sadarghat,2021,Dissolved Oxygen,0.1,B28
+B.C.F.B,2021,Dissolved Oxygen,2.07,B28
+Pagla,2021,Dissolved Oxygen,1.65,B28
+Fatullah,2021,Dissolved Oxygen,0.7,B28
+Port Road,2021,Dissolved Oxygen,2.77,B28
+Majira Demra Ghat,2021,Dissolved Oxygen,2.52,B28
+Murapara (Rupgonj),2021,Dissolved Oxygen,3.55,B28
+Gorashal,2021,Dissolved Oxygen,4.65,B28
+Trimohoni Bridge,2021,Dissolved Oxygen,0.77,B28
+Jolshiri Abason,2021,Dissolved Oxygen,2.42,B28
+Turag Bridge,2021,Dissolved Oxygen,2.91,B28
+Ashulia,2021,Dissolved Oxygen,2.6,B28
+Kaliakoir,2021,Dissolved Oxygen,4.72,B28
+Vawal,2021,Dissolved Oxygen,3.83,B28
+Nama Bazar,2021,Dissolved Oxygen,3.29,B28
+Mukterpur,2021,Dissolved Oxygen,2.78,B28
+Ruhitpur,2021,Dissolved Oxygen,8.14,B28
+Hazratpur,2021,Dissolved Oxygen,6.89,B28
+Alipur,2021,Dissolved Oxygen,2.8,B28
+Sirajnagor,2021,Dissolved Oxygen,0.5,B28
+Utorro Mitra,2021,Dissolved Oxygen,5.85,B28
+Pathorghata,2021,Dissolved Oxygen,5.125,B28
+"Rail Bridge, Shamvoganj",2021,Dissolved Oxygen,7.1,B28
+JamalpurRail Bridge,2021,Dissolved Oxygen,8.23,B28
+Sarkarkhana,2021,Dissolved Oxygen,6.33,B28
+Kakua,2021,Dissolved Oxygen,6.67,B28
+Jamuna Eco Park (UP),2021,Dissolved Oxygen,7.63,B28
+Jamuna Eco Park (DN),2021,Dissolved Oxygen,13.99,B28
+Shariakandi Kheya Ghat Growin Bandh (UP),2021,Dissolved Oxygen,7.57,B28
+Shariakandi Kheya Ghat Growin Bandh (DN),2021,Dissolved Oxygen,7.57,B28
+Horipur Kheya Ghat (UP),2021,Dissolved Oxygen,7.75,B28
+Horipur Kheya Ghat (DN),2021,Dissolved Oxygen,7.75,B28
+Mohonganj (DN),2021,Dissolved Oxygen,7.69,B28
+Mohonganj (UP),2021,Dissolved Oxygen,7.69,B28
+"Bheutha Ghat, Manikganj",2021,Dissolved Oxygen,7.8,B28
+Meghna Ghat,2021,Dissolved Oxygen,5.48,B28
+Bairob Ferry Ghat,2021,Dissolved Oxygen,6.14,B28
+Narshingdi Launch Ghat,2021,Dissolved Oxygen,2.75,B28
+Shajalal Paper,2021,Dissolved Oxygen,5.9,B28
+Annando Bazar,2021,Dissolved Oxygen,6.8,B28
+Bish Nondi Ghat,2021,Dissolved Oxygen,5.65,B28
+Josldia,2021,Dissolved Oxygen,6.1,B28
+Sitardor,2021,Dissolved Oxygen,6.2,B28
+Kandipara,2021,Dissolved Oxygen,6.3,B28
+Khoiria,2021,Dissolved Oxygen,6.9,B28
+Shimolia,2021,Dissolved Oxygen,6.2,B28
+Gordhor Bazar,2021,Dissolved Oxygen,6.8,B28
+Mawa ferry Ghat,2021,Dissolved Oxygen,7.02,B28
+Barha Ghat,2021,Dissolved Oxygen,7.08,B28
+CUFL,2021,Dissolved Oxygen,7.32,B28
+TSP,2021,Dissolved Oxygen,7.75,B28
+Shikalbaha,2021,Dissolved Oxygen,7.04,B28
+Kalurghat Bridge,2021,Dissolved Oxygen,7.53,B28
+Mariam Nagar,2021,Dissolved Oxygen,6.94,B28
+Karnafully Paper,2021,Dissolved Oxygen,7.55,B28
+Maduna Ghat,2021,Dissolved Oxygen,6.88,B28
+Garduara Sluice gate,2021,Dissolved Oxygen,6.7,B28
+Halda Bridge,2021,Dissolved Oxygen,6.78,B28
+"Basundia Bazar, Aladipur",2021,Dissolved Oxygen,4.62,B28
+Noapara Ferry Ghat Abhaynagar,2021,Dissolved Oxygen,5.69,B28
+Noapara Jafarpur,2021,Dissolved Oxygen,5.15,B28
+"Fultala Ghat, Dhulgram",2021,Dissolved Oxygen,5.16,B28
+Kamarkhali Bridge,2021,Dissolved Oxygen,7.91,B28
+Dorshona Railway Junction,2021,Dissolved Oxygen,5.71,B28
+Dhalaitala,2021,Dissolved Oxygen,4.3,B28
+Shoshan Ghat,2021,Dissolved Oxygen,2.76,B28
+Buro Moulavir Darga,2021,Dissolved Oxygen,2.04,B28
+Doshgate Jalma,2021,Dissolved Oxygen,4.18,B28
+Rampal Power Plant,2021,Dissolved Oxygen,6.36,B28
+Banishanta,2021,Dissolved Oxygen,6.18,B28
+Batiaghata By Pass,2021,Dissolved Oxygen,6.33,B28
+"Gilatola, Nadan Pratap (M)",2021,Dissolved Oxygen,5.82,B28
+Kalibari Ghat (M),2021,Dissolved Oxygen,5.66,B28
+"Charer Hat, Sulpur Aijgati (M)",2021,Dissolved Oxygen,6.13,B28
+Rupsa Ghat (M),2021,Dissolved Oxygen,5.72,B28
+Uzirpur,2021,Dissolved Oxygen,8.17,B28
+Kaliganj Bazar,2021,Dissolved Oxygen,8.15,B28
+Boshontopur,2021,Dissolved Oxygen,8.31,B28
+Launch Ghat (S),2021,Dissolved Oxygen,5.49,B28
+Launch Ghat (M),2021,Dissolved Oxygen,5.57,B28
+Kaower Char (S),2021,Dissolved Oxygen,5.77,B28
+Kaower Char (M),2021,Dissolved Oxygen,5.71,B28
+Dopdopia Kheyaghat (S),2021,Dissolved Oxygen,5.75,B28
+Dopdopia Kheyaghat (M),2021,Dissolved Oxygen,5.76,B28
+Vadura Launch Ghat (S),2021,Dissolved Oxygen,5.9,B28
+Vadura Launch Ghat (M),2021,Dissolved Oxygen,5.88,B28
+Patuakhali Launch Ghat (S),2021,Dissolved Oxygen,5.78,B28
+Patuakhali Launch Ghat (M),2021,Dissolved Oxygen,5.75,B28
+Dottobari Bridge (UP),2021,Dissolved Oxygen,4.54,B28
+Dottobari Bridge (Down),2021,Dissolved Oxygen,4.54,B28
+Aziz Ahmed Taki Road (UP),2021,Dissolved Oxygen,4.6,B28
+Aziz Ahmed Taki Road (Down),2021,Dissolved Oxygen,4.6,B28
+Sultanganj- Gabtoli (UP),2021,Dissolved Oxygen,4.61,B28
+Sultanganj- Gabtoli (DN),2021,Dissolved Oxygen,4.61,B28
+Teesta Bridge (Up),2021,Dissolved Oxygen,7.89,B28
+Teesta Bridge (Dn),2021,Dissolved Oxygen,7.89,B28
+Nohali Sapmari (Up),2021,Dissolved Oxygen,7.75,B28
+Nohali Sapmari (Dn),2021,Dissolved Oxygen,7.75,B28
+Teesta Barrage (Up),2021,Dissolved Oxygen,7.89,B28
+Teesta Barrage (Dn),2021,Dissolved Oxygen,7.89,B28
+Mendibag Point,2021,Dissolved Oxygen,6.99,B28
+Kin Bridge Point,2021,Dissolved Oxygen,7,B28
+Sheaik Ghat,2021,Dissolved Oxygen,7.23,B28
+Chhatak,2021,Dissolved Oxygen,6.99,B28
+Fcnchuganj Bridge Point,2021,Dissolved Oxygen,7.03,B28
+Mirpur Bridge,2022,Dissolved Oxygen,3.1,B28
+Bosila Bridge,2022,Dissolved Oxygen,2.92,B28
+Hajaribag,2022,Dissolved Oxygen,3.12,B28
+Satmosjid Road,2022,Dissolved Oxygen,2.42,B28
+Chadnighat,2022,Dissolved Oxygen,2.17,B28
+Bangladesg China Friendship Bridge,2022,Dissolved Oxygen,2.66,B28
+Fatullah,2022,Dissolved Oxygen,2.61,B28
+Port Road,2022,Dissolved Oxygen,2.65,B28
+Table Majhira Demra Ghat,2022,Dissolved Oxygen,2.56,B28
+Murapara (Rupganj),2022,Dissolved Oxygen,4.04,B28
+Gorashal Fertilizer,2022,Dissolved Oxygen,4.89,B28
+Trimohoni Bridge,2022,Dissolved Oxygen,0.94,B28
+Jolshiri Abason,2022,Dissolved Oxygen,2.69,B28
+Turag Bridge,2022,Dissolved Oxygen,3.75,B28
+Ashulia,2022,Dissolved Oxygen,3.66,B28
+Kaliakoir,2022,Dissolved Oxygen,5.39,B28
+Vawal,2022,Dissolved Oxygen,4.73,B28
+Nama Bazar,2022,Dissolved Oxygen,4.51,B28
+Mukterpur,2022,Dissolved Oxygen,2.72,B28
+Pathorghata,2022,Dissolved Oxygen,4.88,B28
+Ruhitpur,2022,Dissolved Oxygen,5.99,B28
+Hazratpur,2022,Dissolved Oxygen,5.22,B28
+Utorro Mitra,2022,Dissolved Oxygen,6.71,B28
+Mymensingh,2022,Dissolved Oxygen,11.4,B28
+Jamalpur Bridge,2022,Dissolved Oxygen,7.55,B28
+Jamalpur Rail Bridge,2022,Dissolved Oxygen,8,B28
+Jamuna Eco Park (U),2022,Dissolved Oxygen,7.63,B28
+Jamuna Eco Park (D),2022,Dissolved Oxygen,7.63,B28
+Shariakandi Groin badth (U),2022,Dissolved Oxygen,7.57,B28
+Shariakandi Groin badth (D),2022,Dissolved Oxygen,7.57,B28
+Mohonganj (U),2022,Dissolved Oxygen,7.63,B28
+Mohonganj (D),2022,Dissolved Oxygen,7.63,B28
+Horipur Kheya Ghat (U),2022,Dissolved Oxygen,7.62,B28
+Horipur Kheya Ghat (D),2022,Dissolved Oxygen,7.62,B28
+Kakua,2022,Dissolved Oxygen,7.38,B28
+Tarakandi (D),2022,Dissolved Oxygen,6.48,B28
+Tarakandi (U),2022,Dissolved Oxygen,4.6,B28
+"Bheutha Ghat, Manikganj",2022,Dissolved Oxygen,7.2,B28
+Meghna Ghat,2022,Dissolved Oxygen,5.53,B28
+Bisnondi,2022,Dissolved Oxygen,5.34,B28
+Norsingdi Launch Terminal,2022,Dissolved Oxygen,4.41,B28
+Anondo Bazar,2022,Dissolved Oxygen,4.83,B28
+Bhairob Bazar,2022,Dissolved Oxygen,6.04,B28
+Mawa Ghat,2022,Dissolved Oxygen,7.87,B28
+Barha Ghat,2022,Dissolved Oxygen,7.6,B28
+CUFL,2022,Dissolved Oxygen,7.58,B28
+TSP,2022,Dissolved Oxygen,7.29,B28
+Shikalbaha,2022,Dissolved Oxygen,7.45,B28
+Kalurghat Bridge,2022,Dissolved Oxygen,7.53,B28
+Mariam Nagar,2022,Dissolved Oxygen,7.37,B28
+Karnaphuli Paper,2022,Dissolved Oxygen,7.59,B28
+Maduna Ghat,2022,Dissolved Oxygen,6.44,B28
+Garduara Sluice Gate,2022,Dissolved Oxygen,6.26,B28
+Halda Bridge,2022,Dissolved Oxygen,6.56,B28
+Basundia Bazar,2022,Dissolved Oxygen,1.01,B28
+Noapara Ferry Ghat,2022,Dissolved Oxygen,4.3,B28
+Noapara,2022,Dissolved Oxygen,3.6,B28
+Fultala Ghat,2022,Dissolved Oxygen,4.7,B28
+Shoshan Ghat,2022,Dissolved Oxygen,2.76,B28
+Buro Moulavir Darga,2022,Dissolved Oxygen,2.04,B28
+Doshgate Jalma,2022,Dissolved Oxygen,4.18,B28
+Rampal Power Plant,2022,Dissolved Oxygen,0.4,B28
+Banishanta,2022,Dissolved Oxygen,0.7,B28
+Batiaghata By Pass,2022,Dissolved Oxygen,5.4,B28
+Rupsa Ghat (M),2022,Dissolved Oxygen,3.8,B28
+Kalibari Ghat (M),2022,Dissolved Oxygen,3.9,B28
+Charer Hat (M),2022,Dissolved Oxygen,5.1,B28
+Gilatala,2022,Dissolved Oxygen,5.9,B28
+Kaliganj Bazar,2022,Dissolved Oxygen,5.4,B28
+Boshontopur,2022,Dissolved Oxygen,5.4,B28
+Gobindakathi,2022,Dissolved Oxygen,5.1,B28
+Launch Ghat (S),2022,Dissolved Oxygen,6.52,B28
+Launch Ghat (M),2022,Dissolved Oxygen,6.7,B28
+Kaower Char (S),2022,Dissolved Oxygen,6.7,B28
+Kaower Char (M),2022,Dissolved Oxygen,6.58,B28
+Dopdopia Kheyaghat (S),2022,Dissolved Oxygen,6.55,B28
+Dopdopia Kheyaghat (M),2022,Dissolved Oxygen,6.85,B28
+Vadura Launch Ghat (S),2022,Dissolved Oxygen,6.3,B28
+Vadura Launch Ghat (M),2022,Dissolved Oxygen,5.06,B28
+Gabkhan Lounch Terminal (S),2022,Dissolved Oxygen,6.75,B28
+Gabkhan Lounch Terminal (M),2022,Dissolved Oxygen,6.98,B28
+Patuakhali Launch Ghat (S),2022,Dissolved Oxygen,7.15,B28
+Patuakhali Launch Ghat (M),2022,Dissolved Oxygen,6.61,B28
+"Dutta Bari Bridge, Bogura (Upstream)",2022,Dissolved Oxygen,5.72,B28
+"Dutta Bari Bridge, Bogura (Downstream)",2022,Dissolved Oxygen,5.72,B28
+Aziz Ahmed Taki Road (Upstream),2022,Dissolved Oxygen,5.78,B28
+Aziz Ahmed Taki Road (Downstream),2022,Dissolved Oxygen,5.78,B28
+"Dutta Bari Bridge, Bogura (Upstream)",2022,Dissolved Oxygen,5.72,B28
+"Dutta Bari Bridge, Bogura (Downstream)",2022,Dissolved Oxygen,5.72,B28
+Aziz Ahmed Taki Road (Upstream),2022,Dissolved Oxygen,5.78,B28
+Aziz Ahmed Taki Road (Downstream),2022,Dissolved Oxygen,5.78,B28
+Mendibag Point,2022,Dissolved Oxygen,7.02,B28
+Kin Bridge Point,2022,Dissolved Oxygen,6.92,B28
+Sheaik Ghat,2022,Dissolved Oxygen,7.06,B28
+Chhatak,2022,Dissolved Oxygen,6.98,B28
+Fenchuganj Bridge Point,2022,Dissolved Oxygen,7.24,B28
+Fenchuganj Fertilizer Industry Point,2022,Dissolved Oxygen,3.83,B28
+Mirpur Bridge,2023,Dissolved Oxygen,3.34,B28
+Bosila Bridge,2023,Dissolved Oxygen,2.49,B28
+Hajaribag,2023,Dissolved Oxygen,2.68,B28
+Satmosjid Road,2023,Dissolved Oxygen,2.61,B28
+Chadnighat,2023,Dissolved Oxygen,1.7,B28
+Bangladesg China Friendship Bridge,2023,Dissolved Oxygen,1.99,B28
+Fatullah,2023,Dissolved Oxygen,2.19,B28
+Port Road,2023,Dissolved Oxygen,1.76,B28
+Majhira Demra Ghat,2023,Dissolved Oxygen,1.83,B28
+Murapara (Rupganj),2023,Dissolved Oxygen,3.25,B28
+Gorashal Fertilizer,2023,Dissolved Oxygen,4.2,B28
+Trimohoni Bridge,2023,Dissolved Oxygen,0.47,B28
+Jolshiri Abason,2023,Dissolved Oxygen,3.15,B28
+Turag Bridge,2023,Dissolved Oxygen,2.8,B28
+Ashulia,2023,Dissolved Oxygen,2.78,B28
+Kaliakoir,2023,Dissolved Oxygen,5.63,B28
+Vawal,2023,Dissolved Oxygen,4.83,B28
+Nama Bazar,2023,Dissolved Oxygen,3.29,B28
+Mukterpur,2023,Dissolved Oxygen,1.97,B28
+Pathorghata,2023,Dissolved Oxygen,5.68,B28
+Ruhitpur,2023,Dissolved Oxygen,5.9,B28
+Hazratpur,2023,Dissolved Oxygen,6.31,B28
+Utorro Mitra,2023,Dissolved Oxygen,5.47,B28
+Mymensingh,2023,Dissolved Oxygen,5,B28
+"Rail Bridge, Shamvoganj",2023,Dissolved Oxygen,4.37,B28
+Jamuna Eco Park (Up),2023,Dissolved Oxygen,7.57,B28
+Jamuna Eco Park (Dn),2023,Dissolved Oxygen,7.57,B28
+Shariakandi Kheya Ghat (Up),2023,Dissolved Oxygen,7.49,B28
+Shariakandi Kheya Ghat (Dn),2023,Dissolved Oxygen,7.49,B28
+Mohonganj (Up),2023,Dissolved Oxygen,7.55,B28
+Mohonganj (Dn),2023,Dissolved Oxygen,7.55,B28
+Horipur Kheya Ghat (Up),2023,Dissolved Oxygen,7.52,B28
+Horipur Kheya Ghat (Dn),2023,Dissolved Oxygen,7.52,B28
+Kakua,2023,Dissolved Oxygen,7.45,B28
+Tarakandi,2023,Dissolved Oxygen,6.95,B28
+"Bheutha Ghat, Manikganj",2023,Dissolved Oxygen,6.03,B28
+Meghna Ghat,2023,Dissolved Oxygen,4.95,B28
+Bisnondi Ferry Ghat,2023,Dissolved Oxygen,5.62,B28
+Norsingdi Launch Ghat,2023,Dissolved Oxygen,3.78,B28
+Anondo Bazar,2023,Dissolved Oxygen,6.04,B28
+Bhairob Bazar,2023,Dissolved Oxygen,6.09,B28
+Mawa Ghat,2023,Dissolved Oxygen,7.93,B28
+Barha Ghat,2023,Dissolved Oxygen,7.57,B28
+CUFL,2023,Dissolved Oxygen,7.65,B28
+TSP,2023,Dissolved Oxygen,7.52,B28
+Shikalbaha,2023,Dissolved Oxygen,7.35,B28
+Kalurghat Bridge,2023,Dissolved Oxygen,7.57,B28
+Mariam Nagar,2023,Dissolved Oxygen,7.46,B28
+Karnaphuli Paper,2023,Dissolved Oxygen,7.56,B28
+Maduna Ghat,2023,Dissolved Oxygen,7.03,B28
+Garduara Sluice Gate,2023,Dissolved Oxygen,7.13,B28
+Halda Bridge,2023,Dissolved Oxygen,6.83,B28
+Basundia Bazar,2023,Dissolved Oxygen,5.33,B28
+"Noapara Ferry Ghat, Abhaynagar",2023,Dissolved Oxygen,5.87,B28
+Noapara Jafarpur,2023,Dissolved Oxygen,5.99,B28
+"Fultala Ghat, Dhulgram",2023,Dissolved Oxygen,5.93,B28
+Kamarkhali Bridge,2023,Dissolved Oxygen,6.81,B28
+"Pipe Ghat, (M.P)",2023,Dissolved Oxygen,4.52,B28
+Dhalaitala,2023,Dissolved Oxygen,6.65,B28
+Shoshan Ghat,2023,Dissolved Oxygen,0.1,B28
+Buro Moulavir Darga,2023,Dissolved Oxygen,0,B28
+Doshgate Jalma,2023,Dissolved Oxygen,3.32,B28
+Rampal Power Plant,2023,Dissolved Oxygen,6.75,B28
+Banishanta,2023,Dissolved Oxygen,6.71,B28
+Batiaghata By Pass,2023,Dissolved Oxygen,6.71,B28
+Rupsa Ghat (M),2023,Dissolved Oxygen,6.54,B28
+Kalibari Ghat (M),2023,Dissolved Oxygen,5.98,B28
+Charer Hat Sulpur Aijgati (M),2023,Dissolved Oxygen,6.32,B28
+"Gilatala, Nadan Pratap (M)",2023,Dissolved Oxygen,5.55,B28
+Kaliganj Bazar,2023,Dissolved Oxygen,5.85,B28
+Boshontopur,2023,Dissolved Oxygen,6.26,B28
+Uzirpur,2023,Dissolved Oxygen,6.23,B28
+Launch Ghat (S),2023,Dissolved Oxygen,6.93,B28
+Launch Ghat (M),2023,Dissolved Oxygen,6.97,B28
+Kaower Char (S),2023,Dissolved Oxygen,6.91,B28
+Kaower Char (M),2023,Dissolved Oxygen,6.65,B28
+Dopdopia Kheyaghat (S),2023,Dissolved Oxygen,7.36,B28
+Dopdopia Kheyaghat (M),2023,Dissolved Oxygen,6.84,B28
+Vadura Launch Ghat (S),2023,Dissolved Oxygen,6.99,B28
+Vadura Launch Ghat (M),2023,Dissolved Oxygen,6.04,B28
+Patuakhali Launch Ghat (S),2023,Dissolved Oxygen,7.14,B28
+Patuakhali Launch Ghat (M),2023,Dissolved Oxygen,6.59,B28
+Dutta Bari Bridge (Up),2023,Dissolved Oxygen,3.54,B28
+Dutta Bari Bridge (Down),2023,Dissolved Oxygen,3.54,B28
+Aziz Ahmed Taki Road (Up),2023,Dissolved Oxygen,3.54,B28
+Aziz Ahmed Taki Road (Down),2023,Dissolved Oxygen,3.54,B28
+Sardah (Up),2023,Dissolved Oxygen,7.51,B28
+Sardah (Down),2023,Dissolved Oxygen,7.51,B28
+Nurullapur (Up),2023,Dissolved Oxygen,7.59,B28
+Nurullapur (Down),2023,Dissolved Oxygen,7.59,B28
+Kanchan Park (Up),2023,Dissolved Oxygen,7.45,B28
+Kanchan Park (Down),2023,Dissolved Oxygen,7.45,B28
+Mendibag Point,2023,Dissolved Oxygen,7.19,B28
+Kin Bridge Point,2023,Dissolved Oxygen,7.23,B28
+Sheaik Ghat,2023,Dissolved Oxygen,7.24,B28
+Chhatak,2023,Dissolved Oxygen,7.74,B28
+Fenchuganj Bridge Point,2023,Dissolved Oxygen,7.66,B28
+Fenchuganj Fertilizer Industry Point,2023,Dissolved Oxygen,8.79,B28
+"Near United Hospital, Kalachadpur",2020,Biochemical Oxygen Demand,33.51,B24
+"Near United Hospital, Kalachadpur",2021,Biochemical Oxygen Demand,33.56,B24
+"Near United Hospital, Kalachadpur",2022,Biochemical Oxygen Demand,37.25,B24
+"Near United Hospital, Kalachadpur",2023,Biochemical Oxygen Demand,21.23,B24
+"Near Housing, South Bridge",2020,Biochemical Oxygen Demand,26.49,B24
+"Near Housing, South Bridge",2021,Biochemical Oxygen Demand,33.07,B24
+"Near Housing, South Bridge",2022,Biochemical Oxygen Demand,30,B24
+"Near Housing, South Bridge",2023,Biochemical Oxygen Demand,23.03,B24
+Near Lake View Clinic,2020,Biochemical Oxygen Demand,29.31,B24
+Near Lake View Clinic,2021,Biochemical Oxygen Demand,34.09,B24
+Near Lake View Clinic,2022,Biochemical Oxygen Demand,31.75,B24
+Near Lake View Clinic,2023,Biochemical Oxygen Demand,25.53,B24
+"Taltola Shooting Complex, South Side",2020,Biochemical Oxygen Demand,27.42,B24
+"Taltola Shooting Complex, South Side",2021,Biochemical Oxygen Demand,25.75,B24
+"Taltola Shooting Complex, South Side",2022,Biochemical Oxygen Demand,36.5,B24
+"Taltola Shooting Complex, South Side",2023,Biochemical Oxygen Demand,19.3,B24
+8 No. Road Bridge,2020,Biochemical Oxygen Demand,9,B24
+8 No. Road Bridge,2021,Biochemical Oxygen Demand,9.44,B24
+8 No. Road Bridge,2022,Biochemical Oxygen Demand,5.2,B24
+8 No. Road Bridge,2023,Biochemical Oxygen Demand,7.7,B24
+Near Gigatola Pilkhana More,2020,Biochemical Oxygen Demand,9.6,B24
+Near Gigatola Pilkhana More,2021,Biochemical Oxygen Demand,9.22,B24
+Near Gigatola Pilkhana More,2022,Biochemical Oxygen Demand,5.35,B24
+Near Gigatola Pilkhana More,2023,Biochemical Oxygen Demand,6.6,B24
+Near Dhanmondi-28 Bangabandhu Jadughor,2020,Biochemical Oxygen Demand,9.9,B24
+Near Dhanmondi-28 Bangabandhu Jadughor,2021,Biochemical Oxygen Demand,8.44,B24
+Near Dhanmondi-28 Bangabandhu Jadughor,2022,Biochemical Oxygen Demand,5.05,B24
+Near Dhanmondi-28 Bangabandhu Jadughor,2023,Biochemical Oxygen Demand,7.13,B24
+Near Dhanmondi-32 Bridge,2020,Biochemical Oxygen Demand,8.68,B24
+Near Dhanmondi-32 Bridge,2021,Biochemical Oxygen Demand,8.22,B24
+Near Dhanmondi-32 Bridge,2022,Biochemical Oxygen Demand,4.83,B24
+Near Dhanmondi-32 Bridge,2023,Biochemical Oxygen Demand,6.8,B24
+Badda-Gulshan Link Road Bridge,2020,Biochemical Oxygen Demand,25.2,B24
+Badda-Gulshan Link Road Bridge,2021,Biochemical Oxygen Demand,23.56,B24
+Badda-Gulshan Link Road Bridge,2022,Biochemical Oxygen Demand,27.25,B24
+Badda-Gulshan Link Road Bridge,2023,Biochemical Oxygen Demand,20.43,B24
+Rampura Bridge,2020,Biochemical Oxygen Demand,23.57,B24
+Rampura Bridge,2021,Biochemical Oxygen Demand,16.33,B24
+Rampura Bridge,2022,Biochemical Oxygen Demand,22.75,B24
+Rampura Bridge,2023,Biochemical Oxygen Demand,21.27,B24
+FDC More Bridge,2020,Biochemical Oxygen Demand,23.67,B24
+FDC More Bridge,2021,Biochemical Oxygen Demand,22.44,B24
+FDC More Bridge,2022,Biochemical Oxygen Demand,27.5,B24
+FDC More Bridge,2023,Biochemical Oxygen Demand,13.53,B24
+Karnaphuli Mohona,2019,Biochemical Oxygen Demand,28.75,B29
+Karnaphuli Mohona,2020,Biochemical Oxygen Demand,7,B29
+Karnaphuli Mohona,2021,Biochemical Oxygen Demand,24,B29
+1 km straight from Patenga Sea Beach,2019,Biochemical Oxygen Demand,26.25,B29
+1 km straight from Patenga Sea Beach,2020,Biochemical Oxygen Demand,6,B29
+1 km straight from Patenga Sea Beach,2021,Biochemical Oxygen Demand,16,B29
+Patenga Charpara,2019,Biochemical Oxygen Demand,27.5,B29
+Patenga Charpara,2020,Biochemical Oxygen Demand,4,B29
+Patenga Charpara,2021,Biochemical Oxygen Demand,15,B29
+1 km straight from CEPZ,2019,Biochemical Oxygen Demand,29.5,B29
+1 km straight from CEPZ,2020,Biochemical Oxygen Demand,8,B29
+1 km straight from CEPZ,2021,Biochemical Oxygen Demand,18,B29
+Vatiyari Shipyard area,2019,Biochemical Oxygen Demand,26,B29
+Vatiyari Shipyard area,2020,Biochemical Oxygen Demand,39,B29
+Vatiyari Shipyard area,2021,Biochemical Oxygen Demand,14,B29
+Karnaphuli Mohona,2019,Chemical Oxygen Demand,617,B30
+Karnaphuli Mohona,2020,Chemical Oxygen Demand,156,B30
+Karnaphuli Mohona,2021,Chemical Oxygen Demand,110,B30
+1 km straight from Patenga Sea Beach,2019,Chemical Oxygen Demand,743,B30
+1 km straight from Patenga Sea Beach,2020,Chemical Oxygen Demand,132,B30
+1 km straight from Patenga Sea Beach,2021,Chemical Oxygen Demand,106,B30
+Patenga Charpara,2019,Chemical Oxygen Demand,637.5,B30
+Patenga Charpara,2020,Chemical Oxygen Demand,79,B30
+Patenga Charpara,2021,Chemical Oxygen Demand,97,B30
+1 km straight from CEPZ,2019,Chemical Oxygen Demand,715,B30
+1 km straight from CEPZ,2020,Chemical Oxygen Demand,169,B30
+1 km straight from CEPZ,2021,Chemical Oxygen Demand,102,B30
+Vatiyari Shipyard area,2019,Chemical Oxygen Demand,487.75,B30
+Vatiyari Shipyard area,2020,Chemical Oxygen Demand,132,B30
+Vatiyari Shipyard area,2021,Chemical Oxygen Demand,94,B30
+Karnaphuli Mohona,2019,pH,7.72,B31
+Karnaphuli Mohona,2020,pH,7.28,B31
+Karnaphuli Mohona,2021,pH,7.42,B31
+Karnaphuli Mohona,2022,pH,7.68,B31
+Karnaphuli Mohona,2023,pH,7.36,B31
+Karnaphuli Mohona,2024,pH,7.86,B31
+1 km straight from Patenga Sea Beach,2019,pH,7.84,B31
+1 km straight from Patenga Sea Beach,2020,pH,6.94,B31
+1 km straight from Patenga Sea Beach,2021,pH,7.31,B31
+1 km straight from Patenga Sea Beach,2022,pH,7.89,B31
+1 km straight from Patenga Sea Beach,2023,pH,7.46,B31
+1 km straight from Patenga Sea Beach,2024,pH,7.92,B31
+Patenga Charpara,2019,pH,7.65,B31
+Patenga Charpara,2020,pH,7.05,B31
+Patenga Charpara,2021,pH,6.11,B31
+Patenga Charpara,2022,pH,7.78,B31
+Patenga Charpara,2023,pH,7.89,B31
+Patenga Charpara,2024,pH,8.13,B31
+1 km straight from CEPZ,2019,pH,7.81,B31
+1 km straight from CEPZ,2020,pH,7.03,B31
+1 km straight from CEPZ,2021,pH,6.15,B31
+1 km straight from CEPZ,2022,pH,7.65,B31
+1 km straight from CEPZ,2023,pH,7.8,B31
+1 km straight from CEPZ,2024,pH,8.3,B31
+Vatiyari Shipyard area,2019,pH,7.59,B31
+Vatiyari Shipyard area,2020,pH,7.8,B31
+Vatiyari Shipyard area,2021,pH,7.47,B31
+Vatiyari Shipyard area,2022,pH,7.59,B31
+Vatiyari Shipyard area,2023,pH,8,B31
+Vatiyari Shipyard area,2024,pH,7.8,B31
+Joramtol Shipyard Area,2019,pH,7.8,B31
+Sandwip Ghat,2019,pH,8.05,B31
+Karnaphuli Mohona,2019,Salinity,10.93,B32
+Karnaphuli Mohona,2020,Salinity,4.9,B32
+Karnaphuli Mohona,2021,Salinity,13.36,B32
+Karnaphuli Mohona,2022,Salinity,14.52,B32
+Karnaphuli Mohona,2023,Salinity,14.1,B32
+Karnaphuli Mohona,2024,Salinity,4.8,B32
+1 km straight from Patenga Sea Beach,2019,Salinity,11.86,B32
+1 km straight from Patenga Sea Beach,2020,Salinity,4.3,B32
+1 km straight from Patenga Sea Beach,2021,Salinity,12.09,B32
+1 km straight from Patenga Sea Beach,2022,Salinity,13.25,B32
+1 km straight from Patenga Sea Beach,2023,Salinity,14.7,B32
+1 km straight from Patenga Sea Beach,2024,Salinity,4.8,B32
+Patenga Charpara,2019,Salinity,11.3,B32
+Patenga Charpara,2020,Salinity,12.3,B32
+Patenga Charpara,2021,Salinity,14.56,B32
+Patenga Charpara,2022,Salinity,15.63,B32
+Patenga Charpara,2023,Salinity,15.2,B32
+Patenga Charpara,2024,Salinity,5.1,B32
+1 km straight from CEPZ,2019,Salinity,11.27,B32
+1 km straight from CEPZ,2020,Salinity,2.2,B32
+1 km straight from CEPZ,2021,Salinity,15.57,B32
+1 km straight from CEPZ,2022,Salinity,17.23,B32
+1 km straight from CEPZ,2023,Salinity,15.6,B32
+1 km straight from CEPZ,2024,Salinity,6.3,B32
+Vatiyari Shipyard area,2019,Salinity,8.41,B32
+Vatiyari Shipyard area,2020,Salinity,14.5,B32
+Vatiyari Shipyard area,2021,Salinity,12.74,B32
+Vatiyari Shipyard area,2022,Salinity,12.45,B32
+Vatiyari Shipyard area,2023,Salinity,14.5,B32
+Vatiyari Shipyard area,2024,Salinity,11,B32
+Joramtol Shipyard Area,2019,Salinity,9.94,B32
+Sandwip Ghat,2019,Salinity,10.42,B32
+Karnaphuli Mohona,2019,Dissolved Oxygen,7.83,B33
+Karnaphuli Mohona,2020,Dissolved Oxygen,7.12,B33
+Karnaphuli Mohona,2021,Dissolved Oxygen,6.59,B33
+Karnaphuli Mohona,2022,Dissolved Oxygen,7.58,B33
+Karnaphuli Mohona,2023,Dissolved Oxygen,7.46,B33
+Karnaphuli Mohona,2024,Dissolved Oxygen,8.15,B33
+1 km straight from Patenga Sea Beach,2019,Dissolved Oxygen,7.75,B33
+1 km straight from Patenga Sea Beach,2020,Dissolved Oxygen,6.65,B33
+1 km straight from Patenga Sea Beach,2021,Dissolved Oxygen,7.23,B33
+1 km straight from Patenga Sea Beach,2022,Dissolved Oxygen,7.3,B33
+1 km straight from Patenga Sea Beach,2023,Dissolved Oxygen,7.61,B33
+1 km straight from Patenga Sea Beach,2024,Dissolved Oxygen,8.32,B33
+Patenga Charpara,2019,Dissolved Oxygen,7.42,B33
+Patenga Charpara,2020,Dissolved Oxygen,6.68,B33
+Patenga Charpara,2021,Dissolved Oxygen,7.64,B33
+Patenga Charpara,2022,Dissolved Oxygen,7.68,B33
+Patenga Charpara,2023,Dissolved Oxygen,6.98,B33
+Patenga Charpara,2024,Dissolved Oxygen,8.4,B33
+1 km straight from CEPZ,2019,Dissolved Oxygen,7.53,B33
+1 km straight from CEPZ,2020,Dissolved Oxygen,6.99,B33
+1 km straight from CEPZ,2021,Dissolved Oxygen,7.49,B33
+1 km straight from CEPZ,2022,Dissolved Oxygen,7.54,B33
+1 km straight from CEPZ,2023,Dissolved Oxygen,6.9,B33
+1 km straight from CEPZ,2024,Dissolved Oxygen,9.64,B33
+Vatiyari Shipyard area,2019,Dissolved Oxygen,7.29,B33
+Vatiyari Shipyard area,2020,Dissolved Oxygen,7.45,B33
+Vatiyari Shipyard area,2021,Dissolved Oxygen,7.52,B33
+Vatiyari Shipyard area,2022,Dissolved Oxygen,7.62,B33
+Vatiyari Shipyard area,2023,Dissolved Oxygen,7.99,B33
+Vatiyari Shipyard area,2024,Dissolved Oxygen,6.8,B33
+Joramtol Shipyard Area,2019,Dissolved Oxygen,7.5,B33
+Sandwip Ghat,2019,Dissolved Oxygen,7.55,B33
+Karnaphuli Mohona,2019,Plastic and Marine Debris,4193,B34
+1 km straight from Patenga Sea Beach,2019,Plastic and Marine Debris,860,B34
+Patenga Charpara,2019,Plastic and Marine Debris,146,B34
+1 km straight from CEPZ,2019,Plastic and Marine Debris,90,B34
+Vatiyari Shipyard area,2019,Plastic and Marine Debris,36,B34
+Joramtol Shipyard Area,2019,Plastic and Marine Debris,610,B34
+Sandwip Ghat,2019,Plastic and Marine Debris,237,B34

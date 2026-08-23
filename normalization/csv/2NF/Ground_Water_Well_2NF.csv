@@ -1,0 +1,197 @@
+District_Name,Well_No,Well_ID,Latitude,Longitude,Sub_Division,Upazilla,Source_Sheet,Block
+Kumilla,1,CM007,23.4,91.06,allimuK,Barura,Table-2,B63
+Kumilla,2,CM002,23.58,91.15,allimuK,Burichang,Table-2,B63
+Kumilla,3,CM008,23.48,90.91,allimuK,Chandina,Table-2,B63
+Kumilla,4,CM011,23.5,91.2,allimuK,Kumilla Sadar,Table-2,B63
+Kumilla,5,CM052,23.58,90.77,allimuK,Daudkandi,Table-2,B63
+Kumilla,6,CM026,23.6,91.02,allimuK,Debidwar,Table-2,B63
+Kumilla,7,CM048,23.63,90.73,allimuK,Homna,Table-2,B63
+Kumilla,8,CM038,23.24,91.1,allimuK,Laksam,Table-2,B63
+Kumilla,9,CM034,23.66,90.94,allimuK,Muradnagar,Table-2,B63
+Brahmanbaria,10,CM037,23.79,90.81,,Banchharampur,Table-2,B63
+Brahmanbaria,11,CM012,23.96,91.24,,Brahmanbaria Sadar,Table-2,B63
+Brahmanbaria,12,CM001,22.23,92.17,,Kasba,Table-2,B63
+Brahmanbaria,13,CM024,23.85,91.07,,Nabinagar,Table-2,B63
+Brahmanbaria,14,CM035,24.2,91.19,,Nasirnagar,Table-2,B63
+Chandpur,15,CM016,23.28,90.66,,Chandpur Sadar,Table-2,B63
+Chandpur,16,CM028,23.2,90.78,,Faridganj,Table-2,B63
+Chandpur,17,CM015,23.3,90.85,,Hajiganj,Table-2,B63
+Chandpur,18,CM014,23.33,90.9,,Kachua,Table-2,B63
+Chandpur,19,CM017,23.37,90.71,,Matlab,Table-2,B63
+Chattogram,20,CT037,22.37,91.99,,Boalkhali,Table-2,B63
+Chattogram,21,CT006,22.35,91.78,,Chittagong Sadar,Table-2,B63
+Chattogram,22,CT038,22.24,91.8,,Double Mooring,Table-2,B63
+Chattogram,23,CT032,22.7,91.69,,Fatikchhari,Table-2,B63
+Chattogram,24,CT026,22.44,91.79,,Hathazari,Table-2,B63
+Chattogram,25,CT015,22.75,91.56,,Mirsharai,Table-2,B63
+Chattogram,26,CT023,22.27,92.03,,Patiya,Table-2,B63
+Chattogram,27,CT049,22.44,92.09,,Rangunia,Table-2,B63
+Chattogram,28,CT013,22.54,91.92,,Raozan,Table-2,B63
+Chattogram,29,CT011,22.09,92,,Satkania,Table-2,B63
+Feni,30,NA023,22.98,91.52,,Chhagalnaiya,Table-2,B63
+Feni,31,NA003,22.98,91.39,,Feni Sadar,Table-2,B63
+Feni,32,NA029,23.13,91.48,,Parshuram,Table-2,B63
+Habiganj,33,SY094,24.54,91.3,,Ajmirganj,Table-2,B63
+Habiganj,34,SY099,24.39,91.57,,Bahubal,Table-2,B63
+Habiganj,35,SY078,24.47,91.4,,Baniachong,Table-2,B63
+Lakshmipur,40,NA009,22.96,90.87,,Lakshmipur Sadar,Table-3,B64
+Lakshmipur,41,NA030,22.95,90.71,,Raipur,Table-3,B64
+Lakshmipur,42,NA018,23.05,90.86,,Ramganj,Table-3,B64
+Moulvi Bazar,43,SY044,24.65,92.23,,Barlekha,Table-3,B64
+Moulvi Bazar,44,SY027,24.4,91.91,,Kamalgani,Table-3,B64
+Moulvi Bazar,45,SY038,24.6,92.1,,Kulaura,Table-3,B64
+Moulvi Bazar,46,SY054,24.44,91.77,,Moulvi Bazar Sadar,Table-3,B64
+Moulvi Bazar,47,SY043,24.62,91.91,,Rajnagar,Table-3,B64
+Moulvi Bazar,48,SY016,24.23,91.74,,Sreemangal,Table-3,B64
+Noakhali,49,NA006,22.95,91.07,,Begumganj,Table-3,B64
+Noakhali,50,NA013,22.77,91.27,,Companiganj,Table-3,B64
+Noakhali,51,NA011,22.17,91.09,,Hatiya,Table-3,B64
+Noakhali,52,NA019,22.76,91.19,,Noakhali Sadar,Table-3,B64
+Noakhali,53,NA004,23.02,91.2,,Senbagh,Table-3,B64
+Sylhet,54,SY072,24.68,91.8,,Balaganj,Table-3,B64
+Sylhet,55,SY070,24.85,92.17,,Beanibazar,Table-3,B64
+Sylhet,56,SY060,25.05,92.05,,Gowainghat,Table-3,B64
+Sylhet,57,SY061,25.08,92.16,,Jaintapur,Table-3,B64
+Sylhet,58,SY087,24.99,92.34,,Kanairghat,Table-3,B64
+Sylhet,59,SY055,24.86,91.93,,Sylhet Sadar,Table-3,B64
+Sylhet,60,SY084,24.81,91.74,,Bishwhanath,Table-3,B64
+Cox's Bazar,61,CT008,21.72,92.04,,Chakaria,Table-3,B64
+Cox's Bazar,62,CT002,21.51,92.01,,Cox's Bazar Sadar,Table-3,B64
+Cox's Bazar,63,CT003,21.52,91.91,,Maheshkhali,Table-3,B64
+Cox's Bazar,64,CT030,21.39,92.08,,Ramu,Table-3,B64
+Cox's Bazar,65,CT031,21.02,92.22,,Teknaf,Table-3,B64
+Bandarban,66,CH010,22.24,92.24,,Bandarban Sadar,Table-3,B64
+Bandarban,67,CH003,21.88,92.13,,Lama,Table-3,B64
+Rangamati,68,CH006,22.63,91.98,,Kawkhali Betbunia,Table-3,B64
+Rangamati,69,CH012,,,,Kawkhali Betbunia,Table-3,B64
+Sunamganj,70,SY074,24.92,91.69,,Chhatak,Table-3,B64
+Sunamganj,71,SY092,24.8,91.45,,Derai/ Dharampasha,Table-3,B64
+Sunamganj,72,SY097,24.94,91.21,,Jamalganj,Table-3,B64
+Sunamganj,73,SY073,25.02,91.46,,Sunamganj Sadar,Table-3,B64
+Dhaka,74,DH005,23.87,90.22,akahD,Dhamrai,Table-4,B65
+Dhaka,75,DH103,23.83,90.42,akahD,Cantonment,Table-4,B65
+Dhaka,76,DH099,23.6,90.1,akahD,Dohar,Table-4,B65
+Dhaka,77,DH087,23.69,90.34,akahD,Keraniganj,Table-4,B65
+Dhaka,78,DH015,23.79,90.37,akahD,Mirpur,Table-4,B65
+Dhaka,79,DH108,23.75,90.37,akahD,Mahammadpur,Table-4,B65
+Dhaka,80,DH065,23.66,90.21,akahD,Nawabganj,Table-4,B65
+Dhaka,81,DH073,23.87,90.31,akahD,Savar,Table-4,B65
+Dhaka,82,DH124,23.74,90.37,akahD,Tejgaon,Table-4,B65
+Gazipur,83,DH078,23.96,90.48,,Gazipur Sadar,Table-4,B65
+Gazipur,84,DH058,24.21,90.32,,Kaliakair,Table-4,B65
+Gazipur,85,DH122,24.13,90.28,,Kaliakair,Table-4,B65
+Gazipur,86,DH102,24.2,90.63,,Kapasia,Table-4,B65
+Gazipur,87,DH010,24.18,90.54,,Sreepur,Table-4,B65
+Gazipur,88,DH120,23.86,90.52,,Kaliganj,Table-4,B65
+Jamalpur,89,JA013,25.24,89.86,,Baksiganj,Table-4,B65
+Jamalpur,90,JA008,25.23,89.79,,Dewanganj,Table-4,B65
+Jamalpur,91,JA014,25.1,89.76,,Islampur,Table-4,B65
+Jamalpur,92,JA015,24.84,90.05,,Jamalpur Sadar,Table-4,B65
+Jamalpur,93,JA016,24.92,89.78,,Madarganj,Table-4,B65
+Jamalpur,94,JA007,24.98,89.81,,Melandaha,Table-4,B65
+Jamalpur,95,JA006,24.78,89.82,,Sarishabari,Table-4,B65
+Kishoreganj,96,MY063,24.34,91.11,,Astagram,Table-4,B65
+Kishoreganj,97,MY041,24.38,91.01,,Nikli,Table-4,B65
+Kishoreganj,98,MY070,24.29,90.71,,Pakundia,Table-4,B65
+Kishoreganj,99,MY013,24.24,90.99,,Bajitpur,Table-4,B65
+Kishoreganj,100,MY034,24.58,90.92,,Tarail,Table-4,B65
+Kishoreganj,101,MY071,24.16,90.95,,Kuliar Char,Table-4,B65
+Kishoreganj,102,MY088,24.4,90.85,,Kishoreganj Sadar,Table-4,B65
+Kishoreganj,103,MY069,24.12,91,,Bhairab,Table-4,B65
+Kishoreganj,104,MY012,24.33,90.82,,Katiadi,Table-4,B65
+Kishoreganj,105,MY010,24.48,90.91,,Karimganj,Table-4,B65
+Kishoreganj,106,MY090,24.45,90.65,,Hossainpur,Table-4,B65
+Kishoreganj,107,MY027,24.52,91.06,,Itna,Table-4,B65
+Manikganj,108,DH026,23.96,89.83,,Daulatpur,Table-4,B65
+Manikganj,109,DH008,23.89,89.91,,Ghior,Table-4,B65
+Manikganj,110,DH066,23.71,90.01,,Harirampur,Table-4,B65
+Manikganj,111,DH007,23.83,90.07,,Manikganj Sadar,Table-4,B65
+Munshiganj,115,DH097,23.51,90.64,,Gazaria,Table-5,B66
+Munshiganj,116,DH085,23.46,90.41,,Lohajang,Table-5,B66
+Munshiganj,117,DH084,23.51,90.54,,Munshiganj Sadar,Table-5,B66
+Munshiganj,118,DH001,23.63,90.28,,Sirajdikhan,Table-5,B66
+Munshiganj,119,DH062,23.53,90.26,,Sreenagar,Table-5,B66
+Munshiganj,120,DH086,23.44,90.47,,Tongibari,Table-5,B66
+Tangail,121,TA011,24.21,89.85,,Bhoapur,Table-5,B66
+Tangail,122,TA008,24.08,89.93,,Delduar,Table-5,B66
+Tangail,123,TA002,24.18,90.04,,Basail,Table-5,B66
+Tangail,124,TA032,24.43,90.07,,Ghatail,Table-5,B66
+Tangail,125,TA013,24.56,89.89,,Gopalpur,Table-5,B66
+Tangail,126,TA034,24.36,89.91,,Kalihati,Table-5,B66
+Tangail,127,TA021,24.3,90.23,,Sakhipur,Table-5,B66
+Tangail,128,TA024,24.04,89.89,,Nagarpur,Table-5,B66
+Tangail,129,TA022,24.14,90.17,,Mirzapur,Table-5,B66
+Tangail,130,TA004,24.65,90.04,,Madhupur,Table-5,B66
+Netrokona,131,MY074,24.69,91.12,,Khaliajuri,Table-5,B66
+Netrokona,132,MY002,24.97,90.84,,Barhatta,Table-5,B66
+Netrokona,133,MY053,25.15,90.68,,Durgapur,Table-5,B66
+Netrokona,134,MY054,25.14,90.86,,Kalmakanda,Table-5,B66
+Netrokona,135,MY042,24.65,90.88,,Kendua,Table-5,B66
+Netrokona,136,MY036,24.71,90.93,,Madan,Table-5,B66
+Netrokona,137,MY003,24.95,90.75,,Netrokona Sadar,Table-5,B66
+Netrokona,138,MY006,25,90.59,,Purbadhala,Table-5,B66
+Netrokona,139,MY051,24.82,91.03,,Mohanganj,Table-5,B66
+Narsingdi,140,DH059,24.2,90.74,,Manohardi,Table-5,B66
+Narsingdi,141,DH076,23.88,90.68,,Narsingdi Sadar,Table-5,B66
+Narsingdi,142,DH104,23.96,90.67,,Palash,Table-5,B66
+Narsingdi,143,DH105,23.92,90.94,,Raipur,Table-5,B66
+Narsingdi,144,DH011,24.17,90.51,,Shibpur,Table-5,B66
+Mymensingh,145,MY055,24.73,90.22,,Muktagachha,Table-5,B66
+Mymensingh,146,MY052,24.83,90.32,,Mymensingh Sadar,Table-5,B66
+Mymensingh,147,MY081,24.61,90.59,,Ishwarganj,Table-5,B66
+Mymensingh,148,MY089,24.4,90.6,,Gaffargaon,Table-5,B66
+Mymensingh,149,MY050,25.04,90.32,,Haluaghat,Table-5,B66
+Narayanganj,156,DH081,23.69,90.72,,Araihazar,Table-6,B67
+Narayanganj,157,DH003,23.59,90.52,,Narayanganj Sadar,Table-6,B67
+Narayanganj,158,DH080,23.86,90.56,,Rupganj,Table-6,B67
+Narayanganj,159,DH082,23.66,90.63,,Sonargaon,Table-6,B67
+Sherpur,160,JA012,24.99,90.19,,Nakla,Table-6,B67
+Sherpur,161,JA005,25.17,90.2,,Nalitabari,Table-6,B67
+Sherpur,162,JA018,25.05,90,,Sherpur Sadar,Table-6,B67
+Sherpur,163,JA009,25.15,89.97,,Sreebardi,Table-6,B67
+Barguna,164,PT003,22.15,90.16,rupdiraF,Barguna Sadar,Table-6,B67
+Barguna,165,PT006,22.2,90.29,rupdiraF,Amtali,Table-6,B67
+Barisal,166,BA001,22.71,90.36,,Barisal Sadar,Table-6,B67
+Barisal,167,BA003,22.84,90.52,,Mehendiganj,Table-6,B67
+Barisal,168,BA006,22.61,90.45,,Bakerganj,Table-6,B67
+Barisal,169,BA009,22.82,90.21,,Banaripara,Table-6,B67
+Barisal,170,BA010,22.83,90.28,,Babuganj,Table-6,B67
+Barisal,171,BA013,22.92,90.26,,Gaurnadi,Table-6,B67
+Barisal,172,BA011,22.96,90.52,,Hizla,Table-6,B67
+Bhola,173,BA004,22.67,90.64,,Bhola Sadar,Table-6,B67
+Bhola,174,BA028,22.2,90.75,,Char Fasson,Table-6,B67
+Bhola,175,BA029,22.63,90.75,,Daulatkhan,Table-6,B67
+Bhola,176,BA024,22.31,90.79,,Lalmohan,Table-6,B67
+Faridpur,177,FS002,23.75,89.79,,Alfadanga,Table-6,B67
+Faridpur,178,FA020,23.4,89.96,,Bhanga,Table-6,B67
+Faridpur,179,FA057,23.41,89.72,,Boalmari,Table-6,B67
+Faridpur,180,FA022,23.57,89.95,,Char Bhadrasan,Table-6,B67
+Faridpur,181,FA017,23.55,89.78,,Faridpur Sadar,Table-6,B67
+Faridpur,182,FA006,23.6,89.57,,Madhukhali,Table-6,B67
+Faridpur,183,FA046,23.44,89.79,,Nagarkanda,Table-6,B67
+Faridpur,184,FA038,23.51,89.94,,Sadarpur,Table-6,B67
+Gopalganj,185,FA027,23.12,89.91,,Gopalganj Sadar,Table-6,B67
+Gopalganj,186,FA012,23.22,89.72,,Kashiani,Table-6,B67
+Gopalganj,187,FA013,22.94,89.99,,Kotalipara,Table-6,B67
+Jhalokathi,190,BA007,22.63,90.19,,Jhalokathi Sadar,Table-7,B68
+Jhalokathi,191,BA019,22.61,90.16,,Rajapur,Table-7,B68
+Madaripur,192,FA035,23.26,90.25,,Madaripur Sadar,Table-7,B68
+Madaripur,193,FA031,23.2,90.03,,Rajoir,Table-7,B68
+Madaripur,194,FA021,23.37,90.2,,Shibchar,Table-7,B68
+Patuakhali,195,PT002,22.19,90.44,,Galachipa,Table-7,B68
+Patuakhali,196,PT007,22.35,90.21,,Mirzaganj,Table-7,B68
+Patuakhali,197,PT004,22.25,90.06,,Patuakhali Sadar,Table-7,B68
+Pirojpur,198,BA021,22.41,89.97,,Bhandaria,Table-7,B68
+Pirojpur,199,BA018,22.62,90.07,,Kawkhali,Table-7,B68
+Pirojpur,200,BA027,22.37,89.98,,Mathbaria,Table-7,B68
+Pirojpur,201,BA015,22.64,89.98,,Pirojpur Sadar,Table-7,B68
+Pirojpur,202,BA016,22.72,90.12,,Nesarabad( Swarupkathi),Table-7,B68
+Rajbari,203,FA009,23.69,89.58,,Baliakandi,Table-7,B68
+Rajbari,204,FS009,23.71,89.78,,Goalandaghat,Table-7,B68
+Rajbari,205,FA015,23.78,89.5,,Pangsha,Table-7,B68
+Rajbari,206,FA016,23.68,89.71,,Rajbari Sadar,Table-7,B68
+Shariatpur,207,FA024,23.2,90.45,,Bhedarganj,Table-7,B68
+Shariatpur,208,FA061,23.07,90.42,,Gosairhat,Table-7,B68
+Shariatpur,209,FA023,23.3,90.38,,Naria,Table-7,B68
+Shariatpur,210,FS012,23.22,90.35,,Shariatpur Sadar,Table-7,B68
+Shariatpur,211,FA034,23.29,90.28,,Zanjira,Table-7,B68

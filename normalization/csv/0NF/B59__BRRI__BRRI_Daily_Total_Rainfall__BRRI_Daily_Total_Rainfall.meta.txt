@@ -1,0 +1,12 @@
+File: B59__BRRI__BRRI_Daily_Total_Rainfall__BRRI_Daily_Total_Rainfall.csv
+This 0NF CSV is a REPRESENTATIVE EXTRACT of the raw source block.
+It is NOT the complete block and has been truncated on purpose.
+
+Rows written to the CSV : 200
+TRUE full row count     : 25305
+Rows omitted            : 25105
+Column count            : 34
+
+The rows written are the first 200 rows of the block in source order,
+including every header row, merged-header artefact and repeating
+column group exactly as published.

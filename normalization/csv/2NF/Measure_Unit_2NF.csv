@@ -1,0 +1,20 @@
+Measure,Unit,Carried_By
+Temperature,Degree Celsius,Temperature_Record.Temp
+Humidity,Percent,Humidity_Record.Humidity
+Rainfall,Millimetre,Rainfall_Record.Rainfall
+Wind Speed,Knot,Wind_Record.Wind_Speed
+Wind Direction,Degree,Wind_Record.Direction
+Thunderstorm,Count of days in the month,Climatic_Event_Record.Thunderstorm
+Lightning,Count of days in the month,Climatic_Event_Record.Lightning
+Sunshine,Hour,Sunshine_Record.Sunshine_Hours
+Radiation,Langley per hour,Radiation_Record.Radiation
+Biochemical Oxygen Demand,Milligram per litre,Water_Quality.Value
+Chemical Oxygen Demand,Milligram per litre,Water_Quality.Value
+Dissolved Oxygen,Milligram per litre,Water_Quality.Value
+pH,pH unit (dimensionless),Water_Quality.Value
+Salinity,Parts per thousand,Water_Quality.Value
+Plastic and Marine Debris,Piece,Water_Quality.Value
+Forest Area,Acre,Forest_Area_Record
+Waste Water,Cubic metre,Type_Of_Establishments.Quantity
+Produced Waste Water,Thousand litre,Industry_Usage.Produced_Waste_Water
+Reused Waste Water,Thousand litre,Industry_Usage.Reused_Waste_Water

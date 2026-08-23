@@ -1,0 +1,19 @@
+* text=auto
+*.md text eol=lf
+*.py text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.bst text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.sql text eol=lf
+*.svg text eol=lf
+*.mmd text eol=lf
+*.excalidraw text eol=lf
+*.pdf binary
+*.xlsx binary
+*.xls binary
+*.db binary
+*.png binary
+*.jpg binary
+*.jpeg binary

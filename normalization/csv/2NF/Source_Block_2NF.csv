@@ -1,0 +1,69 @@
+Block,Organization,Source_File,Source_Sheet,Block_Title,Repeating_Group_Removed,Target_Relation
+B01,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.02,"Monthly Average Minimum Temperature by Station, 2011-16 (Celsius)",12 month columns Jan..Dec plus Annual,Temperature_Record (Type=Minimum)
+B02,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.02,"Monthly Average Minimum Temperature in celcius by Station, 2017-2024",8 year blocks x 12 month columns (96 measure columns),Temperature_Record (Type=Minimum)
+B03,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.03,"Monthly Average Maximum Temperature by Station, 2011-16 (Celsius)",12 month columns Jan..Dec plus Annual,Temperature_Record (Type=Maximum)
+B04,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.03,"Monthly Average Maximum Temperature in celcius by Station, 2017-2024",8 year blocks x 12 month columns,Temperature_Record (Type=Maximum)
+B05,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.05,"Monthly Total Rainfall by Center/Station, 2011-14 (MM)",12 month columns Jan..Dec plus Annual,Rainfall_Record
+B06,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.05,"Monthly and Yearly Total Rainfall data in millimeter by Station, 2015-2019",12 month columns Jan..Dec plus Total,Rainfall_Record
+B07,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.05,"Monthly and Yearly Total Rainfall data in Millimeter by Station, 2020-2024",12 month columns Jan..Dec plus Total,Rainfall_Record
+B08,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.06,"Monthly & Yearly Average Humidity in Percent by Station, 2011-14",12 month columns Jan..Dec plus Annual,Humidity_Record
+B09,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.06,"Monthly & Yearly Average Humidity in percent by Station, 2015-2019",12 month columns Jan..Dec plus Annual,Humidity_Record
+B10,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.06,"Monthly & Yearly Average Humidity in percent by Station, 2020-2024",12 month columns Jan..Dec plus Annual,Humidity_Record
+B11,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.08,"Monthly Minimum Wind speed in Knots and Directioction in Degrees by Station, 2015-2024","12 month groups, each a (spd, dir) column pair",Wind_Record (Type=Minimum)
+B12,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.10,"Monthly Highest Maximun Wind Speed by Station, 2011-16 (Data in Knots)","12 month groups, each a (SPD., DIR.) column pair",Wind_Record (Type=Maximum)
+B13,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.10,"Monthly Highest Maximun Wind Speed in Knots by Station, 2017-2024","12 month groups, each a (SPD., DIR.) column pair",Wind_Record (Type=Maximum)
+B14,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.13,"Daily Total Sun Shine Hours by Station, 2019-2024",31 day columns (Day 1..31),Sunshine_Record
+B15,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.14,"Radiation BY Station (Bogura), 2019-2022",6 year blocks (2019..2024) x 31 day columns D_01..D_31,Radiation_Record
+B16,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.14,"Radiation BY Station (Dinajpur), 2019-2022",6 year blocks (2019..2024) x 31 day columns D_01..D_31,Radiation_Record
+B17,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.14,"Radiation BY Station (Dhaka), 2019-2022",6 year blocks (2019..2024) x 31 day columns D_01..D_31,Radiation_Record
+B18,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.14,"Radiation BY Station (Satkhira), 2019-2022",6 year blocks (2019..2024) x 31 day columns D_01..D_31,Radiation_Record
+B19,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.14,"Radiation BY Station (Chuadanga), 2019-2022",6 year blocks (2019..2024) x 31 day columns D_01..D_31,Radiation_Record
+B20,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.19,"Monthly Frequency of Thunderstorm by Station, 2015-2024",12 month columns Jan..Dec,Climatic_Event_Record.Thunderstorm
+B21,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.19 a,"Monthly Frequency of Lightening by Station, 2015-2024",12 month columns Jan..Dec,Climatic_Event_Record.Lightning
+B22,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.66,District Wise Total Area of Forest from 2019-20 to 2023-24 (In Acre),5 fiscal-year blocks x 8 measure columns,Forest_Area_Record
+B23,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.84,"Freshwater Quality by Station, 2018-2023 (Biochemical oxygen demand (BOD))","year blocks side by side, each repeating the District/Station column",Water_Quality + River + River_Station
+B25,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.84b,"Freshwater Quality by Station, 2018-2023 (Chemical Oxygen Demand (COD))","year blocks side by side, each repeating the District/Station column",Water_Quality + River + River_Station
+B26,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.84c,"Freshwater Quality by Station, 2018-2023 (pH/Acidity/Alkalinity)","year blocks side by side, each repeating the District/Station column",Water_Quality + River + River_Station
+B27,BBS,BBS_Time_Series_Environmental_Database.xlsx,T184d,"Freshwater Quality by Station, 2018-2023 (Salinity)","year blocks side by side, each repeating the District/Station column",Water_Quality + River + River_Station
+B28,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.84e,"Freshwater Quality by Station, 2018-2023 (Dissolved Oxygen (DO))","year blocks side by side, each repeating the District/Station column",Water_Quality + River + River_Station
+B24,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.84,"Freshwater Quality by District/Station, 2020-2023 (BOD, lakes)",4 year columns 2020..2023,Water_Quality + River + River_Station
+B29,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85,"Marine Water Quality by District/Station, 2019-2024 (Biochemical oxygen demand (BOD))",6 year columns 2019..2024,Water_Quality
+B30,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85b,"Marine Water Quality by District/Station, 2019-2024 (Chemical oxygen demand (COD))",6 year columns 2019..2024,Water_Quality
+B31,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85c,"Marine Water Quality by District/Station, 2019-2024 (pH/Acidity/Alkalinity)",6 year columns 2019..2024,Water_Quality
+B32,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85d,"Marine Water Quality by District/Station, 2019-2024 (Salinity)",6 year columns 2019..2024,Water_Quality
+B33,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85e,"Marine Water Quality by District/Station, 2019-2024 (Dissolved oxygen (DO))",6 year columns 2019..2024,Water_Quality
+B34,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85f,"Marine Water Quality by District/Station, 2019-2024 (Plastic waste and other marine debris)",6 year columns 2019..2024,Water_Quality
+B35,BBS,BBS_Time_Series_Environmental_Database.xlsx,T3.14,Treatment of Industrial Waste Water by type of Treatment (Cubic Meter) - Industry Type block,3 fiscal-year quantity columns + 3 percentage columns,Type_Of_Establishments
+B36,BBS,BBS_Time_Series_Environmental_Database.xlsx,T3.22,Distribution of Reused Waste Water by Type and Category of Industry (000 litre.),3 fiscal-year produced columns + 3 reuse columns,Industrial_Type
+B37,BMD,Temperature Data.xlsx,Table-1,Monthly Temperature (degC) in 1995,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B38,BMD,Temperature Data.xlsx,Table-2,Monthly Temperature (degC) in 1996,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B39,BMD,Temperature Data.xlsx,Table-3,Monthly Temperature (degC) in 1997,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B40,BMD,Temperature Data.xlsx,Table-4,Monthly Temperature (degC) in 1998,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B41,BMD,Temperature Data.xlsx,Table-5,Monthly Temperature (degC) in 1999,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B42,BMD,Temperature Data.xlsx,Table-6,Monthly Temperature (degC) in 2000,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B43,BMD,Temperature Data.xlsx,Table-7,Monthly Temperature (degC) in 2001,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B44,BMD,Temperature Data.xlsx,Table-8,Monthly Temperature (degC) in 2002,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B45,BMD,Temperature Data.xlsx,Table-9,Monthly Temperature (degC) in 2003,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B46,BMD,Temperature Data.xlsx,Table-10,Monthly Temperature (degC) in 2004,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B47,BMD,Temperature Data.xlsx,Table-11,Monthly Temperature (degC) in 2005,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B48,BMD,Temperature Data.xlsx,Table-12,Monthly Temperature (degC) in 2006,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B49,BMD,Temperature Data.xlsx,Table-13,Monthly Temperature (degC) in 2007,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B50,BMD,Temperature Data.xlsx,Table-14,Monthly Temperature (degC) in 2008,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B51,BMD,Temperature Data.xlsx,Table-15,Monthly Temperature (degC) in 2009,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B52,BMD,Temperature Data.xlsx,Table-16,Monthly Temperature (degC) in 2010,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B53,BMD,Temperature Data.xlsx,Table-17,Monthly Temperature (degC) in 2011,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B54,BMD,Temperature Data.xlsx,Table-18,Monthly Temperature (degC) in 2012,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
+B55,BMD,Sunshine.xls,Climate,"Climate (daily sunshine grid, 2022)",31 day columns D_01..D_31,Sunshine_Record
+B56,BMD,Sunshine.xls,Climate Leap year February,"Climate Leap year February (daily sunshine grid, 2024)",31 day columns D_01..D_31,Sunshine_Record
+B57,BRRI,BRRI_Daily_Maximum_Temperature.xlsx,BRRI_Daily_Maximum_Temperature,Daily Maximum Temperature data in degree celcius,31 day columns (Days 1..31),"Temperature_Record (Type=Maximum, monthly MEAN)"
+B58,BRRI,BRRI_Daily_Minimum_Temperature.xlsx,BRRI_Daily_Minimum_Temperature,Daily Minimum Temperature data in celcius,31 day columns (Days 1..31),"Temperature_Record (Type=Minimum, monthly MEAN)"
+B59,BRRI,BRRI_Daily_Total_Rainfall.xlsx,BRRI_Daily_Total_Rainfall,Daily total Rain fall data in Milli meter,31 day columns (Days 1..31),Rainfall_Record (monthly SUM)
+B60,BRRI,BRRI_Daily_Average_Humidity.xlsx,BRRI_Daily_Average_Humidity,Daily average Humidity in %,31 day columns (Days 1..31),Humidity_Record (monthly MEAN)
+B61,BRRI,BRRI_Daily_Sunshine.xlsx,BRRI_Daily_Sunshine,Daily Total Sunshine Hours,31 day columns (Days 1..31),"Sunshine_Record (daily, no aggregation)"
+B62,BWDB,BWDB_Rivers_Information.csv,(csv),BWDB river register,none (already one row per river),River
+B63,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-2,Groundwater observation wells (Table-2),none (one row per well),Ground_Water_Well
+B64,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-3,Groundwater observation wells (Table-3),none (one row per well),Ground_Water_Well
+B65,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-4,Groundwater observation wells (Table-4),none (one row per well),Ground_Water_Well
+B66,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-5,Groundwater observation wells (Table-5),none (one row per well),Ground_Water_Well
+B67,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-6,Groundwater observation wells (Table-6),none (one row per well),Ground_Water_Well
+B68,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-7,Groundwater observation wells (Table-7),none (one row per well),Ground_Water_Well

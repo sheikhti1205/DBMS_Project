@@ -1,0 +1,48 @@
+desktop.ini
+.DS_Store
+__pycache__/
+*.pyc
+
+# The original datasets live in Google Drive, not GitHub.
+/Selected_Source_Files/
+/source/
+/sources/
+/raw_data/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+
+# Generated working notes and intermediate report measurements
+/CLEANUP_REPORT.md
+/normalization/DATA_QUALITY_LOG.md
+/normalization/STATISTICS.md
+/exclusions/EXCLUSION_REGISTER.md
+/report/generated/*
+!/report/generated/measured.tex
+
+# Local tooling
+/.agents/
+/graphify-out/
+/outputs/
+/tmp/
+/work_scripts/
+/schema/backups/
+
+# Keep the coding repository free of report copies and old working versions
+/deliverables/
+/report/
+/work/
+/work_v*/
+/*.zip

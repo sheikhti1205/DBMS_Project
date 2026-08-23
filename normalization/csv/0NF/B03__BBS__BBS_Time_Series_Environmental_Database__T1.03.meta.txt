@@ -1,0 +1,14 @@
+File: B03__BBS__BBS_Time_Series_Environmental_Database__T1.03.csv
+This 0NF CSV is a REPRESENTATIVE EXTRACT of the raw source block.
+It is NOT the complete block and has been truncated on purpose.
+
+Rows written to the CSV : 200
+TRUE full row count     : 253
+Rows omitted            : 53
+Column count            : 15
+
+The rows written are the first 200 rows of the block in source order,
+including every header row, merged-header artefact and repeating
+column group exactly as published.
+
+Station identity is carried by "Station : X" label rows.

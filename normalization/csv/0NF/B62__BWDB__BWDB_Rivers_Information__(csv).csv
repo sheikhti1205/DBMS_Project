@@ -1,0 +1,200 @@
+Serial No,River Name,BWDB Zone,Border River,Flow Type
+1,Abua (Nandiagang),NE,No,PERENNIAL
+2,Afra,SE,No,PERENNIAL
+3,Akhira Machcha,NW,No,SEASONAL
+4,Alai,NW,No,SEASONAL
+5,Alai Kumari (Burail),NW,No,SEASONAL
+6,Amari Khal,NE,No,SEASONAL
+7,Andhar Manik,SW,No,PERENNIAL
+8,Arial Khan,SW,No,PERENNIAL
+9,Arial Khan (Narsingdi),NC,No,PERENNIAL
+10,Arpangasia,NC,No,PERENNIAL
+11,Arshi-Nalia,SE,No,SEASONAL
+12,Atai,SW,No,PERENNIAL
+13,Atharabaki,SW,No,PERENNIAL
+14,Atrai,SW,No,PERENNIAL
+15,Atrai (Dinajpur),NW,No,SEASONAL
+16,Atrai (Naogaon-Natore),NW,No,SEASONAL
+17,Atrai (Pabna),NW,No,SEASONAL
+18,Atrakhali,NE,No,SEASONAL
+19,Ayman-Akhila,NC,No,SEASONAL
+20,Ayman-Mobari,NC,No,SEASONAL
+21,Badai,NW,No,SEASONAL
+22,Badurgacha,SW,No,PERENNIAL
+23,Bajja Medhua,NC,No,SEASONAL
+24,Bakkhali,NC,No,PERENNIAL
+25,Baksatra,NC,No,SEASONAL
+26,Baleshwar,NC,No,PERENNIAL
+27,Baloi,NE,No,SEASONAL
+28,Balu,NC,No,PERENNIAL
+29,Balua,NC,No,PERENNIAL
+30,Banar Lower,NC,No,PERENNIAL
+31,Banar Upper,NC,No,SEASONAL
+32,Bangali,NW,No,PERENNIAL
+33,Bangshi,NC,No,SEASONAL
+34,Bangshi (Savar),NC,No,PERENNIAL
+35,Banni,NW,No,SEASONAL
+36,Baragang,NE,No,SEASONAL
+37,Baral Lower (Pabna),NW,No,SEASONAL
+38,Baral Upper (Baral-Nandakuza),NW,No,SEASONAL
+39,Barnai,NW,No,SEASONAL
+40,Batar Khal,NE,No,SEASONAL
+41,Bathail,NE,No,SEASONAL
+42,Baula (Balua),NE,No,SEASONAL
+43,Beduri Khal,NE,No,SEASONAL
+44,Begabati,SW,No,SEASONAL
+45,Bekra,NE,No,SEASONAL
+46,Belan,NW,No,SEASONAL
+47,Berong,NW,No,SEASONAL
+48,Besani,NW,No,PERENNIAL
+49,Betna,SW,Yes,SEASONAL
+50,Betoir,NE,No,SEASONAL
+51,Bhadai (Bogra),NW,No,SEASONAL
+52,Bhadra,SW,No,SEASONAL
+53,Bhairab (Bagerhat),SW,No,SEASONAL
+54,Bhairav,SW,No,PERENNIAL
+55,Bhairav-Kapadak,SW,No,SEASONAL
+56,Bhogai Kangsha,NE,Yes,PERENNIAL
+57,Bhola (Bagerhat),SW,No,PERENNIAL
+58,Bhola Khal,SE,No,SEASONAL
+59,Bhulni,NW,No,SEASONAL
+60,Bhulua,SE,No,SEASONAL
+61,Bhuvneshwar,SW,No,SEASONAL
+62,Bhwabna - Basia-Bahia Gang,NE,No,SEASONAL
+63,Bibiyana,NE,No,SEASONAL
+64,Bijna-Gungaijuri,NE,No,SEASONAL
+65,Bisharkand-Bagda Khal,SW,No,SEASONAL
+66,Bishkhali,SW,No,PERENNIAL
+67,Bizni,SE,Yes,SEASONAL
+68,Bogy,SW,No,PERENNIAL
+69,Boiran,NC,No,SEASONAL
+70,Boshkhali Khal,NC,No,SEASONAL
+71,Brahmaputra (Naringdi-Munshiganj),NC,No,SEASONAL
+72,Brahmaputra-Jamuna,MJ,Yes,PERENNIAL
+73,Bulnai,NW,No,SEASONAL
+74,Bura Matamuhuri,SE,No,PERENNIAL
+75,Burail,NW,No,SEASONAL
+76,Buri,SE,No,SEASONAL
+77,Buriganga,NC,No,PERENNIAL
+78,Burikhora,NW,No,SEASONAL
+79,Burishwar-pyra,SW,No,PERENNIAL
+80,Buritista,NW,Yes,SEASONAL
+81,Burka,NW,No,SEASONAL
+82,Chamati,NE,No,SEASONAL
+83,Chandana-Barasia,SW,No,SEASONAL
+84,Chapai,NC,No,SEASONAL
+85,Chatal,NE,No,SEASONAL
+86,Chatkhali,SW,No,SEASONAL
+87,Chatnai,NW,No,SEASONAL
+88,Chatra,SW,No,SEASONAL
+89,Chawai,NW,No,PERENNIAL
+90,Chela,NE,Yes,PERENNIAL
+91,Chikli,NW,No,SEASONAL
+92,Chiknai,NW,No,SEASONAL
+93,Chilai,NE,No,SEASONAL
+94,Chingri (Chengi),SE,No,SEASONAL
+95,Chiri,NW,No,SEASONAL
+96,Chirri,NW,No,SEASONAL
+97,Chitalkhali,NE,No,SEASONAL
+98,Chitra (Chuadanga),SW,No,PERENNIAL
+99,Chotto Dhepa,NW,No,SEASONAL
+100,Chotto Feni,SE,No,PERENNIAL
+101,Chotto Jamuna,NW,No,SEASONAL
+102,Chotto Senua,NW,No,SEASONAL
+103,Chungabhanga,NW,No,SEASONAL
+104,Chunkuri,SW,No,PERENNIAL
+105,Coolik,NW,No,PERENNIAL
+106,Cumlal-Naotara,NW,No,SEASONAL
+107,Dahook,NW,Yes,PERENNIAL
+108,Dakatia,SE,No,PERENNIAL
+109,Dalu Khal-Tangkabati Khal,EH,No,SEASONAL
+110,Daratana-Pailahara,EH,No,PERENNIAL
+111,Darirgang,SW,No,SEASONAL
+112,Dasadia,SE,No,SEASONAL
+113,Dauka,NE,No,SEASONAL
+114,Deluti,SW,No,PERENNIAL
+115,Deonai-Charal Kata-Jamuneshwari,NW,Yes,PERENNIAL
+116,Dhaijan,NW,No,PERENNIAL
+117,Dhaki,SW,No,PERENNIAL
+118,Dhala,NE,Yes,SEASONAL
+119,Dhalai (Maulvibazar),NE,Yes,SEASONAL
+120,Dhalai-Bisnai,NE,No,SEASONAL
+121,Dhaleshwari,NC,No,PERENNIAL
+122,Dhanagoda,SE,No,PERENNIAL
+123,Dhanu,NE,No,PERENNIAL
+124,Dharla,NW,Yes,PERENNIAL
+125,Dhepa,NW,No,SEASONAL
+126,Dhum,NW,No,SEASONAL
+127,Dolta,NE,No,SEASONAL
+128,Dudhda,NE,No,SEASONAL
+129,Dudhkumar,NW,Yes,PERENNIAL
+130,Eidgaon,EH,No,SEASONAL
+131,Elishmari,NC,No,SEASONAL
+132,Elongjani,NC,No,SEASONAL
+133,Fakirnee,NW,No,PERENNIAL
+134,Fatki,SE,No,SEASONAL
+135,Feni,SE,Yes,PERENNIAL
+136,Fullkumar,NW,No,SEASONAL
+137,Gadai,NW,No,SEASONAL
+138,Galghesia (Gutia khali),SW,No,SEASONAL
+139,Gangdubi,NC,No,SEASONAL
+140,Ganges (Padma),MJ,Yes,PERENNIAL
+141,Gangnai,NW,No,SEASONAL
+142,Garai,NW,No,PERENNIAL
+143,Gaveswari,NW,No,SEASONAL
+144,Gazikhali,NC,No,SEASONAL
+145,Ghaghar,SW,No,PERENNIAL
+146,Ghaghat,NW,No,PERENNIAL
+147,Ghaghtia,NE,No,SEASONAL
+148,Ghanura-Baggala (Bukha),NE,No,SEASONAL
+149,Ghasiyakhali,NE,No,PERENNIAL
+150,Ghirnai,NW,No,SEASONAL
+151,Ghora Utra,NE,No,SEASONAL
+152,Ghoramara,NW,Yes,SEASONAL
+153,Ghoria Khal,NW,No,PERENNIAL
+154,Ghunggur,SE,No,SEASONAL
+155,Girai,NW,No,SEASONAL
+156,Giridari,NW,No,SEASONAL
+157,Goalner Khal,NC,No,SEASONAL
+158,Gobra,NW,No,SEASONAL
+159,Gohala,NW,No,SEASONAL
+160,Gulishakhali,SW,No,PERENNIAL
+161,Gumai,NE,No,SEASONAL
+162,Gumti,SE,Yes,SEASONAL
+163,Gunakhali,SW,No,PERENNIAL
+164,Halda,SE,No,PERENNIAL
+165,Hamkura,SW,No,SEASONAL
+166,Haparkhali,SW,No,SEASONAL
+167,Harabati,NW,No,SEASONAL
+168,Hari,SW,No,PERENNIAL
+169,Haria,SW,No,SEASONAL
+170,Haridoa,NC,No,SEASONAL
+171,Harihar,SW,No,SEASONAL
+172,Hawarkhali,SW,No,PERENNIAL
+173,Hawrah,SE,Yes,SEASONAL
+174,Hi,NC,No,SEASONAL
+175,Hishna-Jhanjha,SW,No,SEASONAL
+176,Hura Sagor,NW,No,SEASONAL
+177,Ichamati (Bogra),NW,No,SEASONAL
+178,Ichamati (Bogra-Sirajganj),NW,No,SEASONAL
+179,Ichamati (Dinajpur),SW,No,SEASONAL
+180,Ichamati (Manikganj),NC,No,PERENNIAL
+181,Ichamati (Pabna),NW,No,SEASONAL
+182,Ichamati (Rangamati),SE,No,PERENNIAL
+183,Ichamati (Sirajdikhan),NC,No,PERENNIAL
+184,Ichamati-Kalindi,NC,No,PERENNIAL
+185,Iramatee,NW,No,SEASONAL
+186,Isdar Khal - Barabanga,NE,No,SEASONAL
+187,Jadukata Rakti,NE,Yes,PERENNIAL
+188,Jaflong-Dauki,NE,No,PERENNIAL
+189,Jalia Chhara (Bholaganj),NE,No,SEASONAL
+190,Jalukhali (Chaltee),NE,Yes,SEASONAL
+191,Jamuna (Panchagarh),NW,No,SEASONAL
+192,Jaypara Khal,NC,No,SEASONAL
+193,Jhapjhapia,SW,No,PERENNIAL
+194,Jharkata,NC,No,PERENNIAL
+195,Jhenai,NC,No,SEASONAL
+196,Jingiram,NC,No,PERENNIAL
+197,Juri,NE,Yes,PERENNIAL
+198,Kacha,NC,No,PERENNIAL
+199,Kageshwari,NW,No,SEASONAL

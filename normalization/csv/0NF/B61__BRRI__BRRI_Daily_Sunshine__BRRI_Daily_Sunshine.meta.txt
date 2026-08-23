@@ -1,0 +1,12 @@
+File: B61__BRRI__BRRI_Daily_Sunshine__BRRI_Daily_Sunshine.csv
+This 0NF CSV is a REPRESENTATIVE EXTRACT of the raw source block.
+It is NOT the complete block and has been truncated on purpose.
+
+Rows written to the CSV : 200
+TRUE full row count     : 17860
+Rows omitted            : 17660
+Column count            : 34
+
+The rows written are the first 200 rows of the block in source order,
+including every header row, merged-header artefact and repeating
+column group exactly as published.

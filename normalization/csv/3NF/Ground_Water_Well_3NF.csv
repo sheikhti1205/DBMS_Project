@@ -1,0 +1,197 @@
+District_Name,Well_No,Well_ID,Latitude,Longitude,Upazilla
+Kumilla,1,CM007,23.4,91.06,Barura
+Kumilla,2,CM002,23.58,91.15,Burichang
+Kumilla,3,CM008,23.48,90.91,Chandina
+Kumilla,4,CM011,23.5,91.2,Kumilla Sadar
+Kumilla,5,CM052,23.58,90.77,Daudkandi
+Kumilla,6,CM026,23.6,91.02,Debidwar
+Kumilla,7,CM048,23.63,90.73,Homna
+Kumilla,8,CM038,23.24,91.1,Laksam
+Kumilla,9,CM034,23.66,90.94,Muradnagar
+Brahmanbaria,10,CM037,23.79,90.81,Banchharampur
+Brahmanbaria,11,CM012,23.96,91.24,Brahmanbaria Sadar
+Brahmanbaria,12,CM001,22.23,92.17,Kasba
+Brahmanbaria,13,CM024,23.85,91.07,Nabinagar
+Brahmanbaria,14,CM035,24.2,91.19,Nasirnagar
+Chandpur,15,CM016,23.28,90.66,Chandpur Sadar
+Chandpur,16,CM028,23.2,90.78,Faridganj
+Chandpur,17,CM015,23.3,90.85,Hajiganj
+Chandpur,18,CM014,23.33,90.9,Kachua
+Chandpur,19,CM017,23.37,90.71,Matlab
+Chattogram,20,CT037,22.37,91.99,Boalkhali
+Chattogram,21,CT006,22.35,91.78,Chittagong Sadar
+Chattogram,22,CT038,22.24,91.8,Double Mooring
+Chattogram,23,CT032,22.7,91.69,Fatikchhari
+Chattogram,24,CT026,22.44,91.79,Hathazari
+Chattogram,25,CT015,22.75,91.56,Mirsharai
+Chattogram,26,CT023,22.27,92.03,Patiya
+Chattogram,27,CT049,22.44,92.09,Rangunia
+Chattogram,28,CT013,22.54,91.92,Raozan
+Chattogram,29,CT011,22.09,92,Satkania
+Feni,30,NA023,22.98,91.52,Chhagalnaiya
+Feni,31,NA003,22.98,91.39,Feni Sadar
+Feni,32,NA029,23.13,91.48,Parshuram
+Habiganj,33,SY094,24.54,91.3,Ajmirganj
+Habiganj,34,SY099,24.39,91.57,Bahubal
+Habiganj,35,SY078,24.47,91.4,Baniachong
+Lakshmipur,40,NA009,22.96,90.87,Lakshmipur Sadar
+Lakshmipur,41,NA030,22.95,90.71,Raipur
+Lakshmipur,42,NA018,23.05,90.86,Ramganj
+Moulvi Bazar,43,SY044,24.65,92.23,Barlekha
+Moulvi Bazar,44,SY027,24.4,91.91,Kamalgani
+Moulvi Bazar,45,SY038,24.6,92.1,Kulaura
+Moulvi Bazar,46,SY054,24.44,91.77,Moulvi Bazar Sadar
+Moulvi Bazar,47,SY043,24.62,91.91,Rajnagar
+Moulvi Bazar,48,SY016,24.23,91.74,Sreemangal
+Noakhali,49,NA006,22.95,91.07,Begumganj
+Noakhali,50,NA013,22.77,91.27,Companiganj
+Noakhali,51,NA011,22.17,91.09,Hatiya
+Noakhali,52,NA019,22.76,91.19,Noakhali Sadar
+Noakhali,53,NA004,23.02,91.2,Senbagh
+Sylhet,54,SY072,24.68,91.8,Balaganj
+Sylhet,55,SY070,24.85,92.17,Beanibazar
+Sylhet,56,SY060,25.05,92.05,Gowainghat
+Sylhet,57,SY061,25.08,92.16,Jaintapur
+Sylhet,58,SY087,24.99,92.34,Kanairghat
+Sylhet,59,SY055,24.86,91.93,Sylhet Sadar
+Sylhet,60,SY084,24.81,91.74,Bishwhanath
+Cox's Bazar,61,CT008,21.72,92.04,Chakaria
+Cox's Bazar,62,CT002,21.51,92.01,Cox's Bazar Sadar
+Cox's Bazar,63,CT003,21.52,91.91,Maheshkhali
+Cox's Bazar,64,CT030,21.39,92.08,Ramu
+Cox's Bazar,65,CT031,21.02,92.22,Teknaf
+Bandarban,66,CH010,22.24,92.24,Bandarban Sadar
+Bandarban,67,CH003,21.88,92.13,Lama
+Rangamati,68,CH006,22.63,91.98,Kawkhali Betbunia
+Rangamati,69,CH012,,,Kawkhali Betbunia
+Sunamganj,70,SY074,24.92,91.69,Chhatak
+Sunamganj,71,SY092,24.8,91.45,Derai/ Dharampasha
+Sunamganj,72,SY097,24.94,91.21,Jamalganj
+Sunamganj,73,SY073,25.02,91.46,Sunamganj Sadar
+Dhaka,74,DH005,23.87,90.22,Dhamrai
+Dhaka,75,DH103,23.83,90.42,Cantonment
+Dhaka,76,DH099,23.6,90.1,Dohar
+Dhaka,77,DH087,23.69,90.34,Keraniganj
+Dhaka,78,DH015,23.79,90.37,Mirpur
+Dhaka,79,DH108,23.75,90.37,Mahammadpur
+Dhaka,80,DH065,23.66,90.21,Nawabganj
+Dhaka,81,DH073,23.87,90.31,Savar
+Dhaka,82,DH124,23.74,90.37,Tejgaon
+Gazipur,83,DH078,23.96,90.48,Gazipur Sadar
+Gazipur,84,DH058,24.21,90.32,Kaliakair
+Gazipur,85,DH122,24.13,90.28,Kaliakair
+Gazipur,86,DH102,24.2,90.63,Kapasia
+Gazipur,87,DH010,24.18,90.54,Sreepur
+Gazipur,88,DH120,23.86,90.52,Kaliganj
+Jamalpur,89,JA013,25.24,89.86,Baksiganj
+Jamalpur,90,JA008,25.23,89.79,Dewanganj
+Jamalpur,91,JA014,25.1,89.76,Islampur
+Jamalpur,92,JA015,24.84,90.05,Jamalpur Sadar
+Jamalpur,93,JA016,24.92,89.78,Madarganj
+Jamalpur,94,JA007,24.98,89.81,Melandaha
+Jamalpur,95,JA006,24.78,89.82,Sarishabari
+Kishoreganj,96,MY063,24.34,91.11,Astagram
+Kishoreganj,97,MY041,24.38,91.01,Nikli
+Kishoreganj,98,MY070,24.29,90.71,Pakundia
+Kishoreganj,99,MY013,24.24,90.99,Bajitpur
+Kishoreganj,100,MY034,24.58,90.92,Tarail
+Kishoreganj,101,MY071,24.16,90.95,Kuliar Char
+Kishoreganj,102,MY088,24.4,90.85,Kishoreganj Sadar
+Kishoreganj,103,MY069,24.12,91,Bhairab
+Kishoreganj,104,MY012,24.33,90.82,Katiadi
+Kishoreganj,105,MY010,24.48,90.91,Karimganj
+Kishoreganj,106,MY090,24.45,90.65,Hossainpur
+Kishoreganj,107,MY027,24.52,91.06,Itna
+Manikganj,108,DH026,23.96,89.83,Daulatpur
+Manikganj,109,DH008,23.89,89.91,Ghior
+Manikganj,110,DH066,23.71,90.01,Harirampur
+Manikganj,111,DH007,23.83,90.07,Manikganj Sadar
+Munshiganj,115,DH097,23.51,90.64,Gazaria
+Munshiganj,116,DH085,23.46,90.41,Lohajang
+Munshiganj,117,DH084,23.51,90.54,Munshiganj Sadar
+Munshiganj,118,DH001,23.63,90.28,Sirajdikhan
+Munshiganj,119,DH062,23.53,90.26,Sreenagar
+Munshiganj,120,DH086,23.44,90.47,Tongibari
+Tangail,121,TA011,24.21,89.85,Bhoapur
+Tangail,122,TA008,24.08,89.93,Delduar
+Tangail,123,TA002,24.18,90.04,Basail
+Tangail,124,TA032,24.43,90.07,Ghatail
+Tangail,125,TA013,24.56,89.89,Gopalpur
+Tangail,126,TA034,24.36,89.91,Kalihati
+Tangail,127,TA021,24.3,90.23,Sakhipur
+Tangail,128,TA024,24.04,89.89,Nagarpur
+Tangail,129,TA022,24.14,90.17,Mirzapur
+Tangail,130,TA004,24.65,90.04,Madhupur
+Netrokona,131,MY074,24.69,91.12,Khaliajuri
+Netrokona,132,MY002,24.97,90.84,Barhatta
+Netrokona,133,MY053,25.15,90.68,Durgapur
+Netrokona,134,MY054,25.14,90.86,Kalmakanda
+Netrokona,135,MY042,24.65,90.88,Kendua
+Netrokona,136,MY036,24.71,90.93,Madan
+Netrokona,137,MY003,24.95,90.75,Netrokona Sadar
+Netrokona,138,MY006,25,90.59,Purbadhala
+Netrokona,139,MY051,24.82,91.03,Mohanganj
+Narsingdi,140,DH059,24.2,90.74,Manohardi
+Narsingdi,141,DH076,23.88,90.68,Narsingdi Sadar
+Narsingdi,142,DH104,23.96,90.67,Palash
+Narsingdi,143,DH105,23.92,90.94,Raipur
+Narsingdi,144,DH011,24.17,90.51,Shibpur
+Mymensingh,145,MY055,24.73,90.22,Muktagachha
+Mymensingh,146,MY052,24.83,90.32,Mymensingh Sadar
+Mymensingh,147,MY081,24.61,90.59,Ishwarganj
+Mymensingh,148,MY089,24.4,90.6,Gaffargaon
+Mymensingh,149,MY050,25.04,90.32,Haluaghat
+Narayanganj,156,DH081,23.69,90.72,Araihazar
+Narayanganj,157,DH003,23.59,90.52,Narayanganj Sadar
+Narayanganj,158,DH080,23.86,90.56,Rupganj
+Narayanganj,159,DH082,23.66,90.63,Sonargaon
+Sherpur,160,JA012,24.99,90.19,Nakla
+Sherpur,161,JA005,25.17,90.2,Nalitabari
+Sherpur,162,JA018,25.05,90,Sherpur Sadar
+Sherpur,163,JA009,25.15,89.97,Sreebardi
+Barguna,164,PT003,22.15,90.16,Barguna Sadar
+Barguna,165,PT006,22.2,90.29,Amtali
+Barisal,166,BA001,22.71,90.36,Barisal Sadar
+Barisal,167,BA003,22.84,90.52,Mehendiganj
+Barisal,168,BA006,22.61,90.45,Bakerganj
+Barisal,169,BA009,22.82,90.21,Banaripara
+Barisal,170,BA010,22.83,90.28,Babuganj
+Barisal,171,BA013,22.92,90.26,Gaurnadi
+Barisal,172,BA011,22.96,90.52,Hizla
+Bhola,173,BA004,22.67,90.64,Bhola Sadar
+Bhola,174,BA028,22.2,90.75,Char Fasson
+Bhola,175,BA029,22.63,90.75,Daulatkhan
+Bhola,176,BA024,22.31,90.79,Lalmohan
+Faridpur,177,FS002,23.75,89.79,Alfadanga
+Faridpur,178,FA020,23.4,89.96,Bhanga
+Faridpur,179,FA057,23.41,89.72,Boalmari
+Faridpur,180,FA022,23.57,89.95,Char Bhadrasan
+Faridpur,181,FA017,23.55,89.78,Faridpur Sadar
+Faridpur,182,FA006,23.6,89.57,Madhukhali
+Faridpur,183,FA046,23.44,89.79,Nagarkanda
+Faridpur,184,FA038,23.51,89.94,Sadarpur
+Gopalganj,185,FA027,23.12,89.91,Gopalganj Sadar
+Gopalganj,186,FA012,23.22,89.72,Kashiani
+Gopalganj,187,FA013,22.94,89.99,Kotalipara
+Jhalokathi,190,BA007,22.63,90.19,Jhalokathi Sadar
+Jhalokathi,191,BA019,22.61,90.16,Rajapur
+Madaripur,192,FA035,23.26,90.25,Madaripur Sadar
+Madaripur,193,FA031,23.2,90.03,Rajoir
+Madaripur,194,FA021,23.37,90.2,Shibchar
+Patuakhali,195,PT002,22.19,90.44,Galachipa
+Patuakhali,196,PT007,22.35,90.21,Mirzaganj
+Patuakhali,197,PT004,22.25,90.06,Patuakhali Sadar
+Pirojpur,198,BA021,22.41,89.97,Bhandaria
+Pirojpur,199,BA018,22.62,90.07,Kawkhali
+Pirojpur,200,BA027,22.37,89.98,Mathbaria
+Pirojpur,201,BA015,22.64,89.98,Pirojpur Sadar
+Pirojpur,202,BA016,22.72,90.12,Nesarabad( Swarupkathi)
+Rajbari,203,FA009,23.69,89.58,Baliakandi
+Rajbari,204,FS009,23.71,89.78,Goalandaghat
+Rajbari,205,FA015,23.78,89.5,Pangsha
+Rajbari,206,FA016,23.68,89.71,Rajbari Sadar
+Shariatpur,207,FA024,23.2,90.45,Bhedarganj
+Shariatpur,208,FA061,23.07,90.42,Gosairhat
+Shariatpur,209,FA023,23.3,90.38,Naria
+Shariatpur,210,FS012,23.22,90.35,Shariatpur Sadar
+Shariatpur,211,FA034,23.29,90.28,Zanjira
