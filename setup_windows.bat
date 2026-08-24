@@ -1,6 +1,7 @@
 @echo off
 setlocal EnableExtensions
 cd /d "%~dp0"
+set "PYTHONDONTWRITEBYTECODE=1"
 
 set "BYTEFORGE_ENV=%LOCALAPPDATA%\ByteForge\DBMS_Project\venv"
 set "BYTEFORGE_PYTHON=%BYTEFORGE_ENV%\Scripts\python.exe"

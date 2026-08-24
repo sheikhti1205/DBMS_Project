@@ -39,20 +39,20 @@ Windows:
 
 ```powershell
 $python = "$env:LOCALAPPDATA\ByteForge\DBMS_Project\venv\Scripts\python.exe"
-& $python -m schema.scripts.queries.query_database saved
-& $python -m schema.scripts.queries.query_database saved rivers
-& $python -m schema.scripts.queries.query_database describe Water_Quality
-& $python -m schema.scripts.queries.query_database run "SELECT COUNT(*) AS Records FROM Water_Quality"
+& $python -B -m schema.scripts.queries.query_database saved
+& $python -B -m schema.scripts.queries.query_database saved rivers
+& $python -B -m schema.scripts.queries.query_database describe Water_Quality
+& $python -B -m schema.scripts.queries.query_database run "SELECT COUNT(*) AS Records FROM Water_Quality"
 ```
 
 Linux, WSL, or macOS:
 
 ```bash
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
-"$PYTHON" -m schema.scripts.queries.query_database saved
-"$PYTHON" -m schema.scripts.queries.query_database saved rivers
-"$PYTHON" -m schema.scripts.queries.query_database describe Water_Quality
-"$PYTHON" -m schema.scripts.queries.query_database run "SELECT COUNT(*) AS Records FROM Water_Quality"
+"$PYTHON" -B -m schema.scripts.queries.query_database saved
+"$PYTHON" -B -m schema.scripts.queries.query_database saved rivers
+"$PYTHON" -B -m schema.scripts.queries.query_database describe Water_Quality
+"$PYTHON" -B -m schema.scripts.queries.query_database run "SELECT COUNT(*) AS Records FROM Water_Quality"
 ```
 
 Every query command opens the database read-only. Saved examples cover table counts, relationships, time coverage, climate, rainfall, rivers, water quality, forests, wastewater, missing measurements, integrity, and foreign keys.
@@ -63,8 +63,8 @@ Backups and restores remain separate from setup.
 
 ```bash
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
-"$PYTHON" -m schema.scripts.maintenance.backup_database
-"$PYTHON" -m schema.scripts.maintenance.restore_database schema/backups/environment_YYYYMMDD_HHMMSS.db --replace
+"$PYTHON" -B -m schema.scripts.maintenance.backup_database
+"$PYTHON" -B -m schema.scripts.maintenance.restore_database schema/backups/environment_YYYYMMDD_HHMMSS.db --replace
 ```
 
 Backups are written under `schema/backups/` and are not committed or copied during Drive publishing.
@@ -77,11 +77,11 @@ Windows PowerShell:
 
 ```powershell
 $python = "$env:LOCALAPPDATA\ByteForge\DBMS_Project\venv\Scripts\python.exe"
-& $python normalization\scripts\extract.py
-& $python normalization\scripts\exclusions.py
-& $python normalization\scripts\workbook.py
-& $python -m schema.scripts.setup.build_database --replace
-& $python -m schema.scripts.setup.verify_database
+& $python -B normalization\scripts\extract.py
+& $python -B normalization\scripts\exclusions.py
+& $python -B normalization\scripts\workbook.py
+& $python -B -m schema.scripts.setup.build_database --replace
+& $python -B -m schema.scripts.setup.verify_database
 ```
 
 Linux, WSL, or macOS:
@@ -89,11 +89,11 @@ Linux, WSL, or macOS:
 ```bash
 export DBMS_SOURCE_DIR="/path/to/DBMS_Project/Selected_Source_Files"
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
-"$PYTHON" normalization/scripts/extract.py
-"$PYTHON" normalization/scripts/exclusions.py
-"$PYTHON" normalization/scripts/workbook.py
-"$PYTHON" -m schema.scripts.setup.build_database --replace
-"$PYTHON" -m schema.scripts.setup.verify_database
+"$PYTHON" -B normalization/scripts/extract.py
+"$PYTHON" -B normalization/scripts/exclusions.py
+"$PYTHON" -B normalization/scripts/workbook.py
+"$PYTHON" -B -m schema.scripts.setup.build_database --replace
+"$PYTHON" -B -m schema.scripts.setup.verify_database
 ```
 
 The workbook is generated as `normalization/Environmental_Normalization_0NF_to_BCNF.xlsx`. The database importer reads all final BCNF CSV files and enforces the 21 tables and 27 relationships defined by the final ERD.
@@ -103,13 +103,13 @@ The workbook is generated as `normalization/Environmental_Normalization_0NF_to_B
 Check for differences:
 
 ```bash
-python3 tools/publish_to_drive.py --drive "/path/to/DBMS_Project"
+python3 -B tools/publish_to_drive.py --drive "/path/to/DBMS_Project"
 ```
 
 Apply the checked update:
 
 ```bash
-python3 tools/publish_to_drive.py --drive "/path/to/DBMS_Project" --apply
+python3 -B tools/publish_to_drive.py --drive "/path/to/DBMS_Project" --apply
 ```
 
 Publishing manages only `ERD`, `exclusions`, `normalization`, `schema`, the launchers, and `requirements.txt`. It never changes `report/` or `Selected_Source_Files/` and never copies Git metadata or this README to Drive.

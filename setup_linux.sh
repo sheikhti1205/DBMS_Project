@@ -2,6 +2,7 @@
 set -eu
 
 cd "$(dirname "$0")"
+export PYTHONDONTWRITEBYTECODE=1
 
 if command -v python3 >/dev/null 2>&1; then
     system_python=python3
