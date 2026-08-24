@@ -5,8 +5,17 @@ from __future__ import annotations
 import sqlite3
 import sys
 from contextlib import closing
-from .query_database import load_queries
-from ..common.schema_model import DEFAULT_DATABASE
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+
+# Allow VS Code to run this file directly.
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from schema.scripts.queries.query_database import load_queries
+from schema.scripts.common.schema_model import DEFAULT_DATABASE
 
 
 DATABASE = DEFAULT_DATABASE

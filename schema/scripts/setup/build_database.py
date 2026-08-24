@@ -10,7 +10,14 @@ import sys
 from contextlib import closing
 from pathlib import Path
 
-from ..common.schema_model import (
+sys.dont_write_bytecode = True
+
+# Allow VS Code to run this file directly.
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from schema.scripts.common.schema_model import (
     CSV_DIR,
     DEFAULT_DATABASE,
     DEFAULT_SQL,
