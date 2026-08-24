@@ -2,6 +2,10 @@ desktop.ini
 .DS_Store
 __pycache__/
 *.pyc
+.venv/
+*.building
+*.restoring
+*.syncing
 
 # The original datasets live in Google Drive, not GitHub.
 /Selected_Source_Files/
@@ -24,11 +28,8 @@ __pycache__/
 *.toc
 *.xdv
 
-# Generated working notes and intermediate report measurements
+# Generated report measurements
 /CLEANUP_REPORT.md
-/normalization/DATA_QUALITY_LOG.md
-/normalization/STATISTICS.md
-/exclusions/EXCLUSION_REGISTER.md
 /report/generated/*
 !/report/generated/measured.tex
 
