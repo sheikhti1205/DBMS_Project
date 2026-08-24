@@ -12,12 +12,12 @@
   "terminal.integrated.cwd": "${workspaceFolder}",
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
-  "code-runner.fileDirectoryAsCwd": false,
+  "code-runner.fileDirectoryAsCwd": true,
   "code-runner.preserveFocus": false,
   "code-runner.showExecutionMessage": false,
   "code-runner.executorMapByFileExtension": {
     ".sh": "bash",
-    ".sql": "sqlite3 -readonly -header -column \"$workspaceRoot/schema/environment.db\" <"
+    ".sql": "bash -lc 'repo=$(git -C $dirWithoutTrailingSlash rev-parse --show-toplevel) && sqlite3 -readonly -header -column \"$repo/schema/environment.db\" < $fullFileName'"
   },
   "code-runner.executorMapByGlob": {
     "schema.sql": "sqlite3 -header -column ':memory:' <"
