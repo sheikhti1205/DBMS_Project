@@ -8,8 +8,8 @@ import xlrd
 import csv
 import os
 
-from nlib import (SRC, BBS_XLSX, BMD_TEMP, BMD_SUN, BRRI_DIR, BWDB_RIVERS,
-                  BWDB_GW, write_raw_csv, clean_text, anom)
+from nlib import (BBS_XLSX, BMD_TEMP, BMD_SUN, BRRI_DIR, BWDB_RIVERS,
+                  write_raw_csv, clean_text, anom)
 
 _CACHE = {}
 
@@ -81,21 +81,6 @@ def brri_rows(tag):
             rs.pop()
         _CACHE[key] = rs
         wb.close()
-    return _CACHE[key]
-
-
-def bwdb_gw_rows(sheet):
-    key = ('gw', sheet)
-    if key not in _CACHE:
-        wb = _CACHE.get('gw_wb')
-        if wb is None:
-            wb = openpyxl.load_workbook(BWDB_GW, read_only=True,
-                                        data_only=True)
-            _CACHE['gw_wb'] = wb
-        rs = [list(r) for r in wb[sheet].iter_rows(values_only=True)]
-        while rs and all(c is None or clean_text(c) == '' for c in rs[-1]):
-            rs.pop()
-        _CACHE[key] = rs
     return _CACHE[key]
 
 
@@ -296,7 +281,7 @@ B('B36', 'BBS', BBS_FILE, 'T3.22',
   '(000 litre.)',
   0, 7, 8, '3 fiscal-year produced columns + 3 reuse columns',
   'r0 title, r1 header spans, r2 fiscal years, r3 column-number row',
-  'Industrial_Type')
+  'Industry_Type')
 
 for _i in range(1, 19):
     B('B%02d' % (36 + _i), 'BMD', BMD_TEMP_FILE, 'Table-%d' % _i,
@@ -334,13 +319,6 @@ for _bid, _tag, _t, _tgt in _BRRI:
 B('B62', 'BWDB', 'BWDB_Rivers_Information.csv', '(csv)',
   'BWDB river register', 0, None, 5, 'none (already one row per river)',
   'row 0 header', 'River', loader='rivers')
-for _i, _sh in enumerate(('Table-2', 'Table-3', 'Table-4', 'Table-5',
-                          'Table-6', 'Table-7')):
-    B('B%d' % (63 + _i), 'BWDB',
-      'BWDB_Groundwater_Weekly_Data_2018.xlsx', _sh,
-      'Groundwater observation wells (%s)' % _sh, 0, None, 7,
-      'none (one row per well)', 'r0 title, r1 header',
-      'Ground_Water_Well', loader='gw')
 
 
 def block_rows(b):
@@ -355,8 +333,6 @@ def block_rows(b):
     elif ld == 'brri':
         tag = [k for k, v in BRRI_FILES.items() if v == b['file']][0]
         rs = brri_rows(tag)
-    elif ld == 'gw':
-        rs = bwdb_gw_rows(b['sheet'])
     elif ld == 'rivers':
         rs = rivers_rows()
     else:

@@ -8,11 +8,10 @@ Two different figures are given, because they answer two different questions. Th
 
 | Organisation | Raw blocks read | Values read from the source | Rows offered to the final database |
 |---|---|---|---|
-| BRRI | 5 | 3252182 | 600168 |
-| BBS | 36 | 181600 | 176453 |
+| BRRI | 5 | 3252182 | 600166 |
+| BBS | 36 | 181600 | 176442 |
 | BMD | 20 | 14688 | 14688 |
-| BWDB | 7 | 196 | 405 |
-| **Total** | **68** | **3448666** | **791714** |
+| **Total** | **62** | **3448470** | **791701** |
 
 ## 2. Cells read, kept and missing, per raw block
 
@@ -77,72 +76,66 @@ Two different figures are given, because they answer two different questions. Th
 | B59 | BRRI | BRRI_Daily_Total_Rainfall | 784331 | 754555 | 29776 |
 | B60 | BRRI | BRRI_Daily_Average_Humidity | 785106 | 755764 | 29342 |
 | B61 | BRRI | BRRI_Daily_Sunshine | 553505 | 509512 | 43993 |
-| B63 | BWDB | Table-2 | 35 | 35 | 0 |
-| B64 | BWDB | Table-3 | 34 | 34 | 0 |
-| B65 | BWDB | Table-4 | 38 | 38 | 0 |
-| B66 | BWDB | Table-5 | 35 | 35 | 0 |
-| B67 | BWDB | Table-6 | 32 | 32 | 0 |
-| B68 | BWDB | Table-7 | 22 | 22 | 0 |
-| **Total** | | | **3717501** | **3448666** | **268835** |
+| **Total** | | | **3717305** | **3448470** | **268835** |
 
 ## 3. Row counts through the normalization chain
 
 | Stage | Table | Rows |
 |---|---|---|
-| 1NF | Climate_Observation_1NF | 154055 |
+| 1NF | BRRI_Humidity_Daily_1NF | 755740 |
+| 1NF | BRRI_Maximum_Temperature_Daily_1NF | 616381 |
+| 1NF | BRRI_Minimum_Temperature_Daily_1NF | 615964 |
+| 1NF | BRRI_Rainfall_Daily_1NF | 754488 |
+| 1NF | Climate_Observation_1NF | 154049 |
 | 1NF | Daily_Observation_1NF | 648061 |
 | 1NF | Forest_Area_1NF | 1350 |
-| 1NF | Ground_Water_Well_1NF | 196 |
 | 1NF | River_Register_1NF | 405 |
 | 1NF | Waste_Water_1NF | 15 |
-| 1NF | Water_Quality_1NF | 2359 |
-| 2NF | Climate_Observation_2NF | 154055 |
+| 1NF | Water_Quality_1NF | 2352 |
+| 2NF | Climate_Observation_2NF | 154049 |
 | 2NF | Daily_Observation_2NF | 648061 |
 | 2NF | Fiscal_Year_2NF | 5 |
 | 2NF | Forest_Area_2NF | 1350 |
-| 2NF | Ground_Water_Well_2NF | 196 |
 | 2NF | Measure_Unit_2NF | 19 |
 | 2NF | River_Register_2NF | 405 |
-| 2NF | River_Station_2NF | 323 |
-| 2NF | Source_Block_2NF | 68 |
+| 2NF | River_Station_2NF | 321 |
+| 2NF | Source_Block_2NF | 62 |
 | 2NF | Waste_Water_2NF | 15 |
-| 2NF | Water_Quality_2NF | 2359 |
+| 2NF | Water_Quality_2NF | 2352 |
 | 3NF | Climatic_Event_Record_3NF | 4006 |
-| 3NF | District_Sub_Division_3NF | 3 |
 | 3NF | Fiscal_Year_3NF | 5 |
 | 3NF | Forest_Area_Record_3NF | 175 |
-| 3NF | Ground_Water_Well_3NF | 196 |
 | 3NF | Humidity_Record_3NF | 30820 |
 | 3NF | Industry_Usage_3NF | 3 |
 | 3NF | Radiation_Record_3NF | 62931 |
 | 3NF | Rainfall_Record_3NF | 30795 |
 | 3NF | River_Register_3NF | 405 |
-| 3NF | River_Station_3NF | 323 |
+| 3NF | River_Station_3NF | 321 |
 | 3NF | Sunshine_Record_3NF | 585130 |
-| 3NF | Temperature_Record_3NF | 65598 |
+| 3NF | Temperature_Record_3NF | 65596 |
 | 3NF | Type_Of_Establishments_3NF | 12 |
-| 3NF | Water_Quality_3NF | 2359 |
-| 3NF | Wind_Record_3NF | 9495 |
+| 3NF | Water_Quality_3NF | 2352 |
+| 3NF | Wind_Record_3NF | 9491 |
 | BCNF | Climatic_Event_Record | 4006 |
 | BCNF | Day_Time | 23348 |
 | BCNF | District | 35 |
 | BCNF | Fiscal_Year | 6 |
 | BCNF | Forest_Area_Record | 175 |
 | BCNF | Humidity_Record | 25350 |
-| BCNF | Industrial_Type | 1 |
+| BCNF | Industry_Type | 1 |
 | BCNF | Industry_Usage | 3 |
 | BCNF | Month_Time | 924 |
 | BCNF | Radiation_Record | 62931 |
 | BCNF | Rainfall_Record | 25453 |
 | BCNF | River | 417 |
-| BCNF | River_Station | 323 |
+| BCNF | River_Station | 321 |
 | BCNF | Size | 4 |
 | BCNF | Station | 56 |
 | BCNF | Sunshine_Record | 533140 |
 | BCNF | Temperature_Record | 42295 |
 | BCNF | Type_Of_Establishments | 12 |
-| BCNF | Water_Quality | 2334 |
-| BCNF | Wind_Record | 9447 |
+| BCNF | Water_Quality | 2327 |
+| BCNF | Wind_Record | 9443 |
 | BCNF | Year_Time | 77 |
 
 ## 4. Final relation sizes
@@ -155,22 +148,22 @@ Two different figures are given, because they answer two different questions. Th
 | Fiscal_Year | (Start_Year, End_Year) | 2 | 6 |
 | Forest_Area_Record | (District_Name, Fiscal_Start_Year, Fiscal_End_Year) | 11 | 175 |
 | Humidity_Record | (Station_Name, Year, Month) | 4 | 25350 |
-| Industrial_Type | Industry_Name | 1 | 1 |
+| Industry_Type | Industry_Name | 1 | 1 |
 | Industry_Usage | (Industry_Name, Start_Year, End_Year) | 5 | 3 |
 | Month_Time | (Year, Month) | 2 | 924 |
 | Radiation_Record | (Station_Name, Year, Month, Day, Sample_No) | 6 | 62931 |
 | Rainfall_Record | (Station_Name, Year, Month) | 4 | 25453 |
 | River | River_Name | 1 | 417 |
-| River_Station | WQ_Station_Name | 2 | 323 |
+| River_Station | WQ_Station_Name | 2 | 321 |
 | Size | Size_Name | 1 | 4 |
-| Station | Station_Name | 1 | 56 |
+| Station | Station_Name | 2 | 56 |
 | Sunshine_Record | (Station_Name, Year, Month, Day) | 5 | 533140 |
 | Temperature_Record | (Station_Name, Year, Month, Type) | 5 | 42295 |
 | Type_Of_Establishments | (Size_Name, Start_Year, End_Year) | 5 | 12 |
-| Water_Quality | (WQ_Station_Name, Year, Parameter_Type) | 4 | 2334 |
-| Wind_Record | (Station_Name, Year, Month, Type) | 6 | 9447 |
+| Water_Quality | (WQ_Station_Name, Year, Parameter_Type) | 4 | 2327 |
+| Wind_Record | (Station_Name, Year, Month, Type) | 6 | 9443 |
 | Year_Time | Year | 1 | 77 |
-| **Total** | | | **730337** |
+| **Total** | | | **730324** |
 
 ## 5. Distinct key values in the loaded database
 
@@ -179,7 +172,7 @@ Two different figures are given, because they answer two different questions. Th
 | Station | 56 |
 | District | 35 |
 | River | 417 |
-| River_Station | 323 |
+| River_Station | 321 |
 | Year_Time | 77 |
 | Month_Time | 924 |
 | Day_Time | 23348 |

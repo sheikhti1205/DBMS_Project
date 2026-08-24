@@ -3,10 +3,12 @@ setlocal EnableExtensions DisableDelayedExpansion
 cd /d "%~dp0"
 set "PYTHONDONTWRITEBYTECODE=1"
 set "BYTEFORGE_ASSUME_YES=0"
+set "BYTEFORGE_REPLACE_DATABASE=0"
 
 for %%A in (%*) do (
   if /i "%%~A"=="/yes" set "BYTEFORGE_ASSUME_YES=1"
   if /i "%%~A"=="/y" set "BYTEFORGE_ASSUME_YES=1"
+  if /i "%%~A"=="/replace" set "BYTEFORGE_REPLACE_DATABASE=1"
   if /i "%%~A"=="/help" goto help
   if /i "%%~A"=="/?" goto help
 )
@@ -74,7 +76,11 @@ if errorlevel 1 (
 )
 
 echo Preparing the database.
-"%BYTEFORGE_PYTHON%" -m schema.scripts.setup.build_database --replace
+if "%BYTEFORGE_REPLACE_DATABASE%"=="1" (
+  "%BYTEFORGE_PYTHON%" -m schema.scripts.setup.build_database --replace
+) else (
+  "%BYTEFORGE_PYTHON%" -m schema.scripts.setup.build_database
+)
 if errorlevel 1 goto failed
 
 echo Checking the database.
@@ -166,8 +172,9 @@ if /i "%BYTEFORGE_ANSWER%"=="yes" exit /b 0
 exit /b 1
 
 :help
-echo Usage: setup_windows.bat [/yes]
+echo Usage: setup_windows.bat [/yes] [/replace]
 echo   /yes  Approve required installations without prompting.
+echo   /replace  Replace a different or current database.
 exit /b 0
 
 :failed

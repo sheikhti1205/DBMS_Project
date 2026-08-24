@@ -85,7 +85,7 @@ def whole_sources():
 
     others = [
         ('DoE', 'Formatted_Data/DoE',
-         'Ambient air quality, and surface and ground water quality reports',
+         'Ambient air quality and surface water quality reports',
          'Air quality is measured at continuous air monitoring stations, which '
          'are a different station network from the weather stations the '
          'diagram holds. The water quality report publishes monthly figures, '
@@ -209,7 +209,7 @@ def bbs_sheets():
             reason = ('Environmental protection and management. Two sheets '
                       'from this theme are loaded, T3.14 and T3.22, because '
                       'the diagram draws Type_Of_Establishments and '
-                      'Industrial_Type against the reused waste water '
+                      'Industry_Type against the reused waste water '
                       'figures. The remaining %d are excluded: they publish '
                       'greenhouse gas emissions by category, environmental '
                       'expenditure and protection programme figures, for '
@@ -332,13 +332,6 @@ STAGE_DROPS = [
      'The published text 2019-20 is not atomic: it holds two years in one '
      'cell. It is split into Start_Year and End_Year in the Fiscal_Year '
      'relation, so the span is explicit and a foreign key can point at it.'),
-    ('2NF to 3NF', 'Ground_Water_Well',
-     ['Sub_Division'],
-     'A transitive dependency. The sub division is a property of the '
-     'district, not of the well, so at Third Normal Form it moves to '
-     'District_Sub_Division. The move is shown because it is what the normal '
-     'form requires, even though the diagram has no groundwater entity to '
-     'load either table into.'),
     ('3NF to BCNF', 'River',
      ['Serial_No', 'BWDB_Zone', 'Border_River', 'Flow_Type'],
      'Not in the approved diagram, which keeps only the river name. The '
@@ -370,11 +363,6 @@ def unloaded_tables():
          'so the units are documented rather than loaded. Every measurement '
          'column in the loaded schema holds one unit throughout, so no row is '
          'ambiguous without it.'),
-        ('District_Sub_Division_3NF',
-         'One row per district, with its water development board sub division',
-         'Created by Third Normal Form to remove a transitive dependency on '
-         'the district. The approved diagram has no groundwater entity, so '
-         'neither this table nor the wells it describes are loaded.'),
     ]:
         found = None
         for st in ('1NF', '2NF', '3NF'):
@@ -415,40 +403,16 @@ def unloaded_rows():
         'A second organisation publishing a different value for a key another '
         'organisation had already filled',
         plural(len(rows), 'row'),
-        'Precedence is Bangladesh Bureau of Statistics, then Bangladesh '
-        'Meteorological Department, then Bangladesh Rice Research Institute. '
+        'Climate precedence is Bangladesh Meteorological Department, then '
+        'Bangladesh Rice Research Institute, then Bangladesh Bureau of '
+        'Statistics. Equal sources use the newest coverage, then the later '
+        'source occurrence. '
         'Of these, %d are a real disagreement about the value and %d are the '
         'same reading rounded to a different number of decimal places. Every '
         'one is listed with both values in csv/BCNF/_Key_Conflicts.csv, so no '
         'rejected measurement is lost in silence. Together with the exact '
         'duplicates above this accounts for all %d rows the key refuses.'
         % (len(sub), len(rows) - len(sub), lost))
-
-    gw = os.path.join(CSVDIR, '3NF', 'Ground_Water_Well_3NF.csv')
-    ngw = n_rows(gw)
-    dgw = 0
-    if os.path.exists(gw):
-        with open(gw, newline='', encoding='utf-8') as f:
-            wells = {r['District_Name'].strip() for r in csv.DictReader(f)}
-        loaded = set()
-        dis = os.path.join(CSVDIR, 'BCNF', 'District.csv')
-        if os.path.exists(dis):
-            with open(dis, newline='', encoding='utf-8') as f:
-                loaded = {r['District_Name'].strip()
-                          for r in csv.DictReader(f)}
-        dgw = len(wells - loaded)
-    add('Rows', 'Ground_Water_Well, every well',
-        'Observation wells with their number, identifier, latitude, longitude '
-        'and administrative sub division',
-        plural(ngw, 'row'),
-        'The approved diagram carries no groundwater entity, so these wells '
-        'reach Third Normal Form and stop there. They are extracted, '
-        'reconciled and normalized in full, and the per stage files hold them, '
-        'so adding one relation to the diagram would load them without any '
-        'further extraction work. Their absence also removes %d districts '
-        'that no other relation names, which is why District holds fewer rows '
-        'than Bangladesh has districts.' % dgw)
-
 
 def md_escape(s):
     return s.replace('|', r'\|')

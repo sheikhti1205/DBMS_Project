@@ -5,7 +5,9 @@ Run:  python normalization/scripts/extract.py
 """
 import calendar
 import collections
+import csv
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,6 @@ EVENT = []
 SUN = []
 RAD = []
 WQ = []
-GW = []
 FOREST = []
 IND = []
 EST = []
@@ -39,6 +40,14 @@ CELLS_KEPT = collections.Counter()
 MISSING = collections.Counter()
 
 TRACE = []
+QUARANTINE = []
+AGGREGATION_AUDIT = []
+UNMAPPED_STATIONS = []
+
+
+def quarantine(relation, key, value, block, reason):
+    QUARANTINE.append((relation, key, value, block, reason))
+    anom('Row quarantined: ' + reason, '%s %s = %s' % (block, key, value))
 
 
 def T(rel, attr, org, fil, sheet, col, xform):
@@ -494,14 +503,14 @@ def parse_t322():
             IND.append((lab, y1, y2, q, p, bid))
     if len(IND) <= 3:
         anom('Source sheet T3.22 publishes only one category row, so '
-             'Industrial_Type is loaded with a single industry and '
+             'Industry_Type is loaded with a single industry and '
              'Industry_Usage with one row per fiscal year',
              '%d row(s) present' % (len(IND) // 3 if IND else 0))
     anom('T3.22 labels reused waste water as a percentage although its values '
          'are outside the percentage range and the table title states '
          'thousand litres',
-         'The published values are preserved as reused waste water; a '
-         'separate database view calculates the reuse rate for review')
+         'The exact produced and reused volumes remain in pre-BCNF files; '
+         'the final Percentage is 100 times reused divided by produced')
 
 
 def parse_bmd_temp():
@@ -587,26 +596,32 @@ def parse_brri():
                 if kind == 'sun':
                     SUN.append((st, y, m, d, v, bid))
                 else:
-                    BRRI_DAILY[(tag, st, y, m)].append(v)
+                    BRRI_DAILY[(tag, st, y, m)].append((d, v))
 
 
 def aggregate_brri():
     """Daily BRRI readings become monthly rows, because the approved schema
     keeps temperature, humidity and rainfall at month grain."""
-    for (tag, st, y, m), vals in BRRI_DAILY.items():
-        if not vals:
+    for (tag, st, y, m), daily in BRRI_DAILY.items():
+        if not daily:
             continue
+        vals = [value for _day, value in daily]
         kind, typ = BRRI_TARGET[tag]
         bid = BRRI_BID[tag]
         if kind == 'rain':
             v = sum(vals)
             RAIN.append((st, y, m, v, bid))
+            rule = 'sum'
         elif kind == 'hum':
             v = sum(vals) / len(vals)
             HUM.append((st, y, m, round(v, 2), bid))
+            rule = 'average'
         elif kind == 'temp':
-            v = sum(vals) / len(vals)
+            v = max(vals) if typ == 'Maximum' else min(vals)
             TEMP.append((st, y, m, typ, round(v, 2), bid))
+            rule = 'maximum' if typ == 'Maximum' else 'minimum'
+        AGGREGATION_AUDIT.append(
+            (bid, tag, st, y, m, len(vals), rule, round(v, 4)))
         if len(vals) < 25:
             anom('Month aggregated from fewer than 25 daily readings',
                  '%s %s %d-%02d: %d days' % (tag, st, y, m, len(vals)))
@@ -624,41 +639,6 @@ def parse_rivers():
             continue
         RIVREG.append((as_int(r[0]), nm, clean_text(r[2]), clean_text(r[3]),
                        clean_text(r[4])))
-
-
-def parse_gw():
-    for i, sheet in enumerate(('Table-2', 'Table-3', 'Table-4', 'Table-5',
-                               'Table-6', 'Table-7')):
-        bid = 'B%d' % (63 + i)
-        rs = BK.bwdb_gw_rows(sheet)
-        dist = None
-        sub = None
-        for r in rs[2:]:
-            r = list(r) + [None] * 10
-            wno = as_int(r[0])
-            wid = clean_text(r[1])
-            if wno is None or not wid:
-                continue
-            d = canon_district(r[5])
-            if d:
-                dist = d
-                s = clean_text(r[6])
-                sub = s if s else None
-            if dist is None:
-                anom('Groundwater well before the first district label',
-                     '%s well %s' % (sheet, wid))
-                continue
-            lon, k1 = num(r[2], '%s %s long' % (bid, wid))
-            lat, k2 = num(r[3], '%s %s lat' % (bid, wid))
-            seen(bid, True, k1)
-            up = clean_text(r[4]) or None
-            GW.append((dist, wno, wid, lat, lon, sub, up, bid))
-    if any(g[5] and g[5] != g[5][::-1] for g in GW):
-        pass
-    for g in GW:
-        if g[5] and g[5][::-1] in ('Kumilla', 'Dhaka', 'Faridpur'):
-            anom('Sub-Division value stored with its characters reversed',
-                 '%s -> %s' % (g[5], g[5][::-1]))
 
 
 T102_YEARHEADS = [(2, 2017), (14, 2018), (26, 2019), (38, 2020), (50, 2021),
@@ -702,8 +682,8 @@ def run_parsers():
     parse_brri()
     aggregate_brri()
     parse_rivers()
-    parse_gw()
     range_check()
+    quarantine_water_quality()
 
 
 PLAUSIBLE = {
@@ -743,24 +723,60 @@ def range_check():
     def ctx(b, st, *rest):
         return '%s %s %s' % (b, st, '-'.join(str(x) for x in rest))
 
-    TEMP = [r for r in TEMP
-            if in_range('Temperature', r[4], ctx(r[5], r[0], r[1], r[2], r[3]))]
-    HUM = [r for r in HUM
-           if in_range('Humidity', r[3], ctx(r[4], r[0], r[1], r[2]))]
-    RAIN = [r for r in RAIN
-            if in_range('Rainfall', r[3], ctx(r[4], r[0], r[1], r[2]))]
-    SUN = [r for r in SUN
-           if in_range('Sunshine', r[4], ctx(r[5], r[0], r[1], r[2], r[3]))]
+    def keep(rows, relation, measure, value_index, block_index, key_indexes):
+        kept = []
+        for row in rows:
+            value = row[value_index]
+            block = row[block_index]
+            key = ' | '.join(str(row[i]) for i in key_indexes)
+            if in_range(measure, value, '%s %s' % (block, key)):
+                kept.append(row)
+            else:
+                quarantine(relation, key, value, block,
+                           '%s outside the accepted range' % measure)
+        return kept
+
+    TEMP = keep(TEMP, 'Temperature_Record', 'Temperature', 4, 5,
+                (0, 1, 2, 3))
+    HUM = keep(HUM, 'Humidity_Record', 'Humidity', 3, 4, (0, 1, 2))
+    RAIN = keep(RAIN, 'Rainfall_Record', 'Rainfall', 3, 4, (0, 1, 2))
+    SUN = keep(SUN, 'Sunshine_Record', 'Sunshine', 4, 5, (0, 1, 2, 3))
     kept = []
     for st, y, m, ty, sp, di, b in WIND:
         c = ctx(b, st, y, m, ty)
+        rejected = []
         if not in_range('Wind Speed', sp, c + ' speed'):
-            sp = None
+            rejected.append('Wind Speed outside the accepted range')
         if not in_range('Wind Direction', di, c + ' direction'):
-            di = None
-        if sp is not None or di is not None:
-            kept.append((st, y, m, ty, sp, di, b))
+            rejected.append('Wind Direction outside the accepted range')
+        if rejected:
+            quarantine('Wind_Record', '%s | %s | %s | %s' % (st, y, m, ty),
+                       'speed=%s; direction=%s' % (sp, di), b,
+                       '; '.join(rejected))
+            continue
+        kept.append((st, y, m, ty, sp, di, b))
     WIND = kept
+
+
+def quarantine_water_quality():
+    global WQ
+    kept = []
+    for row in WQ:
+        st, year, parameter, value, river, category, block = row
+        key = '%s | %s | %s' % (st, year, parameter)
+        lowered = st.lower()
+        reason = None
+        if lowered.startswith(('table ', 'note:', 'source:')):
+            reason = 'header or note text parsed as a station'
+        elif parameter == 'pH' and not 0 <= value <= 14:
+            reason = 'pH outside 0-14'
+        elif parameter != 'pH' and value < 0:
+            reason = '%s cannot be negative' % parameter
+        if reason:
+            quarantine('Water_Quality', key, value, block, reason)
+        else:
+            kept.append(row)
+    WQ = kept
 
 
 SRC_ORG = {}
@@ -777,9 +793,9 @@ MEASURE_UNIT = [
     ('Rainfall', 'Millimetre', 'Rainfall_Record.Rainfall'),
     ('Wind Speed', 'Knot', 'Wind_Record.Wind_Speed'),
     ('Wind Direction', 'Degree', 'Wind_Record.Direction'),
-    ('Thunderstorm', 'Count of days in the month',
+    ('Thunderstorm', 'Monthly frequency',
      'Climatic_Event_Record.Thunderstorm'),
-    ('Lightning', 'Count of days in the month',
+    ('Lightning', 'Monthly frequency',
      'Climatic_Event_Record.Lightning'),
     ('Sunshine', 'Hour', 'Sunshine_Record.Sunshine_Hours'),
     ('Radiation', 'Langley per hour', 'Radiation_Record.Radiation'),
@@ -791,14 +807,12 @@ MEASURE_UNIT = [
     ('Plastic and Marine Debris', 'Piece', 'Water_Quality.Value'),
     ('Forest Area', 'Acre', 'Forest_Area_Record'),
     ('Waste Water', 'Cubic metre', 'Type_Of_Establishments.Quantity'),
-    ('Produced Waste Water', 'Thousand litre',
-     'Industry_Usage.Produced_Waste_Water'),
-    ('Reused Waste Water', 'Thousand litre',
-     'Industry_Usage.Reused_Waste_Water'),
+    ('Produced Waste Water', 'Thousand litre', 'Industry_Usage.Quantity'),
+    ('Reuse Rate', 'Percent', 'Industry_Usage.Percentage'),
 ]
 
 
-ORG_RANK = {'BBS': 1, 'BMD': 2, 'BRRI': 3, 'BWDB': 1}
+ORG_RANK = {'BMD': 0, 'BRRI': 1, 'BBS': 2, 'BWDB': 0}
 CONFLICTS = []
 DUP_IDENTICAL = collections.Counter()
 CONFLICT_CLASS = collections.Counter()
@@ -840,6 +854,16 @@ def log_conflict(relation, key, korg, kvals, lorg, lvals):
                       fmtvals(kvals), lorg, fmtvals(lvals), cls))
 
 
+def source_priority(bid):
+    org, _filename, _sheet = SRC_ORG.get(bid, ('?', '', ''))
+    block = next((item for item in BK.BLOCKS if item['id'] == bid), None)
+    years = [int(value) for value in re.findall(r'(?<!\d)(?:19|20)\d{2}(?!\d)',
+                                                block['title'] if block else '')]
+    latest = max(years) if years else 0
+    number = int(bid[1:]) if bid[1:].isdigit() else 0
+    return ORG_RANK.get(org, 9), -latest, -number
+
+
 def resolve(relation, rows, keylen, vallen):
     """rows are tuples ending in the block id. Returns deduplicated rows."""
     best = {}
@@ -850,17 +874,19 @@ def resolve(relation, rows, keylen, vallen):
         vals = tuple(r[keylen:keylen + vallen])
         cur = best.get(key)
         if cur is None:
-            best[key] = (r, org, vals)
+            best[key] = (r, org, vals, bid)
             continue
-        crow, corg, cvals = cur
+        crow, corg, cvals, cbid = cur
         if vals == cvals:
             DUP_IDENTICAL[relation] += 1
             continue
-        if ORG_RANK.get(org, 9) < ORG_RANK.get(corg, 9):
-            log_conflict(relation, key, org, vals, corg, cvals)
-            best[key] = (r, org, vals)
+        if source_priority(bid) < source_priority(cbid):
+            log_conflict(relation, key, '%s %s' % (org, bid), vals,
+                         '%s %s' % (corg, cbid), cvals)
+            best[key] = (r, org, vals, bid)
         else:
-            log_conflict(relation, key, corg, cvals, org, vals)
+            log_conflict(relation, key, '%s %s' % (corg, cbid), cvals,
+                         '%s %s' % (org, bid), vals)
     return [v[0] for v in best.values()]
 
 
@@ -913,6 +939,32 @@ def build_1nf():
         o, f, s = SRC_ORG[b]
         a.append([st, y, m, d, h, 'Radiation', v, o, s, b])
 
+    daily_names = {
+        'Max_Temp': ('BRRI_Maximum_Temperature_Daily_1NF',
+                     'Daily Maximum Temperature'),
+        'Min_Temp': ('BRRI_Minimum_Temperature_Daily_1NF',
+                     'Daily Minimum Temperature'),
+        'Rainfall': ('BRRI_Rainfall_Daily_1NF', 'Daily Total Rainfall'),
+        'Humidity': ('BRRI_Humidity_Daily_1NF', 'Daily Average Humidity'),
+    }
+    daily_header = [
+        'Station_Name', 'Year', 'Month', 'Day', 'Measure', 'Value',
+        'Source_Organization', 'Source_Sheet', 'Block'
+    ]
+    for tag, (table_name, measure_name) in daily_names.items():
+        rows = []
+        for (row_tag, station, year, month), daily in BRRI_DAILY.items():
+            if row_tag != tag:
+                continue
+            block = BRRI_BID[tag]
+            organization, _file, source_sheet = SRC_ORG[block]
+            rows.extend(
+                [station, year, month, day, measure_name, value,
+                 organization, source_sheet, block]
+                for day, value in daily
+            )
+        ONE_NF[table_name] = (daily_header, rows)
+
     ONE_NF['Water_Quality_1NF'] = (
         ['WQ_Station_Name', 'River_Name', 'Water_Category', 'Year',
          'Parameter_Type', 'Value', 'Source_Organization', 'Source_Sheet',
@@ -931,14 +983,6 @@ def build_1nf():
         for attr, _ in FOREST_MEASURES:
             if vals[attr] is not None:
                 a.append([d, fy, y1, y2, attr, vals[attr], s, b])
-
-    ONE_NF['Ground_Water_Well_1NF'] = (
-        ['District_Name', 'Well_No', 'Well_ID', 'Latitude', 'Longitude',
-         'Sub_Division', 'Upazilla', 'Source_Sheet', 'Block'], [])
-    a = ONE_NF['Ground_Water_Well_1NF'][1]
-    for d, wn, wid, la, lo, sub, up, b in GW:
-        o, f, s = SRC_ORG[b]
-        a.append([d, wn, wid, la, lo, sub or '', up or '', s, b])
 
     ONE_NF['Waste_Water_1NF'] = (
         ['Category', 'Group_Name', 'Fiscal_Start_Year', 'Fiscal_End_Year',
@@ -1021,7 +1065,6 @@ def build_2nf():
         [[r[0], r[2], r[3], r[4], r[5], r[7]]
          for r in ONE_NF['Forest_Area_1NF'][1]])
 
-    TWO_NF['Ground_Water_Well_2NF'] = ONE_NF['Ground_Water_Well_1NF']
     TWO_NF['Waste_Water_2NF'] = ONE_NF['Waste_Water_1NF']
     TWO_NF['River_Register_2NF'] = ONE_NF['River_Register_1NF']
 
@@ -1099,19 +1142,6 @@ def build_3nf():
         hdr, [[k[0], k[1], k[2]] + [v.get(a) for a, _ in FOREST_MEASURES]
               for k, v in f.items()])
 
-    dsub = {}
-    for r in TWO_NF['Ground_Water_Well_2NF'][1]:
-        if r[5]:
-            dsub[r[0]] = r[5]
-    THREE_NF['District_Sub_Division_3NF'] = (
-        ['District_Name', 'Sub_Division'],
-        [[k, v] for k, v in sorted(dsub.items())])
-    THREE_NF['Ground_Water_Well_3NF'] = (
-        ['District_Name', 'Well_No', 'Well_ID', 'Latitude', 'Longitude',
-         'Upazilla'],
-        [[r[0], r[1], r[2], r[3], r[4], r[6]]
-         for r in TWO_NF['Ground_Water_Well_2NF'][1]])
-
     est = [r for r in TWO_NF['Waste_Water_2NF'][1]
            if r[0] == 'Type of Establishment']
     ind = [r for r in TWO_NF['Waste_Water_2NF'][1] if r[0] == 'Industry']
@@ -1138,6 +1168,22 @@ def build_bcnf():
     t = resolve('Temperature_Record', [tuple(r) for r in
                                        THREE_NF['Temperature_Record_3NF'][1]],
                 4, 1)
+    by_month = collections.defaultdict(dict)
+    for row in t:
+        by_month[row[:3]][row[3]] = row
+    invalid_temperature_keys = set()
+    for month_key, pair in by_month.items():
+        minimum = pair.get('Minimum')
+        maximum = pair.get('Maximum')
+        if minimum and maximum and minimum[4] > maximum[4]:
+            invalid_temperature_keys.add(month_key)
+            for row in (minimum, maximum):
+                quarantine(
+                    'Temperature_Record',
+                    ' | '.join(str(value) for value in row[:4]),
+                    row[4], row[-1],
+                    'monthly minimum exceeds monthly maximum')
+    t = [row for row in t if row[:3] not in invalid_temperature_keys]
     BCNF['Temperature_Record'] = (
         ['Station_Name', 'Year', 'Month', 'Type', 'Temp'],
         [list(r[:5]) for r in keysort(t, 4)])
@@ -1217,21 +1263,16 @@ def build_bcnf():
     PK['Forest_Area_Record'] = \
         '(District_Name, Fiscal_Start_Year, Fiscal_End_Year)'
 
-    anom('The approved diagram has no groundwater entity, so the wells '
-         'reconciled at Third Normal Form have no relation to load into',
-         '%d wells from %d districts stop at Third Normal Form'
-         % (len(THREE_NF['Ground_Water_Well_3NF'][1]),
-            len({r[0] for r in THREE_NF['Ground_Water_Well_3NF'][1]})))
-
     BCNF['Type_Of_Establishments'] = (
         ['Size_Name', 'Start_Year', 'End_Year', 'Quantity', 'Percentage'],
         [[r[0], r[1], r[2], r[3], r[4]]
          for r in keysort(THREE_NF['Type_Of_Establishments_3NF'][1], 3)])
     PK['Type_Of_Establishments'] = '(Size_Name, Start_Year, End_Year)'
     BCNF['Industry_Usage'] = (
-        ['Industry_Name', 'Start_Year', 'End_Year',
-         'Produced_Waste_Water', 'Reused_Waste_Water'],
-        [[r[0], r[1], r[2], r[3], r[4]]
+        ['Industry_Name', 'Start_Year', 'End_Year', 'Quantity', 'Percentage'],
+        [[r[0], r[1], r[2], r[3],
+          None if r[3] in (None, 0) or r[4] is None
+          else round(100.0 * r[4] / r[3], 6)]
          for r in keysort(THREE_NF['Industry_Usage_3NF'][1], 3)])
     PK['Industry_Usage'] = '(Industry_Name, Start_Year, End_Year)'
     BCNF['Size'] = (
@@ -1239,10 +1280,10 @@ def build_bcnf():
         [[s] for s in sorted({r[0] for r in
                               BCNF['Type_Of_Establishments'][1]})])
     PK['Size'] = 'Size_Name'
-    BCNF['Industrial_Type'] = (
+    BCNF['Industry_Type'] = (
         ['Industry_Name'],
         [[s] for s in sorted({r[0] for r in BCNF['Industry_Usage'][1]})])
-    PK['Industrial_Type'] = 'Industry_Name'
+    PK['Industry_Type'] = 'Industry_Name'
     anom('Both waste relations are keyed by fiscal year in the approved '
          'diagram, so every published year loads rather than only the latest',
          'Type_Of_Establishments %d rows over %d fiscal years; Industry_Usage '
@@ -1252,20 +1293,24 @@ def build_bcnf():
             len(BCNF['Industry_Usage'][1]),
             len({(r[1], r[2]) for r in BCNF['Industry_Usage'][1]})))
 
+    districts = {r[0] for r in BCNF['Forest_Area_Record'][1]}
+    BCNF['District'] = (['District_Name'], [[d] for d in sorted(districts)])
+    PK['District'] = 'District_Name'
+
     stations = set()
     for rel in ('Temperature_Record', 'Humidity_Record', 'Rainfall_Record',
                 'Wind_Record', 'Climatic_Event_Record', 'Sunshine_Record',
                 'Radiation_Record'):
         for r in BCNF[rel][1]:
             stations.add(r[0])
-    BCNF['Station'] = (['Station_Name'], [[s] for s in sorted(stations)])
+    station_rows = []
+    for station in sorted(stations):
+        district = station if station in districts else ''
+        station_rows.append([station, district])
+        if not district:
+            UNMAPPED_STATIONS.append(station)
+    BCNF['Station'] = (['Station_Name', 'District_Name'], station_rows)
     PK['Station'] = 'Station_Name'
-
-    districts = set()
-    for r in BCNF['Forest_Area_Record'][1]:
-        districts.add(r[0])
-    BCNF['District'] = (['District_Name'], [[d] for d in sorted(districts)])
-    PK['District'] = 'District_Name'
 
     reg = {}
     for ser, nm, zone, border, flow in RIVREG:
@@ -1371,12 +1416,13 @@ def build_bcnf():
             'Size_Name -> Size(Size_Name)',
             '(Start_Year, End_Year) -> Fiscal_Year(Start_Year, End_Year)'],
         'Industry_Usage': [
-            'Industry_Name -> Industrial_Type(Industry_Name)',
+            'Industry_Name -> Industry_Type(Industry_Name)',
             '(Start_Year, End_Year) -> Fiscal_Year(Start_Year, End_Year)'],
         'Forest_Area_Record': [
             'District_Name -> District(District_Name)',
             '(Fiscal_Start_Year, Fiscal_End_Year) -> '
             'Fiscal_Year(Start_Year, End_Year)'],
+        'Station': ['District_Name -> District(District_Name), when known'],
     })
 
 
@@ -1395,12 +1441,9 @@ XFORM = {
             'a day that does not exist in that month is rejected.',
     'brri': 'Read from a Bangladesh Rice Research Institute daily weather '
             'file and aggregated to the month, because the approved design '
-            'holds monthly climate readings. Temperature and humidity are '
-            'averaged over the days present, rainfall is summed, and the '
-            'number of days each figure rests on is counted.',
-    'gw': 'Read from the Bangladesh Water Development Board groundwater '
-          'workbook. The district is named only on the first well of each '
-          'group, so it is carried down to the wells that follow it.',
+            'holds monthly climate readings. Daily maxima become monthly '
+            'maxima, daily minima become monthly minima, rainfall is summed, '
+            'humidity is averaged, and the observation count is recorded.',
     'rivers': 'Read from the Bangladesh Water Development Board river '
               'register. One row per river, so no column group repeats.',
 }
@@ -1486,10 +1529,10 @@ def build_trace():
 
 
     for b in BK.BLOCKS:
-        if not b['target'].startswith(('Industrial_Type',
+        if not b['target'].startswith(('Industry_Type',
                                        'Type_Of_Establishments')):
             continue
-        usage = b['target'].startswith('Industrial')
+        usage = b['target'].startswith('Industry_Type')
         rel = 'Industry_Usage' if usage else 'Type_Of_Establishments'
         key = 'Industry_Name' if usage else 'Size_Name'
         note = ('Read from the Bangladesh Bureau of Statistics workbook. The '
@@ -1498,18 +1541,18 @@ def build_trace():
                 'rather than reduced to the latest year. '
                 % key.replace('_', ' ').lower())
         if usage:
-            note += ('The produced and reused values are preserved in '
-                     'separate columns; the source heading conflict is '
-                     'documented rather than silently corrected.')
+            note += ('Quantity is the published produced volume. Percentage '
+                     'is derived from the published reused and produced '
+                     'volumes; both exact source figures remain in the '
+                     'pre-BCNF stages.')
         else:
             note += ('The published quantity and percentage are preserved '
                      'as separate columns.')
-        attrs = ('%s, Start_Year, End_Year, Produced_Waste_Water, '
-                 'Reused_Waste_Water' % key if usage else
+        attrs = ('%s, Start_Year, End_Year, Quantity, Percentage' % key if usage else
                  '%s, Start_Year, End_Year, Quantity, Percentage' % key)
         TRACE.append((rel, attrs, b['org'], b['file'], b['sheet'].strip(),
                       b['rep'], note))
-        TRACE.append(('Industrial_Type' if usage else 'Size', key, b['org'],
+        TRACE.append(('Industry_Type' if usage else 'Size', key, b['org'],
                       b['file'], b['sheet'].strip(), b['rep'],
                       'A reference relation collected from the %s values that '
                       '%s actually uses, so the foreign key has a parent row.'
@@ -1662,8 +1705,8 @@ def write_quality():
     L.append('')
     L.append('Every problem the extraction program meets in the source files '
              'is counted here. Nothing is silently corrected: a repair is '
-             'recorded as a repair, and a value that cannot be repaired is '
-             'left empty rather than replaced with a zero.')
+             'recorded as a repair, and a record that cannot be repaired is '
+             'quarantined rather than replaced with an invented value.')
     L.append('')
     L.append('## 1. Problems found, by class')
     L.append('')
@@ -1727,12 +1770,11 @@ def write_quality():
              'recorded here, because a discarded measurement must remain '
              'visible.')
     L.append('')
-    L.append('Precedence used: %s.'
-             % ', '.join('%s before %s' % (a, b) for a, b in
-                         [('Bangladesh Bureau of Statistics', 'Bangladesh '
-                           'Meteorological Department'),
-                          ('Bangladesh Meteorological Department',
-                           'Bangladesh Rice Research Institute')]))
+    L.append('Meteorological precedence used: Bangladesh Meteorological '
+             'Department, then Bangladesh Rice Research Institute, then '
+             'Bangladesh Bureau of Statistics. Within one organisation, the '
+             'block with the newest stated coverage wins; a remaining tie '
+             'uses the later source occurrence.')
     L.append('')
     if CONFLICTS:
         L.append('### 6.1 Summary, and why the two kinds of conflict are '
@@ -1838,9 +1880,9 @@ def write_quality():
         for d in VERIFY['detail']:
             L.append('- %s' % d)
     else:
-        L.append('No violation of any kind is found. Every relation loads '
-                 'with a unique primary key, and every foreign key value has '
-                 'a matching parent row.')
+        L.append('The primary-key and foreign-key checks found no violation. '
+                 'Other domain and cross-row checks are listed separately in '
+                 '`DATA_REVIEW.md`.')
     with open(OUT + 'DATA_QUALITY_LOG.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(L) + '\n')
 
@@ -1866,7 +1908,7 @@ PK_COLS = {
     'Radiation_Record': ['Station_Name', 'Year', 'Month', 'Day', 'Sample_No'],
     'Water_Quality': ['WQ_Station_Name', 'Year', 'Parameter_Type'],
     'Size': ['Size_Name'],
-    'Industrial_Type': ['Industry_Name'],
+    'Industry_Type': ['Industry_Name'],
     'Type_Of_Establishments': ['Size_Name', 'Start_Year', 'End_Year'],
     'Industry_Usage': ['Industry_Name', 'Start_Year', 'End_Year'],
     'Forest_Area_Record': ['District_Name', 'Fiscal_Start_Year',
@@ -1874,6 +1916,7 @@ PK_COLS = {
 }
 
 FK_PAIRS = [
+    ('Station', ['District_Name'], 'District', ['District_Name']),
     ('River_Station', ['River_Name'], 'River', ['River_Name']),
     ('Month_Time', ['Year'], 'Year_Time', ['Year']),
     ('Day_Time', ['Year', 'Month'], 'Month_Time', ['Year', 'Month']),
@@ -1885,7 +1928,7 @@ FK_PAIRS = [
     ('Type_Of_Establishments', ['Size_Name'], 'Size', ['Size_Name']),
     ('Type_Of_Establishments', ['Start_Year', 'End_Year'], 'Fiscal_Year',
      ['Start_Year', 'End_Year']),
-    ('Industry_Usage', ['Industry_Name'], 'Industrial_Type',
+    ('Industry_Usage', ['Industry_Name'], 'Industry_Type',
      ['Industry_Name']),
     ('Industry_Usage', ['Start_Year', 'End_Year'], 'Fiscal_Year',
      ['Start_Year', 'End_Year']),
@@ -1920,7 +1963,11 @@ def verify():
                 % (rel, len(k) - len(set(k))))
     for child, ccols, parent, pcols in FK_PAIRS:
         VERIFY['fk_checked'] += 1
-        miss = set(proj(child, ccols)) - set(proj(parent, pcols))
+        child_values = {
+            value for value in proj(child, ccols)
+            if all(item not in (None, '') for item in value)
+        }
+        miss = child_values - set(proj(parent, pcols))
         if miss:
             VERIFY['fk_violations'] += 1
             VERIFY['detail'].append(
@@ -1972,8 +2019,8 @@ FD_ROWS = [
     ('Climatic_Event_Record', '(Station_Name, Year, Month)',
      '(Station_Name, Year, Month) -> Thunderstorm, Lightning',
      'the whole key', 'yes',
-     'Both attributes count days in the same month at the same station, so '
-     'they share one key and belong in one relation.'),
+     'Both attributes are published monthly event frequencies at the same '
+     'station, so they share one key and belong in one relation.'),
     ('Sunshine_Record', '(Station_Name, Year, Month, Day)',
      '(Station_Name, Year, Month, Day) -> Sunshine_Hours', 'the whole key',
      'yes', 'Bright sunshine hours for one station on one day.'),
@@ -1992,7 +2039,7 @@ FD_ROWS = [
     ('Size', 'Size_Name', 'none beyond the key', 'the whole key', 'yes',
      'A reference relation naming the four enterprise sizes: Micro, Small, '
      'Medium and Large.'),
-    ('Industrial_Type', 'Industry_Name', 'none beyond the key',
+    ('Industry_Type', 'Industry_Name', 'none beyond the key',
      'the whole key', 'yes',
      'A reference relation naming the industry categories that report reused '
      'waste water.'),
@@ -2005,12 +2052,11 @@ FD_ROWS = [
      'It is kept because the approved diagram carries it and the source '
      'publishes it as a separate figure.'),
     ('Industry_Usage', '(Industry_Name, Start_Year, End_Year)',
-     '(Industry_Name, Start_Year, End_Year) -> Produced_Waste_Water, '
-     'Reused_Waste_Water',
+     '(Industry_Name, Start_Year, End_Year) -> Quantity, Percentage',
      'the whole key', 'yes',
-     'Both published waste-water values belong to one industry and fiscal '
-     'year. The reuse rate is calculated from them in a database view rather '
-     'than stored as a misleading source percentage.'),
+     'Quantity stores published produced waste water. Percentage is derived '
+     'from the published reused and produced amounts as required by the '
+     'approved diagram; both source amounts remain in the earlier stages.'),
     ('Forest_Area_Record',
      '(District_Name, Fiscal_Start_Year, Fiscal_End_Year)',
      'the whole key determines all eight area figures', 'the whole key',
@@ -2022,6 +2068,111 @@ FD_ROWS = [
 ]
 
 
+def write_review():
+    review_dir = os.path.join(OUT, 'review')
+    os.makedirs(review_dir, exist_ok=True)
+
+    def write(name, header, rows):
+        path = os.path.join(review_dir, name)
+        with open(path, 'w', encoding='utf-8', newline='') as handle:
+            writer = csv.writer(handle, lineterminator='\n')
+            writer.writerow(header)
+            writer.writerows(rows)
+
+    write('VALUE_CONFLICTS.csv',
+          ['Relation', 'Primary_Key', 'Source_Kept', 'Value_Kept',
+           'Source_Rejected', 'Value_Rejected', 'Conflict_Class'],
+          CONFLICTS)
+    write('QUARANTINED_ROWS.csv',
+          ['Relation', 'Primary_Key', 'Value', 'Block', 'Reason'],
+          QUARANTINE)
+    write('UNMAPPED_STATIONS.csv', ['Station_Name', 'Reason'],
+          [(station, 'No district mapping is published in the selected files')
+           for station in UNMAPPED_STATIONS])
+    write('BRRI_MONTHLY_AGGREGATION.csv',
+          ['Block', 'Measure', 'Station_Name', 'Year', 'Month',
+           'Daily_Readings', 'Rule', 'Monthly_Value'],
+          AGGREGATION_AUDIT)
+    block_accounting = []
+    for block in [item['id'] for item in BK.BLOCKS]:
+        read = CELLS_READ.get(block, 0)
+        accepted = CELLS_KEPT.get(block, 0)
+        rejected = MISSING.get(block, 0)
+        block_accounting.append(
+            (block, read, accepted, rejected,
+             'yes' if read == accepted + rejected else 'no')
+        )
+    write('BLOCK_ACCOUNTING.csv',
+          ['Block', 'Cells_Read', 'Values_Parsed', 'Missing_Or_Unusable',
+           'Balances'], block_accounting)
+
+    stage_map = {
+        'Temperature_Record': 'Temperature_Record_3NF',
+        'Humidity_Record': 'Humidity_Record_3NF',
+        'Rainfall_Record': 'Rainfall_Record_3NF',
+        'Wind_Record': 'Wind_Record_3NF',
+        'Climatic_Event_Record': 'Climatic_Event_Record_3NF',
+        'Sunshine_Record': 'Sunshine_Record_3NF',
+        'Radiation_Record': 'Radiation_Record_3NF',
+        'Water_Quality': 'Water_Quality_3NF',
+    }
+    accounting = []
+    for relation, stage_name in stage_map.items():
+        offered = len(THREE_NF[stage_name][1])
+        accepted = len(BCNF[relation][1])
+        duplicate = DUP_IDENTICAL.get(relation, 0)
+        displaced = sum(1 for item in CONFLICTS if item[0] == relation)
+        final_quarantine = sum(
+            1 for item in QUARANTINE
+            if item[0] == relation and
+            item[4] == 'monthly minimum exceeds monthly maximum')
+        quarantined = sum(1 for item in QUARANTINE if item[0] == relation)
+        input_rows = offered + quarantined - final_quarantine
+        balanced = input_rows == accepted + duplicate + displaced + quarantined
+        accounting.append((relation, input_rows, accepted, duplicate, displaced,
+                           quarantined, 'yes' if balanced else 'no'))
+    write('ROW_ACCOUNTING.csv',
+          ['Relation', 'Rows_Input_To_Resolution', 'Rows_Accepted',
+           'Identical_Duplicates', 'Displaced_Conflicts',
+           'Quarantined_Rows', 'Balances'], accounting)
+
+    lines = [
+        '# Data Review', '',
+        'This file lists the decisions that change which source value reaches '
+        'the final database. The detailed rows are in `review/`.', '',
+        '## Source choice', '',
+        '- Weather values use BMD, then BRRI, then BBS.',
+        '- Equal-authority conflicts use the newest stated coverage, then the '
+        'later source occurrence.',
+        '- Every displaced value remains in `review/VALUE_CONFLICTS.csv`.', '',
+        '## Monthly derivation', '',
+        '- Daily maximum temperature becomes the monthly maximum.',
+        '- Daily minimum temperature becomes the monthly minimum.',
+        '- Daily rainfall is summed by month.',
+        '- Daily humidity is averaged by month.',
+        '- Daily sunshine remains daily.',
+        '- Aggregation counts are in `review/BRRI_MONTHLY_AGGREGATION.csv`.', '',
+        '## Review counts', '',
+        '- Active source blocks: %d (B01-B62).' % len(BK.BLOCKS),
+        '- Source-cell accounting for every block is in '
+        '`review/BLOCK_ACCOUNTING.csv`.',
+        '- Displaced source values: %d.' % len(CONFLICTS),
+        '- Quarantined rows or values: %d.' % len(QUARANTINE),
+        '- Stations without a published district mapping: %d.'
+        % len(UNMAPPED_STATIONS), '',
+        '## Team report follow-up', '',
+        '- Use 62 active source blocks.',
+        '- Use the table name `Industry_Type` consistently.',
+        '- `Industry_Usage.Quantity` is produced waste-water volume.',
+        '- `Industry_Usage.Percentage` is the reuse rate.',
+        '- Climatic event values are monthly frequencies, not a count of days.',
+        '- Database rows for minimum and maximum temperature remain separate '
+        'because `Type` is part of the approved primary key.', '',
+    ]
+    with open(os.path.join(OUT, 'DATA_REVIEW.md'), 'w', encoding='utf-8') as handle:
+        handle.write('\n'.join(lines))
+
+
 def main():
     build_source_index()
     print('Reading selected source files.')
@@ -2031,7 +2182,7 @@ def main():
     print('  climate rows  : temp %d  hum %d  rain %d  wind %d  event %d'
           % (len(TEMP), len(HUM), len(RAIN), len(WIND), len(EVENT)))
     print('  daily rows    : sun %d  rad %d' % (len(SUN), len(RAD)))
-    print('  water quality : %d   ground water : %d' % (len(WQ), len(GW)))
+    print('  water quality : %d' % len(WQ))
     print('  forest %d  industry %d  establishment %d  rivers %d'
           % (len(FOREST), len(IND), len(EST), len(RIVREG)))
     build_1nf()
@@ -2064,6 +2215,7 @@ def main():
               ['Relation', 'Attribute', 'Organisation', 'Source_File',
                'Source_Sheet', 'Source_Column_Group', 'Transformation'],
               [list(r) for r in TRACE])
+    write_review()
     write_statistics()
     write_quality()
     print('Normalization files refreshed.')

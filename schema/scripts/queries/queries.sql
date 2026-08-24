@@ -1,22 +1,29 @@
 -- name: climate
--- Monthly climate measurements by station.
-SELECT t.Station_Name,
-       t.Year,
-       t.Month,
-       t.Type AS Temperature_Type,
-       t.Temp,
-       h.Humidity,
-       r.Rainfall
-FROM Temperature_Record AS t
-LEFT JOIN Humidity_Record AS h
-  ON h.Station_Name = t.Station_Name
- AND h.Year = t.Year
- AND h.Month = t.Month
-LEFT JOIN Rainfall_Record AS r
-  ON r.Station_Name = t.Station_Name
- AND r.Year = t.Year
- AND r.Month = t.Month
-ORDER BY t.Year DESC, t.Month DESC, t.Station_Name, t.Type
+-- Monthly climate measurements with minimum and maximum side by side.
+SELECT Station_Name,
+       Year,
+       Month,
+       Maximum_Temperature,
+       Minimum_Temperature,
+       Humidity,
+       Rainfall,
+       Thunderstorm,
+       Lightning
+FROM Monthly_Climate_Summary
+ORDER BY Year DESC, Month DESC, Station_Name
+LIMIT 50;
+
+-- name: wind
+-- Monthly wind readings with minimum and maximum side by side.
+SELECT Station_Name,
+       Year,
+       Month,
+       Maximum_Wind_Speed,
+       Maximum_Wind_Direction,
+       Minimum_Wind_Speed,
+       Minimum_Wind_Direction
+FROM Monthly_Wind_Summary
+ORDER BY Year DESC, Month DESC, Station_Name
 LIMIT 50;
 
 -- name: rivers
@@ -33,14 +40,13 @@ ORDER BY w.Year DESC, rs.River_Name, w.WQ_Station_Name, w.Parameter_Type
 LIMIT 50;
 
 -- name: wastewater
--- Waste-water production, reuse, and calculated reuse rate.
+-- Produced waste-water volume and source-derived reuse percentage.
 SELECT Industry_Name,
        Start_Year,
        End_Year,
-       Produced_Waste_Water,
-       Reused_Waste_Water,
-       ROUND(Reuse_Percentage, 2) AS Reuse_Percentage
-FROM Industry_Usage_With_Rate
+       Quantity,
+       ROUND(Percentage, 2) AS Percentage
+FROM Industry_Usage
 ORDER BY Start_Year DESC, Industry_Name
 LIMIT 50;
 
@@ -68,7 +74,7 @@ WITH counts(Table_Name, Records, Sort_Order) AS (
   SELECT 'River', COUNT(*), 7 FROM River UNION ALL
   SELECT 'River_Station', COUNT(*), 8 FROM River_Station UNION ALL
   SELECT 'Size', COUNT(*), 9 FROM Size UNION ALL
-  SELECT 'Industrial_Type', COUNT(*), 10 FROM Industrial_Type UNION ALL
+  SELECT 'Industry_Type', COUNT(*), 10 FROM Industry_Type UNION ALL
   SELECT 'Temperature_Record', COUNT(*), 11 FROM Temperature_Record UNION ALL
   SELECT 'Humidity_Record', COUNT(*), 12 FROM Humidity_Record UNION ALL
   SELECT 'Rainfall_Record', COUNT(*), 13 FROM Rainfall_Record UNION ALL

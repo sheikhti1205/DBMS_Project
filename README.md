@@ -4,7 +4,7 @@ ByteForge Scrum Group 07 normalized the selected environmental records and loade
 
 ## Project layout
 
-- `ERD/` contains only the final ERD.
+- `ERD/Final_ERD.png` is the report ERD used by the active database. Old diagrams are isolated in `ERD/discarded_do_not_use/`.
 - `normalization/` contains the generated workbook, normalization CSVs, statistics, data-quality log, and its `scripts/` folder.
 - `schema/environment.db` is the ready-to-query SQLite database.
 - `schema/scripts/setup/` builds and verifies the database.
@@ -31,9 +31,9 @@ Linux, WSL, or macOS:
 ./setup_linux.sh
 ```
 
-For an unattended setup, use `setup_windows.bat /yes` or `./setup_linux.sh --yes`. Linux supports apt, dnf, microdnf, yum, pacman, zypper, and apk; Homebrew is also recognized on macOS. System package installation may ask for the computer's administrator password. Declining an installation stops setup without rebuilding the database.
+For an unattended installation, use `setup_windows.bat /yes` or `./setup_linux.sh --yes`. Add `/replace` on Windows or `--replace` on Linux only when the existing database should be replaced. Linux supports apt, dnf, microdnf, yum, pacman, zypper, and apk; Homebrew is also recognized on macOS. System package installation may ask for the computer's administrator password. Declining an installation stops setup without rebuilding the database.
 
-Each launcher creates a private environment outside the project folder, installs the pinned packages, refreshes `schema/environment.db`, verifies the final ERD structure, and runs the sample demonstration. Running a launcher again refreshes the database cleanly.
+Each launcher creates a private environment outside the project folder, installs the pinned packages, prepares `schema/environment.db`, verifies the final ERD structure, and runs the sample demonstration. A current database is kept on later runs. A different database asks before replacement unless the explicit replacement option is used.
 
 ## VS Code on WSL
 
@@ -102,20 +102,20 @@ PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
 "$PYTHON" -B -m schema.scripts.setup.verify_database
 ```
 
-The workbook is generated as `normalization/Environmental_Normalization_0NF_to_BCNF.xlsx`. The database importer reads all final BCNF CSV files and enforces the 21 tables and 27 relationships defined by the final ERD.
+The workbook is generated as `normalization/Environmental_Normalization_0NF_to_BCNF.xlsx`. Human review decisions are summarized in `normalization/DATA_REVIEW.md`, with supporting CSV files in `normalization/review/`. The database importer reads all final BCNF CSV files and enforces the 21 tables and 28 relationships defined by the final ERD.
 
 ## Publish the verified files to Drive
 
 Check for differences:
 
 ```bash
-python3 -B tools/publish_to_drive.py --drive "/path/to/DBMS_Project"
+python3 -B tools/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project"
 ```
 
 Apply the checked update:
 
 ```bash
-python3 -B tools/publish_to_drive.py --drive "/path/to/DBMS_Project" --apply
+python3 -B tools/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project" --apply
 ```
 
 Publishing manages only `ERD`, `exclusions`, `normalization`, `schema`, the launchers, and `requirements.txt`. It never changes `report/` or `Selected_Source_Files/` and never copies Git metadata or this README to Drive.

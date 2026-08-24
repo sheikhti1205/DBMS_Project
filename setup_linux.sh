@@ -5,15 +5,20 @@ cd "$(dirname "$0")"
 export PYTHONDONTWRITEBYTECODE=1
 
 assume_yes=0
+replace_database=0
 
 for argument in "$@"; do
     case "$argument" in
         -y|--yes)
             assume_yes=1
             ;;
+        --replace)
+            replace_database=1
+            ;;
         -h|--help)
-            echo "Usage: ./setup_linux.sh [--yes]"
+            echo "Usage: ./setup_linux.sh [--yes] [--replace]"
             echo "  --yes  Approve required installations without prompting."
+            echo "  --replace  Replace a different or current database."
             exit 0
             ;;
         *)
@@ -129,6 +134,44 @@ install_system_python() {
     esac
 }
 
+install_sqlite_cli() {
+    if command -v apt-get >/dev/null 2>&1; then
+        manager="apt"
+    elif command -v dnf >/dev/null 2>&1; then
+        manager="dnf"
+    elif command -v microdnf >/dev/null 2>&1; then
+        manager="microdnf"
+    elif command -v yum >/dev/null 2>&1; then
+        manager="yum"
+    elif command -v pacman >/dev/null 2>&1; then
+        manager="pacman"
+    elif command -v zypper >/dev/null 2>&1; then
+        manager="zypper"
+    elif command -v apk >/dev/null 2>&1; then
+        manager="apk"
+    elif command -v brew >/dev/null 2>&1; then
+        manager="brew"
+    else
+        echo "No supported package manager was found for the SQLite command-line tool." >&2
+        return 1
+    fi
+    echo "The SQLite command-line tool is needed to run SQL files directly."
+    if ! confirm_install "Install the SQLite command-line tool now?"; then
+        echo "SQLite command-line installation was not approved. Python queries will still work." >&2
+        return 1
+    fi
+    case "$manager" in
+        apt) run_as_root apt-get install -y sqlite3 ;;
+        dnf) run_as_root dnf install -y sqlite ;;
+        microdnf) run_as_root microdnf install -y sqlite ;;
+        yum) run_as_root yum install -y sqlite ;;
+        pacman) run_as_root pacman -Sy --needed --noconfirm sqlite ;;
+        zypper) run_as_root zypper --non-interactive install sqlite3 ;;
+        apk) run_as_root apk add sqlite ;;
+        brew) brew install sqlite ;;
+    esac
+}
+
 find_python() {
     for candidate in python3 python; do
         if command -v "$candidate" >/dev/null 2>&1 \
@@ -145,6 +188,10 @@ if [ -z "$system_python" ]; then
     echo "A usable Python 3.10 or newer installation was not found."
     install_system_python || exit 1
     system_python=$(find_python || true)
+fi
+
+if ! command -v sqlite3 >/dev/null 2>&1; then
+    install_sqlite_cli || exit 1
 fi
 
 if [ -z "$system_python" ]; then
@@ -204,7 +251,11 @@ else
 fi
 
 echo "Preparing the database."
-"$python" -m schema.scripts.setup.build_database --replace
+if [ "$replace_database" -eq 1 ]; then
+    "$python" -m schema.scripts.setup.build_database --replace
+else
+    "$python" -m schema.scripts.setup.build_database
+fi
 
 echo "Checking the database."
 "$python" -m schema.scripts.setup.verify_database

@@ -1,0 +1,9 @@
+Relation,Rows_Input_To_Resolution,Rows_Accepted,Identical_Duplicates,Displaced_Conflicts,Quarantined_Rows,Balances
+Temperature_Record,65598,42295,452,22849,2,yes
+Humidity_Record,30822,25350,189,5281,2,yes
+Rainfall_Record,30796,25453,4854,488,1,yes
+Wind_Record,9502,9443,48,0,11,yes
+Climatic_Event_Record,4006,4006,0,0,0,yes
+Sunshine_Record,585163,533140,41027,10963,33,yes
+Radiation_Record,62931,62931,0,0,0,yes
+Water_Quality,2359,2327,15,10,7,yes

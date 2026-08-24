@@ -179,10 +179,10 @@ GUIDE = [
      'is what the next stage removes.'),
     ('3NF', 'Third Normal Form',
      'No non key attribute depends on another non key attribute.',
-     'The sub division of a groundwater well depends on the district, not on '
-     'the well, so it moves to a district table. The measure name is no '
-     'longer a data value: each measured quantity gets its own relation, '
-     'which is what the approved Entity Relationship diagram draws.',
+     'The measure name is no longer stored as a data value: each measured '
+     'quantity gets its own relation, which is what the approved Entity '
+     'Relationship diagram draws. River details also move away from yearly '
+     'measurements because they depend on the station alone.',
      'A relation can still hold a determinant that is not a candidate key, '
      'which is the one case Third Normal Form permits and Boyce Codd Normal '
      'Form does not.'),
@@ -277,7 +277,7 @@ def build():
                'Nothing below is cleaned. Empty cells, merged heading '
                'artefacts and column number legend rows appear as published.'],
               '0NF')
-    for bid in ('B01', 'B22', 'B63'):
+    for bid in ('B01', 'B22', 'B62'):
         b = next((x for x in BK.BLOCKS if x['id'] == bid), None)
         if b is None or bid not in Z0:
             continue
@@ -368,9 +368,10 @@ def build():
               ['Two organisations sometimes publish a different value for the '
                'same station, year and month. The primary key allows one row, '
                'so one value is kept and the other cannot be loaded.',
-               'Precedence: Bangladesh Bureau of Statistics before Bangladesh '
-               'Meteorological Department, and Bangladesh Meteorological '
-               'Department before Bangladesh Rice Research Institute.',
+               'Precedence for climate observations: Bangladesh '
+               'Meteorological Department, then Bangladesh Rice Research '
+               'Institute, then Bangladesh Bureau of Statistics. Equal '
+               'sources use the newest stated coverage, then the later block.',
                'Of %d conflicts, %d are the two organisations rounding the '
                'same reading differently and %d are a real disagreement about '
                'the value. The %d substantive conflicts are listed first.'
@@ -480,8 +481,8 @@ def build():
             ('DATA_QUALITY_LOG.md', 'Data Quality',
              'Every problem found in the published files',
              'Nothing is silently corrected. A repair is recorded as a '
-             'repair, and a value that cannot be repaired is left empty '
-             'rather than replaced with a zero.')):
+             'repair, and a record that cannot be repaired is quarantined '
+             'rather than replaced with an invented value.')):
         ws = sheet(wb, sname, STAGE_COLOUR['INFO'])
         r = title(ws, headline, [note,
                                  'The same content, in full, is in '
@@ -644,16 +645,18 @@ def build():
         ('Daily_Observation_1NF', '1NF',
          'Split at Third Normal Form into Sunshine_Record and '
          'Radiation_Record, one relation per measured quantity.'),
+        ('BRRI_*_Daily_1NF', '1NF',
+         'Four full daily trace tables preserve maximum temperature, minimum '
+         'temperature, rainfall and humidity before their monthly '
+         'aggregation. Their monthly results enter the climate relations; '
+         'the daily rows are not loaded because the approved keys are monthly.'),
         ('Forest_Area_1NF', '1NF',
          'The fiscal year text becomes Fiscal_Year at Second Normal Form, '
          'then the eight area measures pivot back into named columns at '
          'Third Normal Form.'),
-        ('Ground_Water_Well_1NF', '1NF',
-         'Sub_Division moves to District_Sub_Division at Third Normal Form, '
-         'because it depends on the district and not on the well.'),
         ('Waste_Water_1NF', '1NF',
          'Split at Third Normal Form into Type_Of_Establishments and '
-         'Industrial_Type, which the approved diagram draws separately.'),
+         'Industry_Type, which the approved diagram draws separately.'),
         ('Water_Quality_1NF', '1NF',
          'River_Name and Water_Category move to River_Station at Second '
          'Normal Form, because they depend on the station alone.'),
@@ -676,16 +679,9 @@ def build():
          'Records the unit of each measured quantity. The approved diagram '
          'has no unit entity, so the units are documented rather than '
          'loaded.'),
-        ('District_Sub_Division_3NF', '3NF',
-         'Folded back into Ground_Water_Well at Boyce Codd Normal Form, '
-         'because the approved diagram places Sub_Division on the well.'),
         ('River_Register_3NF', '3NF',
          'Reduced to River. Serial number, zone, border flag and flow type '
          'are not in the approved diagram.'),
-        ('Ground_Water_Well_3NF', '3NF',
-         'Loaded as Ground_Water_Well. The Upazilla attribute is dropped, '
-         'because the approved diagram carries the sub division and not the '
-         'upazilla.'),
         ('Station, District, Year_Time, Month_Time, Day_Time', 'BCNF',
          'New at Boyce Codd Normal Form. No organisation publishes these as '
          'tables. Each is collected from the values the measurement relations '

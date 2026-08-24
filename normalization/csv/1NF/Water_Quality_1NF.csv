@@ -424,7 +424,6 @@ Chadnighat,Buriganga River,Freshwater,2022,Biochemical Oxygen Demand,13.98,BBS,T
 Bangladesg China Friendship Bridge,Buriganga River,Freshwater,2022,Biochemical Oxygen Demand,14.75,BBS,T1.84,B23
 Fatullah,Buriganga River,Freshwater,2022,Biochemical Oxygen Demand,13.5,BBS,T1.84,B23
 Port Road,Shitalakhya River,Freshwater,2022,Biochemical Oxygen Demand,10.35,BBS,T1.84,B23
-Table Majhira Demra Ghat,Shitalakhya River,Freshwater,2022,Biochemical Oxygen Demand,10.24,BBS,T1.84,B23
 Murapara (Rupganj),Shitalakhya River,Freshwater,2022,Biochemical Oxygen Demand,8.98,BBS,T1.84,B23
 Gorashal Fertilizer,Shitalakhya River,Freshwater,2022,Biochemical Oxygen Demand,5.72,BBS,T1.84,B23
 Trimohoni Bridge,Balu River,Freshwater,2022,Biochemical Oxygen Demand,31.44,BBS,T1.84,B23
@@ -755,7 +754,6 @@ Chadnighat,Buriganga River,Freshwater,2022,Chemical Oxygen Demand,46.25,BBS,T1.8
 Bangladesg China Friendship Bridge,Buriganga River,Freshwater,2022,Chemical Oxygen Demand,44.75,BBS,T1.84b,B25
 Fatullah,Buriganga River,Freshwater,2022,Chemical Oxygen Demand,43.83,BBS,T1.84b,B25
 Port Road,Shitalakhya River,Freshwater,2022,Chemical Oxygen Demand,34.58,BBS,T1.84b,B25
-Table Majhira Demra Ghat,Shitalakhya River,Freshwater,2022,Chemical Oxygen Demand,44.42,BBS,T1.84b,B25
 Murapara (Rupganj),Shitalakhya River,Freshwater,2022,Chemical Oxygen Demand,34.83,BBS,T1.84b,B25
 Gorashal Fertilizer,Shitalakhya River,Freshwater,2022,Chemical Oxygen Demand,17.33,BBS,T1.84b,B25
 Trimohoni Bridge,Balu River,Freshwater,2022,Chemical Oxygen Demand,89.5,BBS,T1.84b,B25
@@ -785,7 +783,6 @@ Maduna Ghat,Halda River,Freshwater,2022,Chemical Oxygen Demand,12.99,BBS,T1.84b,
 Garduara Sluice Gate,Halda River,Freshwater,2022,Chemical Oxygen Demand,12.1,BBS,T1.84b,B25
 Halda Bridge,Halda River,Freshwater,2022,Chemical Oxygen Demand,12.15,BBS,T1.84b,B25
 Launch Ghat (S),Kirtonkhola River,Freshwater,2022,Chemical Oxygen Demand,9.5,BBS,T1.84b,B25
-Launch Ghat (M),Kirtonkhola River,Freshwater,2022,Chemical Oxygen Demand,-44,BBS,T1.84b,B25
 Kaower Char (S),Kirtonkhola River,Freshwater,2022,Chemical Oxygen Demand,111,BBS,T1.84b,B25
 Kaower Char (M),Kirtonkhola River,Freshwater,2022,Chemical Oxygen Demand,409,BBS,T1.84b,B25
 Dopdopia Kheyaghat (S),Kirtonkhola River,Freshwater,2022,Chemical Oxygen Demand,276,BBS,T1.84b,B25
@@ -1283,7 +1280,6 @@ Aziz Ahmed Taki Road (Down),Korotoa River,Freshwater,2021,pH,7.07,BBS,T1.84c,B26
 Sultanganj- Gabtoli (UP),Korotoa River,Freshwater,2021,pH,7.03,BBS,T1.84c,B26
 Sultanganj- Gabtoli (DN),Korotoa River,Freshwater,2021,pH,7.03,BBS,T1.84c,B26
 Teesta Bridge (Up),Teesta River,Freshwater,2021,pH,7.94,BBS,T1.84c,B26
-Teesta Bridge (Dn),Teesta River,Freshwater,2021,pH,14.4,BBS,T1.84c,B26
 Nohali Sapmari (Up),Teesta River,Freshwater,2021,pH,7.72,BBS,T1.84c,B26
 Nohali Sapmari (Dn),Teesta River,Freshwater,2021,pH,7.72,BBS,T1.84c,B26
 Teesta Barrage (Up),Teesta River,Freshwater,2021,pH,8.09,BBS,T1.84c,B26
@@ -1301,7 +1297,6 @@ Chadnighat,Buriganga River,Freshwater,2022,pH,7.17,BBS,T1.84c,B26
 Bangladesg China Friendship Bridge,Buriganga River,Freshwater,2022,pH,7.16,BBS,T1.84c,B26
 Fatullah,Buriganga River,Freshwater,2022,pH,7.23,BBS,T1.84c,B26
 Port Road,Shitalakhya River,Freshwater,2022,pH,7.36,BBS,T1.84c,B26
-Table Majhira Demra Ghat,Shitalakhya River,Freshwater,2022,pH,7.32,BBS,T1.84c,B26
 Murapara (Rupganj),Shitalakhya River,Freshwater,2022,pH,7.4,BBS,T1.84c,B26
 Gorashal Fertilizer,Shitalakhya River,Freshwater,2022,pH,7.43,BBS,T1.84c,B26
 Trimohoni Bridge,Balu River,Freshwater,2022,pH,7.1,BBS,T1.84c,B26
@@ -1757,7 +1752,6 @@ Sheaik Ghat,Surma River,Freshwater,2019,Dissolved Oxygen,6.18,BBS,T1.84e,B28
 Chhatak,Surma River,Freshwater,2019,Dissolved Oxygen,6.9,BBS,T1.84e,B28
 Kazir Bazar,Surma River,Freshwater,2019,Dissolved Oxygen,7.4,BBS,T1.84e,B28
 Kushiyara Point,Kushiara River,Freshwater,2019,Dissolved Oxygen,6.73,BBS,T1.84e,B28
-"Table 1.59a: Freshwater Quality by District/Station, 2020-2023",Kushiara River,Freshwater,2019,Dissolved Oxygen,2020,BBS,T1.84e,B28
 Mirpur Bridge,Buriganga River,Freshwater,2020,Dissolved Oxygen,2.83,BBS,T1.84e,B28
 Hajaribag,Buriganga River,Freshwater,2020,Dissolved Oxygen,2.64,BBS,T1.84e,B28
 Kamrangir Char,Buriganga River,Freshwater,2020,Dissolved Oxygen,2.52,BBS,T1.84e,B28
@@ -1994,7 +1988,6 @@ Chadnighat,Buriganga River,Freshwater,2022,Dissolved Oxygen,2.17,BBS,T1.84e,B28
 Bangladesg China Friendship Bridge,Buriganga River,Freshwater,2022,Dissolved Oxygen,2.66,BBS,T1.84e,B28
 Fatullah,Buriganga River,Freshwater,2022,Dissolved Oxygen,2.61,BBS,T1.84e,B28
 Port Road,Shitalakhya River,Freshwater,2022,Dissolved Oxygen,2.65,BBS,T1.84e,B28
-Table Majhira Demra Ghat,Shitalakhya River,Freshwater,2022,Dissolved Oxygen,2.56,BBS,T1.84e,B28
 Murapara (Rupganj),Shitalakhya River,Freshwater,2022,Dissolved Oxygen,4.04,BBS,T1.84e,B28
 Gorashal Fertilizer,Shitalakhya River,Freshwater,2022,Dissolved Oxygen,4.89,BBS,T1.84e,B28
 Trimohoni Bridge,Balu River,Freshwater,2022,Dissolved Oxygen,0.94,BBS,T1.84e,B28

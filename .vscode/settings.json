@@ -15,6 +15,10 @@
   "code-runner.fileDirectoryAsCwd": true,
   "code-runner.preserveFocus": false,
   "code-runner.showExecutionMessage": false,
+  "code-runner.executorMap": {
+    "sh": "bash",
+    "sql": "bash -lc 'repo=$(git -C $dir rev-parse --show-toplevel) && sqlite3 -readonly -header -column \"$repo/schema/environment.db\" < $fullFileName'"
+  },
   "code-runner.executorMapByFileExtension": {
     ".sh": "bash",
     ".sql": "bash -lc 'repo=$(git -C $dirWithoutTrailingSlash rev-parse --show-toplevel) && sqlite3 -readonly -header -column \"$repo/schema/environment.db\" < $fullFileName'"

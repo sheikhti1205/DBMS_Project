@@ -1,0 +1,57 @@
+Relation,Primary_Key,Value,Block,Reason
+Temperature_Record,Khulna | 2023 | 4 | Maximum,347.0,B57,Temperature outside the accepted range
+Temperature_Record,Khulna | 2023 | 5 | Maximum,334.0,B57,Temperature outside the accepted range
+Humidity_Record,Gazipur | 2007 | 5,189.6,B60,Humidity outside the accepted range
+Humidity_Record,Patuakhali | 2021 | 6,104.35,B60,Humidity outside the accepted range
+Rainfall_Record,Sandwip | 2001 | 6,3001.0,B59,Rainfall outside the accepted range
+Sunshine_Record,Dhaka | 2024 | 11 | 18,14.6,B14,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2024 | 7 | 18,20.2,B14,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2024 | 10 | 7,17.9,B14,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2024 | 10 | 14,17.0,B14,Sunshine outside the accepted range
+Sunshine_Record,Patuakhali | 2024 | 9 | 30,17.3,B14,Sunshine outside the accepted range
+Sunshine_Record,Ambagan (Ctg) | 2023 | 1 | 13,19.8,B14,Sunshine outside the accepted range
+Sunshine_Record,Ambagan (Ctg) | 2024 | 4 | 6,18.0,B14,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 12,16.6,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 13,16.3,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 14,16.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 15,16.2,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 16,15.9,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 17,15.5,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 18,15.4,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 19,15.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 20,20.3,B61,Sunshine outside the accepted range
+Sunshine_Record,Comilla | 2020 | 7 | 21,23.8,B61,Sunshine outside the accepted range
+Sunshine_Record,Gazipur | 2000 | 10 | 31,90.1,B61,Sunshine outside the accepted range
+Sunshine_Record,Gazipur | 2018 | 3 | 15,73.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Gazipur | 2019 | 4 | 10,72.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Kutubdia | 2014 | 10 | 9,90.2,B61,Sunshine outside the accepted range
+Sunshine_Record,Teknaf | 1981 | 5 | 10,14.2,B61,Sunshine outside the accepted range
+Sunshine_Record,Sylhet | 2021 | 11 | 9,18.6,B61,Sunshine outside the accepted range
+Sunshine_Record,Tangail | 2022 | 2 | 18,18.8,B61,Sunshine outside the accepted range
+Sunshine_Record,Tangail | 2022 | 6 | 29,86.5,B61,Sunshine outside the accepted range
+Sunshine_Record,Sylhet | 2022 | 3 | 13,18.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Sylhet | 2022 | 3 | 21,16.9,B61,Sunshine outside the accepted range
+Sunshine_Record,Sylhet | 2022 | 3 | 22,17.2,B61,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2022 | 3 | 5,18.3,B61,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2022 | 3 | 7,15.6,B61,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2022 | 5 | 27,15.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2022 | 7 | 15,18.0,B61,Sunshine outside the accepted range
+Sunshine_Record,Chuadanga | 2022 | 11 | 5,17.5,B61,Sunshine outside the accepted range
+Wind_Record,Mymensingh | 2022 | 11 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Mymensingh | 2022 | 12 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Mymensingh | 2023 | 2 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Sitakunda | 2020 | 12 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Sitakunda | 2021 | 10 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Sitakunda | 2021 | 11 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Sitakunda | 2023 | 1 | Minimum,speed=None; direction=9990.0,B11,Wind Direction outside the accepted range
+Wind_Record,Madaripur | 2014 | 4 | Maximum,speed=5.0; direction=990.0,B12,Wind Direction outside the accepted range
+Wind_Record,Sitakunda | 2016 | 11 | Maximum,speed=15.0; direction=990.0,B12,Wind Direction outside the accepted range
+Wind_Record,Kutubdia | 2011 | 12 | Maximum,speed=9.0; direction=990.0,B12,Wind Direction outside the accepted range
+Wind_Record,Sitakunda | 2017 | 8 | Maximum,speed=12.0; direction=990.0,B13,Wind Direction outside the accepted range
+Water_Quality,Table Majhira Demra Ghat | 2022 | Biochemical Oxygen Demand,10.24,B23,header or note text parsed as a station
+Water_Quality,Table Majhira Demra Ghat | 2022 | Chemical Oxygen Demand,44.42,B25,header or note text parsed as a station
+Water_Quality,Launch Ghat (M) | 2022 | Chemical Oxygen Demand,-44.0,B25,Chemical Oxygen Demand cannot be negative
+Water_Quality,Teesta Bridge (Dn) | 2021 | pH,14.4,B26,pH outside 0-14
+Water_Quality,Table Majhira Demra Ghat | 2022 | pH,7.32,B26,header or note text parsed as a station
+Water_Quality,"Table 1.59a: Freshwater Quality by District/Station, 2020-2023 | 2019 | Dissolved Oxygen",2020.0,B28,header or note text parsed as a station
+Water_Quality,Table Majhira Demra Ghat | 2022 | Dissolved Oxygen,2.56,B28,header or note text parsed as a station

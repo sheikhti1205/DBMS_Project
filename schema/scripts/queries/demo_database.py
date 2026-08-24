@@ -21,6 +21,8 @@ from schema.scripts.common.schema_model import DEFAULT_DATABASE
 DATABASE = DEFAULT_DATABASE
 DEMO_QUERIES = (
     ("table-counts", 30),
+    ("climate", 8),
+    ("wind", 8),
     ("time-coverage", 20),
     ("water-quality-summary", 8),
     ("rainfall-ranking", 8),

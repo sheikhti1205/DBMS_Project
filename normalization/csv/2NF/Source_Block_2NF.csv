@@ -34,7 +34,7 @@ B32,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85d,"Marine Water Quality
 B33,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85e,"Marine Water Quality by District/Station, 2019-2024 (Dissolved oxygen (DO))",6 year columns 2019..2024,Water_Quality
 B34,BBS,BBS_Time_Series_Environmental_Database.xlsx,T1.85f,"Marine Water Quality by District/Station, 2019-2024 (Plastic waste and other marine debris)",6 year columns 2019..2024,Water_Quality
 B35,BBS,BBS_Time_Series_Environmental_Database.xlsx,T3.14,Treatment of Industrial Waste Water by type of Treatment (Cubic Meter) - Industry Type block,3 fiscal-year quantity columns + 3 percentage columns,Type_Of_Establishments
-B36,BBS,BBS_Time_Series_Environmental_Database.xlsx,T3.22,Distribution of Reused Waste Water by Type and Category of Industry (000 litre.),3 fiscal-year produced columns + 3 reuse columns,Industrial_Type
+B36,BBS,BBS_Time_Series_Environmental_Database.xlsx,T3.22,Distribution of Reused Waste Water by Type and Category of Industry (000 litre.),3 fiscal-year produced columns + 3 reuse columns,Industry_Type
 B37,BMD,Temperature Data.xlsx,Table-1,Monthly Temperature (degC) in 1995,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
 B38,BMD,Temperature Data.xlsx,Table-2,Monthly Temperature (degC) in 1996,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
 B39,BMD,Temperature Data.xlsx,Table-3,Monthly Temperature (degC) in 1997,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
@@ -61,9 +61,3 @@ B59,BRRI,BRRI_Daily_Total_Rainfall.xlsx,BRRI_Daily_Total_Rainfall,Daily total Ra
 B60,BRRI,BRRI_Daily_Average_Humidity.xlsx,BRRI_Daily_Average_Humidity,Daily average Humidity in %,31 day columns (Days 1..31),Humidity_Record (monthly MEAN)
 B61,BRRI,BRRI_Daily_Sunshine.xlsx,BRRI_Daily_Sunshine,Daily Total Sunshine Hours,31 day columns (Days 1..31),"Sunshine_Record (daily, no aggregation)"
 B62,BWDB,BWDB_Rivers_Information.csv,(csv),BWDB river register,none (already one row per river),River
-B63,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-2,Groundwater observation wells (Table-2),none (one row per well),Ground_Water_Well
-B64,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-3,Groundwater observation wells (Table-3),none (one row per well),Ground_Water_Well
-B65,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-4,Groundwater observation wells (Table-4),none (one row per well),Ground_Water_Well
-B66,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-5,Groundwater observation wells (Table-5),none (one row per well),Ground_Water_Well
-B67,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-6,Groundwater observation wells (Table-6),none (one row per well),Ground_Water_Well
-B68,BWDB,BWDB_Groundwater_Weekly_Data_2018.xlsx,Table-7,Groundwater observation wells (Table-7),none (one row per well),Ground_Water_Well

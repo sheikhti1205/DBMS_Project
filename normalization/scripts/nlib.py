@@ -22,9 +22,6 @@ BMD_TEMP = SRC + 'Formatted_Data/BMD/Temperature Data/Temperature Data.xlsx'
 BMD_SUN = SRC + 'Govt/BMD/Sunshine.xls'
 BRRI_DIR = SRC + 'Govt/BRRI/'
 BWDB_RIVERS = SRC + 'Govt/BWDB/BWDB_Rivers_Information.csv'
-BWDB_GW = (SRC + 'Formatted_Data/BWDB/BWDB_Groundwater_Weekly_Data_2018/'
-           'BWDB_Groundwater_Weekly_Data_2018.xlsx')
-
 ZERO_NF_ROW_CAP = 200
 
 ANOM = {}

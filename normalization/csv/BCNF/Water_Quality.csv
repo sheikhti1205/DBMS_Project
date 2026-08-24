@@ -1125,7 +1125,6 @@ Launch Ghat (M),2020,Dissolved Oxygen,5.93
 Launch Ghat (M),2020,pH,7.53
 Launch Ghat (M),2021,Dissolved Oxygen,5.57
 Launch Ghat (M),2021,pH,7.69
-Launch Ghat (M),2022,Chemical Oxygen Demand,-44
 Launch Ghat (M),2022,Dissolved Oxygen,6.7
 Launch Ghat (M),2022,pH,7.73
 Launch Ghat (M),2023,Dissolved Oxygen,6.97
@@ -2173,11 +2172,6 @@ TSP,2023,pH,7.52
 "TSP Side, Patenga",2020,Chemical Oxygen Demand,450.17
 "TSP Side, Patenga",2020,Dissolved Oxygen,6.46
 "TSP Side, Patenga",2020,pH,7.54
-"Table 1.59a: Freshwater Quality by District/Station, 2020-2023",2019,Dissolved Oxygen,2020
-Table Majhira Demra Ghat,2022,Biochemical Oxygen Demand,10.24
-Table Majhira Demra Ghat,2022,Chemical Oxygen Demand,44.42
-Table Majhira Demra Ghat,2022,Dissolved Oxygen,2.56
-Table Majhira Demra Ghat,2022,pH,7.32
 "Taltola Shooting Complex, South Side",2020,Biochemical Oxygen Demand,27.42
 "Taltola Shooting Complex, South Side",2021,Biochemical Oxygen Demand,25.75
 "Taltola Shooting Complex, South Side",2022,Biochemical Oxygen Demand,36.5
@@ -2199,7 +2193,6 @@ Teesta Barrage (Up),2021,Dissolved Oxygen,7.89
 Teesta Barrage (Up),2021,pH,8.09
 Teesta Bridge (Dn),2021,Biochemical Oxygen Demand,2.25
 Teesta Bridge (Dn),2021,Dissolved Oxygen,7.89
-Teesta Bridge (Dn),2021,pH,14.4
 Teesta Bridge (Up),2021,Biochemical Oxygen Demand,2.25
 Teesta Bridge (Up),2021,Dissolved Oxygen,7.89
 Teesta Bridge (Up),2021,pH,7.94

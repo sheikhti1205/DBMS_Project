@@ -1,40 +1,46 @@
-"""Verify that an SQLite database matches the final ERD and BCNF files."""
+"""Verify SQLite independently against the report ERD contract and BCNF files."""
 
 from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
+import json
 import sqlite3
-import sys
 from collections import defaultdict
 from contextlib import closing
 from pathlib import Path
 
-sys.dont_write_bytecode = True
 
-# Allow VS Code to run this file directly.
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+CONTRACT_PATH = PROJECT_ROOT / "schema" / "erd_contract.json"
+DEFAULT_DATABASE = PROJECT_ROOT / "schema" / "environment.db"
+DEFAULT_CSV_DIR = PROJECT_ROOT / "normalization" / "csv" / "BCNF"
+DEFAULT_SQL = PROJECT_ROOT / "schema" / "scripts" / "setup" / "schema.sql"
+DEFAULT_REVIEW_DIR = PROJECT_ROOT / "normalization" / "review"
+APPLICATION_ID = 0x42464F52
 
-from schema.scripts.setup.build_database import APPLICATION_ID
-from schema.scripts.common.schema_model import (
-    CSV_DIR,
-    DEFAULT_DATABASE,
-    FOREIGN_KEYS,
-    PRIMARY_KEYS,
-    TABLES,
-    fingerprint_version,
-    quote,
-    source_fingerprint,
-)
+
+def quote(name: str) -> str:
+    return '"' + name.replace('"', '""') + '"'
 
 
 def arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--database", type=Path, default=DEFAULT_DATABASE)
-    parser.add_argument("--csv-dir", type=Path, default=CSV_DIR)
+    parser.add_argument("--csv-dir", type=Path, default=DEFAULT_CSV_DIR)
+    parser.add_argument("--contract", type=Path, default=CONTRACT_PATH)
+    parser.add_argument("--schema-sql", type=Path, default=DEFAULT_SQL)
+    parser.add_argument("--review-dir", type=Path, default=DEFAULT_REVIEW_DIR)
     return parser.parse_args()
+
+
+def load_contract(path: Path) -> dict[str, object]:
+    with path.open(encoding="utf-8") as handle:
+        contract = json.load(handle)
+    if contract.get("version") != 1:
+        raise ValueError(f"Unsupported ERD contract version in {path}")
+    return contract
 
 
 def csv_row_count(path: Path) -> int:
@@ -44,67 +50,214 @@ def csv_row_count(path: Path) -> int:
         return sum(1 for _ in reader)
 
 
-def actual_relationships(connection: sqlite3.Connection) -> set[tuple[str, tuple[str, ...], str, tuple[str, ...]]]:
+def expected_version(contract: dict[str, object], csv_dir: Path, schema_sql: Path) -> int:
+    schema_data = schema_sql.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    digest = hashlib.sha256(schema_data)
+    for table in contract["tables"]:
+        digest.update(table.encode("utf-8"))
+        data = (csv_dir / f"{table}.csv").read_bytes()
+        digest.update(data.replace(b"\r\n", b"\n").replace(b"\r", b"\n"))
+    return int(digest.hexdigest()[:8], 16) & 0x7FFFFFFF
+
+
+def actual_relationships(
+    connection: sqlite3.Connection, tables: list[str]
+) -> set[tuple[str, tuple[str, ...], str, tuple[str, ...]]]:
     relationships: set[tuple[str, tuple[str, ...], str, tuple[str, ...]]] = set()
-    for child in TABLES:
+    for child in tables:
         groups: dict[int, list[tuple[int, str, str, str]]] = defaultdict(list)
         for row in connection.execute(f"PRAGMA foreign_key_list({quote(child)})"):
             groups[row[0]].append((row[1], row[2], row[3], row[4]))
         for rows in groups.values():
             ordered = sorted(rows)
             relationships.add(
-                (
-                    child,
-                    tuple(row[2] for row in ordered),
-                    ordered[0][1],
-                    tuple(row[3] for row in ordered),
-                )
+                (child, tuple(row[2] for row in ordered), ordered[0][1], tuple(row[3] for row in ordered))
             )
     return relationships
 
 
-def verify(connection: sqlite3.Connection, csv_dir: Path) -> tuple[list[str], int]:
+def scalar(connection: sqlite3.Connection, statement: str) -> int:
+    return int(connection.execute(statement).fetchone()[0])
+
+
+def verify_review_files(problems: list[str], review_dir: Path) -> None:
+    required = {
+        "VALUE_CONFLICTS.csv",
+        "QUARANTINED_ROWS.csv",
+        "UNMAPPED_STATIONS.csv",
+        "BRRI_MONTHLY_AGGREGATION.csv",
+        "BLOCK_ACCOUNTING.csv",
+        "ROW_ACCOUNTING.csv",
+    }
+    missing = sorted(name for name in required if not (review_dir / name).is_file())
+    if missing:
+        problems.append(f"review files missing: {missing}")
+        return
+    with (review_dir / "ROW_ACCOUNTING.csv").open(newline="", encoding="utf-8-sig") as handle:
+        rows = list(csv.DictReader(handle))
+    unbalanced = []
+    for row in rows:
+        calculated = (
+            int(row["Rows_Accepted"])
+            + int(row["Identical_Duplicates"])
+            + int(row["Displaced_Conflicts"])
+            + int(row["Quarantined_Rows"])
+        )
+        if row.get("Balances") != "yes" or int(row["Rows_Input_To_Resolution"]) != calculated:
+            unbalanced.append(row.get("Relation", "?"))
+    if not rows or unbalanced:
+        problems.append(f"row accounting does not balance: {unbalanced or 'no rows'}")
+    with (review_dir / "BLOCK_ACCOUNTING.csv").open(newline="", encoding="utf-8-sig") as handle:
+        blocks = list(csv.DictReader(handle))
+    expected_blocks = [f"B{number:02d}" for number in range(1, 63)]
+    found_blocks = [row.get("Block") for row in blocks]
+    bad_blocks = [
+        row.get("Block", "?")
+        for row in blocks
+        if row.get("Balances") != "yes"
+        or int(row["Cells_Read"])
+        != int(row["Values_Parsed"]) + int(row["Missing_Or_Unusable"])
+    ]
+    block_mismatch = set(found_blocks) != set(expected_blocks) or len(found_blocks) != len(expected_blocks)
+    if block_mismatch or bad_blocks:
+        problems.append(
+            f"source block accounting differs: block mismatch={block_mismatch}, "
+            f"unbalanced={bad_blocks}"
+        )
+    with (review_dir / "QUARANTINED_ROWS.csv").open(newline="", encoding="utf-8-sig") as handle:
+        quarantine_reasons = {row["Reason"] for row in csv.DictReader(handle)}
+    required_reasons = {
+        "header or note text parsed as a station",
+        "Chemical Oxygen Demand cannot be negative",
+        "pH outside 0-14",
+    }
+    if not required_reasons.issubset(quarantine_reasons):
+        problems.append(
+            f"known malformed water-quality rows are missing from quarantine: "
+            f"{sorted(required_reasons - quarantine_reasons)}"
+        )
+    with (review_dir / "VALUE_CONFLICTS.csv").open(newline="", encoding="utf-8-sig") as handle:
+        conflicts = sum(1 for _ in csv.DictReader(handle))
+    if conflicts == 0:
+        problems.append("source conflict register is empty")
+
+
+def verify(
+    connection: sqlite3.Connection,
+    csv_dir: Path,
+    contract: dict[str, object],
+    schema_sql: Path,
+    review_dir: Path,
+) -> tuple[list[str], int]:
     problems: list[str] = []
+    tables = list(contract["tables"])
+    views = list(contract["views"])
     objects = {
         (row[0], row[1])
         for row in connection.execute(
-            "SELECT type, name FROM sqlite_master "
-            "WHERE name NOT LIKE 'sqlite_%' ORDER BY type, name"
+            "SELECT type, name FROM sqlite_master WHERE name NOT LIKE 'sqlite_%' ORDER BY type, name"
         )
     }
-    expected_objects = {("table", table) for table in TABLES} | {
-        ("view", "Industry_Usage_With_Rate")
-    }
+    expected_objects = {("table", table) for table in tables} | {("view", view) for view in views}
     if objects != expected_objects:
-        problems.append(f"database objects differ: expected {sorted(expected_objects)}, found {sorted(objects)}")
+        problems.append(
+            f"database objects differ: missing={sorted(expected_objects - objects)}, "
+            f"extra={sorted(objects - expected_objects)}"
+        )
 
     total = 0
-    for table, expected_columns in TABLES.items():
+    for table, expected_columns in contract["tables"].items():
         info = connection.execute(f"PRAGMA table_info({quote(table)})").fetchall()
-        actual_columns = [(row[1], row[2].upper()) for row in info]
-        if actual_columns != list(expected_columns):
-            problems.append(f"{table} columns or types differ")
+        actual_columns = [(row[1], row[2].upper(), bool(row[3])) for row in info]
+        wanted_columns = [(name, kind, required) for name, kind, required in expected_columns]
+        if actual_columns != wanted_columns:
+            problems.append(f"{table} columns, types, or nullability differ")
         actual_key = tuple(row[1] for row in sorted(info, key=lambda row: row[5]) if row[5])
-        if actual_key != PRIMARY_KEYS[table]:
-            problems.append(f"{table} primary key differs: {actual_key}")
-
-        database_rows = connection.execute(f"SELECT COUNT(*) FROM {quote(table)}").fetchone()[0]
-        source_rows = csv_row_count(csv_dir / f"{table}.csv")
+        wanted_key = tuple(contract["primary_keys"][table])
+        if actual_key != wanted_key:
+            problems.append(f"{table} primary key differs: expected {wanted_key}, found {actual_key}")
+        path = csv_dir / f"{table}.csv"
+        if not path.is_file():
+            problems.append(f"missing BCNF file: {path.name}")
+            continue
+        with path.open(newline="", encoding="utf-8-sig") as handle:
+            header = next(csv.reader(handle), [])
+        if header != [column[0] for column in expected_columns]:
+            problems.append(f"{path.name} header differs from the ERD contract")
+        database_rows = scalar(connection, f"SELECT COUNT(*) FROM {quote(table)}")
+        source_rows = csv_row_count(path)
         total += database_rows
         if database_rows != source_rows:
             problems.append(f"{table} has {database_rows:,} rows; CSV has {source_rows:,}")
 
-    relationships = actual_relationships(connection)
-    if relationships != set(FOREIGN_KEYS):
-        missing = set(FOREIGN_KEYS) - relationships
-        extra = relationships - set(FOREIGN_KEYS)
-        problems.append(f"foreign keys differ: missing={sorted(missing)}, extra={sorted(extra)}")
+    for view, expected_columns in contract["view_columns"].items():
+        actual = [row[1] for row in connection.execute(f"PRAGMA table_info({quote(view)})")]
+        if actual != expected_columns:
+            problems.append(f"{view} columns differ: expected {expected_columns}, found {actual}")
 
-    expected_version = fingerprint_version(source_fingerprint(csv_dir))
-    application_id = connection.execute("PRAGMA application_id").fetchone()[0]
-    user_version = connection.execute("PRAGMA user_version").fetchone()[0]
-    if (application_id, user_version) != (APPLICATION_ID, expected_version):
+    expected_relationships = {
+        (child, tuple(child_columns), parent, tuple(parent_columns))
+        for child, child_columns, parent, parent_columns in contract["foreign_keys"]
+    }
+    relationships = actual_relationships(connection, tables)
+    if relationships != expected_relationships:
+        problems.append(
+            f"foreign keys differ: missing={sorted(expected_relationships - relationships)}, "
+            f"extra={sorted(relationships - expected_relationships)}"
+        )
+
+    for table, fragments in contract["required_checks"].items():
+        row = connection.execute(
+            "SELECT sql FROM sqlite_master WHERE type='table' AND name=?", (table,)
+        ).fetchone()
+        normalized = (row[0] if row else "").upper().replace('"', "")
+        for fragment in fragments:
+            if fragment not in normalized:
+                problems.append(f"{table} is missing required check fragment: {fragment}")
+
+    version = expected_version(contract, csv_dir, schema_sql)
+    actual_version = (scalar(connection, "PRAGMA application_id"), scalar(connection, "PRAGMA user_version"))
+    if actual_version != (APPLICATION_ID, version):
         problems.append("database fingerprint does not match the current schema and CSV files")
+
+    quality_checks = {
+        "invalid calendar dates": "SELECT COUNT(*) FROM Day_Time WHERE date(printf('%04d-%02d-%02d', Year, Month, Day)) IS NULL",
+        "invalid fiscal spans": "SELECT COUNT(*) FROM Fiscal_Year WHERE End_Year <> Start_Year + 1",
+        "invalid temperature types": "SELECT COUNT(*) FROM Temperature_Record WHERE Type NOT IN ('Maximum','Minimum')",
+        "invalid wind types": "SELECT COUNT(*) FROM Wind_Record WHERE Type NOT IN ('Maximum','Minimum')",
+        "minimum temperature above maximum": """
+            SELECT COUNT(*) FROM (
+              SELECT Station_Name, Year, Month
+              FROM Temperature_Record
+              GROUP BY Station_Name, Year, Month
+              HAVING MAX(CASE WHEN Type='Minimum' THEN Temp END) >
+                     MAX(CASE WHEN Type='Maximum' THEN Temp END)
+            )
+        """,
+        "invalid humidity": "SELECT COUNT(*) FROM Humidity_Record WHERE Humidity NOT BETWEEN 0 AND 100",
+        "invalid water quality": "SELECT COUNT(*) FROM Water_Quality WHERE (Parameter_Type='pH' AND Value NOT BETWEEN 0 AND 14) OR (Parameter_Type<>'pH' AND Value < 0)",
+        "invalid establishment percentages": "SELECT COUNT(*) FROM Type_Of_Establishments WHERE Percentage NOT BETWEEN 0 AND 100",
+        "invalid industry calculations": "SELECT COUNT(*) FROM Industry_Usage WHERE Quantity < 0 OR Percentage NOT BETWEEN 0 AND 100",
+    }
+    for label, statement in quality_checks.items():
+        count = scalar(connection, statement)
+        if count:
+            problems.append(f"{label}: {count} row(s)")
+
+    bad_percentage_groups = scalar(
+        connection,
+        """
+        SELECT COUNT(*) FROM (
+          SELECT Start_Year, End_Year
+          FROM Type_Of_Establishments
+          WHERE Percentage IS NOT NULL
+          GROUP BY Start_Year, End_Year
+          HAVING ABS(SUM(Percentage) - 100.0) > 1.0
+        )
+        """,
+    )
+    if bad_percentage_groups:
+        problems.append(f"establishment percentage totals differ from 100: {bad_percentage_groups} group(s)")
 
     violations = connection.execute("PRAGMA foreign_key_check").fetchall()
     if violations:
@@ -112,30 +265,36 @@ def verify(connection: sqlite3.Connection, csv_dir: Path) -> tuple[list[str], in
     integrity = connection.execute("PRAGMA integrity_check").fetchone()[0]
     if integrity != "ok":
         problems.append(f"integrity check returned: {integrity}")
+    verify_review_files(problems, review_dir)
     return problems, total
 
 
 def main() -> int:
     args = arguments()
     if not args.database.is_file():
-        print(f"Verification stopped: database not found: {args.database}", file=sys.stderr)
+        print(f"Verification stopped: database not found: {args.database}")
         return 2
     try:
+        contract = load_contract(args.contract)
         uri = args.database.resolve().as_uri() + "?mode=ro"
         with closing(sqlite3.connect(uri, uri=True)) as connection:
             connection.execute("PRAGMA foreign_keys = ON")
-            problems, total = verify(connection, args.csv_dir)
-    except (OSError, sqlite3.Error, ValueError) as error:
-        print(f"Verification stopped: {error}", file=sys.stderr)
+            problems, total = verify(
+                connection, args.csv_dir, contract, args.schema_sql, args.review_dir
+            )
+    except (OSError, sqlite3.Error, ValueError, KeyError, json.JSONDecodeError) as error:
+        print(f"Verification stopped: {error}")
         return 2
-
     if problems:
-        print("Database check failed:", file=sys.stderr)
+        print("Database check failed:")
         for problem in problems:
-            print(f"- {problem}", file=sys.stderr)
+            print(f"- {problem}")
         return 1
     print("Database check passed.")
-    print(f"Checked {len(TABLES)} tables, {len(FOREIGN_KEYS)} relationships, and {total:,} rows.")
+    print(
+        f"Checked {len(contract['tables'])} tables, {len(contract['foreign_keys'])} "
+        f"relationships, {len(contract['views'])} views, and {total:,} rows."
+    )
     return 0
 
 
