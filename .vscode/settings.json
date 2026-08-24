@@ -1,0 +1,34 @@
+{
+  "python.defaultInterpreterPath": "${env:HOME}/.cache/byteforge-dbms/venv/bin/python",
+  "terminal.integrated.profiles.linux": {
+    "ByteForge Bash": {
+      "path": "/usr/bin/bash",
+      "args": [
+        "-l"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "ByteForge Bash",
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.fileDirectoryAsCwd": false,
+  "code-runner.preserveFocus": false,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.executorMapByFileExtension": {
+    ".sh": "bash",
+    ".sql": "sqlite3 -readonly -header -column \"$workspaceRoot/schema/environment.db\" <"
+  },
+  "code-runner.executorMapByGlob": {
+    "schema.sql": "sqlite3 -header -column ':memory:' <"
+  },
+  "sqltools.connections": [
+    {
+      "name": "ByteForge SQLite",
+      "driver": "SQLite",
+      "database": "${workspaceFolder:DBMS_Project}/schema/environment.db",
+      "previewLimit": 200
+    }
+  ],
+  "sqltools.results.limit": 200
+}

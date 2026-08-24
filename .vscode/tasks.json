@@ -1,0 +1,121 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ByteForge: Setup project",
+      "type": "shell",
+      "command": "./setup_linux.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "ByteForge: Run current shell file",
+      "type": "process",
+      "command": "/usr/bin/bash",
+      "args": [
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "ByteForge: Run current SQL file read-only",
+      "type": "process",
+      "command": "/usr/bin/bash",
+      "args": [
+        "-lc",
+        "sqlite3 -readonly -header -column \"$1\" < \"$2\"",
+        "_",
+        "${workspaceFolder}/schema/environment.db",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "ByteForge: Validate schema SQL",
+      "type": "process",
+      "command": "/usr/bin/bash",
+      "args": [
+        "-lc",
+        "sqlite3 -header -column ':memory:' < \"$1\"",
+        "_",
+        "${workspaceFolder}/schema/scripts/setup/schema.sql"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "ByteForge: Verify database",
+      "type": "process",
+      "command": "${env:HOME}/.cache/byteforge-dbms/venv/bin/python",
+      "args": [
+        "-B",
+        "-m",
+        "schema.scripts.setup.verify_database"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "ByteForge: Run sample queries",
+      "type": "process",
+      "command": "${env:HOME}/.cache/byteforge-dbms/venv/bin/python",
+      "args": [
+        "-B",
+        "-m",
+        "schema.scripts.queries.demo_database"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}

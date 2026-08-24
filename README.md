@@ -35,6 +35,10 @@ For an unattended setup, use `setup_windows.bat /yes` or `./setup_linux.sh --yes
 
 Each launcher creates a private environment outside the project folder, installs the pinned packages, refreshes `schema/environment.db`, verifies the final ERD structure, and runs the sample demonstration. Running a launcher again refreshes the database cleanly.
 
+## VS Code on WSL
+
+Open the GitHub project folder through **WSL: Fedora**. The workspace recommends and configures Code Runner, SQLTools, the SQLite driver, and ShellCheck. The Run Code button executes `.sh` files with Bash and runs `.sql` files read-only against `schema/environment.db`; `schema.sql` is checked in an in-memory database. SQLTools includes a ready connection named `ByteForge SQLite`. The same commands are available under **Terminal > Run Task**.
+
 ## Query the database
 
 Windows:
