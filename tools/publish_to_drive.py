@@ -6,7 +6,9 @@ import argparse
 import hashlib
 import os
 import shutil
+import sqlite3
 import sys
+from contextlib import closing
 from pathlib import Path
 
 
@@ -72,6 +74,45 @@ def same_file(source: Path, target: Path) -> bool:
     return target.is_file() and source.stat().st_size == target.stat().st_size and digest(source) == digest(target)
 
 
+def database_signature(path: Path) -> tuple[object, ...] | None:
+    if not path.is_file():
+        return None
+    try:
+        uri = path.resolve().as_uri() + "?mode=ro"
+        with closing(sqlite3.connect(uri, uri=True)) as connection:
+            if connection.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+                return None
+            if connection.execute("PRAGMA foreign_key_check").fetchone() is not None:
+                return None
+            objects = tuple(
+                connection.execute(
+                    "SELECT type, name FROM sqlite_master "
+                    "WHERE name NOT LIKE 'sqlite_%' ORDER BY type, name"
+                )
+            )
+            tables = [name for kind, name in objects if kind == "table"]
+            counts = []
+            for name in tables:
+                quoted = name.replace('"', '""')
+                count = connection.execute(f'SELECT COUNT(*) FROM "{quoted}"').fetchone()[0]
+                counts.append((name, count))
+            return (
+                connection.execute("PRAGMA application_id").fetchone()[0],
+                connection.execute("PRAGMA user_version").fetchone()[0],
+                objects,
+                tuple(counts),
+            )
+    except (OSError, sqlite3.Error):
+        return None
+
+
+def same_managed_file(relative: Path, source: Path, target: Path) -> bool:
+    if relative == Path("schema/environment.db"):
+        source_signature = database_signature(source)
+        return source_signature is not None and source_signature == database_signature(target)
+    return same_file(source, target)
+
+
 def copy_file(source: Path, target: Path) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
     staging = target.with_name(target.name + ".syncing")
@@ -104,7 +145,7 @@ def main() -> int:
     changed = [
         relative
         for relative, source_path in source_files.items()
-        if not same_file(source_path, drive / relative)
+        if not same_managed_file(relative, source_path, drive / relative)
     ]
     stale = sorted(set(target_files) - set(source_files))
 
