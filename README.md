@@ -17,7 +17,7 @@ The WSL checkout is the coding source of truth and the only Git repository. Goog
 
 ## Automatic setup
 
-Python 3.10 or newer is required. SQLite support is included with normal Python installations, so a separate SQLite installation is not required.
+The launchers look for Python 3.10 or newer and confirm that its built-in SQLite support works. If Python, venv, pip, or the pinned project packages are missing, setup explains what it needs and asks before installing system or project packages. The private Python environment stays outside the project folder. A separate SQLite command-line installation is not required.
 
 Windows:
 
@@ -30,6 +30,8 @@ Linux, WSL, or macOS:
 ```bash
 ./setup_linux.sh
 ```
+
+For an unattended setup, use `setup_windows.bat /yes` or `./setup_linux.sh --yes`. Linux supports apt, dnf, microdnf, yum, pacman, zypper, and apk; Homebrew is also recognized on macOS. System package installation may ask for the computer's administrator password. Declining an installation stops setup without rebuilding the database.
 
 Each launcher creates a private environment outside the project folder, installs the pinned packages, refreshes `schema/environment.db`, verifies the final ERD structure, and runs the sample demonstration. Running a launcher again refreshes the database cleanly.
 
