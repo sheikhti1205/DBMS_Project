@@ -13,7 +13,7 @@ for %%A in (%*) do (
   if /i "%%~A"=="/?" goto help
 )
 
-if not defined BYTEFORGE_ENV set "BYTEFORGE_ENV=%LOCALAPPDATA%\ByteForge\DBMS_Project\venv"
+if not defined BYTEFORGE_ENV set "BYTEFORGE_ENV=%USERPROFILE%\.byteforge\dbms_project\venv"
 set "BYTEFORGE_PYTHON=%BYTEFORGE_ENV%\Scripts\python.exe"
 
 call :find_python
@@ -40,9 +40,15 @@ if exist "%BYTEFORGE_PYTHON%" (
 )
 
 echo Preparing the ByteForge Python environment.
+echo The first run may take a minute while Python prepares pip.
 "%BYTEFORGE_SYSTEM_PYTHON%" %BYTEFORGE_SYSTEM_ARGS% -m venv --clear "%BYTEFORGE_ENV%"
 if errorlevel 1 (
   echo The private Python environment could not be created.
+  goto failed
+)
+if not exist "%BYTEFORGE_PYTHON%" (
+  echo Python created the environment somewhere other than the requested folder.
+  echo Set BYTEFORGE_ENV to a normal user folder and run setup again.
   goto failed
 )
 

@@ -44,7 +44,7 @@ Open the GitHub project folder through **WSL: Fedora**. The workspace recommends
 Windows:
 
 ```powershell
-$python = "$env:LOCALAPPDATA\ByteForge\DBMS_Project\venv\Scripts\python.exe"
+$python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
 & $python -B -m schema.scripts.queries.query_database saved
 & $python -B -m schema.scripts.queries.query_database saved rivers
 & $python -B -m schema.scripts.queries.query_database describe Water_Quality
@@ -82,7 +82,7 @@ The selected source files remain in Google Drive. In the Drive project, the scri
 Windows PowerShell:
 
 ```powershell
-$python = "$env:LOCALAPPDATA\ByteForge\DBMS_Project\venv\Scripts\python.exe"
+$python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
 & $python -B normalization\scripts\extract.py
 & $python -B normalization\scripts\exclusions.py
 & $python -B normalization\scripts\workbook.py
