@@ -16,16 +16,75 @@
   "code-runner.preserveFocus": false,
   "code-runner.showExecutionMessage": false,
   "code-runner.executorMap": {
-    "sh": "bash",
-    "sql": "bash -lc 'repo=$(git -C $dir rev-parse --show-toplevel) && sqlite3 -readonly -header -column \"$repo/schema/environment.db\" < $fullFileName'"
+    "sh": "bash"
   },
   "code-runner.executorMapByFileExtension": {
-    ".sh": "bash",
-    ".sql": "bash -lc 'repo=$(git -C $dirWithoutTrailingSlash rev-parse --show-toplevel) && sqlite3 -readonly -header -column \"$repo/schema/environment.db\" < $fullFileName'"
+    ".sh": "bash"
   },
-  "code-runner.executorMapByGlob": {
-    "schema.sql": "sqlite3 -header -column ':memory:' <"
-  },
+  "latex-workshop.latex.recipe.default": "Generate measurements and build PDF",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Generate measurements and build PDF",
+      "tools": [
+        "generate-report-measurements",
+        "latexmk-report"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "generate-report-measurements",
+      "command": "python3",
+      "args": [
+        "%DIR%/measure.py"
+      ],
+      "cwd": "%DIR%"
+    },
+    {
+      "name": "latexmk-report",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-halt-on-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "-auxdir=%AUXDIR%",
+        "%DOC%"
+      ],
+      "cwd": "%DIR%"
+    }
+  ],
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.autoClean.run": "onSucceeded",
+  "latex-workshop.latex.clean.method": "glob",
+  "latex-workshop.latex.clean.subfolder.enabled": false,
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.bcf",
+    "*.blg",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.log",
+    "*.lol",
+    "*.lot",
+    "*.nav",
+    "*.out",
+    "*.run.xml",
+    "*.snm",
+    "*.synctex(busy)",
+    "*.synctex.gz",
+    "*.synctex.gz(busy)",
+    "*.toc",
+    "*.vrb",
+    "*.xdv",
+    "*-blx.bib"
+  ],
   "sqltools.connections": [
     {
       "name": "ByteForge SQLite",

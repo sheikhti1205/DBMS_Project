@@ -302,9 +302,9 @@ B('B56', 'BMD', 'Sunshine.xls', 'Climate Leap year February',
   note='Station ID is 0.0 and no station name is present.')
 
 _BRRI = (('B57', 'Max_Temp', 'Daily Maximum Temperature data in degree celcius',
-          'Temperature_Record (Type=Maximum, monthly MEAN)'),
+          'Temperature_Record (Type=Maximum, monthly MAXIMUM)'),
          ('B58', 'Min_Temp', 'Daily Minimum Temperature data in celcius',
-          'Temperature_Record (Type=Minimum, monthly MEAN)'),
+          'Temperature_Record (Type=Minimum, monthly MINIMUM)'),
          ('B59', 'Rainfall', 'Daily total Rain fall data in Milli meter',
           'Rainfall_Record (monthly SUM)'),
          ('B60', 'Humidity', 'Daily average Humidity in %',

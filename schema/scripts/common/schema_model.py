@@ -13,6 +13,9 @@ DEFAULT_DATABASE = SCHEMA_DIR / "environment.db"
 DEFAULT_SQL = SCHEMA_DIR / "scripts" / "setup" / "schema.sql"
 DEFAULT_QUERY_FILE = SCHEMA_DIR / "scripts" / "queries" / "queries.sql"
 DEFAULT_BACKUP_DIR = SCHEMA_DIR / "backups"
+DEFAULT_COMPETENCY_BENCHMARK = (
+    SCHEMA_DIR / "validation" / "competency" / "benchmark.json"
+)
 
 
 # Column order is also the required CSV header order.

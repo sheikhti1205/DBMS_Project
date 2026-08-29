@@ -1,0 +1,1261 @@
+{
+  "database": "schema/environment.db",
+  "sqlite_version": "3.46.1",
+  "runs_per_query": 9,
+  "queries": {
+    "climate": {
+      "columns": [
+        "Station_Name",
+        "Year",
+        "Month",
+        "Maximum_Temperature",
+        "Minimum_Temperature",
+        "Humidity",
+        "Rainfall",
+        "Thunderstorm",
+        "Lightning"
+      ],
+      "row_count": 50,
+      "sample": [
+        [
+          "Ambagan (Ctg)",
+          2024,
+          12,
+          32.6,
+          14.0,
+          68.0,
+          1.0,
+          null,
+          null
+        ],
+        [
+          "Barisal",
+          2024,
+          12,
+          29.7,
+          11.2,
+          79.0,
+          3.0,
+          null,
+          null
+        ],
+        [
+          "Bhola",
+          2024,
+          12,
+          30.1,
+          10.5,
+          82.0,
+          2.0,
+          null,
+          null
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 135.4716,
+        "median": 148.7465,
+        "p95": 165.3023,
+        "maximum": 165.3023
+      },
+      "query_plan": [
+        {
+          "id": 2,
+          "parent": 0,
+          "detail": "CO-ROUTINE Monthly_Climate_Summary"
+        },
+        {
+          "id": 4,
+          "parent": 2,
+          "detail": "CO-ROUTINE Monthly_Keys"
+        },
+        {
+          "id": 6,
+          "parent": 4,
+          "detail": "COMPOUND QUERY"
+        },
+        {
+          "id": 7,
+          "parent": 6,
+          "detail": "LEFT-MOST SUBQUERY"
+        },
+        {
+          "id": 9,
+          "parent": 7,
+          "detail": "SCAN Temperature_Record USING COVERING INDEX sqlite_autoindex_Temperature_Record_1"
+        },
+        {
+          "id": 17,
+          "parent": 6,
+          "detail": "UNION USING TEMP B-TREE"
+        },
+        {
+          "id": 19,
+          "parent": 17,
+          "detail": "SCAN Humidity_Record USING COVERING INDEX sqlite_autoindex_Humidity_Record_1"
+        },
+        {
+          "id": 27,
+          "parent": 6,
+          "detail": "UNION USING TEMP B-TREE"
+        },
+        {
+          "id": 29,
+          "parent": 27,
+          "detail": "SCAN Rainfall_Record USING COVERING INDEX sqlite_autoindex_Rainfall_Record_1"
+        },
+        {
+          "id": 37,
+          "parent": 6,
+          "detail": "UNION USING TEMP B-TREE"
+        },
+        {
+          "id": 39,
+          "parent": 37,
+          "detail": "SCAN Climatic_Event_Record USING COVERING INDEX sqlite_autoindex_Climatic_Event_Record_1"
+        },
+        {
+          "id": 67,
+          "parent": 2,
+          "detail": "SCAN k"
+        },
+        {
+          "id": 70,
+          "parent": 2,
+          "detail": "SEARCH t USING INDEX sqlite_autoindex_Temperature_Record_1 (Station_Name=? AND Year=? AND Month=?) LEFT-JOIN"
+        },
+        {
+          "id": 83,
+          "parent": 2,
+          "detail": "SEARCH h USING INDEX sqlite_autoindex_Humidity_Record_1 (Station_Name=? AND Year=? AND Month=?) LEFT-JOIN"
+        },
+        {
+          "id": 96,
+          "parent": 2,
+          "detail": "SEARCH r USING INDEX sqlite_autoindex_Rainfall_Record_1 (Station_Name=? AND Year=? AND Month=?) LEFT-JOIN"
+        },
+        {
+          "id": 109,
+          "parent": 2,
+          "detail": "SEARCH e USING INDEX sqlite_autoindex_Climatic_Event_Record_1 (Station_Name=? AND Year=? AND Month=?) LEFT-JOIN"
+        },
+        {
+          "id": 122,
+          "parent": 2,
+          "detail": "USE TEMP B-TREE FOR GROUP BY"
+        },
+        {
+          "id": 222,
+          "parent": 0,
+          "detail": "SCAN Monthly_Climate_Summary"
+        },
+        {
+          "id": 246,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "wind": {
+      "columns": [
+        "Station_Name",
+        "Year",
+        "Month",
+        "Maximum_Wind_Speed",
+        "Maximum_Wind_Direction",
+        "Minimum_Wind_Speed",
+        "Minimum_Wind_Direction"
+      ],
+      "row_count": 50,
+      "sample": [
+        [
+          "Dhaka",
+          2024,
+          8,
+          0.0,
+          null,
+          null,
+          null
+        ],
+        [
+          "Bhola",
+          2024,
+          7,
+          5.0,
+          "130",
+          2.0,
+          "130"
+        ],
+        [
+          "Chandpur",
+          2024,
+          7,
+          3.0,
+          "180",
+          1.0,
+          "180"
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 5.0397,
+        "median": 5.6408,
+        "p95": 6.8905,
+        "maximum": 6.8905
+      },
+      "query_plan": [
+        {
+          "id": 2,
+          "parent": 0,
+          "detail": "CO-ROUTINE Monthly_Wind_Summary"
+        },
+        {
+          "id": 9,
+          "parent": 2,
+          "detail": "SCAN Wind_Record USING INDEX sqlite_autoindex_Wind_Record_1"
+        },
+        {
+          "id": 77,
+          "parent": 0,
+          "detail": "SCAN Monthly_Wind_Summary"
+        },
+        {
+          "id": 95,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "rivers": {
+      "columns": [
+        "River_Name",
+        "WQ_Station_Name",
+        "Year",
+        "Parameter_Type",
+        "Value"
+      ],
+      "row_count": 50,
+      "sample": [
+        [
+          "Bay of Bengal",
+          "1 km straight from CEPZ",
+          2024,
+          "Dissolved Oxygen",
+          9.64
+        ],
+        [
+          "Bay of Bengal",
+          "1 km straight from CEPZ",
+          2024,
+          "Salinity",
+          6.3
+        ],
+        [
+          "Bay of Bengal",
+          "1 km straight from CEPZ",
+          2024,
+          "pH",
+          8.3
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 0.6378,
+        "median": 0.6737,
+        "p95": 1.4986,
+        "maximum": 1.4986
+      },
+      "query_plan": [
+        {
+          "id": 6,
+          "parent": 0,
+          "detail": "SCAN w"
+        },
+        {
+          "id": 8,
+          "parent": 0,
+          "detail": "SEARCH rs USING INDEX sqlite_autoindex_River_Station_1 (WQ_Station_Name=?)"
+        },
+        {
+          "id": 27,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "wastewater": {
+      "columns": [
+        "Industry_Name",
+        "Start_Year",
+        "End_Year",
+        "Quantity",
+        "Percentage"
+      ],
+      "row_count": 3,
+      "sample": [
+        [
+          "Agriculture Forestry and Fishing",
+          2020,
+          2021,
+          17225335.0,
+          0.1
+        ],
+        [
+          "Agriculture Forestry and Fishing",
+          2019,
+          2020,
+          14798737.0,
+          0.16
+        ],
+        [
+          "Agriculture Forestry and Fishing",
+          2018,
+          2019,
+          17870758.0,
+          0.15
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 0.0093,
+        "median": 0.0094,
+        "p95": 0.0141,
+        "maximum": 0.0141
+      },
+      "query_plan": [
+        {
+          "id": 4,
+          "parent": 0,
+          "detail": "SCAN Industry_Usage"
+        },
+        {
+          "id": 22,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "forests": {
+      "columns": [
+        "District_Name",
+        "Fiscal_Start_Year",
+        "Fiscal_End_Year",
+        "Protected_Area",
+        "Total_Forest_FD_Acre",
+        "Total_Forest_Land"
+      ],
+      "row_count": 50,
+      "sample": [
+        [
+          "Bagerhat",
+          2023,
+          2024,
+          0.0,
+          566512.95,
+          566512.95
+        ],
+        [
+          "Bandarban",
+          2023,
+          2024,
+          0.0,
+          303143.95,
+          797516.49
+        ],
+        [
+          "Barguna",
+          2023,
+          2024,
+          0.0,
+          75000.0,
+          75000.0
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 0.0727,
+        "median": 0.0782,
+        "p95": 0.1957,
+        "maximum": 0.1957
+      },
+      "query_plan": [
+        {
+          "id": 4,
+          "parent": 0,
+          "detail": "SCAN Forest_Area_Record"
+        },
+        {
+          "id": 23,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "table-counts": {
+      "columns": [
+        "Table_Name",
+        "Records"
+      ],
+      "row_count": 22,
+      "sample": [
+        [
+          "Climatic_Event_Record",
+          4006
+        ],
+        [
+          "Day_Time",
+          23348
+        ],
+        [
+          "District",
+          35
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 9.8214,
+        "median": 11.5274,
+        "p95": 14.9354,
+        "maximum": 14.9354
+      },
+      "query_plan": [
+        {
+          "id": 2,
+          "parent": 0,
+          "detail": "CO-ROUTINE final_counts"
+        },
+        {
+          "id": 3,
+          "parent": 2,
+          "detail": "COMPOUND QUERY"
+        },
+        {
+          "id": 4,
+          "parent": 3,
+          "detail": "LEFT-MOST SUBQUERY"
+        },
+        {
+          "id": 7,
+          "parent": 4,
+          "detail": "MATERIALIZE counts"
+        },
+        {
+          "id": 9,
+          "parent": 7,
+          "detail": "COMPOUND QUERY"
+        },
+        {
+          "id": 10,
+          "parent": 9,
+          "detail": "LEFT-MOST SUBQUERY"
+        },
+        {
+          "id": 13,
+          "parent": 10,
+          "detail": "SCAN Year_Time"
+        },
+        {
+          "id": 24,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 27,
+          "parent": 24,
+          "detail": "SCAN Month_Time"
+        },
+        {
+          "id": 38,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 41,
+          "parent": 38,
+          "detail": "SCAN Day_Time"
+        },
+        {
+          "id": 52,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 55,
+          "parent": 52,
+          "detail": "SCAN Fiscal_Year"
+        },
+        {
+          "id": 66,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 69,
+          "parent": 66,
+          "detail": "SCAN Station USING COVERING INDEX sqlite_autoindex_Station_1"
+        },
+        {
+          "id": 80,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 83,
+          "parent": 80,
+          "detail": "SCAN District"
+        },
+        {
+          "id": 94,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 97,
+          "parent": 94,
+          "detail": "SCAN River"
+        },
+        {
+          "id": 108,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 111,
+          "parent": 108,
+          "detail": "SCAN River_Station USING COVERING INDEX sqlite_autoindex_River_Station_1"
+        },
+        {
+          "id": 122,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 125,
+          "parent": 122,
+          "detail": "SCAN Size"
+        },
+        {
+          "id": 136,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 139,
+          "parent": 136,
+          "detail": "SCAN Industry_Type"
+        },
+        {
+          "id": 150,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 153,
+          "parent": 150,
+          "detail": "SCAN Temperature_Record USING COVERING INDEX sqlite_autoindex_Temperature_Record_1"
+        },
+        {
+          "id": 164,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 167,
+          "parent": 164,
+          "detail": "SCAN Humidity_Record USING COVERING INDEX sqlite_autoindex_Humidity_Record_1"
+        },
+        {
+          "id": 178,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 181,
+          "parent": 178,
+          "detail": "SCAN Rainfall_Record USING COVERING INDEX sqlite_autoindex_Rainfall_Record_1"
+        },
+        {
+          "id": 192,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 195,
+          "parent": 192,
+          "detail": "SCAN Wind_Record USING COVERING INDEX sqlite_autoindex_Wind_Record_1"
+        },
+        {
+          "id": 206,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 209,
+          "parent": 206,
+          "detail": "SCAN Climatic_Event_Record USING COVERING INDEX sqlite_autoindex_Climatic_Event_Record_1"
+        },
+        {
+          "id": 220,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 223,
+          "parent": 220,
+          "detail": "SCAN Sunshine_Record USING COVERING INDEX sqlite_autoindex_Sunshine_Record_1"
+        },
+        {
+          "id": 234,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 237,
+          "parent": 234,
+          "detail": "SCAN Radiation_Record USING COVERING INDEX sqlite_autoindex_Radiation_Record_1"
+        },
+        {
+          "id": 248,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 251,
+          "parent": 248,
+          "detail": "SCAN Water_Quality USING COVERING INDEX sqlite_autoindex_Water_Quality_1"
+        },
+        {
+          "id": 262,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 265,
+          "parent": 262,
+          "detail": "SCAN Forest_Area_Record USING COVERING INDEX sqlite_autoindex_Forest_Area_Record_1"
+        },
+        {
+          "id": 276,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 279,
+          "parent": 276,
+          "detail": "SCAN Type_Of_Establishments USING COVERING INDEX sqlite_autoindex_Type_Of_Establishments_1"
+        },
+        {
+          "id": 290,
+          "parent": 9,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 293,
+          "parent": 290,
+          "detail": "SCAN Industry_Usage USING COVERING INDEX sqlite_autoindex_Industry_Usage_1"
+        },
+        {
+          "id": 307,
+          "parent": 4,
+          "detail": "SCAN counts"
+        },
+        {
+          "id": 314,
+          "parent": 3,
+          "detail": "UNION ALL"
+        },
+        {
+          "id": 318,
+          "parent": 314,
+          "detail": "SCAN counts"
+        },
+        {
+          "id": 330,
+          "parent": 0,
+          "detail": "SCAN final_counts"
+        },
+        {
+          "id": 339,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "relationships": {
+      "columns": [
+        "Child_Table",
+        "Child_Columns",
+        "Parent_Table",
+        "Parent_Columns"
+      ],
+      "row_count": 28,
+      "sample": [
+        [
+          "Climatic_Event_Record",
+          "Year, Month",
+          "Month_Time",
+          "Year, Month"
+        ],
+        [
+          "Climatic_Event_Record",
+          "Station_Name",
+          "Station",
+          "Station_Name"
+        ],
+        [
+          "Day_Time",
+          "Year, Month",
+          "Month_Time",
+          "Year, Month"
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 0.1347,
+        "median": 0.1423,
+        "p95": 0.1895,
+        "maximum": 0.1895
+      },
+      "query_plan": [
+        {
+          "id": 8,
+          "parent": 0,
+          "detail": "SCAN m"
+        },
+        {
+          "id": 15,
+          "parent": 0,
+          "detail": "SCAN f VIRTUAL TABLE INDEX 0:"
+        },
+        {
+          "id": 20,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR GROUP BY"
+        },
+        {
+          "id": 73,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "time-coverage": {
+      "columns": [
+        "Relation",
+        "First_Year",
+        "Last_Year"
+      ],
+      "row_count": 11,
+      "sample": [
+        [
+          "Climatic_Event_Record",
+          2015,
+          2024
+        ],
+        [
+          "Forest_Area_Record",
+          2019,
+          2024
+        ],
+        [
+          "Humidity_Record",
+          1948,
+          2024
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 47.6882,
+        "median": 51.8856,
+        "p95": 56.8033,
+        "maximum": 56.8033
+      },
+      "query_plan": [
+        {
+          "id": 1,
+          "parent": 0,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 3,
+          "parent": 1,
+          "detail": "LEFT"
+        },
+        {
+          "id": 4,
+          "parent": 3,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 6,
+          "parent": 4,
+          "detail": "LEFT"
+        },
+        {
+          "id": 7,
+          "parent": 6,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 9,
+          "parent": 7,
+          "detail": "LEFT"
+        },
+        {
+          "id": 13,
+          "parent": 9,
+          "detail": "SCAN Temperature_Record USING COVERING INDEX sqlite_autoindex_Temperature_Record_1"
+        },
+        {
+          "id": 29,
+          "parent": 7,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 33,
+          "parent": 29,
+          "detail": "SCAN Humidity_Record USING COVERING INDEX sqlite_autoindex_Humidity_Record_1"
+        },
+        {
+          "id": 73,
+          "parent": 4,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 74,
+          "parent": 73,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 76,
+          "parent": 74,
+          "detail": "LEFT"
+        },
+        {
+          "id": 77,
+          "parent": 76,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 79,
+          "parent": 77,
+          "detail": "LEFT"
+        },
+        {
+          "id": 83,
+          "parent": 79,
+          "detail": "SCAN Rainfall_Record USING COVERING INDEX sqlite_autoindex_Rainfall_Record_1"
+        },
+        {
+          "id": 99,
+          "parent": 77,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 103,
+          "parent": 99,
+          "detail": "SCAN Wind_Record USING COVERING INDEX sqlite_autoindex_Wind_Record_1"
+        },
+        {
+          "id": 143,
+          "parent": 74,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 147,
+          "parent": 143,
+          "detail": "SCAN Climatic_Event_Record USING COVERING INDEX sqlite_autoindex_Climatic_Event_Record_1"
+        },
+        {
+          "id": 211,
+          "parent": 1,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 212,
+          "parent": 211,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 214,
+          "parent": 212,
+          "detail": "LEFT"
+        },
+        {
+          "id": 215,
+          "parent": 214,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 217,
+          "parent": 215,
+          "detail": "LEFT"
+        },
+        {
+          "id": 218,
+          "parent": 217,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 220,
+          "parent": 218,
+          "detail": "LEFT"
+        },
+        {
+          "id": 224,
+          "parent": 220,
+          "detail": "SCAN Sunshine_Record USING COVERING INDEX sqlite_autoindex_Sunshine_Record_1"
+        },
+        {
+          "id": 240,
+          "parent": 218,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 244,
+          "parent": 240,
+          "detail": "SCAN Radiation_Record USING COVERING INDEX sqlite_autoindex_Radiation_Record_1"
+        },
+        {
+          "id": 284,
+          "parent": 215,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 288,
+          "parent": 284,
+          "detail": "SCAN Water_Quality USING COVERING INDEX sqlite_autoindex_Water_Quality_1"
+        },
+        {
+          "id": 328,
+          "parent": 212,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 329,
+          "parent": 328,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 331,
+          "parent": 329,
+          "detail": "LEFT"
+        },
+        {
+          "id": 332,
+          "parent": 331,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 334,
+          "parent": 332,
+          "detail": "LEFT"
+        },
+        {
+          "id": 338,
+          "parent": 334,
+          "detail": "SCAN Forest_Area_Record USING COVERING INDEX sqlite_autoindex_Forest_Area_Record_1"
+        },
+        {
+          "id": 354,
+          "parent": 332,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 358,
+          "parent": 354,
+          "detail": "SCAN Type_Of_Establishments USING COVERING INDEX sqlite_autoindex_Type_Of_Establishments_1"
+        },
+        {
+          "id": 398,
+          "parent": 329,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 402,
+          "parent": 398,
+          "detail": "SCAN Industry_Usage USING COVERING INDEX sqlite_autoindex_Industry_Usage_1"
+        }
+      ]
+    },
+    "rainfall-ranking": {
+      "columns": [
+        "Station_Name",
+        "Measurements",
+        "Average_Rainfall",
+        "Highest_Rainfall"
+      ],
+      "row_count": 15,
+      "sample": [
+        [
+          "Sylhet",
+          805,
+          343.48,
+          2124.0
+        ],
+        [
+          "Teknaf",
+          568,
+          325.81,
+          2072.0
+        ],
+        [
+          "Cox's Bazar",
+          917,
+          302.51,
+          1885.0
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 4.2481,
+        "median": 5.0318,
+        "p95": 6.105,
+        "maximum": 6.105
+      },
+      "query_plan": [
+        {
+          "id": 9,
+          "parent": 0,
+          "detail": "SCAN Rainfall_Record USING INDEX sqlite_autoindex_Rainfall_Record_1"
+        },
+        {
+          "id": 61,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "water-quality-summary": {
+      "columns": [
+        "River_Name",
+        "Parameter_Type",
+        "Measurements",
+        "First_Year",
+        "Last_Year",
+        "Average_Value"
+      ],
+      "row_count": 25,
+      "sample": [
+        [
+          "Jamuna (Panchagarh)",
+          "Dissolved Oxygen",
+          53,
+          2018,
+          2023,
+          7.43
+        ],
+        [
+          "Jamuna (Panchagarh)",
+          "pH",
+          53,
+          2018,
+          2023,
+          7.595
+        ],
+        [
+          "Jamuna (Panchagarh)",
+          "Biochemical Oxygen Demand",
+          52,
+          2018,
+          2023,
+          3.082
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 1.6525,
+        "median": 1.7185,
+        "p95": 2.9619,
+        "maximum": 2.9619
+      },
+      "query_plan": [
+        {
+          "id": 10,
+          "parent": 0,
+          "detail": "SCAN w"
+        },
+        {
+          "id": 15,
+          "parent": 0,
+          "detail": "SEARCH rs USING INDEX sqlite_autoindex_River_Station_1 (WQ_Station_Name=?)"
+        },
+        {
+          "id": 20,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR GROUP BY"
+        },
+        {
+          "id": 81,
+          "parent": 0,
+          "detail": "USE TEMP B-TREE FOR ORDER BY"
+        }
+      ]
+    },
+    "missing-measurements": {
+      "columns": [
+        "Field",
+        "Missing",
+        "Total"
+      ],
+      "row_count": 6,
+      "sample": [
+        [
+          "Humidity_Record.Humidity",
+          0,
+          25350
+        ],
+        [
+          "Rainfall_Record.Rainfall",
+          0,
+          25453
+        ],
+        [
+          "Temperature_Record.Temp",
+          0,
+          42295
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 6.6719,
+        "median": 7.1412,
+        "p95": 8.7006,
+        "maximum": 8.7006
+      },
+      "query_plan": [
+        {
+          "id": 1,
+          "parent": 0,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 3,
+          "parent": 1,
+          "detail": "LEFT"
+        },
+        {
+          "id": 4,
+          "parent": 3,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 6,
+          "parent": 4,
+          "detail": "LEFT"
+        },
+        {
+          "id": 7,
+          "parent": 6,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 9,
+          "parent": 7,
+          "detail": "LEFT"
+        },
+        {
+          "id": 13,
+          "parent": 9,
+          "detail": "SCAN Temperature_Record"
+        },
+        {
+          "id": 31,
+          "parent": 7,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 35,
+          "parent": 31,
+          "detail": "SCAN Humidity_Record"
+        },
+        {
+          "id": 77,
+          "parent": 4,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 81,
+          "parent": 77,
+          "detail": "SCAN Rainfall_Record"
+        },
+        {
+          "id": 123,
+          "parent": 1,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 124,
+          "parent": 123,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 126,
+          "parent": 124,
+          "detail": "LEFT"
+        },
+        {
+          "id": 127,
+          "parent": 126,
+          "detail": "MERGE (UNION ALL)"
+        },
+        {
+          "id": 129,
+          "parent": 127,
+          "detail": "LEFT"
+        },
+        {
+          "id": 133,
+          "parent": 129,
+          "detail": "SCAN Wind_Record"
+        },
+        {
+          "id": 151,
+          "parent": 127,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 155,
+          "parent": 151,
+          "detail": "SCAN Wind_Record"
+        },
+        {
+          "id": 196,
+          "parent": 124,
+          "detail": "RIGHT"
+        },
+        {
+          "id": 200,
+          "parent": 196,
+          "detail": "SCAN Water_Quality"
+        }
+      ]
+    },
+    "integrity": {
+      "columns": [
+        "integrity_check"
+      ],
+      "row_count": 1,
+      "sample": [
+        [
+          "ok"
+        ]
+      ],
+      "timing_ms": {
+        "minimum": 346.5616,
+        "median": 414.5226,
+        "p95": 523.6524,
+        "maximum": 523.6524
+      },
+      "query_plan": []
+    },
+    "foreign-key-check": {
+      "columns": [
+        "table",
+        "rowid",
+        "parent",
+        "fkid"
+      ],
+      "row_count": 0,
+      "sample": [],
+      "timing_ms": {
+        "minimum": 264.1433,
+        "median": 301.1103,
+        "p95": 347.7518,
+        "maximum": 347.7518
+      },
+      "query_plan": []
+    }
+  },
+  "integrity_check": "ok",
+  "foreign_key_violations": 0
+}

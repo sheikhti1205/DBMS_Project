@@ -35,15 +35,25 @@ __pycache__/
 
 # Local tooling
 /.agents/
+/.serena/
 /graphify-out/
 /outputs/
 /tmp/
 /work_scripts/
 /schema/backups/
+tempCodeRunnerFile.*
+
+# Local symlink to the shared Drive folder that holds the original workbooks.
+# The normalization pipeline reads through it; the target path is per-machine,
+# so the link itself must not be committed.
+/Selected_Source_Files
 
 # Keep the coding repository free of report copies and old working versions
 /deliverables/
 /report/
+/report_v*/
+/report_versions/
+/report_final/main.pdf
 /work/
 /work_v*/
 /*.zip

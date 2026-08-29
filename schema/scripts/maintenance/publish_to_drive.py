@@ -12,7 +12,8 @@ from contextlib import closing
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# schema/scripts/maintenance/publish_to_drive.py -> repository root
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 MANAGED_DIRECTORIES = ("ERD", "exclusions", "normalization", "schema")
 MANAGED_FILES = ("requirements.txt", "setup_windows.bat", "setup_linux.sh")
 IGNORED_NAMES = {"__pycache__", "desktop.ini", "Thumbs.db"}

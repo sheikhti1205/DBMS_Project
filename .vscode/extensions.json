@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "formulahendry.code-runner",
+    "james-yu.latex-workshop",
     "ms-python.python",
     "mtxr.sqltools",
     "mtxr.sqltools-driver-sqlite",

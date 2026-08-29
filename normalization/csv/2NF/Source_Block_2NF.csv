@@ -55,8 +55,8 @@ B53,BMD,Temperature Data.xlsx,Table-17,Monthly Temperature (degC) in 2011,Max_Ja
 B54,BMD,Temperature Data.xlsx,Table-18,Monthly Temperature (degC) in 2012,Max_Jan..Max_Dec and Min_Jan..Min_Dec (24 columns),Temperature_Record (both Types)
 B55,BMD,Sunshine.xls,Climate,"Climate (daily sunshine grid, 2022)",31 day columns D_01..D_31,Sunshine_Record
 B56,BMD,Sunshine.xls,Climate Leap year February,"Climate Leap year February (daily sunshine grid, 2024)",31 day columns D_01..D_31,Sunshine_Record
-B57,BRRI,BRRI_Daily_Maximum_Temperature.xlsx,BRRI_Daily_Maximum_Temperature,Daily Maximum Temperature data in degree celcius,31 day columns (Days 1..31),"Temperature_Record (Type=Maximum, monthly MEAN)"
-B58,BRRI,BRRI_Daily_Minimum_Temperature.xlsx,BRRI_Daily_Minimum_Temperature,Daily Minimum Temperature data in celcius,31 day columns (Days 1..31),"Temperature_Record (Type=Minimum, monthly MEAN)"
+B57,BRRI,BRRI_Daily_Maximum_Temperature.xlsx,BRRI_Daily_Maximum_Temperature,Daily Maximum Temperature data in degree celcius,31 day columns (Days 1..31),"Temperature_Record (Type=Maximum, monthly MAXIMUM)"
+B58,BRRI,BRRI_Daily_Minimum_Temperature.xlsx,BRRI_Daily_Minimum_Temperature,Daily Minimum Temperature data in celcius,31 day columns (Days 1..31),"Temperature_Record (Type=Minimum, monthly MINIMUM)"
 B59,BRRI,BRRI_Daily_Total_Rainfall.xlsx,BRRI_Daily_Total_Rainfall,Daily total Rain fall data in Milli meter,31 day columns (Days 1..31),Rainfall_Record (monthly SUM)
 B60,BRRI,BRRI_Daily_Average_Humidity.xlsx,BRRI_Daily_Average_Humidity,Daily average Humidity in %,31 day columns (Days 1..31),Humidity_Record (monthly MEAN)
 B61,BRRI,BRRI_Daily_Sunshine.xlsx,BRRI_Daily_Sunshine,Daily Total Sunshine Hours,31 day columns (Days 1..31),"Sunshine_Record (daily, no aggregation)"

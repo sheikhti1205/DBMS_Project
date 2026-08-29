@@ -11,7 +11,7 @@ from contextlib import closing
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DATABASE = ROOT / "schema" / "environment.db"
 QUERY_FILE = ROOT / "schema" / "scripts" / "queries" / "queries.sql"
 MARKER = re.compile(r"^-- name: ([a-z][a-z0-9_-]*)\s*$", re.MULTILINE)

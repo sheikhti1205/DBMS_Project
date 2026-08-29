@@ -5,13 +5,13 @@ ByteForge Scrum Group 07 normalized the selected environmental records and loade
 ## Project layout
 
 - `ERD/Final_ERD.png` is the report ERD used by the active database. Old diagrams are isolated in `ERD/discarded_do_not_use/`.
-- `normalization/` contains the generated workbook, normalization CSVs, statistics, data-quality log, and its `scripts/` folder.
+- `normalization/` contains the generated workbook, normalization CSVs, statistics, data-quality log, exclusion evidence, and its `scripts/` folder.
 - `schema/environment.db` is the ready-to-query SQLite database.
 - `schema/scripts/setup/` builds and verifies the database.
 - `schema/scripts/queries/` contains the read-only query tool, saved SQL, and demonstration.
-- `schema/scripts/maintenance/` contains separate backup and restore tools.
-- `exclusions/` records source material that was reviewed but was not forced into the final ERD.
-- `tools/publish_to_drive.py` updates the non-Git Google Drive copy without touching its report or selected source files.
+- `schema/validation/competency/` preserves the machine-readable competency benchmark evidence.
+- `schema/scripts/maintenance/` contains backup, restore, and Drive-publishing tools.
+- `schema/tests/` contains the database, ERD, setup, and competency acceptance tests.
 
 The WSL checkout is the coding source of truth and the only Git repository. Google Drive is a non-Git project mirror containing the selected sources and the report workspace.
 
@@ -63,6 +63,14 @@ PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
 
 Every query command opens the database read-only. Saved examples cover table counts, relationships, time coverage, climate, rainfall, rivers, water quality, forests, wastewater, missing measurements, integrity, and foreign keys.
 
+Refresh the canonical competency evidence after an intentional database or query change:
+
+```bash
+python3 -B -m schema.scripts.queries.benchmark_database
+```
+
+The benchmark is written to `schema/validation/competency/benchmark.json` by default.
+
 ## Backup and restore
 
 Backups and restores remain separate from setup.
@@ -109,13 +117,13 @@ The workbook is generated as `normalization/Environmental_Normalization_0NF_to_B
 Check for differences:
 
 ```bash
-python3 -B tools/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project"
+python3 -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project"
 ```
 
 Apply the checked update:
 
 ```bash
-python3 -B tools/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project" --apply
+python3 -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project" --apply
 ```
 
-Publishing manages only `ERD`, `exclusions`, `normalization`, `schema`, the launchers, and `requirements.txt`. It never changes `report/` or `Selected_Source_Files/` and never copies Git metadata or this README to Drive.
+Publishing manages only `ERD`, `normalization`, `schema`, the launchers, and `requirements.txt`; it also removes the retired root-level `exclusions/` copy from an older Drive mirror. It never changes `report/` or `Selected_Source_Files/` and never copies Git metadata or this README to Drive.

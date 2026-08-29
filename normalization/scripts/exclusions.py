@@ -24,7 +24,8 @@ from openpyxl import load_workbook
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(HERE))
 OUTDIR = os.path.abspath(os.environ.get(
-    'DBMS_EXCLUSIONS_DIR', os.path.join(PROJECT_ROOT, 'exclusions')
+    'DBMS_EXCLUSIONS_DIR',
+    os.path.join(PROJECT_ROOT, 'normalization', 'exclusions')
 )) + os.sep
 
 REG = []

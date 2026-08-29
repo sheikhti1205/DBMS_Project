@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from schema.scripts.common import schema_model
@@ -57,7 +57,7 @@ class ErdContractTest(unittest.TestCase):
         needles = ("ground" + "water", "ground_" + "water", "bwdb_" + "gw")
         suffixes = {".py", ".sql", ".json", ".md", ".csv", ".txt"}
         hits: list[str] = []
-        for base in (ROOT / "normalization", ROOT / "schema", ROOT / "exclusions", ROOT / "tools"):
+        for base in (ROOT / "normalization", ROOT / "schema"):
             for path in base.rglob("*"):
                 if not path.is_file() or path.suffix.lower() not in suffixes:
                     continue
