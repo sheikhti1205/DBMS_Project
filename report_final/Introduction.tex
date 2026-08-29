@@ -1,0 +1,240 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Bangladeshi agencies publish environmental measurements that can span several
+decades. Weather stations record temperature, rain gauges record rainfall, and
+river monitoring points sample water for oxygen and acidity. The implemented
+records cover the period from \mYearMin{} to \mYearMax.
+
+These publications are difficult to use directly in a database. The sheets
+support human reading, so they contain merged headings, repeated date columns,
+station names placed outside the data rows, and source-specific ways of marking
+missing readings. A person can infer these meanings from the page layout, but
+an extraction program needs them to be stated consistently.
+
+A person reads this without noticing the difficulty, a query cannot. The
+question of what the mean maximum temperature in Bogura was in April 2019
+requires a machine to recognize alternate station spellings, identify the
+correct date column, and distinguish a missing reading from zero. Reliable
+queries depend on explicit rules for each of these cases.
+
+This project makes the measurements queryable. The group designs a relational
+schema, extracts the published material into it, normalizes the result to
+Boyce--Codd Normal Form and records what the process costs.
+
+\subsection{Background and Motivation}
+\label{subsec:bm}
+
+The work belongs to MODELBD, which the cohort develops across seven sectors
+under a Scrum of Scrums arrangement \cite{scrumguide2020}. Group-07 holds the
+environment sector at Scrum Level-01.
+
+The motivation is a gap between publication and use. Bangladesh is highly
+exposed to climate-related hazards and its own agencies hold long-run evidence
+needed to study that exposure \cite{worldbank_climate_bd}. A researcher who
+wants to compare rainfall in the 1970s against rainfall in the 2010s currently
+opens several spreadsheets and reconciles them by hand. That reconciliation is
+slow and is not reproducible when researchers resolve names such as Bogura in
+different ways.
+
+A normalized database removes that variance. Once the organisations' figures
+occupy one schema with one spelling per station and one notation for a missing
+value, the comparison becomes a query and the query returns the same answer to
+everyone who runs it.
+
+\subsection{Problem Statement}
+\label{subsec:ps}
+
+Three recurring problems shape the work.
+
+\begin{description}[leftmargin=1.15cm,style=nextline]
+  \item[P1] The published form is not relational. Column groups repeat, headers
+  merge across cells and a row's identity can depend on a label above it. A
+  sheet in this form has no dependable primary key and violates first normal
+  form before any design decision is made.
+  \item[P2] The same real entity carries several names. Station and place names
+  differ in spelling, capitalization and abbreviation between publications.
+  Missing values are also written as symbols, spreadsheet errors, words and
+  empty cells.
+  \item[P3] Not every candidate publication belongs in the final model. Some
+  material is narrative, outside the approved scope or lacks a reliable join
+  key. Even retained files use different grains and require a reproducible path
+  from extraction to a tested database.
+\end{description}
+
+\subsection{Project Objectives}
+\label{subsec:objectives}
+
+The project has three report-level objectives that respond to these problems.
+
+\begin{description}[leftmargin=1.25cm,style=nextline]
+  \item[OB1] Collect, verify, extract and prepare environmental records from
+  published sources while retaining source traceability and data-quality
+  decisions.
+  \item[OB2] Design an integrated environmental data model, normalize it from
+  first normal form to BCNF and implement the approved relations in SQLite.
+  \item[OB3] Demonstrate that the database is reproducible, queryable and
+  maintainable through competency questions, integrity tests, deployment
+  scripts and backup--restore validation.
+\end{description}
+
+The objectives consolidate the eleven operational goals used during the
+sprints. Table~\ref{tab:goal-list} keeps the complete goal list visible.
+
+\begin{table}[H]
+\centering
+\caption{Complete project-goal list}
+\label{tab:goal-list}
+\begin{tabular}{C{0.09\textwidth}L{0.48\textwidth}L{0.33\textwidth}}
+\toprule
+Goal & Description & Primary evidence \\
+\midrule
+G1 & Environmental Data Collection & Source register and collected files \\
+G2 & Source Verification \& Selection & Exclusion register \\
+G3 & Data Extraction & Extraction code and 0NF blocks \\
+G4 & Data Cleaning \& Preprocessing & Data-quality log \\
+G5 & ERD Development \& Integration & Final ERD and schema definition \\
+G6 & Data Normalization to BCNF & Stage-wise outputs \\
+G7 & Relational Schema Implementation & SQLite database \\
+G8 & Data Loading \& ETL & Build scripts and normalized CSV files \\
+G9 & Database Validation \& Integrity Checking & Automated tests \\
+G10 & Query \& Demonstration Tools & Saved SQL and competency benchmark \\
+G11 & Database Deployment \& Maintenance & Setup, backup and restore scripts \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:objective-mapping} maps each problem to the objectives and report
+evidence that address it.
+
+\begin{table}[H]
+\centering
+\caption{Problem--objective--report mapping}
+\label{tab:objective-mapping}
+\begin{tabular}{C{0.10\textwidth}C{0.15\textwidth}L{0.61\textwidth}}
+\toprule
+Problem & Objective & Principal report evidence \\
+\midrule
+P1 & OB1, OB2 & Sections~\ref{sec:data}, \ref{sec:etl} and \ref{sec:norm} \\
+P2 & OB1, OB2 & Sections~\ref{sec:data}, \ref{sec:etl} and \ref{sec:dm} \\
+P3 & OB1, OB3 & Sections~\ref{sec:rga}, \ref{sec:deploy} and \ref{sec:findings} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:problem-resolution} summarizes how the reported problems move
+from a source condition to a recorded response and a verifiable outcome.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  problem/.style={draw=cublue,fill=cublue!8,rounded corners=2pt,
+    text width=3.4cm,minimum height=1.25cm,align=center,font=\scriptsize},
+  response/.style={draw=cuteal,fill=cuteal!8,rounded corners=2pt,
+    text width=4.2cm,minimum height=1.25cm,align=center,font=\scriptsize},
+  outcome/.style={draw=cuamber,fill=cuamber!8,rounded corners=2pt,
+    text width=3.8cm,minimum height=1.25cm,align=center,font=\scriptsize},
+  arr/.style={-{Stealth[length=2mm]},thick,draw=culine},
+  node distance=0.45cm and 0.55cm
+]
+\node[problem] (p1) {P1: repeating columns, merged headers and no dependable source key};
+\node[response,right=of p1] (r1) {Block extraction, unpivoting and staged normalization};
+\node[outcome,right=of r1] (o1) {Atomic records and relations checked through BCNF};
+
+\node[problem,below=of p1] (p2) {P2: inconsistent names and missing-value notation};
+\node[response,right=of p2] (r2) {Canonical name maps, explicit missing values and quarantine rules};
+\node[outcome,right=of r2] (o2) {Stable keys, reproducible joins and recorded exceptions};
+
+\node[problem,below=of p2] (p3) {P3: mixed scope and grain, with unreliable join keys};
+\node[response,right=of p3] (r3) {Documented source selection, grain-specific decomposition and validation};
+\node[outcome,right=of r3] (o3) {Approved schema, integrity checks and repeatable SQLite build};
+
+\draw[arr] (p1)--(r1); \draw[arr] (r1)--(o1);
+\draw[arr] (p2)--(r2); \draw[arr] (r2)--(o2);
+\draw[arr] (p3)--(r3); \draw[arr] (r3)--(o3);
+\end{tikzpicture}
+\caption{Problems identified, project responses and verified outcomes.}
+\label{fig:problem-resolution}
+\end{figure}
+
+\subsection{Sector Description and Data Products}
+\label{subsec:sdp}
+
+The environment sector contains measurement families whose subjects and time
+grains cannot be placed in one undifferentiated table. The implemented data
+products are separated as follows.
+
+\begin{description}[leftmargin=0.6cm,style=nextline]
+  \item[Monthly climate records] Maximum and minimum temperature, humidity,
+  rainfall, maximum and minimum wind speed with direction and thunderstorm and
+  lightning observations are organized by station, year and month.
+  \item[Daily climate records] Sunshine hours use station and calendar-day
+  grain. Solar radiation adds a sample number because several readings can
+  occur on the same day.
+  \item[Hydrology and water quality] Rivers and monitoring stations support pH,
+  dissolved oxygen, biochemical oxygen demand, chemical oxygen demand,
+  salinity and marine-debris observations by station and year.
+  \item[Forest area] Protected, reserved, unclassed, acquired and total forest
+  areas are organized by district and fiscal period.
+  \item[Industry] Establishment-size and industry-category observations retain
+  their quantity, percentage and fiscal reporting period.
+  \item[Reference and time data] Stations, districts, rivers, monitoring
+  points, categories and calendar or fiscal periods provide consistent keys for
+  the measurement relations.
+\end{description}
+
+\subsection{Scope, Sources and Definitions}
+\label{subsec:sd}
+
+Source discovery covers Bangladeshi and international organisations. The final
+database uses nine approved structured files from Bangladesh Bureau of
+Statistics (BBS), Bangladesh Meteorological Department (BMD), Bangladesh Rice
+Research Institute (BRRI) and Bangladesh Water Development Board (BWDB)
+\cite{bbs_env_ts,bmd_temperature,brri_daily,bwdb_rivers}. The wider collection
+is retained as evidence even when a file cannot support the approved model.
+
+Table~\ref{tab:organisations} adapts the implemented-source profile to the
+verified Drive inventory. Collected files are source or data publications; the
+loaded count excludes support files and derived page images.
+
+\begin{table}[H]
+\centering
+\caption{Implemented source profile within the collected file inventory}
+\label{tab:organisations}
+\begin{tabular}{L{0.31\textwidth}r r L{0.38\textwidth}}
+\toprule
+Organisation & Collected & Loaded & Implemented material \\
+\midrule
+Bangladesh Bureau of Statistics (BBS) & 2 & 1 & Climate, water quality,
+forest and industrial statistics. \\
+Bangladesh Meteorological Department (BMD) & 11 & 2 & Station-based
+temperature and sunshine publications. \\
+Bangladesh Rice Research Institute (BRRI) & 9 & 5 & Daily temperature,
+rainfall, humidity and sunshine observations. \\
+Bangladesh Water Development Board (BWDB) & 4 & 1 & River names and
+river-reference information. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Discovery also covers the Department of Environment, Ministry of Environment,
+Forest and Climate Change, Humanitarian Data Exchange, UNESCO, World Health
+Organization, World Bank, United Nations and other publishers. Their reviewed
+files use incompatible subjects or identifiers, lack a dependable join key or
+consist of narrative material rather than repeatable records. They remain in
+the source review without being represented as loaded database facts
+\cite{hdx_bangladesh}.
+
+In this report, a \textbf{block} means one rectangular region of published
+data that shares one header structure. A sheet may hold several blocks. BBS
+sheet T1.14, for example, publishes radiation for several stations as separate
+tables stacked vertically and each becomes a separate block.
+
+\subsection{Organization of the Report}
+\label{subsec:org}
+
+Sections~\ref{sec:projectmanagement}--\ref{sec:rga} cover management, Scrum and
+sprints; Sections~\ref{sec:data}--\ref{sec:dm} cover sources, ETL,
+normalization and modelling. Deployment, collaboration, findings and pedagogy
+are followed by the evidence-based resource comparison. The conclusion closes
+the numbered discussion, with the bibliography as the final report element.

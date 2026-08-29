@@ -1,0 +1,666 @@
+\section{Sprint Reports}
+\label{sec:rga}
+
+The work is organized into three sprints that move from source discovery to a
+verified SQLite release. Each report uses the same structure: overview,
+backlog, goal, team contributions, completed activities, difficulties and
+responses, and a checkable output. This makes the difference between planned
+work and delivered evidence visible. Figure~\ref{fig:sprint-goal-matrix}
+summarizes the ownership of G1--G11 before the detailed reports.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  matrix of nodes,
+  nodes={draw=culine,minimum width=1.58cm,minimum height=0.62cm,
+    align=center,font=\scriptsize},
+  row 1/.style={nodes={fill=cublue!15,font=\scriptsize\bfseries}},
+  column 1/.style={nodes={minimum width=2.55cm,font=\scriptsize\bfseries}}
+]
+\matrix (goals) {
+Goal & Sprint 1 & Sprint 2 & Sprint 3 \\
+G1 Collection & |[fill=cuteal!45]| Achieved & & \\
+G2 Selection & |[fill=cuteal!45]| Achieved & & \\
+G3 Extraction & & |[fill=cuteal!45]| Achieved & \\
+G4 Cleaning & & |[fill=cuteal!45]| Achieved & \\
+G5 ERD & & |[fill=cuamber!35]| Developed & |[fill=cuteal!45]| Finalized \\
+G6 BCNF & & & |[fill=cuteal!45]| Achieved \\
+G7 Schema & & & |[fill=cuteal!45]| Achieved \\
+G8 ETL & & & |[fill=cuteal!45]| Achieved \\
+G9 Integrity & & & |[fill=cuteal!45]| Achieved \\
+G10 Queries & & & |[fill=cuteal!45]| Achieved \\
+G11 Deployment & & & |[fill=cuteal!45]| Achieved \\
+};
+\end{tikzpicture}
+\caption{Sprint-to-goal matrix for G1--G11. Blank cells indicate that a goal
+was not assigned to that sprint.}
+\label{fig:sprint-goal-matrix}
+\end{figure}
+
+\clearpage
+\subsection{Sprint 1: Data Discovery and Acquisition}
+\label{subsec:sprint1}
+
+\subsubsection{Sprint Overview}
+
+Sprint 1 establishes the source collection. Team members search official
+Bangladesh organizations and recognized international data portals, then
+compare the candidate material in a shared register. A publication is not
+accepted merely because its title concerns the environment. The review checks
+the publisher, file type, time range, measurement grain, identifiers and the
+possibility of connecting the records to the approved scope.
+
+The Drive review identifies \mSourceDataFiles{} source/data files and
+\mSupportFiles{} supporting or administrative files. Only
+\mSourceOrganisations{} organizations finally contribute the
+\mSourceFiles{} structured loader files used by the implementation. The other
+collected material remains part of the discovery record, with its exclusion
+reason, rather than being described as loaded data.
+
+\subsubsection{Sprint Backlog}
+
+\begin{enumerate}[leftmargin=*]
+  \item Search national and international organizations for relevant
+  environmental datasets and publications.
+  \item Store candidate files without overwriting the original downloads and
+  record their publisher and source location.
+  \item Inspect content, format, time coverage, observation grain and usable
+  identifiers.
+  \item Select material that fits the approved environment-sector scope and
+  record why other files or sheets are excluded.
+\end{enumerate}
+
+\subsubsection{Sprint Goal}
+
+The sprint addresses G1, Environmental Data Collection, and G2, Source
+Verification and Selection. Completion requires both an organized collection
+and a review trail showing why each retained source can move to extraction.
+Figure~\ref{fig:sprint1-goals} connects the sprint directly to those goals.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  sprint/.style={draw=cublue,rounded corners=3pt,fill=cublue,text=white,
+    minimum width=2.4cm,minimum height=1.05cm,align=center,font=\bfseries},
+  goal/.style={draw=culine,rounded corners=3pt,fill=cugrey,text width=6.2cm,
+    minimum height=0.9cm,align=center,font=\small},
+  arr/.style={-{Stealth[length=2mm]},thick,draw=cuteal}
+]
+\node[sprint] (s1) {Sprint 1};
+\node[goal,right=2.0cm of s1,yshift=0.65cm] (g1)
+  {G1 - Environmental Data Collection};
+\node[goal,right=2.0cm of s1,yshift=-0.65cm] (g2)
+  {G2 - Source Verification and Selection};
+\coordinate (split) at ($(s1.east)+(0.75cm,0)$);
+\draw[arr] (s1.east)--(split)|-(g1.west);
+\draw[arr] (split)|-(g2.west);
+\end{tikzpicture}
+\caption{Goals completed in Sprint 1.}
+\label{fig:sprint1-goals}
+\end{figure}
+
+\clearpage
+\subsubsection{Team Contributions}
+
+Table~\ref{tab:sprint1-contributions} records principal ownership without
+implying that a task was completed without group review.
+
+\begin{table}[H]
+\centering
+\caption{Principal team contributions in Sprint 1}
+\label{tab:sprint1-contributions}
+\begin{tabular}{L{0.26\textwidth}L{0.63\textwidth}}
+\toprule
+Contribution area & Team members and contribution \\
+\midrule
+Dataset search and collection & Safwan Ahmed Rayed and Sheikh Tawsif Bin Aftab
+searched for and collected relevant environmental publications. \\
+Source documentation & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar recorded
+source and dataset information in the shared register. \\
+File organization & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar organized
+the collected files and supporting material in Google Drive. \\
+File examination and selection & Sanjida Mahi reviewed the collected material
+for content and suitability, with selection decisions discussed by the team. \\
+Review and verification & Syed Mehraz Monwar checked the organization and
+documentation needed for later report evidence. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Activities Performed}
+
+\begin{description}[style=nextline]
+  \item[Independent source searching.] Members search separately across the
+  assigned domain and bring the results into one register. This reduces the
+  risk that the collection depends on one search path.
+  \item[Official-source checking.] The review prioritizes responsible
+  government agencies and recognized institutions. Secondary references can
+  help locate a publication, but the original publisher and file are checked
+  before selection.
+  \item[Source recording.] The register preserves the organization, material
+  title, source location, file type, availability and selection status. The
+  retained link lets a reviewer return to the publication.
+  \item[Collection and organization.] Downloaded files are grouped by source
+  organization in the shared Drive. Original material is preserved while
+  extracted copies and later outputs are stored separately.
+  \item[Scope and structure screening.] The team checks whether a file contains
+  relevant measurements, whether its observation unit is clear and whether
+  stable identifiers support integration.
+  \item[Exclusion recording.] Narrative-only reports, repeated derivatives,
+  unsupported national aggregates and files with unsuitable granularity or
+  identifiers remain documented instead of being forced into the loader.
+  \item[Handoff preparation.] Files selected for extraction are accompanied by
+  their source metadata and initial notes about headers, dates, units and
+  missing-value markers.
+\end{description}
+
+\subsubsection{Difficulties and Responses}
+
+Table~\ref{tab:sprint1-challenges} records the principal difficulties and the
+responses used during Sprint 1.
+
+\begin{table}[H]
+\centering
+\caption{Sprint 1 difficulties and practical responses}
+\label{tab:sprint1-challenges}
+\small
+\begin{tabular}{L{0.20\textwidth}L{0.28\textwidth}L{0.42\textwidth}}
+\toprule
+Difficulty & Effect on the work & Response \\
+\midrule
+Fragmented publication & Environmental material is distributed across many
+organizations and portals. & Maintain one source register with organization,
+title, location, format and selection status. \\
+Inaccessible or unstable links & Slow pages and broken downloads delay source
+verification. & Search alternate pages belonging to the same publisher and
+retain the working official location when found. \\
+PDF-only information & Narrative pages or embedded tables cannot enter the
+structured loader directly. & Prefer machine-readable files; retain relevant
+reports as evidence or process them separately only when their grain is clear. \\
+Inconsistent terminology & Similar measures and places appear with different
+labels, units or spellings. & Record differences during discovery so they can
+be reconciled explicitly in Sprint 2. \\
+Scope mismatch & A file can be credible but too aggregated, duplicated or
+outside the implemented domains. & Give it a documented exclusion reason while
+keeping it in the source inventory. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Sprint Output}
+
+Sprint 1 produces a source register and an organized collection containing
+\mSourceDataFiles{} source/data files plus \mSupportFiles{} support files. The
+screening outcome identifies \mSourceFiles{} structured files for the loader
+and records excluded files and sheets separately. Section~\ref{sec:data}
+provides the complete source-by-source accounting and shows that collected,
+selected and loaded are different measurements.
+
+\subsection{Sprint 2: Extraction and Data Preparation}
+\label{subsec:sprint2}
+
+\subsubsection{Sprint Overview}
+
+Sprint 2 converts selected spreadsheets into explicit records. Each workbook
+is inspected before automation because the files do not share one layout:
+station names can appear above a block, dates can run across columns and one
+sheet can contain several unrelated tables. The extraction scripts preserve
+the original files and create raw 0NF CSV blocks for review.
+
+The sprint also develops the integrated ERD. Modelling and extraction proceed
+together because an entity, candidate key or relationship cannot be confirmed
+until actual rows reveal the observation grain. The extraction ultimately
+offers \mRowsOffered{} rows across \mSourceBlocks{} implemented source blocks;
+the stage totals and changing record grain are explained in
+Section~\ref{sec:etl}.
+
+\subsubsection{Sprint Backlog}
+
+\begin{enumerate}[leftmargin=*]
+  \item Inspect the selected workbooks and locate their real data regions,
+  repeated headers, dates, units and identifiers.
+  \item Extract approved structures into raw, traceable 0NF blocks.
+  \item Standardize missing markers, names, dates and safely parseable numeric
+  formats while preserving uncertain cases for review.
+  \item Record duplicates, conflicts, exclusions and source-precedence
+  decisions.
+  \item Develop source-level ERDs and integrate only relationships supported by
+  dependable identifiers.
+\end{enumerate}
+
+\subsubsection{Sprint Goal}
+
+Sprint 2 completes G3, Data Extraction, and G4, Data Cleaning and
+Preprocessing. It develops G5, ERD Development and Integration, for final
+review in Sprint 3.
+Figure~\ref{fig:sprint2-goals} distinguishes completed goals from the goal that
+continues into Sprint 3.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  sprint/.style={draw=cublue,rounded corners=3pt,fill=cublue,text=white,
+    minimum width=2.4cm,minimum height=1.05cm,align=center,font=\bfseries},
+  goal/.style={draw=culine,rounded corners=3pt,fill=cugrey,text width=6.2cm,
+    minimum height=0.84cm,align=center,font=\small},
+  arr/.style={-{Stealth[length=2mm]},thick,draw=cuteal}
+]
+\node[sprint] (s2) {Sprint 2};
+\node[goal,right=2.0cm of s2,yshift=1.05cm] (g3) {G3 - Data Extraction};
+\node[goal,right=2.0cm of s2] (g4) {G4 - Data Cleaning and Preprocessing};
+\node[goal,right=2.0cm of s2,yshift=-1.05cm] (g5)
+  {G5 - ERD Development and Integration};
+\coordinate (split) at ($(s2.east)+(0.75cm,0)$);
+\draw[arr] (s2.east)--(split)|-(g3.west);
+\draw[arr] (split)--(g4.west);
+\draw[arr] (split)|-(g5.west);
+\end{tikzpicture}
+\caption{Goals completed or developed in Sprint 2.}
+\label{fig:sprint2-goals}
+\end{figure}
+
+\subsubsection{Team Contributions}
+
+Table~\ref{tab:sprint2-contributions} records the principal contribution areas
+for Sprint 2.
+
+\begin{table}[H]
+\centering
+\caption{Principal team contributions in Sprint 2}
+\label{tab:sprint2-contributions}
+\begin{tabular}{L{0.26\textwidth}L{0.63\textwidth}}
+\toprule
+Contribution area & Team members and contribution \\
+\midrule
+File inspection & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar examined the
+selected files to locate structures and information requiring extraction. \\
+Extraction development & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar
+developed and adjusted the Python extraction methods. \\
+Data extraction and CSV preparation & Sheikh Tawsif Bin Aftab and Syed Mehraz
+Monwar extracted the approved blocks and organized their raw CSV outputs. \\
+Source-level ERD development & Safwan Ahmed Rayed and Sanjida Mahi developed
+ERDs from the structures exposed by the selected sources. \\
+ERD comparison and integration & Safwan Ahmed Rayed and Sanjida Mahi compared
+entity grain, keys and relationship paths to develop the integrated model. \\
+Review and verification & The group compared extracted samples with the source
+files before the blocks moved to normalization. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Activities Performed}
+
+\begin{description}[style=nextline]
+  \item[Manual spreadsheet inspection.] The team identifies data regions,
+  merged headings, daily and monthly wide layouts, repeated blocks and the
+  cells that supply station, location, date and measurement context.
+  \item[Source-structure identification.] Recurring patterns are described
+  before coding. Particular care is given to labels placed outside the data
+  rows because losing them would make the extracted observations anonymous.
+  \item[Work distribution.] Selected workbooks are divided among members while
+  common parsing and naming rules remain shared. Sample outputs are compared so
+  parallel work does not create incompatible record layouts.
+  \item[Python extraction.] Scripts based on \texttt{openpyxl} read approved
+  sheets, carry contextual identifiers into each record and write explicit CSV
+  blocks. Source-specific handling is retained where layouts genuinely differ.
+  \item[Wide-to-long preparation.] Repeated month, day or measurement columns
+  are exposed as values that can later become atomic 1NF rows. The original
+  spreadsheet remains unchanged.
+  \item[Cleaning preparation.] Utilities handle known missing markers, name
+  mappings, numeric conversion and date interpretation. An uncertain value is
+  logged rather than silently converted.
+  \item[Exclusion and conflict tracking.] Files, sheets or blocks that cannot be
+  integrated receive reasons. Duplicates, inconsistent totals and competing
+  values remain visible in the quality records.
+  \item[ERD integration.] Candidate entities are compared by meaning, key and
+  grain. A link is included only when the sources provide a dependable joining
+  identifier.
+\end{description}
+
+\subsubsection{Difficulties and Responses}
+
+Table~\ref{tab:sprint2-challenges} connects the main Sprint 2 difficulties to
+their practical responses.
+
+\begin{table}[H]
+\centering
+\caption{Sprint 2 difficulties and practical responses}
+\label{tab:sprint2-challenges}
+\small
+\begin{tabular}{L{0.20\textwidth}L{0.28\textwidth}L{0.42\textwidth}}
+\toprule
+Difficulty & Effect on the work & Response \\
+\midrule
+Context outside data rows & Station or district labels can appear only once
+above a block. & Carry the contextual value into every extracted record in that
+block. \\
+Wide spreadsheet layouts & Months, days or measures spread across columns do
+not form atomic database records. & Reshape them into row-based observations
+while retaining source and block identity. \\
+Merged and repeated headers & Generic readers can mistake headings for values
+or omit part of the schema. & Inspect each workbook, define its true header
+region and apply source-specific extraction rules. \\
+Mixed date conventions & Year, fiscal year, month and day appear in different
+positions and formats. & Parse them according to the block's declared grain and
+keep unresolved dates out of the accepted output. \\
+Inconsistent names and values & Spelling variants, missing markers and numeric
+text obstruct joining and loading. & Apply documented mappings and parsing
+rules; log uncertain conversions and source conflicts. \\
+Large record volume & Manual copying is slow and difficult to reproduce. & Use
+scripts to extract repeatably, then compare samples and counts with the source. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Sprint Output}
+
+Sprint 2 produces the extraction scripts, quality and exclusion records,
+\mSourceBlocks{} raw source blocks and \mRowsOffered{} rows offered to the
+normalization workflow. It also produces the integrated ERD draft that Sprint
+3 checks against the normalized relations. Sections~\ref{sec:etl} and
+\ref{sec:dm} provide the detailed implementation and approved final ERD.
+
+\subsection{Sprint 3: Normalization, Implementation and Verification}
+\label{subsec:sprint3}
+
+\subsubsection{Sprint Overview}
+
+Sprint 3 turns the prepared blocks into the final normalized SQLite database.
+Functional dependencies are checked from 1NF through BCNF, the integrated ERD
+is finalized, the approved relational schema is implemented in SQLite and the data is
+loaded through the reproducible build process. Verification then checks the
+schema, relationships, queries, backup and restoration rather than treating a
+successful load command as completion.
+
+The verified database contains \mDbTables{} tables, \mDbViews{} views,
+\mDbColumns{} columns, \mDbPk{} primary-key definitions,
+\mDbFk{} foreign-key relationships and \mDbRows{} rows. Its declared time
+coverage is \mYearMin--\mYearMax. These values are generated from the delivered
+database rather than copied from a manually maintained summary.
+
+\subsubsection{Sprint Backlog}
+
+\begin{enumerate}[leftmargin=*]
+  \item Normalize extracted relations through 1NF, 2NF, 3NF and BCNF while
+  documenting functional dependencies and decompositions.
+  \item Finalize the ERD and define primary, candidate and foreign keys in the
+  final schema definition.
+  \item Implement and load the schema in SQLite3 from the accepted normalized
+  outputs.
+  \item Validate required values, key uniqueness, constraints, foreign keys and
+  logical rebuild equivalence.
+  \item Run competency questions and measure representative query execution
+  times.
+  \item Verify deployment, read-only operation, backup, restore and maintenance
+  procedures.
+\end{enumerate}
+
+\subsubsection{Sprint Goal}
+
+Sprint 3 finalizes G5 and completes G6--G11. The goal is not only a database
+file but a release whose schema, data and operating procedures can be rebuilt
+and checked from the delivered project.
+Figure~\ref{fig:sprint3-goals} shows the full set of goals completed in this
+release sprint.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  sprint/.style={draw=cublue,rounded corners=3pt,fill=cublue,text=white,
+    minimum width=2.1cm,minimum height=1.0cm,align=center,font=\bfseries},
+  goal/.style={draw=culine,rounded corners=3pt,fill=cugrey,text width=4.25cm,
+    minimum height=0.72cm,align=center,font=\scriptsize},
+  arr/.style={-{Stealth[length=1.8mm]},thick,draw=cuteal}
+]
+\node[sprint] (s3) {Sprint 3};
+\node[goal,left=1.65cm of s3,yshift=1.25cm] (g5) {G5 - Final ERD};
+\node[goal,left=1.65cm of s3,yshift=0.42cm] (g6) {G6 - Normalization to BCNF};
+\node[goal,left=1.65cm of s3,yshift=-0.42cm] (g7) {G7 - Schema Implementation};
+\node[goal,left=1.65cm of s3,yshift=-1.25cm] (g8) {G8 - Data Loading and ETL};
+\node[goal,right=1.65cm of s3,yshift=1.25cm] (g9) {G9 - Integrity Checking};
+\node[goal,right=1.65cm of s3,yshift=0.42cm] (g10) {G10 - Query and Demonstration};
+\node[goal,right=1.65cm of s3,yshift=-0.42cm] (g11) {G11 - Deployment and Maintenance};
+\coordinate (leftsplit) at ($(s3.west)+(-0.65cm,0)$);
+\coordinate (rightsplit) at ($(s3.east)+(0.65cm,0)$);
+\draw[arr] (s3.west)--(leftsplit)|-(g5.east);
+\draw[arr] (leftsplit)|-(g6.east);
+\draw[arr] (leftsplit)|-(g7.east);
+\draw[arr] (leftsplit)|-(g8.east);
+\draw[arr] (s3.east)--(rightsplit)|-(g9.west);
+\draw[arr] (rightsplit)|-(g10.west);
+\draw[arr] (rightsplit)|-(g11.west);
+\end{tikzpicture}
+\caption{Goals finalized or completed in Sprint 3.}
+\label{fig:sprint3-goals}
+\end{figure}
+
+\subsubsection{Team Contributions}
+
+Table~\ref{tab:sprint3-contributions} records the principal contribution areas
+for Sprint 3.
+
+\begin{table}[H]
+\centering
+\caption{Principal team contributions in Sprint 3}
+\label{tab:sprint3-contributions}
+\begin{tabular}{L{0.26\textwidth}L{0.63\textwidth}}
+\toprule
+Contribution area & Team members and contribution \\
+\midrule
+ERD refinement and normalization & Sanjida Mahi and Safwan Ahmed Rayed refined
+the integrated ERD and worked through the normalization stages to BCNF. \\
+Schema implementation and ETL & Sheikh Tawsif Bin Aftab implemented the final
+schema, loading process and reproducible database build. \\
+Database testing & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar checked the
+implemented tables, relationships and query behavior. \\
+Review and verification & Syed Mehraz Monwar reviewed report evidence and
+verified that explanations and diagrams agreed with the implemented database. \\
+Queries and demonstrations & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar
+prepared and reviewed saved read-only queries and database demonstrations. \\
+Deployment and maintenance & Sheikh Tawsif Bin Aftab prepared the setup,
+verification, backup and restoration workflow, with the results reviewed
+by the team. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Activities Performed}
+
+\begin{description}[style=nextline]
+  \item[Relational-model refinement.] Extracted attributes are grouped by
+  stable meaning and observation grain. Candidate keys and relationship paths
+  are compared with the approved final ERD.
+  \item[Normal-form evaluation.] Functional dependencies are checked at each
+  stage. Partial and transitive dependencies are decomposed, then every BCNF
+  determinant is checked against the candidate keys.
+  \item[Schema implementation.] The final schema defines exact table
+  names, columns, types, required values, checks, primary keys and foreign keys.
+  The generated SQL and SQLite database are compared with that definition.
+  \item[Normalization and ETL execution.] The pipeline produces intermediate
+  files for review, loads the accepted BCNF files and records stage counts
+  without assuming that changes in grain must be monotonic.
+  \item[Database verification.] The database is checked for table and column
+  agreement, primary-key uniqueness, required values, constraint behavior,
+  foreign-key consistency and logical equivalence after a clean rebuild.
+  \item[Query and demonstration preparation.] Saved read-only queries cover
+  climate, wind, rivers, water quality, forestry, industry, relationship
+  metadata, coverage, missing values and integrity.
+  \item[Deployment and maintenance checks.] Linux and Windows procedures,
+  read-only access, safe rebuild behavior, backup and restore are exercised
+  against temporary copies before final acceptance.
+\end{description}
+
+\subsubsection{Competency Query Validation}
+\label{subsec:competency-query}
+
+Competency questions test whether the schema can answer the environmental and
+relationship questions implied by the final ERD. They therefore check more
+than table existence. Table~\ref{tab:competency-questions} records the questions
+and the verified Group-07 outcomes before representative SQL is shown.
+
+\begin{table}[H]
+\centering
+\caption{Competency questions and verified Group-07 results}
+\label{tab:competency-questions}
+\begin{tabular}{C{0.07\textwidth}L{0.57\textwidth}L{0.25\textwidth}}
+\toprule
+ID & Question & Verified result \\
+\midrule
+CQ1 & How many temperature records are available for 2020? &
+\mTemperatureRowsTwentyTwenty{} rows \\
+CQ2 & How many districts have retained forest-area records? & 35 districts \\
+CQ3 & Can every loaded water-quality row reach a river through its station? &
+\mWaterQualityConnected{} joined rows \\
+CQ4 & Which adequately sampled station has the highest average monthly
+rainfall? & \mWettestStation{}, \mWettestAverage{} mm \\
+CQ5 & Are the retained industry-use observations retrievable by fiscal period?
+& \mIndustryRows{} rows \\
+CQ6 & What is the database's declared time coverage? &
+\mYearMin--\mYearMax \\
+CQ7 & Which geographic limitation remains visible? &
+\mUnmappedStations{} stations lack a supported district mapping \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The following query checks the Station--Temperature relationship and uses the
+implemented measurement column, \texttt{Temp}.
+
+\begin{lstlisting}[language=SQL,caption={Station and temperature relationship validation},
+label={lst:station-temperature-validation}]
+SELECT s.Station_Name, t.Year, t.Month, t.Type, t.Temp
+FROM Station AS s
+JOIN Temperature_Record AS t
+  ON s.Station_Name = t.Station_Name
+WHERE t.Year = 2020;
+\end{lstlisting}
+
+The next query demonstrates the relationship tested by CQ3. The joining column
+is \texttt{WQ\_Station\_Name} in both implemented relations.
+
+\begin{lstlisting}[language=SQL,caption={Water-quality records joined to their rivers},
+label={lst:water-quality-validation}]
+SELECT rs.River_Name,
+       w.WQ_Station_Name,
+       w.Year,
+       w.Parameter_Type,
+       w.Value
+FROM Water_Quality AS w
+JOIN River_Station AS rs
+  ON rs.WQ_Station_Name = w.WQ_Station_Name;
+\end{lstlisting}
+
+CQ4 applies a minimum sample-size rule so a station represented by only a few
+months cannot outrank a long series without disclosure.
+
+\begin{lstlisting}[language=SQL,caption={Rainfall competency ranking},
+label={lst:rainfall-ranking}]
+SELECT Station_Name, COUNT(*) AS Measurements,
+       ROUND(AVG(Rainfall), 2) AS Average_Rainfall,
+       ROUND(MAX(Rainfall), 2) AS Highest_Rainfall
+FROM Rainfall_Record
+WHERE Rainfall IS NOT NULL
+GROUP BY Station_Name
+HAVING COUNT(*) >= 100
+ORDER BY Average_Rainfall DESC
+LIMIT 15;
+\end{lstlisting}
+
+Every saved query is warmed once and then executed \mBenchmarkRuns{} times
+against SQLite \mSQLiteVersion{} in read-only mode. Table~\ref{tab:competency-timing}
+reports median and 95th-percentile wall-clock time. These figures describe the
+test machine and are not general performance guarantees.
+
+\begin{table}[H]
+\centering
+\caption{Selected competency-query timing results}
+\label{tab:competency-timing}
+\begin{tabular}{L{0.46\textwidth}r r r}
+\toprule
+Check & Returned rows & Median (ms) & P95 (ms) \\
+\midrule
+\inputrows{generated/competency_results.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw=cublue,rounded corners,fill=cugrey,text width=3.0cm,
+    minimum height=0.95cm,align=center,font=\small},
+  decision/.style={diamond,draw=cuteal,aspect=2.1,align=center,font=\small},
+  arr/.style={-{Stealth[length=2mm]},thick,draw=cuteal},
+  node distance=0.65cm
+]
+\node[box] (q) {Run competency queries};
+\node[box,right=of q] (i) {Run integrity and FK checks};
+\node[decision,right=of i] (pass) {All pass?};
+\node[box,below=0.8cm of pass] (release) {Checks pass};
+\node[box,below=0.8cm of i] (fix) {Correct data, schema or query};
+\draw[arr] (q)--(i);
+\draw[arr] (i)--(pass);
+\draw[arr] (pass)--node[right,font=\scriptsize]{yes}(release);
+\draw[arr] (pass)--node[above,font=\scriptsize]{no}(fix);
+\draw[arr] (fix)-|(q);
+\end{tikzpicture}
+\caption{Competency-query and database-verification workflow.}
+\label{fig:competency-query-flow}
+\end{figure}
+
+Figure~\ref{fig:competency-query-flow} shows that a failed competency,
+integrity or foreign-key result returns the affected data, schema or query to
+correction. Acceptance follows only after the questions and engine checks pass.
+
+The peer group could not provide an executable SQLite database. Consequently,
+the competency evaluation covers Group-07's verified implementation only and
+does not present a two-database comparison. The separately received MySQL
+demonstration DDL is not treated as an implemented peer database.
+
+\subsubsection{Difficulties and Responses}
+
+Table~\ref{tab:sprint3-challenges} records the implementation and verification
+difficulties addressed during Sprint 3.
+
+\begin{table}[H]
+\centering
+\caption{Sprint 3 difficulties and practical responses}
+\label{tab:sprint3-challenges}
+\small
+\begin{tabular}{L{0.20\textwidth}L{0.28\textwidth}L{0.42\textwidth}}
+\toprule
+Difficulty & Effect on the work & Response \\
+\midrule
+Unmatched water-body names & Some water-quality stations do not match the river
+register by a dependable name. & Retain verified station--river mappings in
+\texttt{River\_Station}; do not invent geographic relationships for unmatched
+station records. \\
+Invalid calendar combinations & Separate year, month and day values can form
+dates such as 30 February. & Use the time relations and checks so invalid
+calendar combinations are rejected during mutation tests. \\
+Malformed numeric text & Typographical decimal points and formatted numbers can
+break numeric loading or change meaning. & Flag the source problem, preserve
+its evidence and convert only when the intended value is defensible. \\
+Conflicting totals & A published total can disagree with its components. & Keep
+the published value distinguishable, calculate comparison totals separately
+and record the discrepancy instead of silently replacing it. \\
+Schema mismatch & A diagram, schema definition, generated SQL and database can disagree
+after revision. & Regenerate and compare all four representations, then run the
+schema, integrity and competency tests before acceptance. \\
+Rebuild and restore risk & A script could overwrite the wrong database or
+produce a structurally different copy. & Refuse unrelated destinations and
+compare content checksums after clean rebuild, backup and restore. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Sprint Output}
+
+Sprint 3 produces the approved final ERD, \mBCNFRels{} BCNF relations, the
+\mDbRows{}-row SQLite database, \mDbViews{} read-only summary views, the schema
+definition, saved queries, measured competency results, automated verification
+tests and backup--restore utilities. The database passes
+\texttt{PRAGMA integrity\_check}, returns \mDbFkViolations{} foreign-key
+violations and rebuilds to the same content checksum. Section~\ref{sec:deploy}
+summarizes these final deployment checks without duplicating
+the full query evidence.

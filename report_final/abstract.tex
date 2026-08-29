@@ -1,0 +1,41 @@
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+\label{sec:abstract}
+
+This project forms the environment sector of MODELBD, a cohort-wide data
+integration initiative spanning seven sectors. Environmental information about
+Bangladesh is published by several agencies in workbooks, reference files and
+reports designed for human reading rather than integrated retrieval, so the
+material stays scattered across separate organisations instead of one queryable
+location. Differences in layout, naming, units, time grain, coverage and
+missing-value notation make the publications difficult to compare directly. The
+project addresses this problem by reviewing \mSourceDataFiles{} collected source
+files from official and other dependable publishers, recording an exclusion
+reason for material that carries no shared key or falls outside the approved
+model, then selecting \mSourceFiles{} structured files and extracting
+\mSourceBlocks{} traceable data blocks from four Bangladeshi organisations.
+Reference registers and narrative publications are converted into structured
+form where they define headings, units or station identity. Subject diagrams
+drawn for individual datasets are consolidated into one integrated
+entity--relationship model. The retained material is then reshaped, reconciled
+and normalized to Boyce--Codd Normal Form without estimating unavailable source
+values. The resulting SQLite database contains \mDbTables{} tables,
+\mDbViews{} views, \mDbColumns{} columns and \mDbRows{} rows covering
+\mYearMin--\mYearMax. Its declared relationships connect climate, time,
+geography, rivers, water quality, forest and industrial records while preserving
+their different daily, monthly, yearly and fiscal-period grains. Competency
+queries, the final schema definition, primary- and foreign-key checks, a clean
+rebuild and a backup--restore comparison evaluate the database; SQLite returns
+\texttt{\mDbIntegrity} for the integrity check and \mDbFkViolations{}
+foreign-key violations. The database therefore replaces manual reconciliation
+across several spreadsheets with one query that returns the same answer to every
+reader, which supports comparison, teaching and further environmental research.
+The principal costs are the volume of manual cleaning the published layouts
+demand, source values that disagree for the same key, uneven subject coverage
+between years and the absence of any automatic refresh: \mProblemTotal{}
+recorded problem occurrences span \mProblemClasses{} classes and
+\mCellsMissingPct\% of the cells read are missing or unusable. Limitations stay
+visible rather than hidden, particularly the \mUnmappedStations{} stations for
+which the source material provides no supported district mapping. Later
+revisions can widen the subject range, add further publishers and introduce a
+scheduled reload.

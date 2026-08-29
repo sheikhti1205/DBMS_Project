@@ -1,0 +1,175 @@
+\section{Findings and Exploratory Analysis}
+\label{sec:findings}
+
+The findings use only loaded observations and disclose the grain and sample
+rules behind each result. They describe the database; they do not by themselves
+establish national causation because station coverage changes over time.
+
+\subsection{Temperature Change Across the Loaded Series}
+\label{subsec:temperature-findings}
+
+Figure~\ref{fig:annual-temperature} plots only years meeting the stated
+minimum observation count.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.90\textwidth,
+  height=6.5cm,
+  xlabel={Year},
+  ylabel={Mean monthly maximum temperature ($^\circ$C)},
+  grid=major,
+  xmin=1968,xmax=2025,
+  legend style={at={(0.5,-0.18)},anchor=north}
+]
+\addplot+[cublue,thick,mark=none]
+  table[x=year,y=value]{generated/annual_temperature.dat};
+\legend{Years with at least 100 loaded observations}
+\end{axis}
+\end{tikzpicture}
+\caption{Annual mean of loaded monthly maximum-temperature observations.
+Source: reproducible SQLite query in \texttt{report/measure.py}.}
+\label{fig:annual-temperature}
+\end{figure}
+
+Among years with at least 100 maximum-temperature observations, the first five
+available annual means average \mTempEarlyMean$^\circ$C and the latest five
+average \mTempRecentMean$^\circ$C, a descriptive difference of
+\mTempDifference$^\circ$C. This is an observed change in the loaded records,
+not a homogeneous national temperature series: station membership and
+observation counts differ between years.
+
+\subsection{Rainfall Variation and Station Ranking}
+\label{subsec:rainfall-findings}
+
+Figure~\ref{fig:annual-rainfall} shows annual variation while
+Table~\ref{tab:rainfall-ranking} adds the sample-size-controlled station
+comparison.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.90\textwidth,
+  height=6.5cm,
+  xlabel={Year},
+  ylabel={Mean loaded monthly rainfall (mm)},
+  grid=major,
+  xmin=1947,xmax=2025
+]
+\addplot+[cuteal,thick,mark=none]
+  table[x=year,y=value]{generated/annual_rainfall.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Annual mean of non-null monthly rainfall observations. Source:
+reproducible SQLite query in \texttt{report/measure.py}.}
+\label{fig:annual-rainfall}
+\end{figure}
+
+Rainfall varies more sharply from year to year than the temperature series. A
+station ranking is meaningful only when sample size is included. With a
+minimum of 100 observations, \mWettestStation{} ranks first with
+\mWettestMeasurements{} measurements, an average of \mWettestAverage{} mm and a
+maximum reported month of \mWettestMaximum{} mm.
+
+\begin{table}[H]
+\centering
+\caption{Highest average monthly rainfall among stations with at least 100
+measurements}
+\label{tab:rainfall-ranking}
+\begin{tabular}{L{0.31\textwidth}r r r}
+\toprule
+Station & Measurements & Average (mm) & Maximum (mm) \\
+\midrule
+\inputrows{generated/rainfall_ranking.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Water-Quality Parameter Coverage}
+\label{subsec:water-quality-findings}
+
+The water-quality relation contains six measured parameter types.
+Figure~\ref{fig:water-quality-parameters} shows how unevenly those parameters
+are represented. Dissolved oxygen (DO), pH and biochemical oxygen demand (BOD)
+account for most observations; chemical oxygen demand (COD), salinity and
+marine-debris records are more limited. The chart measures database coverage,
+not the environmental importance of a parameter.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar,
+  width=0.86\textwidth,
+  height=6.5cm,
+  xlabel={Loaded observations},
+  symbolic y coords={MarineDebris,Salinity,COD,BOD,pH,DO},
+  ytick=data,
+  yticklabels={DO,pH,BOD,COD,Salinity,Marine debris},
+  xmin=0,
+  nodes near coords,
+  bar width=8pt,
+  fill=cuteal!60,
+  draw=cuteal
+]
+\addplot table[x=records,y=parameter]
+  {generated/water_quality_parameters.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Loaded water-quality observations by parameter. Source: reproducible
+SQLite query in \texttt{report/measure.py}.}
+\label{fig:water-quality-parameters}
+\end{figure}
+
+\subsection{Connections Between Tables}
+\label{subsec:relationship-findings}
+
+The final relationships support questions that the source files cannot answer
+without manual reconciliation. All \mWaterQualityConnected{}
+\texttt{Water\_Quality} rows join through \texttt{WQ\_Station\_Name} to
+\texttt{River\_Station} and from there to a river. Climate tables can be
+combined at the shared station--year--month grain through the
+\texttt{Monthly\_Climate\_Summary} view. Forest observations connect to both a
+district and a valid fiscal-year span.
+
+For the \mCompleteClimateRows{} station-month rows where maximum temperature,
+humidity and rainfall are all present, Pearson correlation is
+\mTempHumidityCorrelation{} between maximum temperature and humidity and
+\mHumidityRainfallCorrelation{} between humidity and rainfall. The latter is a
+moderate positive association in the loaded monthly records. Neither value
+shows causation and neither should be generalized beyond the complete-case
+subset.
+
+\subsection{Missing Data and Coverage Limits}
+\label{subsec:missing-findings}
+
+Table~\ref{tab:missing-measurements} distinguishes retained null measurements
+from the separate station-geography limitation.
+
+\begin{table}[H]
+\centering
+\caption{Null measurements retained in selected fact tables}
+\label{tab:missing-measurements}
+\begin{tabular}{L{0.38\textwidth}r r r}
+\toprule
+Field & Missing & Total & Missing share \\
+\midrule
+\inputrows{generated/missing_measurements.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+Missing values remain \texttt{NULL}; they are never replaced by zero. The most
+important geographic limitation is separate from the measurement table:
+\mUnmappedStations{} of 56 stations lack a supported district mapping.
+Their climate observations remain queryable by station but district-level
+analysis must disclose the reduced coverage.
+
+Industry coverage is also narrow. The approved final model contains one
+industry category and \mIndustryRows{} fiscal observations. This is a finding
+about the available source, not evidence that other industries produce no
+wastewater. Similarly, each relation's time range in
+Figure~\ref{fig:timespans} must be checked before a cross-subject trend is
+interpreted.

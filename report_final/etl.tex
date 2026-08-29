@@ -1,0 +1,175 @@
+\section{ETL Methodology}
+\label{sec:etl}
+
+Extract--Transform--Load (ETL) is the complete path from an approved source
+block to a constrained SQLite row. It is not limited to the final insertion
+command. The project preserves intermediate stages so a reviewer can locate
+where a value is reshaped, reconciled, aggregated or rejected.
+
+The principal integration difficulty is that most source files cannot be
+merged row for row. They use different station labels, reporting periods and
+observation grains and some lack identifiers required by the final model. The
+pipeline therefore treats reconciliation as an explicit transformation rather
+than assuming that similarly named columns represent the same fact.
+
+\subsection{ETL Process}
+\label{subsec:etl-process}
+
+Figure~\ref{fig:etl-pipeline} shows the complete ETL path and the evidence
+emitted at each phase.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  phase/.style={draw=cublue,rounded corners,fill=cugrey,text width=3.15cm,
+    minimum height=1.25cm,align=center,font=\small},
+  check/.style={draw=cuteal,rounded corners,fill=white,text width=3.15cm,
+    minimum height=1.05cm,align=center,font=\small},
+  arr/.style={-{Stealth[length=2mm]},thick,draw=cuteal},
+  node distance=0.55cm and 0.65cm
+]
+\node[phase] (e) {\textbf{Extract}\\Approved blocks\\Source identity};
+\node[phase,right=of e] (t) {\textbf{Transform}\\Reshape and type\\Reconcile
+and aggregate};
+\node[phase,right=of t] (l) {\textbf{Load}\\Reference relations\\Observation
+relations};
+\node[check,below=0.75cm of e] (trace) {Source trace\\and 0NF evidence};
+\node[check,below=0.75cm of t] (quality) {Quality, conflict\\and quarantine
+logs};
+\node[check,below=0.75cm of l] (verify) {Schema and counts\\Keys and checks};
+\draw[arr] (e)--(t);
+\draw[arr] (t)--(l);
+\draw[arr] (e)--(trace);
+\draw[arr] (t)--(quality);
+\draw[arr] (l)--(verify);
+\end{tikzpicture}
+\caption{ETL process and its evidence outputs; source is this TikZ code.}
+\label{fig:etl-pipeline}
+\end{figure}
+
+\subsubsection{Extract}
+
+The extraction program reads the \mSourceFiles{} approved structured files and
+creates \mSourceBlocks{} named 0NF blocks. Source-specific readers handle
+merged headings, station labels outside data rows, repeated day or month
+columns and fiscal-year text. The original file is never overwritten. Each
+output name retains the organisation, workbook and sheet identity.
+
+\subsubsection{Transform}
+
+Transformation converts repeated columns into explicit observations, parses
+types and standardizes only documented variants. Asterisks, \texttt{ND},
+\texttt{N/A}, spreadsheet errors and blank cells become \texttt{NULL} when
+they mean unavailable data; a measured zero remains zero. Daily BRRI
+maximum-temperature readings are reduced to the monthly maximum and
+minimum-temperature readings to the monthly minimum. Daily rainfall is summed,
+daily humidity is averaged and sunshine remains at day grain. The
+transformation keeps the number of contributing days so sparse months remain
+detectable.
+
+The program resolves competing values through a documented meteorological
+precedence: BMD, then BRRI, then BBS. Identical duplicates, rounding
+differences and substantive disagreements are counted separately. An
+implausible or structurally invalid row enters the quarantine register instead
+of being corrected by guesswork.
+
+These rules also explain why record totals change. Expanding repeated day and
+month columns increases the 1NF count, while aggregation and conflict
+resolution reduce later counts. Table~\ref{tab:etl-accounting} reports the
+stages without presenting the change as unexplained data loss.
+
+\subsubsection{Load and Verify}
+
+Reference and time relations are loaded before dependent observations.
+Headers must match the ERD contract and each field is converted to its declared
+SQLite type. The builder writes to a staging database, enables foreign keys and
+replaces the delivered file only after both SQLite checks pass.
+
+\begin{lstlisting}[language=Python,caption={Core guarded load used by the database builder},
+label={lst:etl-load}]
+with sqlite3.connect(staging) as db:
+    db.execute("PRAGMA foreign_keys = ON")
+    db.executescript(schema_sql)
+    for table, rows in prepared_rows.items():
+        db.executemany(insert_sql(table), rows)
+    if db.execute("PRAGMA foreign_key_check").fetchall():
+        raise RuntimeError("foreign-key violation")
+    if db.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+        raise RuntimeError("integrity failure")
+    db.commit()
+os.replace(staging, destination)
+\end{lstlisting}
+
+The project implementation additionally validates CSV headers, field counts,
+data types, schema fingerprints and row counts. An independent verifier then
+compares database objects, columns, keys, checks and relationships with
+\texttt{schema/erd\_contract.json}.
+
+\subsection{Failures, Effects and Resolutions}
+\label{subsec:etl-failures}
+
+Table~\ref{tab:etl-failures} records the effect and implemented resolution of
+each recurring failure class.
+
+\begin{table}[H]
+\centering
+\caption{ETL failures and their implemented resolutions}
+\label{tab:etl-failures}
+\begin{tabular}{L{0.24\textwidth}L{0.29\textwidth}L{0.37\textwidth}}
+\toprule
+Failure & Effect & Resolution \\
+\midrule
+Merged and repeating layouts & Generic row readers assign the wrong identity &
+Use block-specific boundaries and make date and station values explicit. \\
+Source grains do not match & Daily values cannot be inserted into a monthly
+key unchanged & Aggregate by measurement semantics and record contributing
+days. \\
+Inconsistent entity names & Valid observations become orphan rows & Apply
+reviewed station, district and river maps before loading. \\
+Malformed values or dates & Type conversion or range checks fail & Use
+source-supported repair only; otherwise quarantine with the source location. \\
+Duplicate keys disagree & A primary key cannot accept both values & Apply
+declared precedence and preserve both values in the conflict register. \\
+Missing relationship parent & A foreign key blocks the load & Confirm the
+source parent, add a supported reference row or exclude the child. \\
+Schema or header mismatch & Columns can enter the wrong target field & Stop before
+insertion when a BCNF CSV header differs from the contract. \\
+Interrupted or failed build & A partial database could replace a good database &
+Build in a staging file and replace the working database only after the new
+database passes verification. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{ETL Accounting}
+\label{subsec:etl-accounting}
+
+Table~\ref{tab:etl-accounting} explains why counts change between source,
+normalization and loaded stages.
+
+\begin{table}[H]
+\centering
+\caption{Record counts through the implemented normalization and loading chain}
+\label{tab:etl-accounting}
+\begin{tabular}{L{0.22\textwidth}r r L{0.38\textwidth}}
+\toprule
+Stage & Relations/blocks & Rows & Meaning \\
+\midrule
+Extracted/offered & \mSourceBlocks{} & \mRowsOffered{} & Rows offered by the
+source-specific readers after required source-level aggregation. \\
+1NF & \mOneNFRels{} & \mOneNFRows{} & Atomic row-based observations,
+including the large daily series. \\
+2NF & \mTwoNFRels{} & \mTwoNFRows{} & Partial dependencies lifted and daily
+series consolidated to the approved grain. \\
+3NF & \mThreeNFRels{} & \mThreeNFRows{} & Transitive descriptive dependencies
+separated. \\
+BCNF/SQLite & \mBCNFRels{} & \mBCNFRows{} & Key conflicts resolved and final
+relations loaded. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Row totals are not expected to decrease uniformly at every theoretical stage:
+decomposition can create reference rows while aggregation can collapse many
+daily readings into one month. The review files close these changes by relation
+instead of treating the difference as unexplained data loss.

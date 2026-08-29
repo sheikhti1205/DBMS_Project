@@ -1,0 +1,124 @@
+\section{Conclusion, Limitations and Future Work}
+\label{sec:cfw}
+
+\subsection{Conclusion}
+
+This project develops an integrated relational database for selected
+environmental records from several Bangladeshi organisations. The final work
+brings the approved source data into a consistent relational structure while
+preserving differences in record grain, source coverage and missing
+information.
+
+The project also establishes a clear connection between the source material,
+the Entity--Relationship model, the normalized relations and the implemented
+SQLite database. Data are included only when their meaning, identifiers and
+relationships can be supported by the available evidence. Where information
+is missing or uncertain, the database preserves that limitation rather than
+introducing unsupported values.
+
+Within the approved scope, the resulting database provides a structured and
+reproducible basis for storing and querying the selected environmental data.
+It contains \mDbTables{} tables, \mDbViews{} views, \mDbColumns{} table columns
+and \mDbRows{} rows covering \mYearMin--\mYearMax. It can also serve as a
+starting point for later groups that may continue the environment-sector work
+in future academic sessions.
+
+\subsection{Limitations and Future Work}
+\label{subsec:future}
+
+The current implementation completes the approved scope of this project, but
+some limitations remain because of the available source material and the
+present deployment environment. These are not unfinished tasks of the current
+team. Instead, they identify areas that later groups may continue if the
+project is extended. Table~\ref{tab:limitations-future-work} separates each
+current limitation from its present handling and possible future continuation.
+
+\begin{longtable}{L{0.20\textwidth}L{0.32\textwidth}L{0.32\textwidth}}
+\caption{Current limitations and directions for future continuation}
+\label{tab:limitations-future-work}\\
+\toprule
+\textbf{Current Limitation} & \textbf{Current Handling} &
+\textbf{Future Continuation} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{\small\textit{Table~\thetable{} continued}}\\
+\toprule
+\textbf{Current Limitation} & \textbf{Current Handling} &
+\textbf{Future Continuation} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\small\textit{Continued on the next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Uneven data coverage &
+Different sources provide records for different locations, variables, time
+periods and observation grains. Only the available source records are retained. &
+New environmental datasets can be added when reliable sources, clear record
+grain and suitable identifiers are available. \\
+Unconnected candidate datasets &
+Some reviewed datasets cannot be connected reliably with the approved model
+because they lack dependable joining fields or suitable structure. &
+These datasets can be reconsidered if improved versions or reliable reference
+keys become available. \\
+Incomplete geographic mapping &
+\mUnmappedStations{} of the 56 climate stations do not have a published
+district mapping in the retained sources. Their district value remains null. &
+An official geographic reference source can be added after the
+station--district relationships are verified. \\
+Source inconsistencies &
+Some values, headings and names remain uncertain when the source does not
+provide enough evidence for a definite correction. &
+Newer publications or additional official sources may resolve these cases when
+stronger evidence becomes available. \\
+Manual review requirements &
+Irregular spreadsheet layouts and source-specific structures still require
+inspection during extraction and verification. &
+Extraction tests can be extended for duplicate records, naming differences,
+missing-value patterns, unexpected values and publisher layout changes. \\
+Narrow industry coverage &
+The database retains one industry category and only \mIndustryRows{} fiscal
+rows, so it cannot represent all industrial wastewater activity. &
+Additional industry data can be included only when its categories, periods and
+measurement meanings can be matched reliably. \\
+No peer database for comparison &
+The peer group did not provide an executable SQLite database. The reported
+competency evaluation therefore covers Group-07's implementation only. &
+No peer comparison is required for the present report. A later verified
+database could be tested with the same competency questions as separate work. \\
+Single-user SQLite deployment &
+SQLite is suitable for the current portable course-project implementation but
+is not intended here for simultaneous authenticated multi-user access. &
+The normalized schema can later be migrated to a server database if multi-user
+access and centralized management are required. \\
+Direct query-based access &
+Users currently access the stored records mainly through SQL queries and
+database tools. &
+A simple web interface, dashboard or Application Programming Interface (API)
+can be built over the existing database. \\
+\end{longtable}
+
+\subsection{Verification Completed}
+\label{subsec:verification-completed}
+
+The approved final ERD, schema definition, normalized CSV headers and SQLite
+database are checked against the same relation and key definitions. Automated
+tests rebuild the database, run integrity and foreign-key checks, execute the
+competency queries and verify backup and restoration by comparing the restored
+database contents. The current database reports \mDbIntegrity{} for
+\texttt{PRAGMA integrity\_check} and \mDbFkViolations{} foreign-key violations.
+These checks are already implemented and are not being deferred as future work.
+
+If the project is continued by a future batch, the present database, final ERD,
+normalized structure, source records and verification files should be used as
+the starting point rather than rebuilding the environment-sector database from
+the beginning. Any new dataset should first be checked for source reliability,
+record grain, identifiers and compatibility with the existing model.
+
+Future work should therefore focus mainly on extending the database where new
+evidence becomes available and improving the supporting tools around the
+existing structure. The extraction tests should also be updated whenever a
+publisher changes a workbook layout. This approach allows later groups to
+continue the project while preserving the consistency and source traceability
+established through the retained normalization and review files.

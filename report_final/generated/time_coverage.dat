@@ -1,0 +1,11 @@
+relation start end
+{Humidity} 1948 2024
+{Rainfall} 1948 2024
+{Sunshine} 1961 2024
+{Temperature} 1970 2024
+{Wind} 2011 2024
+{Events} 2015 2024
+{Industry use} 2018 2021
+{Water quality} 2018 2024
+{Forest area} 2019 2024
+{Radiation} 2019 2022

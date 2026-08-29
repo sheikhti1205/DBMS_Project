@@ -1,0 +1,126 @@
+\section{Deployment and Maintenance}
+\label{sec:deploy}
+
+The delivered deployment is a portable SQLite file backed by a reproducible
+build rather than a manually edited database. SQLite is appropriate for the
+course project because it requires no server process and keeps the schema,
+indexes and data in one file \cite{sqlite}. The current database is
+\texttt{schema/environment.db} and is approximately \mDbMiB{} MiB.
+
+\subsection{Deployment Layout and Initialization}
+\label{subsec:deployment-layout}
+
+Table~\ref{tab:deployment-components} identifies the files and programs needed
+for a reproducible release.
+
+\begin{table}[H]
+\centering
+\caption{Deployment components}
+\label{tab:deployment-components}
+\begin{tabular}{L{0.34\textwidth}L{0.55\textwidth}}
+\toprule
+Component & Responsibility \\
+\midrule
+\texttt{schema/environment.db} & Verified portable database \\
+\texttt{schema/erd\_contract.json} & Final tables, columns, keys,
+relationships, checks and views \\
+\texttt{normalization/csv/BCNF} & Final records used for a clean build \\
+\texttt{build\_database.py} & Header/type validation, staging load and atomic
+replacement \\
+\texttt{verify\_database.py} & Independent schema, row-count, quality and
+fingerprint verification \\
+\texttt{setup\_linux.sh} and \texttt{setup\_windows.bat} & Platform entry
+points for installation and verification \\
+\texttt{backup\_database.py} and \texttt{restore\_database.py} & Checked
+backup and safe restoration \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A clean deployment follows one order: retain or back up any current database,
+build a staging database from the BCNF CSV files, verify it independently and
+only then publish the resulting file. The builder refuses to overwrite an
+unrelated database unless the operator explicitly requests replacement.
+
+\begin{lstlisting}[language=bash,caption={Linux initialization and independent verification},
+label={lst:deploy-linux}]
+./setup_linux.sh
+python3 -m schema.scripts.setup.verify_database \
+  --database schema/environment.db
+\end{lstlisting}
+
+Windows uses \texttt{setup\_windows.bat} and the same Python modules. The
+database itself is cross-platform; only the command wrapper differs.
+
+\subsection{Final Database Verification}
+\label{subsec:release-gate}
+
+The final database is accepted only when the schema definition, CSV row counts and
+operational checks agree. Detailed competency questions and timings remain in
+Section~\ref{subsec:competency-query}; Table~\ref{tab:release-gate} records only
+the final deployment checks.
+
+\begin{table}[H]
+\centering
+\caption{Verification results for the delivered SQLite database}
+\label{tab:release-gate}
+\begin{tabular}{L{0.45\textwidth}L{0.20\textwidth}L{0.24\textwidth}}
+\toprule
+Check & Expected & Verified result \\
+\midrule
+Schema objects & \mDbTables{} tables and \mDbViews{} views & Pass \\
+Loaded row total & \mDbRows{} & Pass \\
+SQLite integrity & \texttt{ok} & \texttt{\mDbIntegrity} \\
+Foreign-key violations & 0 & \mDbFkViolations{} \\
+Primary-key uniqueness and required values & No violations & Pass \\
+Competency questions & Meaningful results & Pass \\
+Clean rebuild content checksum & Matches delivered database & Pass \\
+Backup--restore content checksum & Matches delivered database & Pass \\
+Read-only distribution check & Writes rejected & Pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Backup and Restore}
+\label{subsec:backup-restore}
+
+Backup uses SQLite's consistent backup mechanism and verifies the produced
+file. Restore validates the candidate backup before replacing a destination,
+so a corrupt input cannot erase a working database.
+
+\begin{lstlisting}[language=bash,caption={Checked backup and restoration workflow},
+label={lst:backup-restore}]
+python3 -m schema.scripts.maintenance.backup_database \
+  --database schema/environment.db \
+  --output schema/backups/environment.db
+python3 -m schema.scripts.maintenance.restore_database \
+  schema/backups/environment.db \
+  --database schema/environment-restored.db
+\end{lstlisting}
+
+The competency test suite rebuilds the database in a temporary directory,
+creates a backup, restores it and compares SHA-256 content checksums over every
+table ordered by its primary key. This compares content independently of
+SQLite's physical page layout.
+
+\subsection{Maintenance Procedure}
+\label{subsec:maint}
+
+\begin{enumerate}[leftmargin=*]
+  \item Preserve the new source file and update the source/exclusion register.
+  \item Run extraction and review changes in the quality, conflict and
+  quarantine files.
+  \item Regenerate the normalization stages and confirm that row accounting
+  balances.
+  \item Review any required change to the approved ERD before modifying the schema.
+  \item Create a verified backup of the current database.
+  \item Build a new staging database and run the independent verifier and test
+  suite.
+  \item Re-run the competency benchmark and regenerate report measurements.
+  \item Publish the updated database only after all verification checks pass.
+\end{enumerate}
+
+SQLite remains a single-user course deployment. A future server migration would
+need authentication, authorization, concurrency control and an operational
+backup schedule, but it should retain the same keys, source-traceability rules and
+competency questions.

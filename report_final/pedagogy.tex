@@ -1,0 +1,153 @@
+\section{Pedagogy and Course Comments}
+\label{sec:pedagogy}
+
+The course provides two different levels of practical database work. In the
+earlier mini-project, the team works with a prepared dataset and concentrates
+mainly on Entity--Relationship modelling, normalization, implementation and
+queries. The present project starts before that stage. The team has to find
+suitable data, examine how the information is published, decide which records
+can be used and prepare them before database design can be finalized.
+
+This progression makes the larger project useful because many decisions that
+appear straightforward with a prepared dataset become less obvious when
+working with real source files. Keys, relationships, missing values and even
+the meaning of a record often have to be established from the source structure
+before they can be represented in the database.
+
+\subsection{Working with Real Data}
+\label{subsec:real-data-learning}
+
+Working with real environmental records gives the database concepts taught in
+the course a clearer practical meaning. A primary key is not chosen only from
+an example relation; it has to match the actual observation represented by the
+source. In the same way, a relationship in the ERD is useful only when the
+available records contain a dependable way to establish that relationship.
+
+The project also makes the importance of record grain clear. Daily, monthly,
+yearly and fiscal-period observations describe different kinds of records and
+cannot be treated as interchangeable simply because they belong to the same
+environmental sector. Understanding this difference affects extraction,
+candidate-key selection, normalization and the final relational structure.
+
+Table~\ref{tab:mini-present-project} shows how the present project extends the
+earlier mini-project.
+
+\begin{table}[H]
+\centering
+\caption{Earlier mini-project and present data-integration project}
+\label{tab:mini-present-project}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{p{3.2cm}p{4.6cm}p{6.0cm}}
+\toprule
+\textbf{Aspect} & \textbf{Earlier Mini-Project} & \textbf{Present Project} \\
+\midrule
+Data & One prepared dataset is provided. & Several real source files have to be
+collected, reviewed and selected before implementation. \\
+Starting point & Work begins mainly from database modelling. & Work begins with
+source discovery, verification and understanding the structure of the
+published data. \\
+Data preparation & Only limited preparation is required. & Missing values,
+irregular layouts, inconsistent names, repeated structures and source-specific
+formats have to be handled. \\
+Modelling & Entities and relationships are identified from an already prepared
+structure. & Candidate entities, keys and relationships are revised as the
+actual source records are examined. \\
+Normalization & Normalization is applied to a controlled relation. &
+Normalization is applied to structures produced from real source data and
+observed functional dependencies. \\
+ETL & Data preparation before implementation is limited. & Extraction and
+transformation form a substantial part of the database development process. \\
+Queries & Queries are one of the main implementation exercises. & Queries are
+used after source preparation, modelling, normalization, loading and
+relationship verification. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Difficulties Encountered in Practice}
+\label{subsec:practical-difficulties}
+
+Most of the difficult work occurs before the final SQLite database becomes
+visible. The source files are primarily prepared for human reading rather than
+direct database loading. Merged headings, station names outside individual
+rows, repeated date columns, inconsistent missing-value notation and several
+tables within the same sheet all require interpretation before extraction can
+be performed reliably.
+
+Another difficulty is that the different stages of the project depend on one
+another. An incorrect interpretation during extraction can produce an
+incorrect key; an incorrect key can affect normalization and the ERD; and an
+incorrect relationship can later appear as a loading or foreign-key problem.
+For this reason, errors cannot always be corrected within only one stage of the
+workflow.
+
+The main practical difficulties and corresponding lessons are summarized in
+Table~\ref{tab:course-practical-lessons}.
+
+\begin{table}[!htbp]
+\centering
+\caption{Practical difficulties and lessons from the project}
+\label{tab:course-practical-lessons}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{p{4.3cm}p{9.5cm}}
+\toprule
+\textbf{Difficulty} & \textbf{Practical Lesson} \\
+\midrule
+Irregular source layouts & The structure of a source has to be understood
+before extraction is automated. Headings, repeated blocks, dates and station
+information cannot always be interpreted from individual rows alone. \\
+Inconsistent names and missing values & Standardization should follow
+documented rules. A value should not be changed simply to make different files
+look consistent. \\
+Different observation grains & The unit represented by one record has to be
+decided before selecting keys or combining datasets. \\
+ERD integration & Similar-looking entities from different sources still have
+to be compared by meaning, grain and identifiers before they are merged. \\
+Normalization of real records & Functional dependencies become easier to
+understand when they are examined against actual extracted records rather than
+only theoretical examples. \\
+ETL development & Extraction is not simply copying values from one file to
+another. Each transformed value has to retain its original meaning and context. \\
+Team coordination & Important schema and data decisions need shared review
+because a change can affect extraction, normalization, implementation, queries
+and documentation at the same time. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Comments on Course Delivery}
+\label{subsec:course-comments}
+
+The progression from a smaller prepared-data exercise to a larger real-data
+project works well because students first learn the basic database operations
+before dealing with irregular source material. A few additions could make the
+transition between the two stages smoother for future groups.
+
+A short demonstration using an actual irregular spreadsheet before the first
+sprint would be useful. The demonstration could show how to identify a true
+data region, interpret merged headings, recognize repeated columns,
+distinguish missing values from zero and determine the grain of a record before
+extraction begins. These are small issues individually, but they consume
+considerable time when students encounter them for the first time during the
+project.
+
+An early review of the first integrated ERD would also be helpful. At that
+stage, feedback on candidate keys, record grain, shared entities and proposed
+relationships could identify structural problems before they affect
+normalization and implementation.
+
+A common review checklist could further improve consistency between groups.
+The checklist could cover source authority, record grain, candidate keys,
+missing-value treatment, relationship evidence and source traceability. It
+would provide a minimum standard for review without requiring different sector
+groups to use the same database design. A dedicated final-review period could
+then cover database validation, ERD readability, figure quality, source
+attribution and unresolved data issues.
+
+Finally, occasional short cross-group review sessions could allow groups to
+compare the kinds of source and modelling problems they encounter. Since each
+sector contains different data structures, these discussions could expose
+students to alternative design decisions while leaving each group responsible
+for its own implementation.

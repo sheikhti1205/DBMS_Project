@@ -1,0 +1,869 @@
+\section{Normalization and Schema Refinement}
+\label{sec:norm}
+
+% Dependency displays are frequent in this section; the default display skips
+% leave large gaps between consecutive one-line dependencies.
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{2pt plus 2pt}
+\setlength{\belowdisplayshortskip}{3pt plus 2pt minus 2pt}
+
+This section explains how the team refines the initial environmental data model
+into the normalized relational structure used in the final database. The
+process begins with problems identified during Entity--Relationship modelling
+and mentor review, then continues through structural changes that resolve
+duplicate concepts, unsuitable keys, different observation levels, and
+repeated information. The team checks the resulting relations through First
+Normal Form, Second Normal Form, Third Normal Form, and Boyce--Codd Normal Form
+before presenting the final data model in Section~\ref{sec:dm}.
+
+\subsection{Initial Modelling Approach }
+\label{subsec:zeronf}
+At the beginning, the team prepares a separate Entity--Relationship diagram
+for each collected data file. This helps the team understand the main contents
+of the files and identify possible entities and attributes. However, during
+mentor review, the team finds that using one complete file as one modelling
+unit is not suitable in every case.
+
+Some Excel workbooks contain several sheets, and each sheet may hold a
+different type of environmental record. For example, the sheets may differ in
+their attributes, possible keys, and reporting periods. If the whole workbook
+is treated as one unit, unrelated records may be placed under the same entity.
+This also makes it difficult to identify the relationships and dependencies
+among the attributes.
+
+The team therefore examines each relevant sheet separately. From each sheet,
+the team identifies the possible entities, attributes, candidate keys, and
+time level of the records. Similar entities from different sheets are then
+compared before they are combined. This sheet-based approach gives the team a
+clearer starting point for entity integration and normalization.
+\begin{figure}[H]
+    \centering
+
+    \begin{tikzpicture}[
+        node distance=0.7cm,
+        every node/.style={
+            draw,
+            rounded corners,
+            align=center,
+            minimum width=6.8cm,
+            minimum height=0.75cm,
+            font=\small
+        },
+        arrow/.style={
+            -{Stealth[length=2.5mm]},
+            thick
+        }
+    ]
+
+    \node (files) {
+        Collected Environmental Data Files
+    };
+
+    \node (initial) [below=of files] {
+        One ERD Prepared for Each File
+    };
+
+    \node (review) [below=of initial] {
+        Problems Identified During Mentor Review
+    };
+
+    \node (sheets) [below=of review] {
+        Relevant Sheets Examined Separately
+    };
+
+    \node (entities) [below=of sheets] {
+        Entities, Attributes, and Possible Keys Identified
+    };
+
+    \node (next) [below=of entities] {
+        Entity Integration and Normalization
+    };
+
+    \draw[arrow] (files) -- (initial);
+    \draw[arrow] (initial) -- (review);
+    \draw[arrow] (review) -- (sheets);
+    \draw[arrow] (sheets) -- (entities);
+    \draw[arrow] (entities) -- (next);
+
+    \end{tikzpicture}
+
+    \caption{Steps followed during the initial entity identification}
+    \label{fig:initial-entity-identification}
+\end{figure}
+Figure~\ref{fig:initial-entity-identification} shows how the team changes from
+file-based modelling to sheet-based entity identification. The entities
+identified at this stage are reviewed and refined during the later
+normalization process.
+
+\subsection{Entity Integration }
+
+\label{subsec:entity-integration}
+
+After identifying the entities from the individual sheets, the team compares
+them before preparing the combined data model. The comparison considers the
+meaning of each entity, its attributes, possible primary key, reporting period,
+and relationship with other entities.
+
+Several sources contain similar environmental information. For example,
+temperature, rainfall, humidity, and sunshine records appear in more than one
+source. Keeping a separate entity for every source would create repeated
+structures in the database. Therefore, entities are combined when they
+represent the same type of information and use compatible attributes.
+
+Entities are not combined only because they have similar names. The team also
+checks the level of each record. Some sources provide daily observations,
+whereas others provide monthly or yearly observations. These differences are
+kept in mind during integration so that records with different meanings or time
+levels are not incorrectly placed in the same relation.
+
+The team also reviews entities that cannot be properly connected to the rest
+of the model. Some collected datasets contain too many missing values, lack a
+usable relationship key, or contain only a small amount of relevant
+information. After discussion with the mentor, such entities are excluded
+instead of creating relationships that are not supported by the source data.
+
+The integration process reduces repeated entities and produces a smaller set
+of combined relations. However, some of these relations still contain
+repeated attributes, unsuitable keys, or different types of observations.
+These problems are examined in the next section before the formal
+normalization process begins.
+\begin{figure}[H]
+\centering
+
+\begin{tikzpicture}[
+    node distance=0.75cm and 1.2cm,
+    source/.style={
+        draw,
+        rounded corners,
+        align=center,
+        minimum width=3.7cm,
+        minimum height=0.8cm,
+        font=\small
+    },
+    result/.style={
+        draw=cublue,
+        fill=cugrey,
+        rounded corners,
+        align=center,
+        minimum width=5.2cm,
+        minimum height=0.9cm,
+        font=\small
+    },
+    arrow/.style={
+        -{Stealth[length=2.5mm]},
+        thick
+    }
+]
+
+\node[source] (bmd) {Temperature Entity\\from BMD Data};
+\node[source, right=of bmd] (brri) {Temperature Entity\\from BRRI Data};
+
+\node[result, below=1.2cm of $(bmd)!0.5!(brri)$] (compare)
+{Compare Meaning, Attributes, Keys,\\and Observation Level};
+
+\node[result, below=of compare] (combined)
+{Combined Temperature Record Relation};
+
+\draw[arrow] (bmd) -- (compare);
+\draw[arrow] (brri) -- (compare);
+\draw[arrow] (compare) -- (combined);
+
+\end{tikzpicture}
+
+\caption{Example of entity comparison and integration}
+\label{fig:entity-integration}
+\end{figure}
+Figure~\ref{fig:entity-integration} gives one example of the integration
+process. Temperature entities identified from different sources are compared
+before they are combined. The same process is followed for the other similar
+environmental entities.
+
+\subsection{Structural Problems and Model Decomposition}
+\label{subsec:structural-decomposition}
+
+After integrating the similar entities, the team reviews the structure of the
+combined relations. At this stage, several problems remain. Some relations
+contain different types of observations, some proposed primary keys contain
+missing values, and some attributes do not depend on the same identifying
+fields. These problems must be addressed before applying the normal-form
+checks.
+
+One major problem is found in the climate data. In the earlier model,
+temperature, rainfall, humidity, wind, sunshine, radiation, and climatic-event
+records are kept under a broad Climate Record entity. However, these
+measurements do not have the same attributes or observation levels. For
+example, some records are monthly, while sunshine and radiation records may
+contain daily information. A single primary key is therefore not suitable for
+all climate observations.
+
+To solve this problem, the broad Climate Record entity is divided into
+Temperature Record, Humidity Record, Rainfall Record, Wind Record, Sunshine
+Record, Radiation Record, and Climatic Event Record. Each resulting relation
+contains the attributes and key required for its own type of measurement.
+
+The time information also requires revision. The earlier model uses one Time
+entity for yearly, monthly, and daily records. This causes some records to
+contain unnecessary or missing month and day values. The team therefore
+creates separate Year Time, Month Time, and Day Time relations. Fiscal Year is
+also kept separately because forest-area and industrial records use a start
+year and an end year instead of one calendar date.
+
+Similar changes are made to the industrial and establishment data. Industrial
+Type is kept separately from Industry Usage, while Size is separated from Type
+of Establishments. This prevents category names from being repeatedly stored
+with observations from different fiscal years.
+
+The main changes made during this stage are shown in
+Table~\ref{tab:structural-revisions}. These changes prepare the relations for
+the formal normalization process described in the next section.
+\begin{figure}[H]
+\centering
+
+\begin{tikzpicture}[
+    node distance=0.55cm,
+    main/.style={
+        draw=cublue,
+        fill=cugrey,
+        rounded corners=2pt,
+        align=center,
+        minimum width=5.2cm,
+        minimum height=0.8cm,
+        font=\small
+    },
+    process/.style={
+        draw=cuteal,
+        rounded corners=2pt,
+        align=center,
+        minimum width=5.2cm,
+        minimum height=0.8cm,
+        font=\small
+    },
+    relation/.style={
+        draw,
+        rounded corners=2pt,
+        align=center,
+        minimum width=3.4cm,
+        minimum height=0.7cm,
+        font=\small
+    },
+    arrow/.style={
+        -{Stealth[length=2.4mm]},
+        thick,
+        draw=cuteal
+    }
+]
+
+% Initial relation
+\node[main] (climate) {Broad Climate Record};
+
+% Decomposition rule
+\node[process, below=0.6cm of climate] (separate)
+{Separated by measurement type and time level};
+
+% First row
+\node[relation, below=0.85cm of separate, xshift=-3.8cm]
+(temp) {Temperature Record};
+
+\node[relation, right=0.35cm of temp]
+(humidity) {Humidity Record};
+
+\node[relation, right=0.35cm of humidity]
+(rainfall) {Rainfall Record};
+
+% Second row
+\node[relation, below=0.35cm of temp]
+(wind) {Wind Record};
+
+\node[relation, right=0.35cm of wind]
+(sunshine) {Sunshine Record};
+
+\node[relation, right=0.35cm of sunshine]
+(radiation) {Radiation Record};
+
+% Third row
+\node[relation, below=0.35cm of sunshine]
+(event) {Climatic Event Record};
+
+% Grouping box
+\node[
+    draw=cublue,
+    dashed,
+    rounded corners=3pt,
+    fit=(temp)(humidity)(rainfall)(wind)(sunshine)(radiation)(event),
+    inner sep=0.25cm
+] (group) {};
+
+% Only two arrows
+\draw[arrow] (climate) -- (separate);
+\draw[arrow] (separate) -- (group.north);
+
+\end{tikzpicture}
+
+\caption{Decomposition of the Climate Record entity}
+\label{fig:climate-decomposition}
+\end{figure}
+
+Figure~\ref{fig:climate-decomposition} shows how the broad Climate Record
+entity is divided according to measurement type. This allows each relation to
+use a key and set of attributes that match its records.
+Table~\ref{tab:structural-revisions} summarizes the problems found in the
+integrated model and the changes made by the team.
+\begin{table}[H]
+\centering
+\caption{Structural problems and revisions}
+\label{tab:structural-revisions}
+
+\small
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{6pt}
+
+\begin{tabular}{@{}p{3.2cm}p{5.0cm}p{5.7cm}@{}}
+\toprule
+
+\textbf{Initial structure} &
+\textbf{Problem identified} &
+\textbf{Revision made} \\
+
+\midrule
+
+Broad Climate Record &
+The measurements use different attributes, keys, and time levels. &
+The entity is divided into Temperature, Humidity, Rainfall, Wind, Sunshine,
+Radiation, and Climatic Event relations. \\
+
+Unreliable candidate keys &
+Some proposed key attributes contain missing values and cannot identify every
+record. &
+The affected keys are reviewed and replaced with suitable single or composite
+keys. \\
+
+Single Time entity &
+Not every environmental record contains year, month, and day values. &
+Year Time, Month Time, and Day Time are created as separate relations. \\
+
+Calendar-year structure &
+Forest and industrial records use a start year and an end year. &
+A separate Fiscal Year relation is introduced for period-based records. \\
+
+Combined industrial data &
+Industry names are repeated with observations from different fiscal years. &
+\texttt{Industry\_Type} is separated from \texttt{Industry\_Usage}. \\
+
+Combined establishment data &
+Size categories are repeated with period-based observations. &
+Size is separated from Type of Establishments. \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+After these revisions, the relations have clearer keys and contain records
+with consistent meanings and observation levels. However, decomposition alone
+does not prove that the relations are normalized. The relations are therefore
+checked from 1NF to BCNF in the following sections.
+
+\subsection{Theoretical Normalization Process}
+\label{subsec:theoretical-normalization}
+
+Normalization is used to organize data into relations with less repetition and
+fewer data-dependency problems. The process examines how attributes depend on
+the keys of a relation. When an unsuitable dependency is found, the relation
+is divided into smaller relations without losing the connection between the
+data \cite{codd1972further}.
+
+The normal forms provide a sequence of checks. First Normal Form requires
+atomic values and removes repeating groups. Second Normal Form checks whether
+every non-key attribute depends on the complete primary key. Third Normal Form
+removes dependencies between non-key attributes. Boyce--Codd Normal Form
+applies a stricter condition by requiring every determinant to be a candidate
+key \cite{kent1983five}.
+
+The team applies these checks to the preliminary relations produced in the
+previous sections. The relations are checked in order because a relation must
+satisfy the earlier normal form before it can be examined for the next one.
+Examples from the environmental datasets are used in the following sections
+to show the changes made at each stage.
+\begin{figure}[H]
+\centering
+
+\begin{tikzpicture}[
+    node distance=0.5cm,
+    stage/.style={
+        draw,
+        rounded corners=2pt,
+        align=center,
+        text width=9.5cm,
+        minimum height=0.8cm,
+        font=\small
+    },
+    first/.style={
+        stage,
+        draw=cublue,
+        fill=cugrey
+    },
+    arrow/.style={
+        -{Stealth[length=2.4mm]},
+        thick,
+        draw=cuteal
+    }
+]
+
+\node[first] (initial)
+{Preliminary relations identified from the source data};
+
+\node[stage, below=of initial] (nf1)
+{\textbf{First Normal Form (1NF)}\\
+Remove repeating groups and keep one value in each field};
+
+\node[stage, below=of nf1] (nf2)
+{\textbf{Second Normal Form (2NF)}\\
+Remove dependencies on only part of a composite key};
+
+\node[stage, below=of nf2] (nf3)
+{\textbf{Third Normal Form (3NF)}\\
+Remove dependencies between non-key attributes};
+
+\node[stage, below=of nf3] (bcnf)
+{\textbf{Boyce--Codd Normal Form (BCNF)}\\
+Check that every determinant is a candidate key};
+
+\node[first, below=of bcnf] (final)
+{Final normalized relations};
+
+\draw[arrow] (initial) -- (nf1);
+\draw[arrow] (nf1) -- (nf2);
+\draw[arrow] (nf2) -- (nf3);
+\draw[arrow] (nf3) -- (bcnf);
+\draw[arrow] (bcnf) -- (final);
+
+\end{tikzpicture}
+
+\caption{Normalization process followed in the project}
+\label{fig:normalization-process}
+\end{figure}
+Figure~\ref{fig:normalization-process} shows the order followed during
+normalization. A relation moves to the next stage only after the requirements
+of the previous normal form have been checked.
+\subsection{First Normal Form}
+\label{subsec:first-normal-form}
+
+\subsubsection{Theoretical Requirement}
+
+A relation is in First Normal Form when each field contains a single value and
+there are no repeating groups \cite{kent1983five}. Each row must also represent
+one identifiable record.
+
+\subsubsection{Application to the Project}
+
+Several source sheets contain daily or monthly values in separate columns. For
+example, the sunshine dataset places the values for different days across the
+same row. This format is suitable for presenting the data, but it is not
+suitable for a relational table because the day columns form a repeating
+group.
+
+The team converts these columns into separate rows. The station, year, month,
+and day are written explicitly for every observation. Table~\ref{tab:1nf-example}
+shows a shortened example of this change.
+
+\begin{table}[H]
+\centering
+\caption{Sunshine observations before and after First Normal Form}
+\label{tab:1nf-example}
+\small
+\renewcommand{\arraystretch}{1.2}
+
+\textbf{Before 1NF}\\[2mm]
+
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Station} &
+\textbf{Year} &
+\textbf{Month} &
+\textbf{Day 1} &
+\textbf{Day 2} &
+\textbf{Day 3} \\
+\midrule
+Dhaka & 2019 & January & 6.1 & 5.9 & 6.0 \\
+\bottomrule
+\end{tabular}
+
+\vspace{5mm}
+
+\textbf{After 1NF}\\[2mm]
+
+\begin{tabular}{@{}lccccl@{}}
+\toprule
+\textbf{Station} &
+\textbf{Year} &
+\textbf{Month} &
+\textbf{Day} &
+\textbf{Value} &
+\textbf{Measure} \\
+\midrule
+Dhaka & 2019 & 1 & 1 & 6.1 & Sunshine Hours \\
+Dhaka & 2019 & 1 & 2 & 5.9 & Sunshine Hours \\
+Dhaka & 2019 & 1 & 3 & 6.0 & Sunshine Hours \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the original structure, Day 1, Day 2, and Day 3 are repeated columns. After
+1NF, the day number becomes an attribute, and every row represents one daily
+observation. The same method is used for other source sheets containing
+repeated day or month columns.
+
+\subsection{Second Normal Form}
+\label{subsec:second-normal-form}
+
+\subsubsection{Theoretical Requirement}
+
+A relation is in Second Normal Form when it is already in 1NF and every
+non-key attribute depends on the complete primary key
+\cite{kent1983five}. If an attribute depends on only part of a composite key,
+a partial dependency exists.
+
+\subsubsection{Application to the Project}
+
+The 1NF Water Quality relation contains the station name, river name, water
+category, year, parameter type, and measured value. One water-quality
+observation is identified by the station, year, and parameter type.
+
+The main dependency is:
+\[
+(\text{WQ Station Name},\text{Year},\text{Parameter Type})
+\rightarrow \text{Value}
+\]
+
+However, the river name and water category depend only on the station:
+
+\[
+\text{WQ Station Name}
+\rightarrow
+\text{River Name},\text{Water Category}
+\]
+
+Therefore, the river information does not depend on the complete composite
+key of the water-quality observation. The team separates the station-related
+information from the measured values, as shown in
+Table~\ref{tab:2nf-example}.
+
+\begin{table}[H]
+\centering
+\caption{Water Quality relation before and after Second Normal Form}
+\label{tab:2nf-example}
+\small
+\renewcommand{\arraystretch}{1.2}
+
+\textbf{Before 2NF}\\[2mm]
+
+\begin{tabular}{@{}p{2.8cm}p{2.5cm}p{1.7cm}cp{3.4cm}c@{}}
+\toprule
+\textbf{Station} &
+\textbf{River} &
+\textbf{Category} &
+\textbf{Year} &
+\textbf{Parameter} &
+\textbf{Value} \\
+\midrule
+Mirpur Bridge &
+Buriganga River &
+Freshwater &
+2018 &
+Biochemical Oxygen Demand &
+9.47 \\
+
+Hajaribag &
+Buriganga River &
+Freshwater &
+2018 &
+Biochemical Oxygen Demand &
+8.51 \\
+\bottomrule
+\end{tabular}
+
+\vspace{5mm}
+
+\textbf{After 2NF: River Station}\\[2mm]
+
+\begin{tabular}{@{}p{4.2cm}p{3.8cm}p{2.8cm}@{}}
+\toprule
+\textbf{WQ Station Name} &
+\textbf{River Name} &
+\textbf{Water Category} \\
+\midrule
+Mirpur Bridge & Buriganga River & Freshwater \\
+Hajaribag & Buriganga River & Freshwater \\
+\bottomrule
+\end{tabular}
+
+\vspace{5mm}
+
+\textbf{After 2NF: Water Quality}\\[2mm]
+
+\begin{tabular}{@{}p{3.4cm}cp{4.2cm}c@{}}
+\toprule
+\textbf{WQ Station Name} &
+\textbf{Year} &
+\textbf{Parameter Type} &
+\textbf{Value} \\
+\midrule
+Mirpur Bridge & 2018 & Biochemical Oxygen Demand & 9.47 \\
+Hajaribag & 2018 & Biochemical Oxygen Demand & 8.51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+After the decomposition, the Water Quality relation contains the measured
+values, while River Station contains information that depends only on the
+water-quality station name. This removes the partial dependency from the
+measurement relation.
+
+The source category remains in the 2NF and 3NF evidence, where it distinguishes
+freshwater, lake, and marine material. It is not retained in the approved BCNF
+relation because the final model represents the monitored water body through
+\texttt{River\_Name}; the category adds no further identifying dependency.
+
+\subsection{Third Normal Form}
+\label{subsec:third-normal-form}
+
+\subsubsection{Theoretical Requirement}
+
+A relation is in Third Normal Form when it is in 2NF and a non-key attribute
+does not determine another non-key attribute \cite{kent1983five}. Such a
+dependency is known as a transitive dependency.
+
+\subsubsection{Application to the Project}
+
+A transitive dependency appears in the earlier groundwater-well structure. A
+well identifies its district, while the district identifies its subdivision.
+The subdivision therefore depends on the well indirectly through the district.
+
+The dependencies can be written as:
+
+\begin{gather*}
+\text{Well ID}\rightarrow\text{District Name}\\
+\text{District Name}\rightarrow\text{Subdivision}
+\end{gather*}
+
+Therefore:
+
+\begin{gather*}
+\text{Well ID}\rightarrow\text{District Name}\rightarrow\text{Subdivision}
+\end{gather*}
+
+To remove this dependency, the district and subdivision information is placed
+in a separate relation. Table~\ref{tab:3nf-example} shows the structure before
+and after that decomposition.
+
+\begin{table}[htbp]
+\centering
+\caption{Groundwater-well structure before and after Third Normal Form}
+\label{tab:3nf-example}
+\small
+\renewcommand{\arraystretch}{1.2}
+
+\textbf{Before 3NF}\\[2mm]
+
+\begin{tabular}{@{}lcllcc@{}}
+\toprule
+\textbf{Well ID} &
+\textbf{Well No.} &
+\textbf{District} &
+\textbf{Subdivision} &
+\textbf{Latitude} &
+\textbf{Longitude} \\
+\midrule
+CM007 & 1 & Kumilla & Kumilla & 23.40 & 91.06 \\
+CM002 & 2 & Kumilla & Kumilla & 23.58 & 91.15 \\
+CM008 & 3 & Kumilla & Kumilla & 23.48 & 90.91 \\
+\bottomrule
+\end{tabular}
+
+\vspace{5mm}
+
+\textbf{After 3NF: Ground Water Well}\\[2mm]
+
+\begin{tabular}{@{}lclcc@{}}
+\toprule
+\textbf{Well ID} &
+\textbf{Well No.} &
+\textbf{District} &
+\textbf{Latitude} &
+\textbf{Longitude} \\
+\midrule
+CM007 & 1 & Kumilla & 23.40 & 91.06 \\
+CM002 & 2 & Kumilla & 23.58 & 91.15 \\
+CM008 & 3 & Kumilla & 23.48 & 90.91 \\
+\bottomrule
+\end{tabular}
+
+\vspace{5mm}
+
+\textbf{After 3NF: District Subdivision}\\[2mm]
+
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{District Name} &
+\textbf{Subdivision} \\
+\midrule
+Kumilla & Kumilla \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+After the decomposition, the well relation stores the district as a reference,
+but the subdivision is stored only once for that district. The non-key
+attribute Subdivision is therefore no longer repeated for every well.
+
+The groundwater-well data are later excluded because the approved final ERD
+has no groundwater entity. The records are nevertheless extracted and carried
+through 3NF, so this example documents the transitive-dependency check performed
+during schema refinement rather than a relation loaded into the final database.
+\subsection{Boyce--Codd Normal Form}
+\label{subsec:bcnf}
+
+\subsubsection{Theoretical Requirement}
+
+Boyce--Codd Normal Form applies a stricter rule than 3NF. A relation is in BCNF
+when every determinant is a candidate key \cite{codd1972further}. A determinant
+is an attribute, or a group of attributes, that determines another attribute.
+
+\subsubsection{Application to the Project}
+
+At this stage, the team reviews the determinants and candidate keys of the
+retained relations. The key must match the level of the record. For example, a
+temperature value is not identified only by station, year, and month because
+the same station may report both minimum and maximum temperature in the same
+month. Temperature Type must therefore be included in the candidate key.
+
+Before the final key is selected, the following proposed determinant is
+incomplete:
+\[
+(\text{Station Name},\text{Year},\text{Month})
+\nrightarrow \text{Temperature}
+\]
+After including Temperature Type, the functional dependency becomes:
+\[
+(\text{Station Name},\text{Year},\text{Month},\text{Type})
+\rightarrow \text{Temperature}
+\]
+
+\begin{table}[H]
+\centering
+\caption{Temperature Record candidate key established before the BCNF check}
+\label{tab:bcnf-example}
+\small
+\renewcommand{\arraystretch}{1.2}
+
+\textbf{Incomplete proposed key}\\[2mm]
+
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+\textbf{Station} &
+\textbf{Year} &
+\textbf{Month} &
+\textbf{Temperature} &
+\textbf{Meaning} \\
+\midrule
+Dinajpur & 2011 & 1 & 9.1  & Minimum \\
+Dinajpur & 2011 & 1 & 20.8 & Maximum \\
+\bottomrule
+\end{tabular}
+
+\vspace{2mm}
+
+\begin{flushleft}
+Proposed key:
+\(\{\text{Station Name, Year, Month}\}\)
+\end{flushleft}
+
+\vspace{3mm}
+
+\textbf{Corrected candidate key}\\[2mm]
+
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+\textbf{Station} &
+\textbf{Year} &
+\textbf{Month} &
+\textbf{Type} &
+\textbf{Temperature} \\
+\midrule
+Dinajpur & 2011 & 1 & Minimum & 9.1 \\
+Dinajpur & 2011 & 1 & Maximum & 20.8 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2mm}
+
+\begin{flushleft}
+Final candidate key:
+\(\{\text{Station Name, Year, Month, Type}\}\)
+\end{flushleft}
+\end{table}
+
+Table~\ref{tab:bcnf-example} shows that station, year, and month cannot
+determine one temperature value because minimum and maximum values can occur
+for the same month. After Type is included, the complete determinant becomes
+a candidate key. This corrects an incomplete proposed key; it is not presented
+as a BCNF violation or decomposition. The BCNF test is applied only after the
+candidate keys have been established.
+
+The same check is carried out for the other final relations. Some examples are:
+\begin{gather*}
+(\text{Station Name},\text{Year},\text{Month})\rightarrow \text{Humidity}\\
+(\text{Station Name},\text{Year},\text{Month})\rightarrow \text{Rainfall}\\
+(\text{WQ Station Name},\text{Year},\text{Parameter Type})
+\rightarrow \text{Value}\\
+(\text{Industry Name},\text{Start Year},\text{End Year})
+\rightarrow \text{Quantity},\text{Percentage}
+\end{gather*}
+
+In each case, the determinant is the candidate key of its relation. No further
+decomposition is required at this stage because every non-trivial determinant
+checked in the final relations is a candidate key. The final relations
+therefore satisfy the BCNF requirement.
+
+\subsection{Summary of Normalization}
+\label{subsec:normalization-summary}
+
+The normalization process begins by converting repeated spreadsheet columns
+into atomic row-based records. Partial dependencies are then removed from
+relations with composite keys, followed by the removal of transitive
+dependencies. Finally, the determinants and candidate keys of the retained
+relations are checked for BCNF. The resulting relations form the basis of the
+final Entity--Relationship diagram presented in Section~\ref{sec:dm}.
+
+Table~\ref{tab:normalization-summary} collects the worked examples of this
+section into one view, so the structural change made at each stage can be read
+without returning to the individual before-and-after tables.
+
+\begin{table}[H]
+\centering
+\caption{Structural change introduced at each normalization stage}
+\label{tab:normalization-summary}
+\begin{tabular}{L{0.10\textwidth}L{0.25\textwidth}L{0.24\textwidth}L{0.26\textwidth}}
+\toprule
+Stage & Condition enforced & Project example & Structural outcome \\
+\midrule
+1NF & One value for each field and no repeating groups &
+Sunshine values held in separate day columns &
+Day columns become rows carrying station, year, month and day. \\
+2NF & No non-key attribute depends on part of a composite key &
+River name and water category depended only on the monitoring station &
+Station description separates from the yearly measured values. \\
+3NF & No non-key attribute depends on another non-key attribute &
+Subdivision depended on district rather than on the well &
+District detail is stored once and referenced by the well record. \\
+BCNF & Every determinant is a candidate key &
+Station, year and month did not identify one temperature value &
+Temperature Type completes the candidate key before the BCNF test. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\setlength{\abovedisplayskip}{11pt plus 3pt minus 6pt}
+\setlength{\belowdisplayskip}{11pt plus 3pt minus 6pt}
+\setlength{\abovedisplayshortskip}{0pt plus 3pt}
+\setlength{\belowdisplayshortskip}{6.5pt plus 3.5pt minus 3pt}
+\clearpage

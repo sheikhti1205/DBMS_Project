@@ -1,0 +1,148 @@
+\section{Scrum Architecture}
+\label{sec:scrum}
+
+Group-07 contributes the environment sector to the wider MODELBD Scrum of
+Scrums. The architecture separates work carried out inside the group from
+cross-group coordination and cohort-level review. It records only duties that
+are supported by the project evidence and does not assign unverified titles.
+
+\subsection{Scrum-of-Scrums Architecture}
+\label{subsec:scrum-architecture}
+
+Figure~\ref{fig:scrum-architecture} shows the three confirmed coordination
+levels and the direction in which milestones, dependencies and review findings
+move.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  level/.style={draw=cublue,rounded corners,fill=cugrey,text width=9.8cm,
+    minimum height=1.1cm,align=center},
+  arr/.style={<->,>=Stealth,thick,draw=cuteal},
+  node distance=0.7cm
+]
+\node[level] (l3) {\textbf{Level 3: cohort oversight}\\Shared milestones,
+review expectations and integration direction};
+\node[level,below=of l3] (l2) {\textbf{Level 2: cross-group coordination}\\
+Sector representatives exchange dependencies, progress and review findings};
+\node[level,below=of l2] (l1) {\textbf{Level 1: Group-07 environment team}\\
+Source work, ERD, normalization, SQLite implementation and verification};
+\draw[arr] (l3)--(l2);
+\draw[arr] (l2)--(l1);
+\end{tikzpicture}
+\caption{Scrum-of-Scrums structure followed by Group-07.}
+\label{fig:scrum-architecture}
+\end{figure}
+
+\subsection{Roles and Duties at Each Level}
+\label{subsec:scrum-duties}
+
+Table~\ref{tab:scrum-duties} separates confirmed participants from the duties
+that can be supported at each level. Individual Group-07 responsibilities are
+listed in Table~\ref{tab:roles}.
+
+\begin{table}[H]
+\centering
+\caption{Confirmed duties at each Scrum level}
+\label{tab:scrum-duties}
+\begin{tabular}{C{0.12\textwidth}L{0.28\textwidth}L{0.49\textwidth}}
+\toprule
+Level & Confirmed participants & Duties supported by project evidence \\
+\midrule
+1 & Group-07 environment team & Collect and verify sources, design the ERD,
+normalize records, implement SQLite, test the database and report the sector. \\
+2 & Cross-group coordination & Share sector progress, surface integration
+dependencies and communicate review feedback between groups. \\
+3 & Cohort oversight & Set common milestones and reporting expectations and
+review whether sector deliverables can contribute to the larger project. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Intra-Level Coordination}
+\label{subsec:scrum-intra}
+
+At Level 1, source evidence, extraction rules, normalization decisions, the ERD
+and the SQLite release are reviewed as connected work products. A change in
+record grain can alter a key; that key can alter the load order, competency SQL
+and report explanation. Trello exposes task state while Drive, Excalidraw and
+Git retain the material reviewed at each handoff.
+
+\subsection{Inter-Level Coordination}
+\label{subsec:scrum-inter}
+
+Level 2 represents the intended cross-group coordination layer within the wider
+Scrum-of-Scrums structure. For Group-07, the available project files mainly
+show common milestones and review expectations rather than a direct exchange
+of datasets, ERD components or implementation work with another group. Level 3
+supplies the common academic schedule and review expectations. The report does
+not attach names to these levels because the available evidence confirms the
+coordination structure but not individual appointments.
+
+\subsection{Data Collection and Processing}
+\label{subsec:data-collection-processing}
+
+Collection enters the database workflow only after an authority, scope and
+record-grain review. Spreadsheets and CSV files can supply structured records;
+PDF publications provide interpretation or manually checked values but are not
+counted as database rows merely because they were collected. The review step
+in Figure~\ref{fig:collection-processing} prevents an unverified source
+from moving directly into normalization.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  procstep/.style={draw=cublue,rounded corners,fill=cugrey,text width=2.55cm,
+    minimum height=1.1cm,align=center,font=\small},
+  decision/.style={diamond,draw=cuteal,fill=white,aspect=2.0,align=center,
+    font=\small},
+  arr/.style={-{Stealth[length=2mm]},draw=cuteal,thick},
+  node distance=0.55cm
+]
+\node[procstep] (discover) {Discover\\candidate source};
+\node[procstep,right=of discover] (verify) {Verify\\authority and scope};
+\node[decision,right=0.75cm of verify] (pass) {Suitable?};
+\node[procstep,right=0.75cm of pass] (extract) {Extract\\named blocks};
+\node[procstep,below=1.05cm of extract] (trace) {Attach\\source trace};
+\node[procstep,left=0.8cm of trace] (approve) {Approve for\\normalization};
+\node[procstep,below=1.05cm of verify] (record) {Record exclusion\\reason};
+\node[procstep,left=0.8cm of record] (stop) {Retain in the\\source register};
+\draw[arr] (discover)--(verify);
+\draw[arr] (verify)--(pass);
+\draw[arr] (pass)--node[above,font=\scriptsize]{yes}(extract);
+\draw[arr] (extract)--(trace);
+\draw[arr] (trace)--(approve);
+\draw[arr] (pass.south) -- node[right,font=\scriptsize]{no} ++(0,-0.45) -|
+  (record.north);
+\draw[arr] (record)--(stop);
+\end{tikzpicture}
+\caption{Source review workflow before normalization.}
+\label{fig:collection-processing}
+\end{figure}
+
+Of \mCellsRead{} inspected cells, \mCellsMissing{} are missing or unusable
+(\mCellsMissingPct\%). This percentage describes source-cell quality, not rows
+deleted from the final database. Sections~\ref{sec:data} and \ref{sec:etl}
+explain the operational processing and its row accounting.
+Table~\ref{tab:source-review-checks} states the questions used at this decision
+point and the outcome recorded for each answer.
+
+\begin{table}[H]
+\centering
+\caption{Checks applied at the source-review decision point}
+\label{tab:source-review-checks}
+\begin{tabular}{L{0.24\textwidth}L{0.31\textwidth}L{0.35\textwidth}}
+\toprule
+Check & Question & Recorded outcome \\
+\midrule
+Authority and scope & Is the publisher traceable and the subject relevant to
+Bangladesh? & Continue or retain the exclusion reason. \\
+Identifier and grain & Can records be identified at a supported station,
+district, river or time grain? & Define the block grain or exclude it. \\
+Structure & Can repeated observations be extracted without guessing headings
+or values? & Name the block and preserve its source location. \\
+Model fit & Does the material connect to the approved ERD? & Approve it for
+normalization or keep it only as supporting material. \\
+\bottomrule
+\end{tabular}
+\end{table}

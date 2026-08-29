@@ -1,0 +1,482 @@
+\section{Source Discovery and Data Profile}
+\label{sec:data}
+
+Environmental data for Bangladesh is spread across government publications,
+research files and international data platforms. The first task was therefore
+not simply to collect as many files as possible, but to determine which files
+contained records that could be represented by the approved model. The measured
+project Drive inventory contains \mAllDriveFiles{} files. Of these,
+\mSourceDataFiles{} are collected source or data files, \mSupportFiles{} are
+administrative or supporting files and \mDerivedArtifacts{} are formatted or
+page-level derivatives created during review. These groups are reported
+separately so that a generated page image is not counted as another publication.
+
+\subsection{Discovery Overview}
+\label{subsec:source-discovery}
+
+The search covered official Bangladeshi organisations and international
+platforms rather than relying on one repository. Each candidate was reviewed by
+publisher, subject, record grain, time range, file type, missing-value notation
+and the availability of a dependable key. Search engines and LLM tools helped
+locate candidate pages, but acceptance depended on the actual publisher, file
+contents and traceable source evidence.
+
+The review reduced the wider collection to \mSourceFiles{} structured files
+used by the loader. The reduction is not hidden as data loss: excluded files
+remain in the source register with their reasons. The BBS workbook alone has
+\mSheetsTotal{} sheets; \mSheetsUsed{} contribute implemented data and
+\mSheetsExcluded{} have recorded exclusion decisions.
+
+\subsection{Source Organisations and Selection}
+\label{subsec:source-organisations}
+
+Four organisations supplied the implemented records. BBS contributes climate,
+water-quality, forest and industrial statistics. BMD contributes station-based
+temperature and sunshine publications. BRRI supplies daily temperature,
+rainfall, humidity and sunshine observations. BWDB supplies the river reference
+used to connect monitoring stations with river names.
+
+The project also reviewed files from the Department of Environment, the
+Ministry of Environment, Forest and Climate Change, HDX, the UN, UNESCO, WHO,
+the World Bank and other publishers. Those files remain part of the review even
+when they are not loaded. Common reasons include missing join identifiers,
+incompatible grain, duplication of retained material, a subject outside the
+approved model or narrative content without repeated observations.
+
+Table~\ref{tab:drive-source-inventory} includes every collected source family,
+not only the four that reach SQLite.
+
+\begin{table}[H]
+\centering
+\caption{Collected source or data files and files used by the SQLite loader}
+\label{tab:drive-source-inventory}
+\renewcommand{\arraystretch}{1.38}
+\begin{tabular}{L{0.45\textwidth}C{0.13\textwidth}C{0.13\textwidth}C{0.13\textwidth}}
+\toprule
+Source family & Collected & Loaded & Not loaded \\
+\midrule
+BBS & 2 & 1 & 1 \\
+BMD & 11 & 2 & 9 \\
+BRRI & 9 & 5 & 4 \\
+BWDB & 4 & 1 & 3 \\
+Department of Environment & 3 & 0 & 3 \\
+Ministry of Environment, Forest and Climate Change & 5 & 0 & 5 \\
+Humanitarian Data Exchange & 12 & 0 & 12 \\
+Other reviewed publishers & 20 & 0 & 20 \\
+United Nations & 2 & 0 & 2 \\
+UNESCO & 4 & 0 & 4 \\
+World Health Organization & 2 & 0 & 2 \\
+World Bank & 1 & 0 & 1 \\
+\midrule
+Total & \mSourceDataFiles{} & \mSourceFiles{} & 66 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:source-profile} reports the implemented block profile. It shows
+why the number of files alone cannot describe the workload: one workbook can
+contain many independently extracted blocks and millions of numeric values.
+
+\begin{table}[H]
+\centering
+\caption{Structured files and blocks used by the database pipeline}
+\label{tab:source-profile}
+\renewcommand{\arraystretch}{1.38}
+\begin{tabular}{L{0.25\textwidth}C{0.17\textwidth}C{0.24\textwidth}C{0.18\textwidth}}
+\toprule
+Organisation & Source blocks & Source values read & Rows offered \\
+\midrule
+BBS & \mBlocksBBS{} & 181,600 & \mOfferedBBS{} \\
+BMD & \mBlocksBMD{} & 14,688 & \mOfferedBMD{} \\
+BRRI & \mBlocksBRRI{} & 3,252,182 & \mOfferedBRRI{} \\
+BWDB & \mBlocksBWDB{} & Reference register & \mOfferedBWDB{} \\
+\midrule
+Total & \mSourceBlocks{} & \mRawValues{} & \mRowsOffered{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The raw-value total describes numerical values read from BBS, BMD and BRRI.
+BWDB supplies a \mOfferedBWDB-row river reference register, so its entries are
+counted as offered rows rather than climate measurements. Rows offered are not
+the final database rows: daily readings are aggregated to the approved monthly
+grain and primary-key conflicts are resolved before loading.
+
+\subsection{Environmental Data Categories}
+\label{subsec:data-categories}
+
+The integrated database contains environmental subjects supported by the
+approved final ERD and the implemented SQLite relations. Collected subjects
+without an implemented relation are not presented as database categories.
+
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Climate and atmosphere:} Maximum and minimum temperature,
+  rainfall in millimetres, relative humidity, wind speed and direction,
+  sunshine, radiation, thunderstorm and lightning observations.
+  \item \textbf{Rivers and water quality:} River and monitoring-station names
+  together with pH, dissolved oxygen, BOD, COD, salinity and plastic or
+  marine-debris parameter values.
+  \item \textbf{Forest area:} Protected, reserved, unclassed, acquired and
+  total forest area by district and fiscal period.
+  \item \textbf{Industry:} Establishment size or industry category with
+  quantity, percentage and fiscal period.
+\end{itemize}
+
+Figure~\ref{fig:environmental-categories} expands those four domains into the
+implemented data products and representative attributes requested during the
+review.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=1cm,y=0.88cm,
+  product/.style={draw=cublue,rounded corners=2pt,fill=cugrey,
+    text width=9.45cm,minimum height=1.22cm,align=left,inner sep=5pt,
+    font=\small},
+  domainnode/.style={draw=cuamber,rounded corners=2pt,fill=cuamber!10,
+    text width=2.25cm,minimum height=1.05cm,align=center,font=\small\bfseries},
+  core/.style={draw=cuteal,rounded corners=2pt,fill=cuteal!12,
+    text width=5.2cm,minimum height=1.05cm,align=center,font=\small\bfseries},
+  arr/.style={-{Stealth[length=2mm]},draw=cuteal,thick},
+  bus/.style={draw=cuteal,thick}
+]
+\node[core] (db) at (0,9.65) {Environmental SQLite database};
+
+\node[domainnode] (climate) at (-5.65,4.35) {Climate and atmosphere};
+\node[product] (temperature) at (1.25,7.55) {\textbf{Temperature}\quad
+Maximum or minimum value by station, year and month.};
+\node[product] (rainhumidity) at (1.25,5.95) {\textbf{Rainfall and humidity}\quad
+Rainfall in millimetres and relative humidity by station, year and month.};
+\node[product] (wind) at (1.25,4.35) {\textbf{Wind}\quad Maximum or minimum
+wind speed with direction by station, year and month.};
+\node[product] (sunradiation) at (1.25,2.75) {\textbf{Sunshine and radiation}\quad
+Daily sunshine or radiation value; radiation also retains its sample number.};
+\node[product] (events) at (1.25,1.15) {\textbf{Climatic events}\quad
+Thunderstorm and lightning observations by station, year and month.};
+
+\node[domainnode] (water) at (-5.65,-1.25) {Rivers and water quality};
+\node[product] (riverref) at (1.25,-0.45) {\textbf{River reference}\quad
+Water-quality station name connected to its river name.};
+\node[product] (waterquality) at (1.25,-2.05) {\textbf{Water quality}\quad
+pH, DO, BOD, COD, salinity and plastic or marine debris as parameter--value
+records by station and year.};
+
+\node[domainnode] (forest) at (-5.65,-4.15) {Forest area};
+\node[product] (forestproduct) at (1.25,-4.15) {\textbf{Forest area}\quad
+Protected, reserved, unclassed, acquired and total area by district and fiscal
+period.};
+
+\node[domainnode] (industry) at (-5.65,-6.25) {Industry};
+\node[product] (industryproduct) at (1.25,-6.25) {\textbf{Industrial activity}\quad
+Establishment size or industry category, quantity, percentage and fiscal
+period.};
+
+\draw[bus] (db.west) -- (-7.15,9.65) -- (-7.15,-6.25);
+\draw[arr] (-7.15,4.35) -- (climate.west);
+\draw[arr] (-7.15,-1.25) -- (water.west);
+\draw[arr] (-7.15,-4.15) -- (forest.west);
+\draw[arr] (-7.15,-6.25) -- (industry.west);
+
+\draw[bus] (climate.east) -- (-4.25,4.35);
+\draw[bus] (-4.25,7.55) -- (-4.25,1.15);
+\draw[arr] (-4.25,7.55) -- (temperature.west);
+\draw[arr] (-4.25,5.95) -- (rainhumidity.west);
+\draw[arr] (-4.25,4.35) -- (wind.west);
+\draw[arr] (-4.25,2.75) -- (sunradiation.west);
+\draw[arr] (-4.25,1.15) -- (events.west);
+
+\draw[bus] (water.east) -- (-4.25,-1.25);
+\draw[bus] (-4.25,-0.45) -- (-4.25,-2.05);
+\draw[arr] (-4.25,-0.45) -- (riverref.west);
+\draw[arr] (-4.25,-2.05) -- (waterquality.west);
+\draw[arr] (forest.east) -- (forestproduct.west);
+\draw[arr] (industry.east) -- (industryproduct.west);
+\end{tikzpicture}
+\caption{Three-level view of the implemented database, environmental domains
+and data products with their recorded attributes or grain. Source: this LaTeX
+code and the approved SQLite schema.}
+\label{fig:environmental-categories}
+\end{figure}
+
+\subsection{Source Selection and Exclusion}
+\label{subsec:source-selection-exclusion}
+
+Every registered candidate was inspected rather than accepted from its title or
+metadata alone. The review considered Bangladesh and environmental relevance,
+publisher traceability, usable record structure, observation coverage,
+identifiers, duplication and fit with the approved ERD. Relevant narrative
+publications remain supporting evidence even when they do not supply repeated
+records for the database.
+
+{\looseness=-1
+Figure~\ref{fig:source-selection} shows the decision sequence. The 139 entries
+and 75 physical files are different counting objects because several register
+entries can refer to the same publication or resource. The figure is therefore
+a review path, not a claim that each rejected entry corresponds to one deleted
+file.\par}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  >=Stealth,
+  flow/.style={rectangle,rounded corners=1.5pt,draw=black!70,
+    fill=black!3,align=center,minimum width=5.2cm,minimum height=0.82cm,
+    font=\sffamily\small,inner sep=3pt},
+  decision/.style={diamond,draw=black!75,fill=white,align=center,
+    aspect=2.35,text width=3.55cm,font=\sffamily\small,inner sep=1.5pt},
+  outcome/.style={rectangle,rounded corners=1.5pt,draw=black!65,
+    fill=black!2,align=center,text width=4.15cm,minimum height=0.88cm,
+    font=\sffamily\small,inner sep=3pt},
+  retained/.style={rectangle,rounded corners=1.5pt,draw=black!80,
+    thick,fill=black!8,align=center,minimum width=5.2cm,
+    minimum height=0.85cm,font=\sffamily\small,inner sep=3pt},
+  arrow/.style={->,semithick,draw=black!75},
+  branch/.style={font=\sffamily\scriptsize\bfseries,fill=white,
+    inner sep=1.2pt}
+]
+\node[flow] (cand) at (0,0)
+  {\textbf{139 registered resource entries}};
+\node[flow] (review) at (0,-1.55)
+  {\textbf{Manual content and source review}};
+
+\node[decision] (relevant) at (0,-3.9)
+  {Relevant to Bangladesh and the environment?};
+\node[decision] (reliable) at (0,-7.20)
+  {Traceable and verifiable source?};
+\node[decision] (sufficient) at (0,-10.50)
+  {Usable structure, grain and identifiers?};
+\node[decision] (duplicate) at (0,-13.80)
+  {Duplicate or\\overlapping source?};
+
+\node[outcome] (exc1) at (7.15,-3.9)
+  {\textbf{Exclude register entry}\\Outside the approved\\scope};
+\node[outcome] (exc2) at (7.15,-7.20)
+  {\textbf{Exclude register entry}\\Source cannot be verified};
+\node[outcome] (exc3) at (7.15,-10.50)
+  {\textbf{Exclude register entry}\\No dependable model fit};
+\node[outcome] (compare) at (7.15,-13.80)
+  {\textbf{Compare coverage}\\Retain the source with\\stronger coverage};
+
+\node[retained] (keep) at (0,-16.55)
+  {\textbf{Retain source or supporting evidence}};
+\node[flow] (collected) at (0,-18.05)
+  {\textbf{75 collected source or data files}};
+\node[flow] (loader) at (0,-19.55)
+  {\textbf{9 structured loader files}};
+\node[retained] (blocks) at (0,-21.05)
+  {\textbf{62 implemented source blocks}};
+
+\draw[arrow] (cand) -- (review);
+\draw[arrow] (review) -- (relevant);
+\draw[arrow] (relevant) -- node[branch,pos=0.55,right=1.5pt]{YES} (reliable);
+\draw[arrow] (reliable) -- node[branch,pos=0.55,right=1.5pt]{YES} (sufficient);
+\draw[arrow] (sufficient) -- node[branch,pos=0.55,right=1.5pt]{YES} (duplicate);
+\draw[arrow] (duplicate) -- node[branch,pos=0.55,right=1.5pt]{NO} (keep);
+\draw[arrow] (keep) -- (collected);
+\draw[arrow] (collected) -- (loader);
+\draw[arrow] (loader) -- (blocks);
+
+\draw[arrow] (relevant.east) -- node[branch,above=1.5pt]{NO} (exc1.west);
+\draw[arrow] (reliable.east) -- node[branch,above=1.5pt]{NO} (exc2.west);
+\draw[arrow] (sufficient.east) -- node[branch,above=1.5pt]{NO} (exc3.west);
+\draw[arrow] (duplicate.east) -- node[branch,above=1.5pt]{YES} (compare.west);
+\draw[arrow] (compare.south) |- (keep.east);
+\end{tikzpicture}
+\caption{Source selection and exclusion path from the resource register to
+the implemented extraction blocks. Source: the project register, Drive
+inventory and normalization registry.}
+\label{fig:source-selection}
+\end{figure}
+\clearpage
+
+Sources were excluded when they were outside the approved scope, could not be
+verified, lacked usable identifiers or grain, duplicated stronger retained
+material or contained no repeated observations suitable for the model. When two
+sources overlapped, the team retained the version with better supported and
+more complete coverage while recording the decision.
+
+\subsection{Metadata and File Structure}
+\label{subsec:data-metadata}
+
+Table~\ref{tab:collection-metadata} keeps file, block, value, row and schema
+measurements distinct.
+
+\begin{table}[H]
+\centering
+\caption{Measured collection metadata}
+\label{tab:collection-metadata}
+\begin{tabular}{L{0.42\textwidth}L{0.42\textwidth}}
+\toprule
+Measure & Verified value \\
+\midrule
+Files in the Drive collection & \mAllDriveFiles{} files \\
+Source or data files collected & \mSourceDataFiles{} files \\
+Support or administrative files & \mSupportFiles{} files \\
+Derived formatted or page files & \mDerivedArtifacts{} files \\
+Source-level files reviewed & \mCandidateFiles{} files \\
+Structured files read by the loader & \mSourceFiles{} files \\
+Source blocks & \mSourceBlocks{} blocks \\
+Columns summed across the 0NF block headers & \mZeroColumns{} columns \\
+Values read from numeric source series & \mRawValues{} values \\
+Rows offered after extraction or aggregation & \mRowsOffered{} rows \\
+Rows loaded in the final SQLite database & \mDbRows{} rows \\
+Implemented time range & \mYearMin--\mYearMax \\
+Final database structure & \mDbTables{} tables, \mDbColumns{} columns and
+\mDbViews{} views \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The loader uses XLSX or XLS workbooks and CSV reference data. PDF publications
+remain supporting evidence where they explain headings, units or methodology;
+they are not counted as structured database rows. Each 0NF filename records a
+block ID, organisation, workbook and sheet so the extracted material remains
+traceable.
+
+\subsection{Data Range and Record Grain}
+\label{subsec:data-range}
+
+The database covers \mYearMin--\mYearMax{} as a union of the implemented
+relations, not as a promise that every subject is available in every year.
+Monthly temperature, humidity, rainfall, wind and event records use
+\texttt{(Station\_Name, Year, Month)} with an additional type where required.
+Sunshine and radiation use day grain. Water quality uses station, year and
+parameter while forest and industrial tables use fiscal spans.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar stacked,
+  width=0.92\textwidth,
+  height=8.2cm,
+  xmin=1945,xmax=2026,
+  xlabel={Year},
+  symbolic y coords={Industry use,Forest area,Water quality,Radiation,Sunshine,Events,Wind,Rainfall,Humidity,Temperature},
+  ytick=data,
+  y dir=reverse,
+  grid=major,
+  bar width=5pt
+]
+\addplot+[draw=none,fill=none]
+  table[x=start,y=relation] {generated/time_coverage.dat};
+\addplot+[draw=cublue,fill=cublue!55]
+  table[x expr=\thisrow{end}-\thisrow{start},y=relation]
+  {generated/time_coverage.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Observed time span by implemented record family. Source: the database
+measurement query in \texttt{measure.py}.}
+\label{fig:timespans}
+\end{figure}
+
+The record grain determines whether two similarly named datasets can be related.
+Daily station observations cannot be joined directly with annual district
+totals merely because both include a year. Missing station-to-district mappings
+remain null unless a retained source establishes the relationship.
+
+\subsection{Source Discovery Challenges}
+\label{subsec:source-discovery-challenges}
+
+The most persistent discovery problem was locating usable official data.
+Government websites often used inconsistent navigation, slow pages, broken
+links or separate pages for related publications. The team therefore revisited
+source pages and recorded the final publisher location rather than relying on a
+search-result description.
+
+The collected material also used different formats and structures. Excel files
+contained merged cells, repeated headers, many worksheets and inconsistent
+layouts. PDF reports sometimes placed relevant tables inside narrative pages,
+while CSV files used their own names, date formats and missing-value notation.
+Each format required inspection before the team could decide whether it
+contained repeated, identifiable observations.
+
+Similar variables were represented with different headings, dates, station
+names and codes. These differences affected join potential and had to be
+identified before modelling. Temporal coverage was also uneven: some variables
+covered decades, while others described only short fiscal or observation
+periods. The team retained these limits instead of implying uniform coverage.
+
+\subsection{Source Discovery Statistics}
+\label{subsec:source-discovery-statistics}
+
+The current resource register contains 139 candidate or resource entries under
+18 named source labels. The physical source inventory contains
+\mSourceDataFiles{} source or data files. Table~\ref{tab:drive-source-inventory}
+shows how those files are distributed by publisher, and
+Table~\ref{tab:source-profile} shows that \mSourceFiles{} loader files produce
+\mSourceBlocks{} implemented blocks.
+
+The wider audited Drive snapshot contains \mAllDriveFiles{} files. The three
+inventory categories in Table~\ref{tab:drive-inventory-summary} are mutually
+exclusive and sum to that total; loader files and source blocks are processing
+measurements within the source collection and are therefore not added again.
+
+\begin{table}[H]
+\centering
+\caption{Drive inventory summary}
+\label{tab:drive-inventory-summary}
+\begin{tabular}{L{0.66\textwidth}r}
+\toprule
+Drive inventory category & Files \\
+\midrule
+Actual collected source or data files & \mSourceDataFiles{} \\
+Supporting or administrative files & \mSupportFiles{} \\
+Derived, formatted or page-image artifacts & \mDerivedArtifacts{} \\
+\midrule
+Total Drive files & \mAllDriveFiles{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:source-file-types} reports the file types in the overall
+inventory. Most PNG files are derived page images rather than original
+publications, which explains why the total is much larger than the source-file
+count.
+
+\begin{table}[H]
+\centering
+\caption{File types across the complete Drive collection}
+\label{tab:source-file-types}
+\begin{tabular}{L{0.55\textwidth}r}
+\toprule
+File type & Files \\
+\midrule
+\inputrows{generated/source_file_types.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:files-distribution} presents the collected physical files by
+source family. It reports collection, not implementation: the loaded subset is
+given separately in Table~\ref{tab:drive-source-inventory}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar,
+  width=0.90\textwidth,
+  height=10.2cm,
+  xlabel={Collected source or data files},
+  symbolic y coords={WorldBank,WHO,UNESCO,UN,Other,HDX,MoEFCC,DoE,BWDB,BRRI,BMD,BBS},
+  ytick=data,
+  xmin=0,
+  xmax=23,
+  nodes near coords,
+  bar width=7pt,
+  tick label style={font=\scriptsize},
+  fill=cublue!35,
+  draw=cublue
+]
+\addplot table[x=collected,y=source]{generated/source_inventory.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Distribution of collected source or data files by source family.
+Source: the audited Drive inventory snapshot.}
+\label{fig:files-distribution}
+\end{figure}
+
+The source counts, implemented block counts and final row counts answer
+different questions and are not combined into one attrition percentage. The
+database-loading and normalization totals are discussed separately in
+Sections~\ref{sec:etl} and~\ref{sec:norm}.

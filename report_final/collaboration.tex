@@ -1,0 +1,166 @@
+\section{Collaboration}
+\label{sec:collaboration}
+
+Collaboration is important throughout this project because the different
+activities are connected. Data discovery affects extraction, while the
+extracted data influences the ERD, normalization, database implementation,
+and competency queries. Although each member has a main responsibility,
+the group works together whenever one task affects another part of the
+project.
+
+\subsection{Intra-Level Collaboration}
+\label{subsec:intra-level-collaboration}
+
+Intra-level collaboration refers to the cooperation among the four members
+of Group 07. The members divide the work according to their main
+responsibilities. However, these responsibilities are not treated as
+completely separate tasks. Members regularly help one another, review
+shared outputs, and discuss any problem that affects the project.
+
+\subsubsection{Member Roles and Shared Responsibilities}
+
+The main responsibilities of the group members are shown in
+Table~\ref{tab:collaboration-roles}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Main responsibilities of the group members}
+    \label{tab:collaboration-roles}
+    \small
+    \renewcommand{\arraystretch}{1.2}
+
+    \begin{tabularx}{\textwidth}{
+        @{}
+        >{\raggedright\arraybackslash}p{0.26\textwidth}
+        >{\raggedright\arraybackslash}X
+        @{}
+    }
+        \toprule
+        \textbf{Member} & \textbf{Main responsibilities} \\
+        \midrule
+
+        Sheikh Tawsif Bin Aftab &
+        Works as the Team Lead and Scrum Master. He manages the overall progress
+        of the group, maintains the Trello board, distributes tasks, records regular
+        work updates, participates in data extraction, implements the database, and
+        prepares competency queries. \\
+
+Syed Mehraz Monwar &
+Participates in data discovery and contributes to documentation, report
+structure, drawing, review, and verification. \\
+
+Sanjida Mahi &
+Reviews source material, prepares and revises the ERD, verifies the model after
+each major change, and works on normalization from the initial relations
+through BCNF. \\
+
+Safwan Ahmed Rayed &
+Participates in data discovery and works with Sheikh Tawsif Bin
+Aftab during data extraction. He also helps with ERD preparation,
+verification, normalization, and documentation. \\
+
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The responsibilities in Table~\ref{tab:collaboration-roles} identify the
+main areas of work rather than setting strict boundaries. For example,
+Sanjida Mahi mainly works on the ERD and normalization, but Safwan Ahmed
+Rayed also supports these activities. Similarly, Sheikh Tawsif Bin Aftab
+and Safwan Ahmed Rayed work together during extraction, while Syed Mehraz
+Monwar contributes to data discovery with the other members. In this way,
+the team completes connected tasks through shared effort.
+
+
+
+\subsubsection{Task Coordination and Progress Updates}
+
+The group uses Trello to record tasks and monitor their progress. As the
+Scrum Master, Sheikh Tawsif Bin Aftab manages the Trello board. He adds and
+distributes tasks, updates their status, and follows the overall progress of
+the team. This allows the members to identify completed, ongoing, and
+remaining activities.
+
+The team also uses shared working materials for source files, extracted
+data, ERD working files, database files, and report sections. When a member
+updates an important output, the other members review it before it is
+accepted as part of the project.
+
+\subsubsection{Internal Review and Decision Making}
+
+Review takes place throughout the project instead of only at the end.
+The members check the collected data, extracted files, ERD revisions,
+relations, primary keys, and normalization results. This is necessary
+because an error in one stage can create further problems during database
+implementation.
+
+The ERD receives repeated review as the team gains a better understanding of
+the source data. Sanjida Mahi prepares and verifies the approved final drawing,
+with support from Safwan Ahmed Rayed and the other team members. The relations
+are also checked step by step until the final database satisfies BCNF.
+
+\subsubsection{Team Meetings and Problem Solving}
+
+The group holds meetings whenever a problem arises or when an activity
+requires cooperation from the whole team. Therefore, the meetings are
+arranged according to the needs of the project rather than following only
+a fixed schedule.
+
+During these meetings, the members report their progress and discuss
+problems found in the source files, extraction process, ERD, normalization,
+and database implementation. Possible solutions are compared before the
+team reaches a shared decision. The responsible member then updates the
+related work, and the result is reviewed again when necessary.
+
+This process allows the members to complete their individual
+responsibilities while remaining involved in the overall development of
+the project.
+
+\subsection{Inter-Level Collaboration}
+\label{subsec:inter-level-collaboration}
+
+Inter-level collaboration refers to coordination between Group 07 and the
+wider MODELBD Scrum-of-Scrums structure. Common milestones, review
+expectations, and regular academic guidance affect the group's work, but the
+available evidence does not establish a direct exchange of datasets, database
+relations, ERD components, or implementation responsibilities with another
+group. This distinction keeps the collaboration description consistent with
+the work that can be verified.
+
+\subsection{Competency Questions as a Collaboration Tool}
+\label{subsec:competency-collaboration}
+
+Competency questions give the team a common way to check whether modelling,
+normalization, implementation and deployment agree. A modeller can state that water
+quality connects to rivers, but the claim is accepted only when the implementer
+runs the join and the reviewer checks its count. The same questions are saved
+as SQL and automated tests, so they can be repeated after a source or schema
+change.
+
+Figure~\ref{fig:competency-collaboration} shows how the competency questions
+connect modelling, implementation and final review.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  role/.style={draw=cublue,rounded corners,fill=cugrey,text width=2.6cm,
+    minimum height=0.95cm,align=center,font=\small},
+  evidence/.style={draw=cuteal,rounded corners,fill=white,text width=3.0cm,
+    minimum height=0.95cm,align=center,font=\small},
+  arr/.style={-{Stealth[length=2mm]},thick,draw=cuteal},
+  node distance=0.55cm
+]
+\node[role] (model) {Model and normalize};
+\node[role,right=of model] (implement) {Implement and load};
+\node[role,right=of implement] (review) {Review and deploy};
+\node[evidence,below=0.75cm of implement] (cq) {Shared competency questions,
+expected results and timing};
+\draw[arr] (model)--(implement);
+\draw[arr] (implement)--(review);
+\draw[arr] (model)--(cq);
+\draw[arr] (implement)--(cq);
+\draw[arr] (review)--(cq);
+\end{tikzpicture}
+\caption{Competency questions connect intra-level work products.}
+\label{fig:competency-collaboration}
+\end{figure}

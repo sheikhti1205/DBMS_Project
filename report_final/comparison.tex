@@ -1,0 +1,155 @@
+\section{Comparison of Environmental Data Resources}
+\label{sec:comparison}
+
+\subsection{Scope and Counting Method}
+\label{subsec:comparison-scope-method}
+
+Group-07 and Group-08 both collect environmental resources about Bangladesh,
+but their folder structures and preparation workflows differ. The comparison
+therefore separates original source files, converted derivatives,
+Entity--Relationship model artifacts, supporting evidence and final database
+records instead of adding them into one total and treating the result as
+quality.
+
+Only measurements with a reproducible counting definition are included. File
+size is not treated as database quality, and rows from arbitrary Excel or CSV
+files are not treated as directly comparable final database cardinalities. A
+converted copy is identified as a derivative rather than another unique
+dataset. Where the supplied evidence does not establish an equivalent
+measurement, the comparison states this instead of using zero.
+
+The Group-07 register, current source tree, extraction registry and executable
+SQLite database provide the Group-07 measurements. Group-08 measurements use
+the public Google Drive folder metadata available during the review, the
+supplied resource workbook, the latest ERD image and the supplied cleaning and
+search-history evidence. The Drive counts describe the public folder state
+visible during that inspection.
+
+\subsection{Verified Repository Comparison}
+\label{subsec:verified-repository-comparison}
+
+Table~\ref{tab:verified-repository-comparison} compares like categories and
+keeps Group-08's original and converted collections separate. The inspected
+public Group-08 snapshot contains 50 files in \texttt{Datasets}, 47 CSV
+derivatives, 5 root-level Google Sheets, 2 final or previous ER Diagram PNG
+files, 18 individual-model JPEG files and 4 resource or support files. These
+categories total 126 visible leaf files. The file-type check finds 42 XLSX
+files, 14 native Google Sheets, 47 CSV files, 2 PNG files, 18 JPEG files and 3
+PDF files.
+
+\begin{table}[H]
+\centering
+\caption{Verified repository and resource comparison}
+\label{tab:verified-repository-comparison}
+\small
+\begin{tabular}{L{0.24\textwidth}L{0.34\textwidth}L{0.34\textwidth}}
+\toprule
+Measure & Group-07 & Group-08 \\
+\midrule
+Main organisation style & Source organisations separated into government,
+non-government and formatted-output branches & Dataset topics, with a separate
+CSV-converted collection \\
+Current resource register & 139 entries under 18 named source labels & 35
+entries under 6 named source labels \\
+Older or candidate register & Not added to the current register count & 128
+entries under 11 labels in a separate older sheet; not added to the current 35
+\\
+Original or current dataset files & 75 collected source or data files under the
+stated source-corpus definition & 50 files in \texttt{Datasets}: 41 XLSX and 9
+native Google Sheets \\
+Converted or extracted derivatives & 62 named extraction blocks from 9 loader
+files; broader formatted outputs are kept separate from original sources & 47
+CSV files in the separate converted collection \\
+Source mapping and support evidence & Resource register, mapping workbooks,
+exclusion records, source publications and quality logs & Resource workbook,
+cleaning-problem PDF and two search or browsing-history PDFs \\
+ER or model artifacts & Approved final ERD and implementation contract; no
+repository-total artifact count is used & 2 ER Diagram PNG files and 18
+individual-model JPEG files \\
+Files reaching an implementation & 9 structured files produce 62 blocks loaded
+into the final implementation & Not established from the supplied evidence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Group-07 mainly keeps source ownership visible through organisation folders and
+retains substantial source and reference evidence. Group-08 makes many subjects
+easy to locate through topic names, and its separate CSV collection makes 47
+converted tables easier to inspect directly. Group-08 also retains resource,
+search-history and cleaning evidence, although it is arranged differently. Its
+original and converted files require a clear rule for identifying the canonical
+source and its derivative.
+
+\subsection{Data Model and Implementation Comparison}
+\label{subsec:model-implementation-comparison}
+
+Table~\ref{tab:model-implementation-comparison} distinguishes a modelled entity
+from an implemented database table. The latest supplied Group-08 ERD contains
+29 modelled entity boxes by visual inspection. No executable Group-08 database
+is present in the supplied evidence or public-folder snapshot. The comparison
+therefore does not describe those entities as implemented tables and does not
+invent database row, key or integrity results.
+
+\begin{table}[H]
+\centering
+\caption{Data model and implementation comparison}
+\label{tab:model-implementation-comparison}
+\small
+\begin{tabular}{L{0.23\textwidth}L{0.35\textwidth}L{0.34\textwidth}}
+\toprule
+Criterion & Group-07 & Group-08 \\
+\midrule
+Model evidence & Approved final ERD plus a machine-readable schema contract &
+Latest integrated ERD plus 18 individual ER-model images \\
+Executable implementation & Supplied SQLite database and build or verification
+scripts & No executable database was found in the supplied or shared project
+folder for equivalent database-level verification \\
+Relation or entity count & 21 implemented tables and 2 views & 29 modelled
+entities in the inspected ERD \\
+Implemented schema size & 76 table columns and 28 logical foreign-key
+relationships & Not established from the supplied evidence \\
+Final database records and range & 730,324 rows covering 1948--2024 & Not
+established from the supplied evidence \\
+Database verification & \texttt{integrity\_check = ok}; 0 foreign-key
+violations & Equivalent executable checks are not available \\
+Source or data preparation & Source-specific extraction from 9 heterogeneous
+files into 62 traceable blocks, followed by normalization and loading &
+Topic-based original files, 47 CSV derivatives and documented cleaning examples
+\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Group-07's source audit also reads 3,717,305 candidate measurement cells,
+identifies 268,835 missing or unusable cells, approximately 7.2\%, and records
+132,743 quality-problem occurrences across 50 classes. These values describe
+its own extraction audit and are not presented as a Group-08 comparison because
+no equivalent verified measurement is available.
+
+Group-07's heterogeneous publications require more source-specific extraction
+and cleaning, while Group-08's converted files provide convenient flat
+representations for inspection. Group-07's supplied project proceeds further
+into an executable relational implementation with automated integrity and
+reproducibility checks. This observation applies only to the inspected
+materials and does not claim that Group-08 has never built a database elsewhere.
+
+\subsection{Limitations and Takeaways}
+\label{subsec:comparison-limitations-takeaways}
+
+The comparison is limited to the supplied project folders, attached evidence
+and public Drive contents visible during inspection. Source-file counts do not
+measure database quality. Original and converted copies are not separate unique
+datasets unless that duplication is stated, and a modelled entity count is not
+an implemented-table count.
+
+Group-07's database-level measurements can be checked directly because an
+executable SQLite database is supplied. Equivalent database-level statistics
+are not assigned to Group-08 because no executable database was available in
+the inspected material. Consequently, competency-query execution and timing
+results are limited to Group-07's verified implementation.
+
+The practical takeaway is that an environmental database project benefits from
+clear source registration, preserved source evidence, structured or flat
+derivatives where useful, explicit record grain, normalized relationships and
+an implementation that another person can check independently. Only
+measurements supported by the inspected evidence are compared here.

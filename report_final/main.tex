@@ -1,0 +1,133 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{xurl}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows.meta,
+  backgrounds,
+  calc,
+  fit,
+  matrix,
+  positioning,
+  shapes.geometric
+}
+
+\geometry{margin=1in}
+\setstretch{1.35}
+\setlength{\parindent}{0pt}
+\setlength{\JustifyingParindent}{0pt}
+\setlength{\parskip}{0.42\baselineskip}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{5pt}
+
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  bookmarks=true,
+  bookmarksopen=true
+]{hyperref}
+
+\definecolor{cublue}{RGB}{31,78,121}
+\definecolor{cuteal}{RGB}{56,138,131}
+\definecolor{cuamber}{RGB}{191,124,17}
+\definecolor{cugrey}{RGB}{242,244,247}
+\definecolor{culine}{RGB}{200,208,218}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\makeatletter
+\newcommand{\inputrows}[1]{\@@input #1}
+\makeatother
+
+\input{generated/measured}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{cublue}\bfseries,
+  commentstyle=\color{cuteal},
+  stringstyle=\color{cuamber},
+  frame=single,
+  rulecolor=\color{culine},
+  breaklines=true,
+  showstringspaces=false,
+  captionpos=b,
+  numbers=none
+}
+
+\captionsetup{font=small,labelfont=bf}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\renewcommand{\refname}{Bibliography}
+
+\begin{document}
+\justifying
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.42\baselineskip}
+
+\hypersetup{pageanchor=false}
+\input{formatter/titlepage}
+\clearpage
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\input{formatter/studentInfo}
+\clearpage
+\input{preface}
+\clearpage
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\lstlistoflistings
+\clearpage
+\pagenumbering{arabic}
+
+\include{abstract}
+\include{Introduction}
+\include{projectmanagement}
+\include{scrumarchitecture}
+\include{sprint}
+\include{data}
+\include{etl}
+\include{normalization}
+\include{datamodel}
+\include{deploy}
+\include{collaboration}
+\include{findings}
+\include{pedagogy}
+\include{comparison}
+\include{conclusionandfuturework}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+\bibliographystyle{ios1}
+\bibliography{references}
+
+\end{document}

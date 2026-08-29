@@ -1,0 +1,33 @@
+{
+  "snapshot_date": "2026-08-28",
+  "drive_root": "Selected_Source_Files (shared Google Drive folder)",
+  "all_files": 979,
+  "derived_artifacts": 900,
+  "support_files": 4,
+  "source_data_files": 75,
+  "loaded_files": 9,
+  "source_blocks": 62,
+  "file_types": {
+    "PNG": 851,
+    "XLSX": 60,
+    "PDF": 45,
+    "CSV": 16,
+    "Markdown": 3,
+    "XLS": 3,
+    "PowerShell": 1
+  },
+  "sources": [
+    {"name": "BBS", "collected": 2, "loaded": 1},
+    {"name": "BMD", "collected": 11, "loaded": 2},
+    {"name": "BRRI", "collected": 9, "loaded": 5},
+    {"name": "BWDB", "collected": 4, "loaded": 1},
+    {"name": "DoE", "collected": 3, "loaded": 0},
+    {"name": "MoEFCC", "collected": 5, "loaded": 0},
+    {"name": "HDX", "collected": 12, "loaded": 0},
+    {"name": "Other", "collected": 20, "loaded": 0},
+    {"name": "UN", "collected": 2, "loaded": 0},
+    {"name": "UNESCO", "collected": 4, "loaded": 0},
+    {"name": "WHO", "collected": 2, "loaded": 0},
+    {"name": "WorldBank", "collected": 1, "loaded": 0}
+  ]
+}
