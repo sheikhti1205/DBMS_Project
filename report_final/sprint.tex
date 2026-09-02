@@ -1,8 +1,8 @@
 \section{Sprint Reports}
 \label{sec:rga}
 
-The work is organized into three sprints that move from source discovery to a
-verified SQLite release. Each report uses the same structure: overview,
+The work is organised into three sprints that move from source discovery to a
+verified SQLite database. Each report uses the same structure: overview,
 backlog, goal, team contributions, completed activities, difficulties and
 responses, and a checkable output. This makes the difference between planned
 work and delivered evidence visible. Figure~\ref{fig:sprint-goal-matrix}
@@ -44,7 +44,7 @@ was not assigned to that sprint.}
 \subsubsection{Sprint Overview}
 
 Sprint 1 establishes the source collection. Team members search official
-Bangladesh organizations and recognized international data portals, then
+Bangladesh organisations and recognized international data portals, then
 compare the candidate material in a shared register. A publication is not
 accepted merely because its title concerns the environment. The review checks
 the publisher, file type, time range, measurement grain, identifiers and the
@@ -52,15 +52,15 @@ possibility of connecting the records to the approved scope.
 
 The Drive review identifies \mSourceDataFiles{} source/data files and
 \mSupportFiles{} supporting or administrative files. Only
-\mSourceOrganisations{} organizations finally contribute the
-\mSourceFiles{} structured loader files used by the implementation. The other
+\mSourceOrganisations{} organisations provide the \mSourceFiles{} structured
+files selected for pipeline processing. The other
 collected material remains part of the discovery record, with its exclusion
 reason, rather than being described as loaded data.
 
 \subsubsection{Sprint Backlog}
 
 \begin{enumerate}[leftmargin=*]
-  \item Search national and international organizations for relevant
+  \item Search national and international organisations for relevant
   environmental datasets and publications.
   \item Store candidate files without overwriting the original downloads and
   record their publisher and source location.
@@ -73,7 +73,7 @@ reason, rather than being described as loaded data.
 \subsubsection{Sprint Goal}
 
 The sprint addresses G1, Environmental Data Collection, and G2, Source
-Verification and Selection. Completion requires both an organized collection
+Verification and Selection. Completion requires both an organised collection
 and a review trail showing why each retained source can move to extraction.
 Figure~\ref{fig:sprint1-goals} connects the sprint directly to those goals.
 
@@ -117,11 +117,11 @@ Dataset search and collection & Safwan Ahmed Rayed and Sheikh Tawsif Bin Aftab
 searched for and collected relevant environmental publications. \\
 Source documentation & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar recorded
 source and dataset information in the shared register. \\
-File organization & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar organized
+File organisation & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar organised
 the collected files and supporting material in Google Drive. \\
 File examination and selection & Sanjida Mahi reviewed the collected material
 for content and suitability, with selection decisions discussed by the team. \\
-Review and verification & Syed Mehraz Monwar checked the organization and
+Review and verification & Syed Mehraz Monwar checked the organisation and
 documentation needed for later report evidence. \\
 \bottomrule
 \end{tabular}
@@ -137,11 +137,11 @@ documentation needed for later report evidence. \\
   government agencies and recognized institutions. Secondary references can
   help locate a publication, but the original publisher and file are checked
   before selection.
-  \item[Source recording.] The register preserves the organization, material
+  \item[Source recording.] The register preserves the organisation, material
   title, source location, file type, availability and selection status. The
   retained link lets a reviewer return to the publication.
-  \item[Collection and organization.] Downloaded files are grouped by source
-  organization in the shared Drive. Original material is preserved while
+  \item[Collection and organisation.] Downloaded files are grouped by source
+  organisation in the shared Drive. Original material is preserved while
   extracted copies and later outputs are stored separately.
   \item[Scope and structure screening.] The team checks whether a file contains
   relevant measurements, whether its observation unit is clear and whether
@@ -169,7 +169,7 @@ responses used during Sprint 1.
 Difficulty & Effect on the work & Response \\
 \midrule
 Fragmented publication & Environmental material is distributed across many
-organizations and portals. & Maintain one source register with organization,
+organisations and portals. & Maintain one source register with organisation,
 title, location, format and selection status. \\
 Inaccessible or unstable links & Slow pages and broken downloads delay source
 verification. & Search alternate pages belonging to the same publisher and
@@ -189,7 +189,7 @@ keeping it in the source inventory. \\
 
 \subsubsection{Sprint Output}
 
-Sprint 1 produces a source register and an organized collection containing
+Sprint 1 produces a source register and an organised collection containing
 \mSourceDataFiles{} source/data files plus \mSupportFiles{} support files. The
 screening outcome identifies \mSourceFiles{} structured files for the loader
 and records excluded files and sheets separately. Section~\ref{sec:data}
@@ -210,7 +210,7 @@ the original files and create raw 0NF CSV blocks for review.
 The sprint also develops the integrated ERD. Modelling and extraction proceed
 together because an entity, candidate key or relationship cannot be confirmed
 until actual rows reveal the observation grain. The extraction ultimately
-offers \mRowsOffered{} rows across \mSourceBlocks{} implemented source blocks;
+offers \mRowsOffered{} rows across \mSourceBlocks{} extracted source blocks;
 the stage totals and changing record grain are explained in
 Section~\ref{sec:etl}.
 
@@ -277,7 +277,7 @@ selected files to locate structures and information requiring extraction. \\
 Extraction development & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar
 developed and adjusted the Python extraction methods. \\
 Data extraction and CSV preparation & Sheikh Tawsif Bin Aftab and Syed Mehraz
-Monwar extracted the approved blocks and organized their raw CSV outputs. \\
+Monwar extracted the approved blocks and organised their raw CSV outputs. \\
 Source-level ERD development & Safwan Ahmed Rayed and Sanjida Mahi developed
 ERDs from the structures exposed by the selected sources. \\
 ERD comparison and integration & Safwan Ahmed Rayed and Sanjida Mahi compared
@@ -387,8 +387,8 @@ database rather than copied from a manually maintained summary.
   final schema definition.
   \item Implement and load the schema in SQLite3 from the accepted normalized
   outputs.
-  \item Validate required values, key uniqueness, constraints, foreign keys and
-  logical rebuild equivalence.
+  \item Validate required values, key uniqueness, constraints and foreign keys,
+  and confirm that a clean rebuild contains the same database contents.
   \item Run competency questions and measure representative query execution
   times.
   \item Verify deployment, read-only operation, backup, restore and maintenance
@@ -398,10 +398,10 @@ database rather than copied from a manually maintained summary.
 \subsubsection{Sprint Goal}
 
 Sprint 3 finalizes G5 and completes G6--G11. The goal is not only a database
-file but a release whose schema, data and operating procedures can be rebuilt
-and checked from the delivered project.
-Figure~\ref{fig:sprint3-goals} shows the full set of goals completed in this
-release sprint.
+file but a project version whose schema, data and operating procedures can be
+rebuilt and checked from the delivered project.
+Figure~\ref{fig:sprint3-goals} shows the full set of goals completed in
+Sprint 3.
 
 \begin{figure}[H]
 \centering
@@ -452,7 +452,7 @@ the integrated ERD and worked through the normalization stages to BCNF. \\
 Schema implementation and ETL & Sheikh Tawsif Bin Aftab implemented the final
 schema, loading process and reproducible database build. \\
 Database testing & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar checked the
-implemented tables, relationships and query behavior. \\
+implemented tables, relationships and query behaviour. \\
 Review and verification & Syed Mehraz Monwar reviewed report evidence and
 verified that explanations and diagrams agreed with the implemented database. \\
 Queries and demonstrations & Sheikh Tawsif Bin Aftab and Syed Mehraz Monwar
@@ -480,13 +480,14 @@ by the team. \\
   files for review, loads the accepted BCNF files and records stage counts
   without assuming that changes in grain must be monotonic.
   \item[Database verification.] The database is checked for table and column
-  agreement, primary-key uniqueness, required values, constraint behavior,
-  foreign-key consistency and logical equivalence after a clean rebuild.
+  agreement, primary-key uniqueness, required values, constraint behaviour and
+  foreign-key consistency, and a clean rebuild is confirmed to contain the same
+  database contents.
   \item[Query and demonstration preparation.] Saved read-only queries cover
   climate, wind, rivers, water quality, forestry, industry, relationship
   metadata, coverage, missing values and integrity.
   \item[Deployment and maintenance checks.] Linux and Windows procedures,
-  read-only access, safe rebuild behavior, backup and restore are exercised
+  read-only access, safe rebuild behaviour, backup and restore are exercised
   against temporary copies before final acceptance.
 \end{description}
 
@@ -509,7 +510,8 @@ ID & Question & Verified result \\
 CQ1 & How many temperature records are available for 2020? &
 \mTemperatureRowsTwentyTwenty{} rows \\
 CQ2 & How many districts have retained forest-area records? & 35 districts \\
-CQ3 & Can every loaded water-quality row reach a river through its station? &
+CQ3 & Can every loaded water-quality row reach its retained river or water-body
+reference through its station? &
 \mWaterQualityConnected{} joined rows \\
 CQ4 & Which adequately sampled station has the highest average monthly
 rainfall? & \mWettestStation{}, \mWettestAverage{} mm \\
@@ -538,7 +540,7 @@ WHERE t.Year = 2020;
 The next query demonstrates the relationship tested by CQ3. The joining column
 is \texttt{WQ\_Station\_Name} in both implemented relations.
 
-\begin{lstlisting}[language=SQL,caption={Water-quality records joined to their rivers},
+\begin{lstlisting}[language=SQL,caption={Water-quality records joined to their river or water-body references},
 label={lst:water-quality-validation}]
 SELECT rs.River_Name,
        w.WQ_Station_Name,

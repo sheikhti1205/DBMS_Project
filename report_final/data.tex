@@ -4,8 +4,8 @@
 Environmental data for Bangladesh is spread across government publications,
 research files and international data platforms. The first task was therefore
 not simply to collect as many files as possible, but to determine which files
-contained records that could be represented by the approved model. The measured
-project Drive inventory contains \mAllDriveFiles{} files. Of these,
+contained records that could be represented by the approved model. The audited
+source-collection snapshot contains \mAllDriveFiles{} files. Of these,
 \mSourceDataFiles{} are collected source or data files, \mSupportFiles{} are
 administrative or supporting files and \mDerivedArtifacts{} are formatted or
 page-level derivatives created during review. These groups are reported
@@ -31,8 +31,10 @@ remain in the source register with their reasons. The BBS workbook alone has
 \label{subsec:source-organisations}
 
 Four organisations supplied the implemented records. BBS contributes climate,
-water-quality, forest and industrial statistics. BMD contributes station-based
-temperature and sunshine publications. BRRI supplies daily temperature,
+water-quality, forest and industrial statistics. BMD supplies temperature data
+and a sunshine publication; its temperature records contribute to the final
+database, while the two BMD sunshine blocks cannot be loaded because the source
+provides no usable station identity. BRRI supplies daily temperature,
 rainfall, humidity and sunshine observations. BWDB supplies the river reference
 used to connect monitoring stations with river names.
 
@@ -48,12 +50,13 @@ not only the four that reach SQLite.
 
 \begin{table}[H]
 \centering
-\caption{Collected source or data files and files used by the SQLite loader}
+\caption{Collected source or data files and files selected for structured
+processing}
 \label{tab:drive-source-inventory}
 \renewcommand{\arraystretch}{1.38}
-\begin{tabular}{L{0.45\textwidth}C{0.13\textwidth}C{0.13\textwidth}C{0.13\textwidth}}
+\begin{tabular}{L{0.38\textwidth}C{0.13\textwidth}C{0.20\textwidth}C{0.13\textwidth}}
 \toprule
-Source family & Collected & Loaded & Not loaded \\
+Source family & Collected & Pipeline input & Not used \\
 \midrule
 BBS & 2 & 1 & 1 \\
 BMD & 11 & 2 & 9 \\
@@ -98,9 +101,29 @@ Total & \mSourceBlocks{} & \mRawValues{} & \mRowsOffered{} \\
 
 The raw-value total describes numerical values read from BBS, BMD and BRRI.
 BWDB supplies a \mOfferedBWDB-row river reference register, so its entries are
-counted as offered rows rather than climate measurements. Rows offered are not
-the final database rows: daily readings are aggregated to the approved monthly
-grain and primary-key conflicts are resolved before loading.
+counted as offered rows rather than climate measurements. The final
+\texttt{River} reference also contains additional water-body names required by
+retained water-quality stations, so its 417 entries exceed the
+\mOfferedBWDB-row register. Rows offered are not the final database rows: daily
+readings are aggregated to the approved monthly grain and primary-key conflicts
+are resolved before loading.
+
+\subsection{Collected Source File Register}
+\label{subsec:source-file-register}
+
+Each collected source or data file is recorded with the author or creator
+embedded in the file, the download date recorded in the source register, the
+last access date and the file size. Table~\ref{tab:used-source-files} lists the
+\mSourceFiles{} structured files selected as pipeline input, and
+Table~\ref{tab:collected-source-register} lists the full register of the
+\mSourceDataFiles{} collected files. The three original groundwater or
+water-quality files that were moved to the discarded review folder during
+selection remain part of the collected inventory and are included in the
+register.
+
+\input{generated/used_source_files}
+
+
 
 \subsection{Environmental Data Categories}
 \label{subsec:data-categories}
@@ -263,7 +286,7 @@ file.\par}
 \node[flow] (loader) at (0,-19.55)
   {\textbf{9 structured loader files}};
 \node[retained] (blocks) at (0,-21.05)
-  {\textbf{62 implemented source blocks}};
+  {\textbf{62 extracted source blocks}};
 
 \draw[arrow] (cand) -- (review);
 \draw[arrow] (review) -- (relevant);
@@ -282,7 +305,7 @@ file.\par}
 \draw[arrow] (compare.south) |- (keep.east);
 \end{tikzpicture}
 \caption{Source selection and exclusion path from the resource register to
-the implemented extraction blocks. Source: the project register, Drive
+the extracted source blocks. Source: the project register, Drive
 inventory and normalization registry.}
 \label{fig:source-selection}
 \end{figure}
@@ -308,7 +331,7 @@ measurements distinct.
 \toprule
 Measure & Verified value \\
 \midrule
-Files in the Drive collection & \mAllDriveFiles{} files \\
+Files in the audited source-collection snapshot & \mAllDriveFiles{} files \\
 Source or data files collected & \mSourceDataFiles{} files \\
 Support or administrative files & \mSupportFiles{} files \\
 Derived formatted or page files & \mDerivedArtifacts{} files \\
@@ -406,24 +429,25 @@ shows how those files are distributed by publisher, and
 Table~\ref{tab:source-profile} shows that \mSourceFiles{} loader files produce
 \mSourceBlocks{} implemented blocks.
 
-The wider audited Drive snapshot contains \mAllDriveFiles{} files. The three
-inventory categories in Table~\ref{tab:drive-inventory-summary} are mutually
-exclusive and sum to that total; loader files and source blocks are processing
-measurements within the source collection and are therefore not added again.
+The audited source-collection snapshot contains \mAllDriveFiles{} files. The
+three inventory categories in Table~\ref{tab:drive-inventory-summary} are
+mutually exclusive and sum to that total; loader files and source blocks are
+processing measurements within the source collection and are therefore not
+added again.
 
 \begin{table}[H]
 \centering
-\caption{Drive inventory summary}
+\caption{Source-collection inventory snapshot}
 \label{tab:drive-inventory-summary}
 \begin{tabular}{L{0.66\textwidth}r}
 \toprule
-Drive inventory category & Files \\
+Source-collection category & Files \\
 \midrule
 Actual collected source or data files & \mSourceDataFiles{} \\
 Supporting or administrative files & \mSupportFiles{} \\
 Derived, formatted or page-image artifacts & \mDerivedArtifacts{} \\
 \midrule
-Total Drive files & \mAllDriveFiles{} \\
+Total source-collection files & \mAllDriveFiles{} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -435,7 +459,7 @@ count.
 
 \begin{table}[H]
 \centering
-\caption{File types across the complete Drive collection}
+\caption{File types across the audited source-collection snapshot}
 \label{tab:source-file-types}
 \begin{tabular}{L{0.55\textwidth}r}
 \toprule
@@ -472,7 +496,7 @@ given separately in Table~\ref{tab:drive-source-inventory}.
 \end{axis}
 \end{tikzpicture}
 \caption{Distribution of collected source or data files by source family.
-Source: the audited Drive inventory snapshot.}
+Source: the audited source-collection inventory snapshot.}
 \label{fig:files-distribution}
 \end{figure}
 

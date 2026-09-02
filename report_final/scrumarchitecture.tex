@@ -24,7 +24,7 @@ move.
 \node[level] (l3) {\textbf{Level 3: cohort oversight}\\Shared milestones,
 review expectations and integration direction};
 \node[level,below=of l3] (l2) {\textbf{Level 2: cross-group coordination}\\
-Sector representatives exchange dependencies, progress and review findings};
+Intended exchange of sector progress, dependencies and review feedback};
 \node[level,below=of l2] (l1) {\textbf{Level 1: Group-07 environment team}\\
 Source work, ERD, normalization, SQLite implementation and verification};
 \draw[arr] (l3)--(l2);
@@ -43,7 +43,7 @@ listed in Table~\ref{tab:roles}.
 
 \begin{table}[H]
 \centering
-\caption{Confirmed duties at each Scrum level}
+\caption{Confirmed duties and intended coordination at each Scrum level}
 \label{tab:scrum-duties}
 \begin{tabular}{C{0.12\textwidth}L{0.28\textwidth}L{0.49\textwidth}}
 \toprule
@@ -51,8 +51,9 @@ Level & Confirmed participants & Duties supported by project evidence \\
 \midrule
 1 & Group-07 environment team & Collect and verify sources, design the ERD,
 normalize records, implement SQLite, test the database and report the sector. \\
-2 & Cross-group coordination & Share sector progress, surface integration
-dependencies and communicate review feedback between groups. \\
+2 & Cross-group coordination & Intended coordination function: sector progress,
+integration dependencies and review feedback are exchanged between groups in
+the wider structure. \\
 3 & Cohort oversight & Set common milestones and reporting expectations and
 review whether sector deliverables can contribute to the larger project. \\
 \bottomrule
@@ -63,7 +64,7 @@ review whether sector deliverables can contribute to the larger project. \\
 \label{subsec:scrum-intra}
 
 At Level 1, source evidence, extraction rules, normalization decisions, the ERD
-and the SQLite release are reviewed as connected work products. A change in
+and the SQLite database are reviewed as connected work products. A change in
 record grain can alter a key; that key can alter the load order, competency SQL
 and report explanation. Trello exposes task state while Drive, Excalidraw and
 Git retain the material reviewed at each handoff.

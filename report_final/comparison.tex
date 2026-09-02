@@ -30,12 +30,12 @@ visible during that inspection.
 
 Table~\ref{tab:verified-repository-comparison} compares like categories and
 keeps Group-08's original and converted collections separate. The inspected
-public Group-08 snapshot contains 50 files in \texttt{Datasets}, 47 CSV
+public Group-08 snapshot contains 66 files in \texttt{Datasets}, 47 CSV
 derivatives, 5 root-level Google Sheets, 2 final or previous ER Diagram PNG
 files, 18 individual-model JPEG files and 4 resource or support files. These
-categories total 126 visible leaf files. The file-type check finds 42 XLSX
-files, 14 native Google Sheets, 47 CSV files, 2 PNG files, 18 JPEG files and 3
-PDF files.
+categories total 142 visible leaf files. The file-type check finds 57 XLSX
+files, 1 XLS file, 14 native Google Sheets, 47 CSV files, 2 PNG files, 18 JPEG
+files and 3 PDF files.
 
 \begin{table}[H]
 \centering
@@ -55,19 +55,20 @@ Older or candidate register & Not added to the current register count & 128
 entries under 11 labels in a separate older sheet; not added to the current 35
 \\
 Original or current dataset files & 75 collected source or data files under the
-stated source-corpus definition & 50 files in \texttt{Datasets}: 41 XLSX and 9
-native Google Sheets \\
+stated source-corpus definition & 66 files in \texttt{Datasets}: 56 XLSX, 9
+native Google Sheets and 1 XLS \\
 Converted or extracted derivatives & 62 named extraction blocks from 9 loader
 files; broader formatted outputs are kept separate from original sources & 47
 CSV files in the separate converted collection \\
 Source mapping and support evidence & Resource register, mapping workbooks,
 exclusion records, source publications and quality logs & Resource workbook,
 cleaning-problem PDF and two search or browsing-history PDFs \\
-ER or model artifacts & Approved final ERD and implementation contract; no
+ER or model artifacts & Approved final ERD and schema definition file; no
 repository-total artifact count is used & 2 ER Diagram PNG files and 18
 individual-model JPEG files \\
-Files reaching an implementation & 9 structured files produce 62 blocks loaded
-into the final implementation & Not established from the supplied evidence \\
+Files reaching an implementation & 9 structured files produce 62 extracted
+source blocks processed by the pipeline & Not established from the supplied
+evidence \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -99,7 +100,7 @@ invent database row, key or integrity results.
 \toprule
 Criterion & Group-07 & Group-08 \\
 \midrule
-Model evidence & Approved final ERD plus a machine-readable schema contract &
+Model evidence & Approved final ERD plus a schema definition file &
 Latest integrated ERD plus 18 individual ER-model images \\
 Executable implementation & Supplied SQLite database and build or verification
 scripts & No executable database was found in the supplied or shared project
@@ -120,7 +121,7 @@ Topic-based original files, 47 CSV derivatives and documented cleaning examples
 \end{tabular}
 \end{table}
 
-Group-07's source audit also reads 3,717,305 candidate measurement cells,
+Group-07's source audit also reads 3,717,305 inspected source cells,
 identifies 268,835 missing or unusable cells, approximately 7.2\%, and records
 132,743 quality-problem occurrences across 50 classes. These values describe
 its own extraction audit and are not presented as a Group-08 comparison because

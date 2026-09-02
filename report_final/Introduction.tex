@@ -12,7 +12,7 @@ station names placed outside the data rows, and source-specific ways of marking
 missing readings. A person can infer these meanings from the page layout, but
 an extraction program needs them to be stated consistently.
 
-A person reads this without noticing the difficulty, a query cannot. The
+A person can interpret these layouts visually, but a query cannot. The
 question of what the mean maximum temperature in Bogura was in April 2019
 requires a machine to recognize alternate station spellings, identify the
 correct date column, and distinguish a missing reading from zero. Reliable
@@ -39,8 +39,8 @@ different ways.
 
 A normalized database removes that variance. Once the organisations' figures
 occupy one schema with one spelling per station and one notation for a missing
-value, the comparison becomes a query and the query returns the same answer to
-everyone who runs it.
+value, the same query can be evaluated against one consistent set of
+identifiers and stored values.
 
 \subsection{Problem Statement}
 \label{subsec:ps}
@@ -49,9 +49,10 @@ Three recurring problems shape the work.
 
 \begin{description}[leftmargin=1.15cm,style=nextline]
   \item[P1] The published form is not relational. Column groups repeat, headers
-  merge across cells and a row's identity can depend on a label above it. A
-  sheet in this form has no dependable primary key and violates first normal
-  form before any design decision is made.
+  merge across cells and a row's identity can depend on a label above it. If
+  loaded directly as a relation, this structure contains repeating groups and
+  does not satisfy First Normal Form. It also does not provide a dependable
+  candidate key.
   \item[P2] The same real entity carries several names. Station and place names
   differ in spelling, capitalization and abbreviation between publications.
   Missing values are also written as symbols, spreadsheet errors, words and
@@ -186,29 +187,35 @@ products are separated as follows.
 \subsection{Scope, Sources and Definitions}
 \label{subsec:sd}
 
-Source discovery covers Bangladeshi and international organisations. The final
-database uses nine approved structured files from Bangladesh Bureau of
-Statistics (BBS), Bangladesh Meteorological Department (BMD), Bangladesh Rice
+Source discovery covers Bangladeshi and international organisations. The
+processing pipeline uses nine selected structured files from Bangladesh Bureau
+of Statistics (BBS), Bangladesh Meteorological Department (BMD), Bangladesh Rice
 Research Institute (BRRI) and Bangladesh Water Development Board (BWDB)
 \cite{bbs_env_ts,bmd_temperature,brri_daily,bwdb_rivers}. The wider collection
 is retained as evidence even when a file cannot support the approved model.
 
-Table~\ref{tab:organisations} adapts the implemented-source profile to the
+Table~\ref{tab:organisations} adapts the selected-source profile to the
 verified Drive inventory. Collected files are source or data publications; the
-loaded count excludes support files and derived page images.
+pipeline-input count excludes support files and derived page images.
 
+\begingroup
+\setlength{\intextsep}{0pt}
 \begin{table}[H]
 \centering
-\caption{Implemented source profile within the collected file inventory}
+\captionsetup{aboveskip=2pt}
+\renewcommand{\arraystretch}{0.65}
+\setlength{\tabcolsep}{2pt}
+\caption{Selected source profile within the collected file inventory}
 \label{tab:organisations}
-\begin{tabular}{L{0.31\textwidth}r r L{0.38\textwidth}}
+\begin{tabular}{L{0.33\textwidth}r r L{0.36\textwidth}}
 \toprule
-Organisation & Collected & Loaded & Implemented material \\
+Organisation & Collected & Pipeline input & Selected material \\
 \midrule
 Bangladesh Bureau of Statistics (BBS) & 2 & 1 & Climate, water quality,
 forest and industrial statistics. \\
-Bangladesh Meteorological Department (BMD) & 11 & 2 & Station-based
-temperature and sunshine publications. \\
+Bangladesh Meteorological Department (BMD) & 11 & 2 & Temperature data and a
+sunshine publication; only the temperature records contribute loadable
+observations. \\
 Bangladesh Rice Research Institute (BRRI) & 9 & 5 & Daily temperature,
 rainfall, humidity and sunshine observations. \\
 Bangladesh Water Development Board (BWDB) & 4 & 1 & River names and
@@ -216,6 +223,8 @@ river-reference information. \\
 \bottomrule
 \end{tabular}
 \end{table}
+\vspace{-4pt}
+\endgroup
 
 Discovery also covers the Department of Environment, Ministry of Environment,
 Forest and Climate Change, Humanitarian Data Exchange, UNESCO, World Health
@@ -235,6 +244,6 @@ tables stacked vertically and each becomes a separate block.
 
 Sections~\ref{sec:projectmanagement}--\ref{sec:rga} cover management, Scrum and
 sprints; Sections~\ref{sec:data}--\ref{sec:dm} cover sources, ETL,
-normalization and modelling. Deployment, collaboration, findings and pedagogy
-are followed by the evidence-based resource comparison. The conclusion closes
-the numbered discussion, with the bibliography as the final report element.
+normalization and modelling. Deployment, collaboration, findings, pedagogy and
+the evidence-based resource comparison follow before the conclusion and
+bibliography.

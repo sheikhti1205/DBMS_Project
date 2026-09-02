@@ -52,8 +52,8 @@ stored at their published monthly, daily, yearly or fiscal grain. \\
 \centering
 \includegraphics[width=\linewidth,height=0.90\textheight,keepaspectratio]
   {Final_erd.png}
-\caption{Approved final Group-07 environmental ERD in BCNF. Source: the
-linked Group-07 Excalidraw drawing.}
+\caption{Approved final Group-07 environmental ERD in BCNF. Source: Group-07
+final Excalidraw drawing.}
 \label{fig:final-erd}
 \end{figure}
 \end{landscape}
@@ -175,7 +175,8 @@ grains & Composite foreign keys validate the relevant period. \\
 Nullable station district & \mUnmappedStations{} stations lack a supported
 mapping & Missing geography stays visible rather than being guessed. \\
 Water-quality station key & Retained monitoring-station names are unique after
-review & All \mWaterQualityConnected{} water-quality rows connect to a river. \\
+review & All \mWaterQualityConnected{} water-quality rows connect to a retained
+river or water-body reference. \\
 Separate categories from observations & Size and industry names do not vary
 with every fiscal record & Descriptive values are not repeated in period-based
 rows. \\

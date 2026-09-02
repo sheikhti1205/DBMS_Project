@@ -11,7 +11,7 @@ indexes and data in one file \cite{sqlite}. The current database is
 \label{subsec:deployment-layout}
 
 Table~\ref{tab:deployment-components} identifies the files and programs needed
-for a reproducible release.
+for a reproducible deployment.
 
 \begin{table}[H]
 \centering
@@ -55,8 +55,9 @@ database itself is cross-platform; only the command wrapper differs.
 \subsection{Final Database Verification}
 \label{subsec:release-gate}
 
-The final database is accepted only when the schema definition, CSV row counts and
-operational checks agree. Detailed competency questions and timings remain in
+The final database is accepted only when the schema definition, CSV row counts
+and verification checks match the expected results. Detailed competency
+questions and timings remain in
 Section~\ref{subsec:competency-query}; Table~\ref{tab:release-gate} records only
 the final deployment checks.
 
@@ -73,7 +74,8 @@ Loaded row total & \mDbRows{} & Pass \\
 SQLite integrity & \texttt{ok} & \texttt{\mDbIntegrity} \\
 Foreign-key violations & 0 & \mDbFkViolations{} \\
 Primary-key uniqueness and required values & No violations & Pass \\
-Competency questions & Meaningful results & Pass \\
+Competency questions & Defined competency queries execute and match the
+recorded expected results & Pass \\
 Clean rebuild content checksum & Matches delivered database & Pass \\
 Backup--restore content checksum & Matches delivered database & Pass \\
 Read-only distribution check & Writes rejected & Pass \\
@@ -120,7 +122,8 @@ SQLite's physical page layout.
   \item Publish the updated database only after all verification checks pass.
 \end{enumerate}
 
-SQLite remains a single-user course deployment. A future server migration would
+The current project uses SQLite as a local file-based deployment and does not
+provide authenticated multi-user access. A future server migration would
 need authentication, authorization, concurrency control and an operational
 backup schedule, but it should retain the same keys, source-traceability rules and
 competency questions.

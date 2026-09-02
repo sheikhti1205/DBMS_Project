@@ -81,9 +81,10 @@ stages without presenting the change as unexplained data loss.
 \subsubsection{Load and Verify}
 
 Reference and time relations are loaded before dependent observations.
-Headers must match the ERD contract and each field is converted to its declared
-SQLite type. The builder writes to a staging database, enables foreign keys and
-replaces the delivered file only after both SQLite checks pass.
+Headers must match the schema definition file and each field is converted to
+its declared SQLite type. The builder writes to a staging database, enables
+foreign keys and replaces the delivered file only after both SQLite checks
+pass.
 
 \begin{lstlisting}[language=Python,caption={Core guarded load used by the database builder},
 label={lst:etl-load}]
@@ -133,7 +134,7 @@ declared precedence and preserve both values in the conflict register. \\
 Missing relationship parent & A foreign key blocks the load & Confirm the
 source parent, add a supported reference row or exclude the child. \\
 Schema or header mismatch & Columns can enter the wrong target field & Stop before
-insertion when a BCNF CSV header differs from the contract. \\
+insertion when a BCNF CSV header differs from the schema definition file. \\
 Interrupted or failed build & A partial database could replace a good database &
 Build in a staging file and replace the working database only after the new
 database passes verification. \\
@@ -155,7 +156,7 @@ normalization and loaded stages.
 \toprule
 Stage & Relations/blocks & Rows & Meaning \\
 \midrule
-Extracted/offered & \mSourceBlocks{} & \mRowsOffered{} & Rows offered by the
+Source-reader output* & \mSourceBlocks{} & \mRowsOffered{} & Rows offered by the
 source-specific readers after required source-level aggregation. \\
 1NF & \mOneNFRels{} & \mOneNFRows{} & Atomic row-based observations,
 including the large daily series. \\
@@ -168,6 +169,11 @@ relations loaded. \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+The source-reader total is a separate extraction-accounting measure rather than
+the first normalization-stage row count. The 1NF total counts atomic
+observations after repeated spreadsheet structures are expanded, while later
+stages also apply decomposition, aggregation and conflict resolution.
 
 Row totals are not expected to decrease uniformly at every theoretical stage:
 decomposition can create reference rows while aggregation can collapse many

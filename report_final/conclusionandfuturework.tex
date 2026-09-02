@@ -23,6 +23,13 @@ and \mDbRows{} rows covering \mYearMin--\mYearMax. It can also serve as a
 starting point for later groups that may continue the environment-sector work
 in future academic sessions.
 
+The final ERD, schema definition, normalized outputs and SQLite database are
+checked against the same relation and key definitions. Automated tests rebuild
+the database, run integrity and foreign-key checks, execute the competency
+queries and compare backup-restored contents. The current database returns
+\texttt{\mDbIntegrity} for \texttt{PRAGMA integrity\_check} and
+\mDbFkViolations{} foreign-key violations.
+
 \subsection{Limitations and Future Work}
 \label{subsec:future}
 
@@ -87,7 +94,7 @@ The peer group did not provide an executable SQLite database. The reported
 competency evaluation therefore covers Group-07's implementation only. &
 No peer comparison is required for the present report. A later verified
 database could be tested with the same competency questions as separate work. \\
-Single-user SQLite deployment &
+Local file-based SQLite deployment &
 SQLite is suitable for the current portable course-project implementation but
 is not intended here for simultaneous authenticated multi-user access. &
 The normalized schema can later be migrated to a server database if multi-user
@@ -99,26 +106,18 @@ A simple web interface, dashboard or Application Programming Interface (API)
 can be built over the existing database. \\
 \end{longtable}
 
-\subsection{Verification Completed}
-\label{subsec:verification-completed}
-
-The approved final ERD, schema definition, normalized CSV headers and SQLite
-database are checked against the same relation and key definitions. Automated
-tests rebuild the database, run integrity and foreign-key checks, execute the
-competency queries and verify backup and restoration by comparing the restored
-database contents. The current database reports \mDbIntegrity{} for
-\texttt{PRAGMA integrity\_check} and \mDbFkViolations{} foreign-key violations.
-These checks are already implemented and are not being deferred as future work.
-
-If the project is continued by a future batch, the present database, final ERD,
-normalized structure, source records and verification files should be used as
-the starting point rather than rebuilding the environment-sector database from
-the beginning. Any new dataset should first be checked for source reliability,
-record grain, identifiers and compatibility with the existing model.
-
+\vspace{-24pt}
+\begingroup\setstretch{1.3}
 Future work should therefore focus mainly on extending the database where new
 evidence becomes available and improving the supporting tools around the
 existing structure. The extraction tests should also be updated whenever a
 publisher changes a workbook layout. This approach allows later groups to
 continue the project while preserving the consistency and source traceability
 established through the retained normalization and review files.
+
+If the project is continued by a future batch, the present database, final ERD,
+normalized structure, source records and verification files should be used as
+the starting point rather than rebuilding the environment-sector database from
+the beginning. Any new dataset should first be checked for source reliability,
+record grain, identifiers and compatibility with the existing model.
+\endgroup

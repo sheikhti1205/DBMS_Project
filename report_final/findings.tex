@@ -129,7 +129,8 @@ SQLite query in \texttt{report/measure.py}.}
 The final relationships support questions that the source files cannot answer
 without manual reconciliation. All \mWaterQualityConnected{}
 \texttt{Water\_Quality} rows join through \texttt{WQ\_Station\_Name} to
-\texttt{River\_Station} and from there to a river. Climate tables can be
+\texttt{River\_Station} and from there to a retained river or water-body
+reference. Climate tables can be
 combined at the shared station--year--month grain through the
 \texttt{Monthly\_Climate\_Summary} view. Forest observations connect to both a
 district and a valid fiscal-year span.
@@ -161,8 +162,10 @@ Field & Missing & Total & Missing share \\
 \end{tabular}
 \end{table}
 
-Missing values remain \texttt{NULL}; they are never replaced by zero. The most
-important geographic limitation is separate from the measurement table:
+Missing source measurements are never converted to zero. Missing values remain
+\texttt{NULL} where a retained row contains a nullable attribute, while
+observations with no usable measurement are not fabricated as database records.
+The most important geographic limitation is separate from the measurement table:
 \mUnmappedStations{} of 56 stations lack a supported district mapping.
 Their climate observations remain queryable by station but district-level
 analysis must disclose the reduced coverage.

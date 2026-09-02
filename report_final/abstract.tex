@@ -14,10 +14,12 @@ files from official and other dependable publishers, recording an exclusion
 reason for material that carries no shared key or falls outside the approved
 model, then selecting \mSourceFiles{} structured files and extracting
 \mSourceBlocks{} traceable data blocks from four Bangladeshi organisations.
-Reference registers and narrative publications are converted into structured
-form where they define headings, units or station identity. Subject diagrams
-drawn for individual datasets are consolidated into one integrated
-entity--relationship model. The retained material is then reshaped, reconciled
+Reference registers are structured where needed, while narrative publications
+remain supporting evidence for headings, units, methodology and source
+interpretation. Candidate entities
+identified from the reviewed source structures are compared and consolidated
+into one integrated Entity--Relationship model. The retained material is then
+reshaped, reconciled
 and normalized to Boyce--Codd Normal Form without estimating unavailable source
 values. The resulting SQLite database contains \mDbTables{} tables,
 \mDbViews{} views, \mDbColumns{} columns and \mDbRows{} rows covering
@@ -27,9 +29,10 @@ their different daily, monthly, yearly and fiscal-period grains. Competency
 queries, the final schema definition, primary- and foreign-key checks, a clean
 rebuild and a backup--restore comparison evaluate the database; SQLite returns
 \texttt{\mDbIntegrity} for the integrity check and \mDbFkViolations{}
-foreign-key violations. The database therefore replaces manual reconciliation
-across several spreadsheets with one query that returns the same answer to every
-reader, which supports comparison, teaching and further environmental research.
+foreign-key violations. The database therefore reduces manual name
+reconciliation across several spreadsheets: the same query can be evaluated
+against one consistent set of identifiers and stored values, which supports
+comparison, teaching and further environmental research.
 The principal costs are the volume of manual cleaning the published layouts
 demand, source values that disagree for the same key, uneven subject coverage
 between years and the absence of any automatic refresh: \mProblemTotal{}

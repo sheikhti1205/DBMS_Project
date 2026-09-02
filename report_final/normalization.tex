@@ -375,8 +375,9 @@ The normal forms provide a sequence of checks. First Normal Form requires
 atomic values and removes repeating groups. Second Normal Form checks whether
 every non-key attribute depends on the complete primary key. Third Normal Form
 removes dependencies between non-key attributes. Boyce--Codd Normal Form
-applies a stricter condition by requiring every determinant to be a candidate
-key \cite{kent1983five}.
+applies a stricter condition: for every non-trivial functional dependency
+\(X \rightarrow Y\), the determinant \(X\) is a superkey
+\cite{kent1983five}.
 
 The team applies these checks to the preliminary relations produced in the
 previous sections. The relations are checked in order because a relation must
@@ -425,7 +426,7 @@ Remove dependencies between non-key attributes};
 
 \node[stage, below=of nf3] (bcnf)
 {\textbf{Boyce--Codd Normal Form (BCNF)}\\
-Check that every determinant is a candidate key};
+Check that every non-trivial determinant is a superkey};
 
 \node[first, below=of bcnf] (final)
 {Final normalized relations};
@@ -715,18 +716,22 @@ After the decomposition, the well relation stores the district as a reference,
 but the subdivision is stored only once for that district. The non-key
 attribute Subdivision is therefore no longer repeated for every well.
 
-The groundwater-well data are later excluded because the approved final ERD
-has no groundwater entity. The records are nevertheless extracted and carried
-through 3NF, so this example documents the transitive-dependency check performed
-during schema refinement rather than a relation loaded into the final database.
+The team uses this candidate groundwater structure as a working 3NF example
+during schema refinement. The dataset is later excluded because the final ERD
+contains no groundwater relation. The example therefore documents the
+transitive-dependency check performed during schema refinement rather than a
+relation loaded into the final database.
 \subsection{Boyce--Codd Normal Form}
 \label{subsec:bcnf}
 
 \subsubsection{Theoretical Requirement}
 
 Boyce--Codd Normal Form applies a stricter rule than 3NF. A relation is in BCNF
-when every determinant is a candidate key \cite{codd1972further}. A determinant
-is an attribute, or a group of attributes, that determines another attribute.
+when, for every non-trivial functional dependency \(X \rightarrow Y\), \(X\) is a
+superkey \cite{codd1972further}. A determinant is an attribute, or a group of
+attributes, that determines another attribute. A candidate key is a minimal
+superkey, so the candidate keys identified for the project relations provide
+the superkeys checked at this stage.
 
 \subsubsection{Application to the Project}
 
@@ -765,8 +770,8 @@ After including Temperature Type, the functional dependency becomes:
 \textbf{Temperature} &
 \textbf{Meaning} \\
 \midrule
-Dinajpur & 2011 & 1 & 9.1  & Minimum \\
-Dinajpur & 2011 & 1 & 20.8 & Maximum \\
+Dinajpur & 2011 & 1 & 9.2  & Minimum \\
+Dinajpur & 2011 & 1 & 20.9 & Maximum \\
 \bottomrule
 \end{tabular}
 
@@ -789,8 +794,8 @@ Proposed key:
 \textbf{Type} &
 \textbf{Temperature} \\
 \midrule
-Dinajpur & 2011 & 1 & Minimum & 9.1 \\
-Dinajpur & 2011 & 1 & Maximum & 20.8 \\
+Dinajpur & 2011 & 1 & Minimum & 9.2 \\
+Dinajpur & 2011 & 1 & Maximum & 20.9 \\
 \bottomrule
 \end{tabular}
 
@@ -804,10 +809,15 @@ Final candidate key:
 
 Table~\ref{tab:bcnf-example} shows that station, year, and month cannot
 determine one temperature value because minimum and maximum values can occur
-for the same month. After Type is included, the complete determinant becomes
-a candidate key. This corrects an incomplete proposed key; it is not presented
-as a BCNF violation or decomposition. The BCNF test is applied only after the
-candidate keys have been established.
+for the same month. Temperature Type is therefore required. When several
+sources provide competing values for the same station, year, month and type,
+the documented source-precedence rule resolves the competing observations
+during reconciliation. After this reconciliation,
+\((Station\_Name, Year, Month, Type)\) uniquely identifies the retained
+temperature record and is used as the final primary key. This corrects an
+incomplete proposed key; it is not presented as a BCNF violation or
+decomposition. The BCNF test is applied only after the candidate keys have been
+established.
 
 The same check is carried out for the other final relations. Some examples are:
 \begin{gather*}
@@ -855,7 +865,7 @@ Station description separates from the yearly measured values. \\
 3NF & No non-key attribute depends on another non-key attribute &
 Subdivision depended on district rather than on the well &
 District detail is stored once and referenced by the well record. \\
-BCNF & Every determinant is a candidate key &
+BCNF & Every non-trivial determinant is a superkey &
 Station, year and month did not identify one temperature value &
 Temperature Type completes the candidate key before the BCNF test. \\
 \bottomrule
