@@ -53,6 +53,12 @@ class ErdContractTest(unittest.TestCase):
             ).splitlines()[0].split(",")
             self.assertEqual([column[0] for column in columns], header, table)
 
+    def test_committed_schema_sql_matches_generator(self) -> None:
+        committed = (
+            ROOT / "schema" / "scripts" / "setup" / "schema.sql"
+        ).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+        self.assertEqual(schema_model.schema_sql(), committed)
+
     def test_no_retired_domain_in_active_code_or_data(self) -> None:
         needles = ("ground" + "water", "ground_" + "water", "bwdb_" + "gw")
         suffixes = {".py", ".sql", ".json", ".md", ".csv", ".txt"}

@@ -18,6 +18,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from schema.scripts.common.schema_model import (
+    APPLICATION_ID,
     CSV_DIR,
     DEFAULT_DATABASE,
     DEFAULT_SQL,
@@ -28,9 +29,6 @@ from schema.scripts.common.schema_model import (
     schema_sql,
     source_fingerprint,
 )
-
-
-APPLICATION_ID = 0x42464F52  # BFOR
 
 
 def arguments() -> argparse.Namespace:

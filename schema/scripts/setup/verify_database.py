@@ -4,31 +4,37 @@ from __future__ import annotations
 
 import argparse
 import csv
-import hashlib
 import json
 import sqlite3
+import sys
 from collections import defaultdict
 from contextlib import closing
 from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from schema.scripts.common.schema_model import (
+    APPLICATION_ID,
+    CSV_DIR,
+    DEFAULT_DATABASE,
+    DEFAULT_SQL,
+    fingerprint_version,
+    quote,
+    schema_sql,
+    source_fingerprint,
+)
+
 CONTRACT_PATH = PROJECT_ROOT / "schema" / "erd_contract.json"
-DEFAULT_DATABASE = PROJECT_ROOT / "schema" / "environment.db"
-DEFAULT_CSV_DIR = PROJECT_ROOT / "normalization" / "csv" / "BCNF"
-DEFAULT_SQL = PROJECT_ROOT / "schema" / "scripts" / "setup" / "schema.sql"
 DEFAULT_REVIEW_DIR = PROJECT_ROOT / "normalization" / "review"
-APPLICATION_ID = 0x42464F52
-
-
-def quote(name: str) -> str:
-    return '"' + name.replace('"', '""') + '"'
 
 
 def arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--database", type=Path, default=DEFAULT_DATABASE)
-    parser.add_argument("--csv-dir", type=Path, default=DEFAULT_CSV_DIR)
+    parser.add_argument("--csv-dir", type=Path, default=CSV_DIR)
     parser.add_argument("--contract", type=Path, default=CONTRACT_PATH)
     parser.add_argument("--schema-sql", type=Path, default=DEFAULT_SQL)
     parser.add_argument("--review-dir", type=Path, default=DEFAULT_REVIEW_DIR)
@@ -50,14 +56,8 @@ def csv_row_count(path: Path) -> int:
         return sum(1 for _ in reader)
 
 
-def expected_version(contract: dict[str, object], csv_dir: Path, schema_sql: Path) -> int:
-    schema_data = schema_sql.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
-    digest = hashlib.sha256(schema_data)
-    for table in contract["tables"]:
-        digest.update(table.encode("utf-8"))
-        data = (csv_dir / f"{table}.csv").read_bytes()
-        digest.update(data.replace(b"\r\n", b"\n").replace(b"\r", b"\n"))
-    return int(digest.hexdigest()[:8], 16) & 0x7FFFFFFF
+def expected_version(csv_dir: Path) -> int:
+    return fingerprint_version(source_fingerprint(csv_dir))
 
 
 def actual_relationships(
@@ -146,7 +146,7 @@ def verify(
     connection: sqlite3.Connection,
     csv_dir: Path,
     contract: dict[str, object],
-    schema_sql: Path,
+    schema_path: Path,
     review_dir: Path,
 ) -> tuple[list[str], int]:
     problems: list[str] = []
@@ -215,13 +215,26 @@ def verify(
             if fragment not in normalized:
                 problems.append(f"{table} is missing required check fragment: {fragment}")
 
-    version = expected_version(contract, csv_dir, schema_sql)
+    version = expected_version(csv_dir)
     actual_version = (scalar(connection, "PRAGMA application_id"), scalar(connection, "PRAGMA user_version"))
     if actual_version != (APPLICATION_ID, version):
         problems.append("database fingerprint does not match the current schema and CSV files")
 
+    committed_schema = (
+        schema_path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    )
+    if committed_schema != schema_sql():
+        problems.append(
+            "schema.sql is out of sync with the canonical model; "
+            "run build_database --replace to regenerate it"
+        )
+
     quality_checks = {
-        "invalid calendar dates": "SELECT COUNT(*) FROM Day_Time WHERE date(printf('%04d-%02d-%02d', Year, Month, Day)) IS NULL",
+        "invalid calendar dates": """
+            SELECT COUNT(*) FROM Day_Time WHERE
+            strftime('%Y-%m-%d', printf('%04d-%02d-%02d', Year, Month, Day))
+            <> printf('%04d-%02d-%02d', Year, Month, Day)
+        """,
         "invalid fiscal spans": "SELECT COUNT(*) FROM Fiscal_Year WHERE End_Year <> Start_Year + 1",
         "invalid temperature types": "SELECT COUNT(*) FROM Temperature_Record WHERE Type NOT IN ('Maximum','Minimum')",
         "invalid wind types": "SELECT COUNT(*) FROM Wind_Record WHERE Type NOT IN ('Maximum','Minimum')",

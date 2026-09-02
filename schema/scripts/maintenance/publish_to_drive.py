@@ -75,6 +75,26 @@ def same_file(source: Path, target: Path) -> bool:
     return target.is_file() and source.stat().st_size == target.stat().st_size and digest(source) == digest(target)
 
 
+def table_digests(
+    connection: sqlite3.Connection, tables: list[str]
+) -> tuple[tuple[str, str], ...]:
+    digests: list[tuple[str, str]] = []
+    for name in tables:
+        quoted = name.replace('"', '""')
+        key_columns = [
+            row[1]
+            for row in connection.execute(f'PRAGMA table_info("{quoted}")')
+            if row[5]
+        ]
+        order = ", ".join(f'"{column}"' for column in key_columns)
+        digest = hashlib.sha256()
+        statement = f'SELECT * FROM "{quoted}"' + (f" ORDER BY {order}" if order else "")
+        for row in connection.execute(statement):
+            digest.update(repr(row).encode("utf-8"))
+        digests.append((name, digest.hexdigest()))
+    return tuple(digests)
+
+
 def database_signature(path: Path) -> tuple[object, ...] | None:
     if not path.is_file():
         return None
@@ -92,16 +112,18 @@ def database_signature(path: Path) -> tuple[object, ...] | None:
                 )
             )
             tables = [name for kind, name in objects if kind == "table"]
-            counts = []
-            for name in tables:
-                quoted = name.replace('"', '""')
-                count = connection.execute(f'SELECT COUNT(*) FROM "{quoted}"').fetchone()[0]
-                counts.append((name, count))
+            view_definitions = tuple(
+                connection.execute(
+                    "SELECT name, sql FROM sqlite_master "
+                    "WHERE type = 'view' ORDER BY name"
+                )
+            )
             return (
                 connection.execute("PRAGMA application_id").fetchone()[0],
                 connection.execute("PRAGMA user_version").fetchone()[0],
                 objects,
-                tuple(counts),
+                view_definitions,
+                table_digests(connection, tables),
             )
     except (OSError, sqlite3.Error):
         return None

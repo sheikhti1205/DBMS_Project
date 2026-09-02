@@ -2,19 +2,23 @@
 
 from __future__ import annotations
 
-import re
 import csv
 import math
 import sqlite3
+import sys
 import unittest
 from contextlib import closing
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from schema.scripts.queries.query_database import load_queries
+
 DATABASE = ROOT / "schema" / "environment.db"
 QUERY_FILE = ROOT / "schema" / "scripts" / "queries" / "queries.sql"
-MARKER = re.compile(r"^-- name: ([a-z][a-z0-9_-]*)\s*$", re.MULTILINE)
 
 EXPECTED_COLUMNS = {
     "climate": ["Station_Name", "Year", "Month", "Maximum_Temperature", "Minimum_Temperature", "Humidity", "Rainfall", "Thunderstorm", "Lightning"],
@@ -33,17 +37,8 @@ EXPECTED_COLUMNS = {
 }
 
 
-def load_queries() -> dict[str, str]:
-    text = QUERY_FILE.read_text(encoding="utf-8")
-    matches = list(MARKER.finditer(text))
-    result: dict[str, str] = {}
-    for index, match in enumerate(matches):
-        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
-        body = text[match.end():end]
-        result[match.group(1)] = "\n".join(
-            line for line in body.splitlines() if not line.lstrip().startswith("--")
-        ).strip()
-    return result
+def queries_from_file() -> dict[str, str]:
+    return load_queries(QUERY_FILE)
 
 
 class DatabaseAuditTest(unittest.TestCase):
@@ -57,7 +52,7 @@ class DatabaseAuditTest(unittest.TestCase):
         cls.connection.close()
 
     def test_every_named_query_has_expected_columns(self) -> None:
-        queries = load_queries()
+        queries = queries_from_file()
         self.assertEqual(set(EXPECTED_COLUMNS), set(queries))
         for name, expected in EXPECTED_COLUMNS.items():
             with self.subTest(query=name):

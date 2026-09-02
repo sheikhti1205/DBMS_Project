@@ -17,7 +17,7 @@ The WSL checkout is the coding source of truth and the only Git repository. Goog
 
 ## Automatic setup
 
-The launchers look for Python 3.10 or newer and confirm that its built-in SQLite support works. If Python, venv, pip, or the pinned project packages are missing, setup explains what it needs and asks before installing system or project packages. The private Python environment stays outside the project folder. A separate SQLite command-line installation is not required.
+The launchers look for Python 3.10 or newer and confirm that its built-in SQLite support works. If Python, venv, pip, or the pinned project packages are missing, setup explains what it needs and asks before installing system or project packages. The private Python environment stays outside the project folder, under `~/.cache/byteforge-dbms` on Linux/macOS or `%USERPROFILE%\.byteforge\dbms_project` on Windows. Setting the `BYTEFORGE_ENV` environment variable moves it; every command example below assumes the default location. The pipeline needs only Python's built-in SQLite module — no separate SQLite installation is required. On Linux, when the `sqlite3` command-line tool is missing, setup also asks whether to install it, because the VS Code tasks that run `.sql` files directly use that tool.
 
 Windows:
 
@@ -37,7 +37,7 @@ Each launcher creates a private environment outside the project folder, installs
 
 ## VS Code on WSL
 
-Open the GitHub project folder through **WSL: Fedora**. The workspace recommends and configures Code Runner, SQLTools, the SQLite driver, and ShellCheck. The Run Code button executes `.sh` files with Bash and runs `.sql` files read-only against `schema/environment.db`; `schema.sql` is checked in an in-memory database. SQLTools includes a ready connection named `ByteForge SQLite`. The same commands are available under **Terminal > Run Task**.
+Open the GitHub project folder through **WSL: Fedora**. The workspace recommends and configures Code Runner, SQLTools, the SQLite driver, and ShellCheck. The **Run Code** button executes `.sh` files with Bash. To run SQL without changing the database, use **Terminal > Run Task > ByteForge: Run current SQL file read-only** (runs the active `.sql` file against `schema/environment.db`) or **ByteForge: Validate schema SQL** (checks `schema.sql` in an in-memory database); both tasks need the `sqlite3` command-line tool. SQLTools includes a ready connection named `ByteForge SQLite`.
 
 ## Query the database
 
@@ -65,8 +65,18 @@ Every query command opens the database read-only. Saved examples cover table cou
 
 Refresh the canonical competency evidence after an intentional database or query change:
 
+Linux, WSL, or macOS:
+
 ```bash
-python3 -B -m schema.scripts.queries.benchmark_database
+PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
+"$PYTHON" -B -m schema.scripts.queries.benchmark_database
+```
+
+Windows PowerShell:
+
+```powershell
+$python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
+& $python -B -m schema.scripts.queries.benchmark_database
 ```
 
 The benchmark is written to `schema/validation/competency/benchmark.json` by default.
@@ -117,13 +127,15 @@ The workbook is generated as `normalization/Environmental_Normalization_0NF_to_B
 Check for differences:
 
 ```bash
-python3 -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project"
+PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
+"$PYTHON" -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project"
 ```
 
 Apply the checked update:
 
 ```bash
-python3 -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project" --apply
+PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
+"$PYTHON" -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project" --apply
 ```
 
 Publishing manages only `ERD`, `normalization`, `schema`, the launchers, and `requirements.txt`; it also removes the retired root-level `exclusions/` copy from an older Drive mirror. It never changes `report/` or `Selected_Source_Files/` and never copies Git metadata or this README to Drive.

@@ -17,6 +17,8 @@ DEFAULT_COMPETENCY_BENCHMARK = (
     SCHEMA_DIR / "validation" / "competency" / "benchmark.json"
 )
 
+APPLICATION_ID = 0x42464F52  # "BFOR" used as the SQLite application_id marker
+
 
 # Column order is also the required CSV header order.
 TABLES: dict[str, tuple[tuple[str, str], ...]] = {
