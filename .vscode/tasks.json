@@ -64,7 +64,7 @@
         "-lc",
         "sqlite3 -header -column ':memory:' < \"$1\"",
         "_",
-        "${workspaceFolder}/schema/scripts/setup/schema.sql"
+        "${workspaceFolder}/schema/sql/schema.sql"
       ],
       "options": {
         "cwd": "${workspaceFolder}"

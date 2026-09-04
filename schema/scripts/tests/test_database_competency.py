@@ -13,9 +13,9 @@ from contextlib import closing
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 DATABASE = ROOT / "schema" / "environment.db"
-CONTRACT = ROOT / "schema" / "erd_contract.json"
+CONTRACT = ROOT / "schema" / "scripts" / "erd_contract.json"
 
 
 def quote(identifier: str) -> str:

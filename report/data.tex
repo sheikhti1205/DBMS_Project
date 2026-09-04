@@ -131,11 +131,11 @@ included in the register. Where file metadata does not identify an author or
 creator the register reports Not identified, and each printed source file name
 links to the corresponding file in the shared project Drive folder.
 
-\input{generated/used_source_files}
+\input{scripts/generated/used_source_files}
 
-\input{generated/official_source_register}
+\input{scripts/generated/official_source_register}
 
-\input{generated/unofficial_source_register}
+\input{scripts/generated/unofficial_source_register}
 
 \subsection{Environmental Data Categories}
 \label{subsec:data-categories}
@@ -393,10 +393,10 @@ parameter while forest and industrial tables use fiscal spans.
   bar width=5pt
 ]
 \addplot+[draw=none,fill=none]
-  table[x=start,y=relation] {generated/time_coverage.dat};
+  table[x=start,y=relation] {scripts/generated/time_coverage.dat};
 \addplot+[draw=cublue,fill=cublue!55]
   table[x expr=\thisrow{end}-\thisrow{start},y=relation]
-  {generated/time_coverage.dat};
+  {scripts/generated/time_coverage.dat};
 \end{axis}
 \end{tikzpicture}
 \caption{Observed time span by implemented record family. Source: the database
@@ -477,7 +477,7 @@ count.
 \toprule
 File type & Files \\
 \midrule
-\inputrows{generated/source_file_types.tex}
+\inputrows{scripts/generated/source_file_types.tex}
 \bottomrule
 \end{tabular}
 \end{table}
@@ -504,7 +504,7 @@ given separately in Table~\ref{tab:drive-source-inventory}.
   fill=cublue!35,
   draw=cublue
 ]
-\addplot table[x=collected,y=source]{generated/source_inventory.dat};
+\addplot table[x=collected,y=source]{scripts/generated/source_inventory.dat};
 \end{axis}
 \end{tikzpicture}
 \caption{Distribution of collected source or data files by source family.

@@ -27,7 +27,7 @@ from schema.scripts.common.schema_model import (
     source_fingerprint,
 )
 
-CONTRACT_PATH = PROJECT_ROOT / "schema" / "erd_contract.json"
+CONTRACT_PATH = PROJECT_ROOT / "schema" / "scripts" / "erd_contract.json"
 DEFAULT_REVIEW_DIR = PROJECT_ROOT / "normalization" / "review"
 
 

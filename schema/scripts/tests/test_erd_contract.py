@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 
 from schema.scripts.common import schema_model
@@ -16,7 +16,7 @@ class ErdContractTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.contract = json.loads(
-            (ROOT / "schema" / "erd_contract.json").read_text(encoding="utf-8")
+            (ROOT / "schema" / "scripts" / "erd_contract.json").read_text(encoding="utf-8")
         )
 
     def test_contract_has_expected_shape(self) -> None:
@@ -55,7 +55,7 @@ class ErdContractTest(unittest.TestCase):
 
     def test_committed_schema_sql_matches_generator(self) -> None:
         committed = (
-            ROOT / "schema" / "scripts" / "setup" / "schema.sql"
+            ROOT / "schema" / "sql" / "schema.sql"
         ).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
         self.assertEqual(schema_model.schema_sql(), committed)
 

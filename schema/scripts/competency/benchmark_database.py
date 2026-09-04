@@ -27,7 +27,7 @@ def arguments() -> argparse.Namespace:
         "--output",
         type=Path,
         default=DEFAULT_COMPETENCY_BENCHMARK,
-        help="machine-readable evidence path (default: schema/validation/competency/benchmark.json)",
+        help="machine-readable evidence path (default: schema/scripts/competency/benchmark.json)",
     )
     return parser.parse_args()
 

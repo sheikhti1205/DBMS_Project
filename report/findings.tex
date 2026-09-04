@@ -24,7 +24,7 @@ minimum observation count.
   legend style={at={(0.5,-0.18)},anchor=north}
 ]
 \addplot+[cublue,thick,mark=none]
-  table[x=year,y=value]{generated/annual_temperature.dat};
+  table[x=year,y=value]{scripts/generated/annual_temperature.dat};
 \legend{Years with at least 100 loaded observations}
 \end{axis}
 \end{tikzpicture}
@@ -59,7 +59,7 @@ comparison.
   xmin=1947,xmax=2025
 ]
 \addplot+[cuteal,thick,mark=none]
-  table[x=year,y=value]{generated/annual_rainfall.dat};
+  table[x=year,y=value]{scripts/generated/annual_rainfall.dat};
 \end{axis}
 \end{tikzpicture}
 \caption{Annual mean of non-null monthly rainfall observations. Source:
@@ -82,7 +82,7 @@ measurements}
 \toprule
 Station & Measurements & Average (mm) & Maximum (mm) \\
 \midrule
-\inputrows{generated/rainfall_ranking.tex}
+\inputrows{scripts/generated/rainfall_ranking.tex}
 \bottomrule
 \end{tabular}
 \end{table}
@@ -115,7 +115,7 @@ not the environmental importance of a parameter.
   draw=cuteal
 ]
 \addplot table[x=records,y=parameter]
-  {generated/water_quality_parameters.dat};
+  {scripts/generated/water_quality_parameters.dat};
 \end{axis}
 \end{tikzpicture}
 \caption{Loaded water-quality observations by parameter. Source: reproducible
@@ -157,7 +157,7 @@ from the separate station-geography limitation.
 \toprule
 Field & Missing & Total & Missing share \\
 \midrule
-\inputrows{generated/missing_measurements.tex}
+\inputrows{scripts/generated/missing_measurements.tex}
 \bottomrule
 \end{tabular}
 \end{table}

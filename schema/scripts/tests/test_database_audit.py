@@ -11,14 +11,14 @@ from contextlib import closing
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from schema.scripts.queries.query_database import load_queries
 
 DATABASE = ROOT / "schema" / "environment.db"
-QUERY_FILE = ROOT / "schema" / "scripts" / "queries" / "queries.sql"
+QUERY_FILE = ROOT / "schema" / "sql" / "queries.sql"
 
 EXPECTED_COLUMNS = {
     "climate": ["Station_Name", "Year", "Month", "Maximum_Temperature", "Minimum_Temperature", "Humidity", "Rainfall", "Thunderstorm", "Lightning"],

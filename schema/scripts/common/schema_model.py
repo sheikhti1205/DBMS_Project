@@ -10,11 +10,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 SCHEMA_DIR = PROJECT_ROOT / "schema"
 CSV_DIR = PROJECT_ROOT / "normalization" / "csv" / "BCNF"
 DEFAULT_DATABASE = SCHEMA_DIR / "environment.db"
-DEFAULT_SQL = SCHEMA_DIR / "scripts" / "setup" / "schema.sql"
-DEFAULT_QUERY_FILE = SCHEMA_DIR / "scripts" / "queries" / "queries.sql"
+DEFAULT_SQL = SCHEMA_DIR / "sql" / "schema.sql"
+DEFAULT_QUERY_FILE = SCHEMA_DIR / "sql" / "queries.sql"
 DEFAULT_BACKUP_DIR = SCHEMA_DIR / "backups"
 DEFAULT_COMPETENCY_BENCHMARK = (
-    SCHEMA_DIR / "validation" / "competency" / "benchmark.json"
+    SCHEMA_DIR / "scripts" / "competency" / "benchmark.json"
 )
 
 APPLICATION_ID = 0x42464F52  # "BFOR" used as the SQLite application_id marker

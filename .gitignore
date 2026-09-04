@@ -28,10 +28,7 @@ __pycache__/
 *.toc
 *.xdv
 
-# Generated report measurements
-/CLEANUP_REPORT.md
-/report/generated/*
-!/report/generated/measured.tex
+# Generated report measurements are committed under report/scripts/generated/.
 
 # Local tooling
 /.agents/
@@ -43,6 +40,11 @@ __pycache__/
 /schema/backups/
 tempCodeRunnerFile.*
 
+# Local-only convenience tools (Drive publishing, interactive demo); not part
+# of the delivered evidence or the GitHub source of truth.
+/schema/scripts/maintenance/publish_to_drive.py
+/schema/scripts/queries/demo_database.py
+
 # Local symlink to the shared Drive folder that holds the original workbooks.
 # The normalization pipeline reads through it; the target path is per-machine,
 # so the link itself must not be committed.
@@ -50,12 +52,13 @@ tempCodeRunnerFile.*
 
 # Keep the coding repository free of report copies and old working versions
 /deliverables/
-/report/
 /report_v*/
 /report_versions/
-/report_final/main.pdf
 /work/
 /work_v*/
+
+# Compiled report output (source and generated evidence are committed)
+/report/main.pdf
 /*.zip
 
 # Internal process notes and review documents are kept locally, never pushed.

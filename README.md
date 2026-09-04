@@ -8,10 +8,11 @@ ByteForge Scrum Group 07 normalized the selected environmental records and loade
 - `normalization/` contains the generated workbook, normalization CSVs, statistics, data-quality log, exclusion evidence, and its `scripts/` folder.
 - `schema/environment.db` is the ready-to-query SQLite database.
 - `schema/scripts/setup/` builds and verifies the database.
-- `schema/scripts/queries/` contains the read-only query tool, saved SQL, and demonstration.
-- `schema/validation/competency/` preserves the machine-readable competency benchmark evidence.
+- `schema/scripts/queries/` contains the read-only query tool and demonstration.
+- `schema/sql/` holds the committed SQL: `schema.sql`, the saved `queries.sql`, and the `complete_data/` reports.
+- `schema/scripts/competency/` keeps the machine-readable competency benchmark evidence.
 - `schema/scripts/maintenance/` contains backup, restore, and Drive-publishing tools.
-- `schema/tests/` contains the database, ERD, setup, and competency acceptance tests.
+- `schema/scripts/tests/` contains the database, ERD, setup, and competency acceptance tests.
 
 The WSL checkout is the coding source of truth and the only Git repository. Google Drive is a non-Git project mirror containing the selected sources and the report workspace.
 
@@ -69,17 +70,17 @@ Linux, WSL, or macOS:
 
 ```bash
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
-"$PYTHON" -B -m schema.scripts.queries.benchmark_database
+"$PYTHON" -B -m schema.scripts.competency.benchmark_database
 ```
 
 Windows PowerShell:
 
 ```powershell
 $python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
-& $python -B -m schema.scripts.queries.benchmark_database
+& $python -B -m schema.scripts.competency.benchmark_database
 ```
 
-The benchmark is written to `schema/validation/competency/benchmark.json` by default.
+The benchmark is written to `schema/scripts/competency/benchmark.json` by default.
 
 ## Backup and restore
 
