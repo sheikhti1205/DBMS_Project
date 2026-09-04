@@ -1,24 +1,62 @@
 # Bangladesh Environmental Data Integration
 
-ByteForge Scrum Group 07 normalized the selected environmental records and loaded the final BCNF relations into SQLite. The final ERD in `ERD/` is the authority for the database structure.
+ByteForge Scrum Group 07 normalised selected environmental records for
+Bangladesh into BCNF relations and loaded them into a SQLite database. The
+final ERD in `ERD/` is the authority for the database structure. The report is
+written in LaTeX under `report/` and the database is reproducible from the
+committed sources.
+
+## Reviewer Quick Access
+
+- **Final report (PDF):** [`Group-07_Environmental_DBMS_Final_Report.pdf`](
+  https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q
+  ) in the public source folder
+- **Collected source files (public Drive folder):**
+  [Selected_Source_Files](https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q)
+- **Complete source register with original URLs:**
+  [Team-7_BD_Environment_Data_Resources.xlsx](https://drive.google.com/file/d/1UB5vrVxfrtvFXZUDgvV4bsBDaMcvC2sw/view)
+- **Final ERD:** [`ERD/Final_ERD.png`](ERD/Final_ERD.png)
+- **SQLite database:** [`schema/environment.db`](schema/environment.db)
+- **Normalization evidence:** [`normalization/`](normalization/)
+- **Database verification:**
+  [`schema/scripts/setup/verify_database.py`](schema/scripts/setup/verify_database.py)
+
+Verify the delivered database (read-only; checks tables, relationships, views,
+rows and the ERD contract):
+
+```bash
+python3 -B -m schema.scripts.setup.verify_database
+```
 
 ## Project layout
 
-- `ERD/Final_ERD.png` is the report ERD used by the active database. Old diagrams are isolated in `ERD/discarded_do_not_use/`.
-- `normalization/` contains the generated workbook, normalization CSVs, statistics, data-quality log, exclusion evidence, and its `scripts/` folder.
-- `schema/environment.db` is the ready-to-query SQLite database.
-- `schema/scripts/setup/` builds and verifies the database.
-- `schema/scripts/queries/` contains the read-only query tool and demonstration.
-- `schema/sql/` holds the committed SQL: `schema.sql`, the saved `queries.sql`, and the `complete_data/` reports.
-- `schema/scripts/competency/` keeps the machine-readable competency benchmark evidence.
-- `schema/scripts/maintenance/` contains backup, restore, and Drive-publishing tools.
-- `schema/scripts/tests/` contains the database, ERD, setup, and competency acceptance tests.
+- `ERD/Final_ERD.png` — final ERD used by the active database. Discarded
+  designs are under `ERD/discarded_do_not_use/`.
+- `normalization/` — generated workbook, normalization CSVs, statistics,
+  data-quality log, exclusion evidence and its scripts.
+- `schema/environment.db` — the ready-to-query SQLite database.
+- `schema/sql/` — committed SQL: `schema.sql`, saved `queries.sql`, and
+  `complete_data/`.
+- `schema/scripts/` — Python tooling: `setup/` builds and verifies the
+  database, `queries/` runs the saved queries, `competency/` regenerates the
+  benchmark evidence, `maintenance/` backs up and restores, `tests/` holds the
+  acceptance tests.
+- `report/` — LaTeX report sources and build; compiled PDFs are not committed.
+- `MySQL/` — a MariaDB/MySQL clone of the database with parity checks.
+- `Selected_Source_Files/` and the source workbooks live on Google Drive, not
+  in this repository.
 
-The WSL checkout is the coding source of truth and the only Git repository. Google Drive is a non-Git project mirror containing the selected sources and the report workspace.
+The Git repository is the source of truth. Google Drive keeps a synced copy of
+the project and the original collected files for the reviewers.
 
 ## Automatic setup
 
-The launchers look for Python 3.10 or newer and confirm that its built-in SQLite support works. If Python, venv, pip, or the pinned project packages are missing, setup explains what it needs and asks before installing system or project packages. The private Python environment stays outside the project folder, under `~/.cache/byteforge-dbms` on Linux/macOS or `%USERPROFILE%\.byteforge\dbms_project` on Windows. Setting the `BYTEFORGE_ENV` environment variable moves it; every command example below assumes the default location. The pipeline needs only Python's built-in SQLite module — no separate SQLite installation is required. On Linux, when the `sqlite3` command-line tool is missing, setup also asks whether to install it, because the VS Code tasks that run `.sql` files directly use that tool.
+The launchers look for Python 3.10 or newer and use only its built-in SQLite
+module. The private Python environment lives outside the project folder: on
+Linux/macOS `~/.cache/byteforge-dbms`, on Windows
+`%USERPROFILE%\.byteforge\dbms_project` (override with `BYTEFORGE_ENV`). Setup
+asks before installing missing system or project packages and before replacing
+an existing database.
 
 Windows:
 
@@ -26,23 +64,29 @@ Windows:
 setup_windows.bat
 ```
 
-Linux, WSL, or macOS:
+Linux, WSL or macOS:
 
 ```bash
 ./setup_linux.sh
 ```
 
-For an unattended installation, use `setup_windows.bat /yes` or `./setup_linux.sh --yes`. Add `/replace` on Windows or `--replace` on Linux only when the existing database should be replaced. Linux supports apt, dnf, microdnf, yum, pacman, zypper, and apk; Homebrew is also recognized on macOS. System package installation may ask for the computer's administrator password. Declining an installation stops setup without rebuilding the database.
-
-Each launcher creates a private environment outside the project folder, installs the pinned packages, prepares `schema/environment.db`, verifies the final ERD structure, and runs the sample demonstration. A current database is kept on later runs. A different database asks before replacement unless the explicit replacement option is used.
+For an unattended run add `/yes` (Windows) or `--yes` (Linux/macOS). Add
+`/replace` or `--replace` only when the existing database should be rebuilt.
+Each launcher prepares `schema/environment.db`, verifies the ERD structure and
+runs the sample demonstration.
 
 ## VS Code on WSL
 
-Open the GitHub project folder through **WSL: Fedora**. The workspace recommends and configures Code Runner, SQLTools, the SQLite driver, and ShellCheck. The **Run Code** button executes `.sh` files with Bash. To run SQL without changing the database, use **Terminal > Run Task > ByteForge: Run current SQL file read-only** (runs the active `.sql` file against `schema/environment.db`) or **ByteForge: Validate schema SQL** (checks `schema.sql` in an in-memory database); both tasks need the `sqlite3` command-line tool. SQLTools includes a ready connection named `ByteForge SQLite`.
+Open the project folder through your WSL distribution. The workspace
+recommends Code Runner, SQLTools, the SQLite driver and ShellCheck. To run a
+`.sql` file without changing the database use **Terminal > Run Task >
+ByteForge: Run current SQL file read-only**; to check the committed schema use
+**ByteForge: Validate schema SQL**. Both tasks need the `sqlite3` command-line
+tool. SQLTools provides a ready connection named `ByteForge SQLite`.
 
 ## Query the database
 
-Windows:
+Windows PowerShell:
 
 ```powershell
 $python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
@@ -52,7 +96,7 @@ $python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
 & $python -B -m schema.scripts.queries.query_database run "SELECT COUNT(*) AS Records FROM Water_Quality"
 ```
 
-Linux, WSL, or macOS:
+Linux, WSL or macOS:
 
 ```bash
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
@@ -62,29 +106,20 @@ PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
 "$PYTHON" -B -m schema.scripts.queries.query_database run "SELECT COUNT(*) AS Records FROM Water_Quality"
 ```
 
-Every query command opens the database read-only. Saved examples cover table counts, relationships, time coverage, climate, rainfall, rivers, water quality, forests, wastewater, missing measurements, integrity, and foreign keys.
+Every query runs read-only. Saved examples cover counts, relationships, time
+coverage, climate, rainfall, rivers, water quality, forests, wastewater,
+missing measurements, integrity and foreign keys.
 
-Refresh the canonical competency evidence after an intentional database or query change:
-
-Linux, WSL, or macOS:
+Refresh the competency benchmark evidence only after an intentional change:
 
 ```bash
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
 "$PYTHON" -B -m schema.scripts.competency.benchmark_database
 ```
 
-Windows PowerShell:
-
-```powershell
-$python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
-& $python -B -m schema.scripts.competency.benchmark_database
-```
-
-The benchmark is written to `schema/scripts/competency/benchmark.json` by default.
+The result is written to `schema/scripts/competency/benchmark.json`.
 
 ## Backup and restore
-
-Backups and restores remain separate from setup.
 
 ```bash
 PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
@@ -92,11 +127,13 @@ PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
 "$PYTHON" -B -m schema.scripts.maintenance.restore_database schema/backups/environment_YYYYMMDD_HHMMSS.db --replace
 ```
 
-Backups are written under `schema/backups/` and are not committed or copied during Drive publishing.
+Backups land under `schema/backups/` and are not committed.
 
 ## Refresh normalization outputs
 
-The selected source files remain in Google Drive. In the Drive project, the scripts find `Selected_Source_Files/` automatically. In another checkout, set `DBMS_SOURCE_DIR` to that folder.
+The original source files stay on Google Drive under `Selected_Source_Files/`;
+the scripts find them automatically when run inside the Drive project folder.
+In any other checkout set `DBMS_SOURCE_DIR` to that folder.
 
 Windows PowerShell:
 
@@ -109,7 +146,7 @@ $python = "$env:USERPROFILE\.byteforge\dbms_project\venv\Scripts\python.exe"
 & $python -B -m schema.scripts.setup.verify_database
 ```
 
-Linux, WSL, or macOS:
+Linux, WSL or macOS:
 
 ```bash
 export DBMS_SOURCE_DIR="/path/to/DBMS_Project/Selected_Source_Files"
@@ -121,22 +158,8 @@ PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
 "$PYTHON" -B -m schema.scripts.setup.verify_database
 ```
 
-The workbook is generated as `normalization/Environmental_Normalization_0NF_to_BCNF.xlsx`. Human review decisions are summarized in `normalization/DATA_REVIEW.md`, with supporting CSV files in `normalization/review/`. The database importer reads all final BCNF CSV files and enforces the 21 tables and 28 relationships defined by the final ERD.
-
-## Publish the verified files to Drive
-
-Check for differences:
-
-```bash
-PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
-"$PYTHON" -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project"
-```
-
-Apply the checked update:
-
-```bash
-PYTHON="${XDG_CACHE_HOME:-$HOME/.cache}/byteforge-dbms/venv/bin/python"
-"$PYTHON" -B schema/scripts/maintenance/publish_to_drive.py --drive "/path/to/Drive/DBMS_Project" --apply
-```
-
-Publishing manages only `ERD`, `normalization`, `schema`, the launchers, and `requirements.txt`; it also removes the retired root-level `exclusions/` copy from an older Drive mirror. It never changes `report/` or `Selected_Source_Files/` and never copies Git metadata or this README to Drive.
+The workbook is generated as
+`normalization/Environmental_Normalization_0NF_to_BCNF.xlsx`. Review decisions
+are recorded in `normalization/DATA_REVIEW.md` with supporting files under
+`normalization/review/`. The importer reads the final BCNF CSVs and enforces
+the 21 tables and 28 relationships of the final ERD.
