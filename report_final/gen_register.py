@@ -5,10 +5,12 @@
   generated/official_source_register.tex   - official collected files (longtable)
   generated/unofficial_source_register.tex - unofficial collected files (longtable)
 
-Reads metadata.csv.  Last access dates recorded there follow the verified 2-29
-April 2026 discovery and verification schedule used throughout the report; this
-script never uses a run-time date.  The official and unofficial longtables
-together partition the 75 collected source or data files exactly; the selected
+Reads register_data.csv, the minimal committed register input: one row per
+collected source or data file with its family (org), file name, type (ext),
+author or creator, and recorded last access date.  Those dates follow the
+verified 2-29 April 2026 discovery and verification schedule used throughout
+the report; this script never uses a run-time date.  The official and unofficial
+longtables together partition the 75 collected files exactly; the selected
 table is the deliberate 9-file subset and may repeat those files.  Each printed
 file name links to the actual file in the shared project Google Drive folder
 using drive_file_map.json, which records the public Drive item id for every
@@ -20,7 +22,7 @@ import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-META = os.path.join(HERE, "metadata.csv")
+META = os.path.join(HERE, "register_data.csv")
 DRIVE = os.path.join(HERE, "drive_file_map.json")
 
 # Publisher labels for the register families (all official under the report's
