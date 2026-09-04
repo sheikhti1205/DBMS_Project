@@ -8,9 +8,8 @@ committed sources.
 
 ## Reviewer Quick Access
 
-- **Final report (PDF):** [`Group-07_Environmental_DBMS_Final_Report.pdf`](
-  https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q
-  ) in the public source folder
+- **Final report (PDF):**
+  [Group-07_Environmental_DBMS_Final_Report.pdf](https://drive.google.com/file/d/10C2V5kyrCWXE8RwO4kbFBQrom_KVr9cR/view?usp=sharing)
 - **Collected source files (public Drive folder):**
   [Selected_Source_Files](https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q)
 - **Complete source register with original URLs:**
