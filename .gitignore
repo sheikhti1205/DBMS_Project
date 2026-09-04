@@ -57,3 +57,6 @@ tempCodeRunnerFile.*
 /work/
 /work_v*/
 /*.zip
+
+# Internal process notes and review documents are kept locally, never pushed.
+/_internal/
