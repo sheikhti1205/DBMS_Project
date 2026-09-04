@@ -38,6 +38,18 @@ def percentile_95(values: list[float]) -> float:
     return ordered[index]
 
 
+def _repo_relative(path: Path) -> Path:
+    """Return path relative to the repository root when it lives inside it."""
+    resolved = path.resolve()
+    for parent in resolved.parents:
+        if (parent / ".git").is_dir():
+            try:
+                return resolved.relative_to(parent)
+            except ValueError:
+                break
+    return resolved
+
+
 def main() -> int:
     args = arguments()
     if not args.database.is_file():
@@ -48,7 +60,7 @@ def main() -> int:
     queries = load_queries(args.queries)
     uri = args.database.resolve().as_uri() + "?mode=ro"
     report: dict[str, object] = {
-        "database": str(args.database.resolve()),
+        "database": str(_repo_relative(args.database)),
         "sqlite_version": sqlite3.sqlite_version,
         "runs_per_query": args.runs,
         "queries": {},
