@@ -27,7 +27,7 @@ Engineering, University of Chittagong.
 | `normalization/` | 0NF-to-BCNF workbook and CSVs; `STATISTICS.md` (load statistics), `DATA_REVIEW.md` (data-cleaning decisions), `BMD_DERIVATIVE.md` (BMD PDF/workbook check), `exclusions/` (excluded items). |
 | `MySQL/` | MySQL/MariaDB clone of the database; `README.md` is its setup guide. |
 | `report/` | LaTeX report sources; the compiled PDF is linked above. |
-| `docs/DEVELOPMENT.md` | Developer guide: queries per OS, VS Code on WSL, backup/restore, refresh steps. |
+| `docs/` | `SETUP.md` (step-by-step setup for each OS) and `DEVELOPMENT.md` (queries, VS Code on WSL, backup/restore, refresh steps). |
 
 ## Verified facts
 
@@ -53,6 +53,28 @@ workbook (`Temperature Data.xlsx`); retained PDFs are not automatically
 converted. Outside the Drive project folder set `DBMS_SOURCE_DIR`. Full
 commands are in [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
+## Setup guide
+
+The launchers need Python 3.10+, keep a private environment outside the
+project folder, prepare `schema/environment.db`, verify it and print the saved
+read-only `table-counts` query.
+
+Windows:
+
+```bat
+setup_windows.bat
+```
+
+Linux, WSL or macOS:
+
+```bash
+./setup_linux.sh
+```
+
+Add `/yes` (Windows) or `--yes` (Linux/macOS) for an unattended run; add
+`/replace` or `--replace` only to rebuild an existing database. A detailed,
+step-by-step guide for each OS is in [`docs/SETUP.md`](docs/SETUP.md).
+
 ## Run and query
 
 Verify the delivered database read-only (tables, relationships, views, rows
@@ -61,13 +83,6 @@ and the schema definition):
 ```bash
 python3 -B -m schema.scripts.setup.verify_database
 ```
-
-Build it from scratch with `setup_windows.bat` (Windows) or
-`./setup_linux.sh` (Linux, WSL or macOS); add `/yes` or `--yes` for an
-unattended run and `/replace` or `--replace` only to rebuild an existing
-database. The launchers need Python 3.10+, keep a private environment outside
-the project folder, verify the database and print the saved read-only
-`table-counts` query.
 
 Saved queries live in [`schema/sql/queries.sql`](schema/sql/queries.sql) and
 run read-only against the database with:
@@ -86,6 +101,7 @@ methodology, schema design, example queries and conclusion are documented in
 the [final report](https://drive.google.com/file/d/1KjoO2aXPX3MEvbx64_3Viq4KVtmV7cKm/view?usp=sharing).
 Everything else is kept close to the artifacts it describes:
 
+- `docs/SETUP.md` — step-by-step install and rebuild guide for each OS.
 - `docs/DEVELOPMENT.md` — query recipes per OS, VS Code on WSL, backup and
   restore, and refreshing the normalization and benchmark outputs.
 - `normalization/STATISTICS.md` — how much each source contributes.

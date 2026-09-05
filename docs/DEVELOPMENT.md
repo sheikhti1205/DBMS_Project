@@ -7,7 +7,8 @@ material, verified facts and setup commands live in the
 The launchers (`setup_windows.bat`, `setup_linux.sh`) look for Python 3.10 or
 newer and build a private environment outside the project folder: on
 Linux/macOS `~/.cache/byteforge-dbms`, on Windows
-`%USERPROFILE%\.byteforge\dbms_project` (override with `BYTEFORGE_ENV`). All
+`%USERPROFILE%\.byteforge\dbms_project` (override with `BYTEFORGE_ENV`). The
+step-by-step installation walkthrough is in [`SETUP.md`](SETUP.md). All
 queries below use that environment and run read-only against
 [`schema/environment.db`](../schema/environment.db).
 
