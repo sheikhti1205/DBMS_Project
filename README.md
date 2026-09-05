@@ -3,8 +3,9 @@
 ByteForge Scrum Group 07 normalised selected environmental records for
 Bangladesh into BCNF relations and loaded them into a SQLite database. The
 final ERD in `ERD/` is the authority for the database structure. The report is
-written in LaTeX under `report/` and the database is reproducible from the
-committed sources.
+written in LaTeX under `report/`. The database is reproducible from the
+retained source files in `Selected_Source_Files` together with the committed
+extraction, normalization and schema code.
 
 ## Reviewer Quick Access
 
@@ -21,7 +22,7 @@ committed sources.
   [`schema/scripts/setup/verify_database.py`](schema/scripts/setup/verify_database.py)
 
 Verify the delivered database (read-only; checks tables, relationships, views,
-rows and the ERD contract):
+rows and the schema definition file):
 
 ```bash
 python3 -B -m schema.scripts.setup.verify_database
@@ -45,8 +46,9 @@ python3 -B -m schema.scripts.setup.verify_database
 - `Selected_Source_Files/` and the source workbooks live on Google Drive, not
   in this repository.
 
-The Git repository is the source of truth. Google Drive keeps a synced copy of
-the project and the original collected files for the reviewers.
+GitHub is the primary project repository; Google Drive provides the public
+`Selected_Source_Files` collection and the source register. The original
+collected files stay under `Selected_Source_Files/` for the reviewers.
 
 ## Automatic setup
 

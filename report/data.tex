@@ -22,7 +22,7 @@ locate candidate pages, but acceptance depended on the actual publisher, file
 contents and traceable source evidence.
 
 The review reduced the wider collection to \mSourceFiles{} structured files
-used by the loader. The reduction is not hidden as data loss: excluded files
+selected for processing. The reduction is not hidden as data loss: excluded files
 remain in the source register with their reasons. The BBS workbook alone has
 \mSheetsTotal{} sheets; \mSheetsUsed{} contribute implemented data and
 \mSheetsExcluded{} have recorded exclusion decisions.
@@ -56,7 +56,7 @@ processing}
 \renewcommand{\arraystretch}{1.38}
 \begin{tabular}{L{0.38\textwidth}C{0.13\textwidth}C{0.20\textwidth}C{0.13\textwidth}}
 \toprule
-Source family & Collected & Pipeline input & Not used \\
+Source family & Collected & Processing inputs & Not used \\
 \midrule
 BBS & 2 & 1 & 1 \\
 BMD & 11 & 2 & 9 \\
@@ -112,12 +112,15 @@ are resolved before loading.
 \label{subsec:source-file-register}
 
 Each collected source or data file is recorded with the author or creator
-embedded in the file, its type and a last access date assigned from the
+embedded in the file, its type and a recorded review date drawn from the
 verified discovery and verification schedule of Table~\ref{tab:schedule}, so
 every row in this register carries a date inside the 2--29 April 2026
-collection window. Table~\ref{tab:used-source-files}
-lists the \mSourceFiles{} structured files selected as pipeline input.
-Table~\ref{tab:official-source-register} and
+collection window. Table~\ref{tab:used-source-files} lists the
+\mSourceFiles{} structured files selected for processing; the BMD temperature
+publication is represented there by the project-formatted
+\texttt{Temperature Data.xlsx} derivative, while its retained
+\texttt{Temperature Data.pdf} publication stays in the full collected-source
+register below. Table~\ref{tab:official-source-register} and
 Table~\ref{tab:unofficial-source-register} together give the full register of
 the \mSourceDataFiles{} collected files. An official file is published or
 distributed by a Bangladesh government agency or by an authoritative
@@ -128,8 +131,14 @@ are not official government or intergovernmental publications. The three
 original groundwater or water-quality files that were moved to the discarded
 review folder during selection remain part of the collected inventory and are
 included in the register. Where file metadata does not identify an author or
-creator the register reports Not identified, and each printed source file name
-links to the corresponding file in the shared project Drive folder.
+creator the register reports Not identified.
+
+Original publisher URLs are preserved in the
+\href{https://drive.google.com/file/d/1UB5vrVxfrtvFXZUDgvV4bsBDaMcvC2sw/view}
+{complete source register}; the filenames below link to the retained copies in
+the public \texttt{Selected\_Source\_Files} Drive folder. Only the two BMD
+sunshine blocks are rejected; \texttt{Sunshine\_Record} is populated from the
+retained BBS and BRRI sunshine data.
 
 \input{scripts/generated/used_source_files}
 
@@ -153,8 +162,13 @@ without an implemented relation are not presented as database categories.
   marine-debris parameter values.
   \item \textbf{Forest area:} Protected, reserved, unclassed, acquired and
   total forest area by district and fiscal period.
-  \item \textbf{Industry:} Establishment size or industry category with
-  quantity, percentage and fiscal period.
+  \item \textbf{Industry:} Wastewater observations are retained by
+  establishment-size or industry category and fiscal period.
+  Establishment-size rows store wastewater volume and the published share;
+  industry rows store produced-wastewater quantity and a derived reuse
+  percentage. The retained industry source contains one category, Agriculture
+  Forestry and Fishing, with produced-wastewater quantity for three fiscal
+  periods.
 \end{itemize}
 
 Figure~\ref{fig:environmental-categories} expands those four domains into the
@@ -184,7 +198,8 @@ Rainfall in millimetres and relative humidity by station, year and month.};
 \node[product] (wind) at (1.25,4.35) {\textbf{Wind}\quad Maximum or minimum
 wind speed with direction by station, year and month.};
 \node[product] (sunradiation) at (1.25,2.75) {\textbf{Sunshine and radiation}\quad
-Daily sunshine or radiation value; radiation also retains its sample number.};
+Daily sunshine or radiation value; radiation also retains the source
+observation-hour index in \texttt{Sample\_No}.};
 \node[product] (events) at (1.25,1.15) {\textbf{Climatic events}\quad
 Thunderstorm and lightning observations by station, year and month.};
 
@@ -202,8 +217,8 @@ period.};
 
 \node[domainnode] (industry) at (-5.65,-6.25) {Industry};
 \node[product] (industryproduct) at (1.25,-6.25) {\textbf{Industrial activity}\quad
-Establishment size or industry category, quantity, percentage and fiscal
-period.};
+Wastewater volume or produced quantity by establishment size or industry
+category, with percentage and fiscal period.};
 
 \draw[bus] (db.west) -- (-7.15,9.65) -- (-7.15,-6.25);
 \draw[arr] (-7.15,4.35) -- (climate.west);
@@ -295,8 +310,8 @@ file.\par}
   {\textbf{Retain source or supporting evidence}};
 \node[flow] (collected) at (0,-18.05)
   {\textbf{75 collected source or data files}};
-\node[flow] (loader) at (0,-19.55)
-  {\textbf{9 structured loader files}};
+\node[flow] (processing) at (0,-19.55)
+  {\textbf{9 structured files selected for processing}};
 \node[retained] (blocks) at (0,-21.05)
   {\textbf{62 extracted source blocks}};
 
@@ -307,8 +322,8 @@ file.\par}
 \draw[arrow] (sufficient) -- node[branch,pos=0.55,right=1.5pt]{YES} (duplicate);
 \draw[arrow] (duplicate) -- node[branch,pos=0.55,right=1.5pt]{NO} (keep);
 \draw[arrow] (keep) -- (collected);
-\draw[arrow] (collected) -- (loader);
-\draw[arrow] (loader) -- (blocks);
+\draw[arrow] (collected) -- (processing);
+\draw[arrow] (processing) -- (blocks);
 
 \draw[arrow] (relevant.east) -- node[branch,above=1.5pt]{NO} (exc1.west);
 \draw[arrow] (reliable.east) -- node[branch,above=1.5pt]{NO} (exc2.west);
@@ -348,7 +363,7 @@ Source or data files collected & \mSourceDataFiles{} files \\
 Support or administrative files & \mSupportFiles{} files \\
 Derived formatted or page files & \mDerivedArtifacts{} files \\
 Source-level files reviewed & \mCandidateFiles{} files \\
-Structured files read by the loader & \mSourceFiles{} files \\
+Structured files selected for processing & \mSourceFiles{} files \\
 Source blocks & \mSourceBlocks{} blocks \\
 Columns summed across the 0NF block headers & \mZeroColumns{} columns \\
 Values read from numeric source series & \mRawValues{} values \\
@@ -361,11 +376,11 @@ Final database structure & \mDbTables{} tables, \mDbColumns{} columns and
 \end{tabular}
 \end{table}
 
-The loader uses XLSX or XLS workbooks and CSV reference data. PDF publications
-remain supporting evidence where they explain headings, units or methodology;
-they are not counted as structured database rows. Each 0NF filename records a
-block ID, organisation, workbook and sheet so the extracted material remains
-traceable.
+The extraction and loading steps use XLSX or XLS workbooks and CSV reference
+data. PDF publications remain supporting evidence where they explain headings,
+units or methodology; they are not counted as structured database rows. Each
+0NF filename records a block ID, organisation, workbook and sheet so the
+extracted material remains traceable.
 
 \subsection{Data Range and Record Grain}
 \label{subsec:data-range}
@@ -435,17 +450,20 @@ periods. The team retained these limits instead of implying uniform coverage.
 \label{subsec:source-discovery-statistics}
 
 The current resource register contains 139 candidate or resource entries under
-18 named source labels. The physical source inventory contains
-\mSourceDataFiles{} source or data files. Table~\ref{tab:drive-source-inventory}
-shows how those files are distributed by publisher, and
-Table~\ref{tab:source-profile} shows that \mSourceFiles{} loader files produce
-\mSourceBlocks{} implemented blocks.
+18 named source labels. The broader discovery register contains candidate
+source links, including items that were not downloaded; the 75-file register
+counts the source or data files actually collected. The physical source
+inventory contains \mSourceDataFiles{} source or data files.
+Table~\ref{tab:drive-source-inventory} shows how those files are distributed
+by publisher, and Table~\ref{tab:source-profile} shows that \mSourceFiles{}
+structured files selected for processing produce \mSourceBlocks{} implemented
+blocks.
 
 The audited source-collection snapshot contains \mAllDriveFiles{} files. The
 three inventory categories in Table~\ref{tab:drive-inventory-summary} are
-mutually exclusive and sum to that total; loader files and source blocks are
-processing measurements within the source collection and are therefore not
-added again.
+mutually exclusive and sum to that total; structured processing inputs and
+source blocks are processing measurements within the source collection and are
+therefore not added again.
 
 \begin{table}[H]
 \centering

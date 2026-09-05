@@ -829,6 +829,13 @@ The same check is carried out for the other final relations. Some examples are:
 \rightarrow \text{Quantity},\text{Percentage}
 \end{gather*}
 
+For the industry example, the retained source contains one category,
+Agriculture Forestry and Fishing, with produced-wastewater quantity for three
+fiscal periods; the stored reuse percentage is derived from the published
+produced and reused volumes, so \texttt{Quantity} is wastewater volume and is
+not a count of establishments or a directly published percentage. This
+explains the functional dependency above without changing the final schema.
+
 In each case, the determinant is the candidate key of its relation. No further
 decomposition is required at this stage because every non-trivial determinant
 checked in the final relations is a candidate key. The final relations

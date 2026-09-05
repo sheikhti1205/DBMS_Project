@@ -117,9 +117,11 @@ Relation & Primary key & Columns & Rows \\
 The keys in Table~\ref{tab:relations} state the grain of each record. A monthly
 temperature observation requires station, year, month and type because the same
 station can report minimum and maximum temperature in one month. Daily
-radiation also includes a sample number because more than one reading can occur
-for the same station and date. Reference relations use descriptive names as
-keys so observation tables can point to them without repeating the same text.
+radiation also retains the source observation-hour index in
+\texttt{Sample\_No} because several readings occur on the same calendar day;
+the source labels this field ``Date''. Reference relations use descriptive
+names as keys so observation tables can point to them without repeating the
+same text.
 
 \subsection{Data Coverage and Record Structure}
 \label{subsec:coverage}
@@ -143,8 +145,7 @@ Time relation & Primary key & Related environmental records \\
 wind and climatic-event records. \\
 \texttt{Day\_Time} & Year, Month and Day & Sunshine and radiation records. \\
 \texttt{Fiscal\_Year} & Start Year and End Year & Forest-area,
-establishment-size and industry-usage records. \\
-\bottomrule
+establishment-size and industry-usage records. \\\bottomrule
 \end{tabular}
 \end{table}
 
@@ -180,6 +181,10 @@ river or water-body reference. \\
 Separate categories from observations & Size and industry names do not vary
 with every fiscal record & Descriptive values are not repeated in period-based
 rows. \\
+Water-quality units fixed by parameter & Units differ by measured quantity
+(e.g.\ pH, mg/L, parts per thousand or item counts) & Measurement units are
+documented in the normalization evidence rather than repeated in every
+\texttt{Water\_Quality} row. \\
 Derived views are not ERD entities & Monthly summaries are query conveniences,
 not stored facts & The \mDbViews{} views remain outside the \mDbTables{} base
 relations shown in the ERD. \\

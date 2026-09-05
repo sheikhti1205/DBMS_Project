@@ -94,8 +94,11 @@ The water-quality relation contains six measured parameter types.
 Figure~\ref{fig:water-quality-parameters} shows how unevenly those parameters
 are represented. Dissolved oxygen (DO), pH and biochemical oxygen demand (BOD)
 account for most observations; chemical oxygen demand (COD), salinity and
-marine-debris records are more limited. The chart measures database coverage,
-not the environmental importance of a parameter.
+marine-debris records are more limited. For the BBS T1.85f marine-debris
+block, the database retains the item count under the combined
+\texttt{Plastic and Marine Debris} parameter; the source-specific debris
+subtype is not stored as a separate attribute. The chart measures database
+coverage, not the environmental importance of a parameter.
 
 \begin{figure}[H]
 \centering
@@ -171,7 +174,9 @@ Their climate observations remain queryable by station but district-level
 analysis must disclose the reduced coverage.
 
 Industry coverage is also narrow. The approved final model contains one
-industry category and \mIndustryRows{} fiscal observations. This is a finding
+industry category, Agriculture Forestry and Fishing, and \mIndustryRows{}
+fiscal observations of produced-wastewater quantity, with the reuse percentage
+derived from the published produced and reused volumes. This is a finding
 about the available source, not evidence that other industries produce no
 wastewater. Similarly, each relation's time range in
 Figure~\ref{fig:timespans} must be checked before a cross-subject trend is

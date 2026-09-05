@@ -170,15 +170,19 @@ products are separated as follows.
   rainfall, maximum and minimum wind speed with direction and thunderstorm and
   lightning observations are organized by station, year and month.
   \item[Daily climate records] Sunshine hours use station and calendar-day
-  grain. Solar radiation adds a sample number because several readings can
-  occur on the same day.
+  grain. Solar radiation retains the source observation-hour index in
+  \texttt{Sample\_No} because several readings occur on the same calendar day;
+  the source labels this field ``Date''.
   \item[Hydrology and water quality] Rivers and monitoring stations support pH,
   dissolved oxygen, biochemical oxygen demand, chemical oxygen demand,
   salinity and marine-debris observations by station and year.
   \item[Forest area] Protected, reserved, unclassed, acquired and total forest
   areas are organized by district and fiscal period.
-  \item[Industry] Establishment-size and industry-category observations retain
-  their quantity, percentage and fiscal reporting period.
+  \item[Industry] Wastewater observations are retained by establishment-size
+  or industry category and fiscal period. Establishment-size rows store
+  wastewater volume and the published share; industry rows store
+  produced-wastewater quantity and a derived reuse percentage. The retained
+  industry source contains one category, Agriculture Forestry and Fishing.
   \item[Reference and time data] Stations, districts, rivers, monitoring
   points, categories and calendar or fiscal periods provide consistent keys for
   the measurement relations.
@@ -196,7 +200,7 @@ is retained as evidence even when a file cannot support the approved model.
 
 Table~\ref{tab:organisations} adapts the selected-source profile to the
 verified Drive inventory. Collected files are source or data publications; the
-pipeline-input count excludes support files and derived page images.
+processing-input count excludes support files and derived page images.
 
 \begingroup
 \setlength{\intextsep}{0pt}
@@ -209,7 +213,7 @@ pipeline-input count excludes support files and derived page images.
 \label{tab:organisations}
 \begin{tabular}{L{0.33\textwidth}r r L{0.36\textwidth}}
 \toprule
-Organisation & Collected & Pipeline input & Selected material \\
+Organisation & Collected & \shortstack{Processing\\ inputs} & Selected material \\
 \midrule
 Bangladesh Bureau of Statistics (BBS) & 2 & 1 & Climate, water quality,
 forest and industrial statistics. \\

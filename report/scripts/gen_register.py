@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 """Generate the Source Discovery register tables for the final report.
 
-  generated/used_source_files.tex          - the 9 pipeline-input files (table)
+  generated/used_source_files.tex          - the 9 structured processing inputs
   generated/official_source_register.tex   - official collected files (longtable)
   generated/unofficial_source_register.tex - unofficial collected files (longtable)
 
 Reads register_data.csv, the minimal committed register input: one row per
 collected source or data file with its family (org), file name, type (ext),
-author or creator, and recorded last access date.  Those dates follow the
+embedded author or creator, and recorded review date.  Those dates follow the
 verified 2-29 April 2026 discovery and verification schedule used throughout
 the report; this script never uses a run-time date.  The official and unofficial
-longtables together partition the 75 collected files exactly; the selected
-table is the deliberate 9-file subset and may repeat those files.  Each printed
-file name links to the actual file in the shared project Google Drive folder
-using drive_file_map.json, which records the public Drive item id for every
-registered file.  Rows are ordered by source, then file type (Excel, CSV, PDF,
-others) and then file name; no size column is printed.
+longtables together partition the 75 collected files exactly.  The selected
+table lists the deliberate set of 9 structured files selected for processing;
+one of them (Temperature Data.xlsx) is the project-formatted derivative of the
+retained BMD Temperature Data.pdf publication, so it is described from that
+register row and is not counted as an additional collected file.  Each printed
+file name links to the actual file in the public Selected_Source_Files Drive
+folder using drive_file_map.json, which records the public Drive item id for
+every registered or derivative file.  Rows are ordered by source, then file
+type (Excel, CSV, PDF, others) and then file name; no size column is printed.
+File-name cells break at underscores and spaces but keep the extension on one
+line, so the generator does not use \\seqsplit.
 """
 import csv
 import json
@@ -86,17 +91,31 @@ UNOFFICIAL_ORDER = ["HydroShare (CUAHSI)",
                     "University of Glasgow",
                     "Virginia Tech (VTechWorks)"]
 
-# The 9 structured loader files (report source-inventory pipeline input)
-PIPELINE = {
+# The 9 structured files selected for processing, kept in printed order.  One
+# entry is a project-formatted derivative of a collected file; its metadata is
+# supplied in DERIVED_INPUTS instead of the collected-source register.
+PIPELINE = (
     "BBS_Time_Series_Environmental_Database.xlsx",
-    "Temperature Data.pdf",
     "Sunshine.xls",
+    "Temperature Data.xlsx",
+    "BRRI_Daily_Average_Humidity.xlsx",
     "BRRI_Daily_Maximum_Temperature.xlsx",
     "BRRI_Daily_Minimum_Temperature.xlsx",
-    "BRRI_Daily_Average_Humidity.xlsx",
     "BRRI_Daily_Sunshine.xlsx",
     "BRRI_Daily_Total_Rainfall.xlsx",
     "BWDB_Rivers_Information.csv",
+)
+
+# Processing inputs that are project-formatted derivatives of a collected file
+# rather than collected source files themselves.  The recorded review date is
+# inherited from the retained source row so that no date is invented.
+DERIVED_INPUTS = {
+    "Temperature Data.xlsx": {
+        "org": "BMD",
+        "ext": ".xlsx",
+        "author": "Not identified",
+        "metadata_from": "Temperature Data.pdf",
+    },
 }
 
 # Meaningful account authors are kept; meaningless account names and empty
@@ -139,7 +158,13 @@ def esc(s):
 
 
 def link_cell(file_name, url):
-    body = f"\\texttt{{\\seqsplit{{{esc(file_name)}}}}}"
+    # Break only after underscores and at spaces, and keep the extension glued
+    # after the final dot so a register never splits a name as ".xls / x".
+    stem, dot, ext = file_name.rpartition(".")
+    body = esc(stem).replace(r"\_", r"\_\allowbreak{}")
+    if dot:
+        body += "." + ext
+    body = f"\\texttt{{{body}}}"
     return f"\\href{{{url}}}{{{body}}}" if url else body
 
 
@@ -193,11 +218,20 @@ def main():
                 % drive_map[f]["id"])
 
     def rec(f):
+        if f in DERIVED_INPUTS:
+            spec = DERIVED_INPUTS[f]
+            parent = rows[spec["metadata_from"]]
+            date = parent["recorded_review_date"].strip()
+            if not date:
+                raise SystemExit(f"missing recorded review date for {f}")
+            return {"file": f, "org": spec["org"], "label": ORG_FULL[spec["org"]],
+                    "official": True, "type": spec["ext"][1:].upper(),
+                    "author": spec["author"], "date": date, "url": drive_url(f)}
         r = rows[f]
         label, official = publisher_of(r)
-        date = r["last_access_date"].strip()
+        date = r["recorded_review_date"].strip()
         if not date:
-            raise SystemExit(f"missing last access date for {f}")
+            raise SystemExit(f"missing recorded review date for {f}")
         return {"file": f, "org": r["org"], "label": label, "official": official,
                 "type": r["ext"][1:].upper(), "author": clean_author(r["author"]),
                 "date": date, "url": drive_url(f)}
@@ -206,7 +240,7 @@ def main():
         order = (OFFICIAL_ORDER if e["official"] else UNOFFICIAL_ORDER)
         return (rank(e["label"], order), type_rank(e["type"]), e["file"])
 
-    used = sorted((rec(f) for f in PIPELINE), key=sort_key)
+    used = [rec(f) for f in PIPELINE]
     full = [rec(f) for f in sorted(rows)]
     if len(full) != 75:
         raise SystemExit(f"expected 75 collected files, found {len(full)}")
@@ -215,9 +249,9 @@ def main():
     official = sorted((e for e in full if e["official"]), key=sort_key)
     unofficial = sorted((e for e in full if not e["official"]), key=sort_key)
 
-    head = ("No. & Source & Source file & Type & Author / creator & "
-            "Last Access Date \\\\")
-    cols = "{c L{2.45cm} L{4.05cm} C{0.9cm} L{2.15cm} C{1.6cm}}"
+    head = ("No. & Source & Source file & Type & Embedded author / creator & "
+            "Recorded review date \\\\")
+    cols = "{c L{2.35cm} L{4.05cm} C{0.9cm} L{2.3cm} C{1.7cm}}"
 
     def tex_row(i, e):
         return (f"{i} & {esc(e['label'])} & {link_cell(e['file'], e['url'])} & "
@@ -230,10 +264,13 @@ def main():
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.25}
-\caption{Pipeline-input source files: the \mSourceFiles{} structured files selected for
-processing. The BMD sunshine workbook is retained as pipeline input but its two sunshine
-blocks cannot be loaded because the source provides no usable station identity. Each
-printed file name links to the corresponding file in the shared project Drive folder.}
+\caption{Structured processing inputs: the \mSourceFiles{} structured files selected for
+processing. The BMD sunshine workbook is retained as a processing input but its two sunshine
+blocks cannot be loaded because the source provides no usable station identity; only those
+blocks are rejected, and Sunshine\_Record is populated from the retained BBS and BRRI
+sunshine data. \texttt{Temperature Data.xlsx} is a project-formatted derivative of the
+retained BMD \texttt{Temperature Data.pdf} publication. Each printed file name links to the
+corresponding file in the public Selected\_Source\_Files Drive folder.}
 \label{tab:used-source-files}
 \begin{tabular}""" + cols + r"""
 \toprule
@@ -281,12 +318,12 @@ printed file name links to the corresponding file in the shared project Drive fo
     n_off = write_register(
         "official_source_register.tex", official,
         "Official source file register (69 files). Source file names link to the "
-        "corresponding file in the shared project Drive folder.",
+        "corresponding file in the public Selected\\_Source\\_Files Drive folder.",
         "tab:official-source-register")
     n_uno = write_register(
         "unofficial_source_register.tex", unofficial,
         "Unofficial source file register (6 files). Source file names link to the "
-        "corresponding file in the shared project Drive folder.",
+        "corresponding file in the public Selected\\_Source\\_Files Drive folder.",
         "tab:unofficial-source-register")
 
     assert n_off + n_uno == len(full) == 75
