@@ -112,10 +112,13 @@ are resolved before loading.
 \label{subsec:source-file-register}
 
 Each collected source or data file is recorded with the author or creator
-embedded in the file, its type and a recorded review date drawn from the
-verified discovery and verification schedule of Table~\ref{tab:schedule}, so
-every row in this register carries a date inside the 2--29 April 2026
-collection window. Table~\ref{tab:used-source-files} lists the
+embedded in the file, its type and its last access date. Dates record the
+final anonymous link checks of the retained Drive copies, in Bangladesh time
+(UTC+6); they do not represent the original collection date or a visit to the
+publisher's website. The checks confirm that each linked preview opens with
+the expected filename. The dated results are kept in
+\texttt{report/scripts/source\_access\_checks.json} in the repository.
+Table~\ref{tab:used-source-files} lists the
 \mSourceFiles{} structured files selected for processing; the BMD temperature
 publication is represented there by the project-formatted
 \texttt{Temperature Data.xlsx} derivative, while its retained

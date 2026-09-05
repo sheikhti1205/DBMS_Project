@@ -93,8 +93,8 @@ echo Checking the database.
 "%BYTEFORGE_PYTHON%" -m schema.scripts.setup.verify_database
 if errorlevel 1 goto failed
 
-echo Opening the sample queries.
-"%BYTEFORGE_PYTHON%" -m schema.scripts.queries.demo_database
+echo Running the saved read-only table-counts query.
+"%BYTEFORGE_PYTHON%" -m schema.scripts.queries.query_database saved table-counts
 if errorlevel 1 goto failed
 
 echo.

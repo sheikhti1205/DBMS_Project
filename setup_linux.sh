@@ -260,8 +260,8 @@ fi
 echo "Checking the database."
 "$python" -m schema.scripts.setup.verify_database
 
-echo "Opening the sample queries."
-"$python" -m schema.scripts.queries.demo_database
+echo "Running the saved read-only table-counts query."
+"$python" -m schema.scripts.queries.query_database saved table-counts
 
 echo
 echo "ByteForge is ready."

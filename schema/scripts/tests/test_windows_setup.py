@@ -19,10 +19,10 @@ class WindowsSetupTest(unittest.TestCase):
             launcher,
         )
 
-    def test_readme_uses_the_same_windows_environment(self) -> None:
-        readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertNotIn("$env:LOCALAPPDATA\\ByteForge", readme)
-        self.assertIn("$env:USERPROFILE\\.byteforge\\dbms_project\\venv", readme)
+    def test_development_doc_uses_the_same_windows_environment(self) -> None:
+        development = (ROOT / "docs" / "DEVELOPMENT.md").read_text(encoding="utf-8")
+        self.assertIn("$env:USERPROFILE\\.byteforge\\dbms_project\\venv", development)
+        self.assertNotIn("$env:LOCALAPPDATA\\ByteForge", development)
 
 
 if __name__ == "__main__":

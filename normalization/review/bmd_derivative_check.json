@@ -1,0 +1,439 @@
+{
+  "scope": "First, middle and last station row in every workbook sheet; 24 monthly max/min cells per row. Not an exhaustive audit.",
+  "pdf_sha256": "99dc8eb4dd24df375d258d31ba36f61eafd6ff4864fb7bb2f8f9939b6e03592f",
+  "xlsx_sha256": "c3a025780567171b09d4b2cc071f8a9c9cfabbbf9dacbce4dc74b476521f9096",
+  "checks": [
+    {
+      "sheet": "Table-1",
+      "year": "1995",
+      "station": "Dhaka",
+      "pdf_page": 1,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-1",
+      "year": "1995",
+      "station": "Sylhet",
+      "pdf_page": 1,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-1",
+      "year": "1995",
+      "station": "Bhola",
+      "pdf_page": 1,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-2",
+      "year": "1996",
+      "station": "Dhaka",
+      "pdf_page": 2,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-2",
+      "year": "1996",
+      "station": "Sylhet",
+      "pdf_page": 2,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-2",
+      "year": "1996",
+      "station": "Bhola",
+      "pdf_page": 2,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-3",
+      "year": "1997",
+      "station": "Dhaka",
+      "pdf_page": 3,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-3",
+      "year": "1997",
+      "station": "Sylhet",
+      "pdf_page": 3,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-3",
+      "year": "1997",
+      "station": "Bhola",
+      "pdf_page": 3,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-4",
+      "year": "1998",
+      "station": "Dhaka",
+      "pdf_page": 4,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-4",
+      "year": "1998",
+      "station": "Sylhet",
+      "pdf_page": 4,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-4",
+      "year": "1998",
+      "station": "Bhola",
+      "pdf_page": 4,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-5",
+      "year": "1999",
+      "station": "Dhaka",
+      "pdf_page": 5,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-5",
+      "year": "1999",
+      "station": "Sylhet",
+      "pdf_page": 5,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-5",
+      "year": "1999",
+      "station": "Bhola",
+      "pdf_page": 5,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-6",
+      "year": "2000",
+      "station": "Dhaka",
+      "pdf_page": 6,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-6",
+      "year": "2000",
+      "station": "Sylhet",
+      "pdf_page": 6,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-6",
+      "year": "2000",
+      "station": "Bhola",
+      "pdf_page": 6,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-7",
+      "year": "2001",
+      "station": "Dhaka",
+      "pdf_page": 7,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-7",
+      "year": "2001",
+      "station": "Sylhet",
+      "pdf_page": 7,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-7",
+      "year": "2001",
+      "station": "Bhola",
+      "pdf_page": 7,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-8",
+      "year": "2002",
+      "station": "Dhaka",
+      "pdf_page": 8,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-8",
+      "year": "2002",
+      "station": "Sylhet",
+      "pdf_page": 8,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-8",
+      "year": "2002",
+      "station": "Bhola",
+      "pdf_page": 8,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-9",
+      "year": "2003",
+      "station": "Dhaka",
+      "pdf_page": 9,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-9",
+      "year": "2003",
+      "station": "Sylhet",
+      "pdf_page": 9,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-9",
+      "year": "2003",
+      "station": "Bhola",
+      "pdf_page": 9,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-10",
+      "year": "2004",
+      "station": "Dhaka",
+      "pdf_page": 10,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-10",
+      "year": "2004",
+      "station": "Sylhet",
+      "pdf_page": 10,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-10",
+      "year": "2004",
+      "station": "Bhola",
+      "pdf_page": 10,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-11",
+      "year": "2005",
+      "station": "Dhaka",
+      "pdf_page": 11,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-11",
+      "year": "2005",
+      "station": "Sylhet",
+      "pdf_page": 11,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-11",
+      "year": "2005",
+      "station": "Bhola",
+      "pdf_page": 11,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-12",
+      "year": "2006",
+      "station": "Dhaka",
+      "pdf_page": 12,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-12",
+      "year": "2006",
+      "station": "Sylhet",
+      "pdf_page": 12,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-12",
+      "year": "2006",
+      "station": "Bhola",
+      "pdf_page": 12,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-13",
+      "year": "2007",
+      "station": "Dhaka",
+      "pdf_page": 13,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-13",
+      "year": "2007",
+      "station": "Sylhet",
+      "pdf_page": 13,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-13",
+      "year": "2007",
+      "station": "Bhola",
+      "pdf_page": 13,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-14",
+      "year": "2008",
+      "station": "Dhaka",
+      "pdf_page": 14,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-14",
+      "year": "2008",
+      "station": "Sylhet",
+      "pdf_page": 14,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-14",
+      "year": "2008",
+      "station": "Bhola",
+      "pdf_page": 14,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-15",
+      "year": "2009",
+      "station": "Dhaka",
+      "pdf_page": 15,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-15",
+      "year": "2009",
+      "station": "Sylhet",
+      "pdf_page": 15,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-15",
+      "year": "2009",
+      "station": "Bhola",
+      "pdf_page": 15,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-16",
+      "year": "2010",
+      "station": "Dhaka",
+      "pdf_page": 16,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-16",
+      "year": "2010",
+      "station": "Sylhet",
+      "pdf_page": 16,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-16",
+      "year": "2010",
+      "station": "Bhola",
+      "pdf_page": 16,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-17",
+      "year": "2011",
+      "station": "Dhaka",
+      "pdf_page": 17,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-17",
+      "year": "2011",
+      "station": "Sylhet",
+      "pdf_page": 17,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-17",
+      "year": "2011",
+      "station": "Bhola",
+      "pdf_page": 17,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-18",
+      "year": "2012",
+      "station": "Dhaka",
+      "pdf_page": 18,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-18",
+      "year": "2012",
+      "station": "Sylhet",
+      "pdf_page": 18,
+      "measurements": 24,
+      "matched": true
+    },
+    {
+      "sheet": "Table-18",
+      "year": "2012",
+      "station": "Bhola",
+      "pdf_page": 18,
+      "measurements": 24,
+      "matched": true
+    }
+  ]
+}

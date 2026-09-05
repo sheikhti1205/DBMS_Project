@@ -1,0 +1,629 @@
+{
+  "scope": "Anonymous retained-copy preview access, with matching filename in page title. Not a publisher-site access log or full-content validation.",
+  "files": [
+    {
+      "file": "2021_Henry_Forest_Ecosys.pdf",
+      "url": "https://drive.google.com/file/d/18jbFwSUcuUUJXh9AGk5-UwqRDzFkVggd/view",
+      "checked_at_utc": "2026-09-05T06:33:14.054903+00:00",
+      "http_status": 200,
+      "title": "2021_Henry_Forest_Ecosys.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Air Pollution Indicator BGD.csv",
+      "url": "https://drive.google.com/file/d/1qUOIUZ0lu-8Kxo8BH7rULUlSjMcGHvIw/view",
+      "checked_at_utc": "2026-09-05T06:33:14.055612+00:00",
+      "http_status": 200,
+      "title": "Air Pollution Indicator BGD.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BBS_HBES_2024.pdf",
+      "url": "https://drive.google.com/file/d/1EP5bIL7GYpgqsXS8ibANmd0bMlRLSYth/view",
+      "checked_at_utc": "2026-09-05T06:33:14.056256+00:00",
+      "http_status": 200,
+      "title": "BBS_HBES_2024.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BBS_Time_Series_Environmental_Database.xlsx",
+      "url": "https://drive.google.com/file/d/1JIISc9YlOjmcH7w1FG6RcY6JLNyyPdjT/view",
+      "checked_at_utc": "2026-09-05T06:33:14.056766+00:00",
+      "http_status": 200,
+      "title": "BBS_Time_Series_Environmental_Database.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD CH4 Admin 01.csv",
+      "url": "https://drive.google.com/file/d/1spje-0EZ-DadW0PXrv7QC115_Z4ZTAbV/view",
+      "checked_at_utc": "2026-09-05T06:33:15.194847+00:00",
+      "http_status": 200,
+      "title": "BGD CH4 Admin 01.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD CH4 City.csv",
+      "url": "https://drive.google.com/file/d/1P22bSCT4151RqD7IaZzmPPylYraVAES4/view",
+      "checked_at_utc": "2026-09-05T06:33:15.195644+00:00",
+      "http_status": 200,
+      "title": "BGD CH4 City.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD CH4 Source.csv",
+      "url": "https://drive.google.com/file/d/1TSay2Zpya6akNuXYg9QY9nbD8OLBumkX/view",
+      "checked_at_utc": "2026-09-05T06:33:15.268642+00:00",
+      "http_status": 200,
+      "title": "BGD CH4 Source.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD CO2 20y Admin 01.csv",
+      "url": "https://drive.google.com/file/d/1AjYzwweRDGvGTSmQLxLT9qmI6ND0T7we/view",
+      "checked_at_utc": "2026-09-05T06:33:15.291796+00:00",
+      "http_status": 200,
+      "title": "BGD CO2 20y Admin 01.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD CO2 20y City.csv",
+      "url": "https://drive.google.com/file/d/1WdhVP3PvVVONkhg9OZAz3O8c_BE4HQpb/view",
+      "checked_at_utc": "2026-09-05T06:33:15.971779+00:00",
+      "http_status": 200,
+      "title": "BGD CO2 20y City.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD CO2 20y Source.csv",
+      "url": "https://drive.google.com/file/d/12PW8LfrzEW_qUjO-zizd8GuuQ4Cpratu/view",
+      "checked_at_utc": "2026-09-05T06:33:16.009040+00:00",
+      "http_status": 200,
+      "title": "BGD CO2 20y Source.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD PM25 Source.csv",
+      "url": "https://drive.google.com/file/d/1aJLirAM0ILJO49EvgVN7DCRvNrFwhOVt/view",
+      "checked_at_utc": "2026-09-05T06:33:16.070632+00:00",
+      "http_status": 200,
+      "title": "BGD PM25 Source.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD Rainfall Subnat 5ytd.csv",
+      "url": "https://drive.google.com/file/d/1byfLOQDC42kRqvMPvcHKXQUsq8XL2sqU/view",
+      "checked_at_utc": "2026-09-05T06:33:16.112418+00:00",
+      "http_status": 200,
+      "title": "BGD Rainfall Subnat 5ytd.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BGD Rainfall Subnat Full.csv",
+      "url": "https://drive.google.com/file/d/1KAlUkD5lVCYQEkUlDcwN5F64xajHeOn5/view",
+      "checked_at_utc": "2026-09-05T06:33:19.943930+00:00",
+      "http_status": 200,
+      "title": "BGD Rainfall Subnat Full.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Additional_Climate_File_1.xlsx",
+      "url": "https://drive.google.com/file/d/1ZiNR0vO9TVYRmH9vbbZT7f-vHADj2pdv/view",
+      "checked_at_utc": "2026-09-05T06:33:19.972066+00:00",
+      "http_status": 200,
+      "title": "BRRI_Additional_Climate_File_1.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Additional_Climate_File_2.xlsx",
+      "url": "https://drive.google.com/file/d/1fydswkFpcDjl3bgUwaf8r1Xu2uIx2Bd_/view",
+      "checked_at_utc": "2026-09-05T06:33:19.980480+00:00",
+      "http_status": 200,
+      "title": "BRRI_Additional_Climate_File_2.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Additional_Climate_File_3.xls",
+      "url": "https://drive.google.com/file/d/1W6FqIWACRBbenldKB1dvI9Ow4rOx9nuh/view",
+      "checked_at_utc": "2026-09-05T06:33:20.177939+00:00",
+      "http_status": 200,
+      "title": "BRRI_Additional_Climate_File_3.xls - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Additional_Climate_File_4.xls",
+      "url": "https://drive.google.com/file/d/1PRzzAvHG14sSAwlIxgeQdIkrPv8uXpa4/view",
+      "checked_at_utc": "2026-09-05T06:33:20.687356+00:00",
+      "http_status": 200,
+      "title": "BRRI_Additional_Climate_File_4.xls - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Daily_Average_Humidity.xlsx",
+      "url": "https://drive.google.com/file/d/1oDdc0gzFLuVX-nNJ5iWwkP8y-baT06XU/view",
+      "checked_at_utc": "2026-09-05T06:33:20.695160+00:00",
+      "http_status": 200,
+      "title": "BRRI_Daily_Average_Humidity.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Daily_Maximum_Temperature.xlsx",
+      "url": "https://drive.google.com/file/d/1mHIbZTFBF8QDpozYZo6wEbXXquz97kTy/view",
+      "checked_at_utc": "2026-09-05T06:33:20.773843+00:00",
+      "http_status": 200,
+      "title": "BRRI_Daily_Maximum_Temperature.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Daily_Minimum_Temperature.xlsx",
+      "url": "https://drive.google.com/file/d/1vdWeqX01bncu04SsA8i3zOX0MtRo3rF2/view",
+      "checked_at_utc": "2026-09-05T06:33:20.882880+00:00",
+      "http_status": 200,
+      "title": "BRRI_Daily_Minimum_Temperature.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Daily_Sunshine.xlsx",
+      "url": "https://drive.google.com/file/d/1zC1fZE_ulfMovMYYhB_tt87ROYKvRymG/view",
+      "checked_at_utc": "2026-09-05T06:33:21.424819+00:00",
+      "http_status": 200,
+      "title": "BRRI_Daily_Sunshine.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BRRI_Daily_Total_Rainfall.xlsx",
+      "url": "https://drive.google.com/file/d/1ajdxiDxf0yPmCKOcalTWkZF5KRxy-o_s/view",
+      "checked_at_utc": "2026-09-05T06:33:21.463159+00:00",
+      "http_status": 200,
+      "title": "BRRI_Daily_Total_Rainfall.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BWDB_Groundwater_Weekly_Data_2018.pdf",
+      "url": "https://drive.google.com/file/d/1WuhMI_zZ0yVr6ckkH353487f4t8qJJj7/view",
+      "checked_at_utc": "2026-09-05T06:33:21.557279+00:00",
+      "http_status": 200,
+      "title": "BWDB_Groundwater_Weekly_Data_2018.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BWDB_Rainfall_In_Bangladesh_2017_2018.pdf",
+      "url": "https://drive.google.com/file/d/1Zpusbg2k6k43Z6baj8XwNzT0JJZGY6Ul/view",
+      "checked_at_utc": "2026-09-05T06:33:21.682256+00:00",
+      "http_status": 200,
+      "title": "BWDB_Rainfall_In_Bangladesh_2017_2018.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BWDB_Rivers_Information.csv",
+      "url": "https://drive.google.com/file/d/15c_0Y2k5HXQtjWplxfwcVjedvTNkFoa8/view",
+      "checked_at_utc": "2026-09-05T06:33:22.159186+00:00",
+      "http_status": 200,
+      "title": "BWDB_Rivers_Information.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "BWDB_Trend_of_Water_Level_of_Major_Rivers_2014_2019.pdf",
+      "url": "https://drive.google.com/file/d/18QrRy6WJC0TwMzJEX48iNxfP-nzhCsFb/view",
+      "checked_at_utc": "2026-09-05T06:33:22.186781+00:00",
+      "http_status": 200,
+      "title": "BWDB_Trend_of_Water_Level_of_Major_Rivers_2014_2019.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Climate Change BGD.csv",
+      "url": "https://drive.google.com/file/d/1GpwLS8LV5H64We-xjkkyhOhvVLu3e4Iu/view",
+      "checked_at_utc": "2026-09-05T06:33:22.289368+00:00",
+      "http_status": 200,
+      "title": "Climate Change BGD.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Daily Normal Maximum Temperature.pdf",
+      "url": "https://drive.google.com/file/d/1ShzKuExbNjz6KAGVoWOkj1AX_h3AXdGS/view",
+      "checked_at_utc": "2026-09-05T06:33:22.417208+00:00",
+      "http_status": 200,
+      "title": "Daily Normal Maximum Temperature.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Daily Normal Minimum Temperature.pdf",
+      "url": "https://drive.google.com/file/d/1GXuBjq9TPge8NbG1DvOXUBEIolDeqYKu/view",
+      "checked_at_utc": "2026-09-05T06:33:22.844727+00:00",
+      "http_status": 200,
+      "title": "Daily Normal Minimum Temperature.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Daily Normal Rainfall.pdf",
+      "url": "https://drive.google.com/file/d/1w7lS2dLzBjE7W2jx3535Z76jU3vhlS2X/view",
+      "checked_at_utc": "2026-09-05T06:33:22.895395+00:00",
+      "http_status": 200,
+      "title": "Daily Normal Rainfall.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "DoE_Ambient_Air_Quality_2018_2023.pdf",
+      "url": "https://drive.google.com/file/d/19KOZazA_tjhdz-OT-CgI1obYe2zgYJ3E/view",
+      "checked_at_utc": "2026-09-05T06:33:23.000898+00:00",
+      "http_status": 200,
+      "title": "DoE_Ambient_Air_Quality_2018_2023.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "DoE_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf",
+      "url": "https://drive.google.com/file/d/10p1WgEtZ6-gBB6wmp8TigrokMVSeRdJ1/view",
+      "checked_at_utc": "2026-09-05T06:33:23.242924+00:00",
+      "http_status": 200,
+      "title": "DoE_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "DoE_Surface_and_Ground_Water_Quality_Report_2023.pdf",
+      "url": "https://drive.google.com/file/d/1ArAAsztCBZXU4_IYImov9LAUkp3039J7/view",
+      "checked_at_utc": "2026-09-05T06:33:23.517117+00:00",
+      "http_status": 200,
+      "title": "DoE_Surface_and_Ground_Water_Quality_Report_2023.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "EnergyData_Cyclonic_Storm_Landfalls_File_1.xlsx",
+      "url": "https://drive.google.com/file/d/1VlmjHHchy47vN1IcPqPP0SKz2NGniCV-/view",
+      "checked_at_utc": "2026-09-05T06:33:23.655973+00:00",
+      "http_status": 200,
+      "title": "EnergyData_Cyclonic_Storm_Landfalls_File_1.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "EnergyData_Dhaka_Operations_Report.pdf",
+      "url": "https://drive.google.com/file/d/1Z-Vu_SyG9RFXUPljC2eNJN0W2OMCG1jV/view",
+      "checked_at_utc": "2026-09-05T06:33:23.759781+00:00",
+      "http_status": 200,
+      "title": "EnergyData_Dhaka_Operations_Report.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Environment BGD.csv",
+      "url": "https://drive.google.com/file/d/1sljWpQXGQzoun3xkoVij8nqcXCR_c0GK/view",
+      "checked_at_utc": "2026-09-05T06:33:23.993541+00:00",
+      "http_status": 200,
+      "title": "Environment BGD.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_3148.pdf",
+      "url": "https://drive.google.com/file/d/1FtcC_bZ6de1n8Vr20DD0rBFSc5kyK2wg/view",
+      "checked_at_utc": "2026-09-05T06:33:24.313422+00:00",
+      "http_status": 200,
+      "title": "FAO_3148.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_384b.pdf",
+      "url": "https://drive.google.com/file/d/1hSvXcnpUZrQpOZD0X_fGN1uDB1D9A_0d/view",
+      "checked_at_utc": "2026-09-05T06:33:24.426182+00:00",
+      "http_status": 200,
+      "title": "FAO_384b.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_6086-f.pdf",
+      "url": "https://drive.google.com/file/d/1hLB7k4jfWbL6l32R-9snw7GgIkc8P1h4/view",
+      "checked_at_utc": "2026-09-05T06:33:24.546422+00:00",
+      "http_status": 200,
+      "title": "FAO_6086-f.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_6087.pdf",
+      "url": "https://drive.google.com/file/d/1eURrC_j4p38ORoj7Ag-P1uV-lDSqlpiQ/view",
+      "checked_at_utc": "2026-09-05T06:33:24.732802+00:00",
+      "http_status": 200,
+      "title": "FAO_6087.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_9001.pdf",
+      "url": "https://drive.google.com/file/d/1WbtAHntYHFdtkBnfBpC0UkxrlOoSsK6b/view",
+      "checked_at_utc": "2026-09-05T06:33:25.124754+00:00",
+      "http_status": 200,
+      "title": "FAO_9001.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_966.pdf",
+      "url": "https://drive.google.com/file/d/10XP1E1DXTGMkRBNlSVphbNkEIFA0C2H5/view",
+      "checked_at_utc": "2026-09-05T06:33:25.299918+00:00",
+      "http_status": 200,
+      "title": "FAO_966.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_BFI-Report_final_08_02_2021.pdf",
+      "url": "https://drive.google.com/file/d/18Q2c2REQedCyeYZEEryBieN4Q1fWXaWw/view",
+      "checked_at_utc": "2026-09-05T06:33:25.365407+00:00",
+      "http_status": 200,
+      "title": "FAO_BFI-Report_final_08_02_2021.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_BFI_analysis_document_final_v4.pdf",
+      "url": "https://drive.google.com/file/d/1416kkcreNznFKqYExTjVzba0Wy3JYq4k/view",
+      "checked_at_utc": "2026-09-05T06:33:25.454405+00:00",
+      "http_status": 200,
+      "title": "FAO_BFI_analysis_document_final_v4.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_BFI_manual.pdf",
+      "url": "https://drive.google.com/file/d/15cOAnxgRfAm7xATV1qXmPpG1Isy4VaHl/view",
+      "checked_at_utc": "2026-09-05T06:33:25.847940+00:00",
+      "http_status": 200,
+      "title": "FAO_BFI_manual.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_OpenKnowledge_Content.pdf",
+      "url": "https://drive.google.com/file/d/1POO-L7nUTBQ8AeMvrZf8fTZczQ4GHqCQ/view",
+      "checked_at_utc": "2026-09-05T06:33:26.055876+00:00",
+      "http_status": 200,
+      "title": "FAO_OpenKnowledge_Content.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "FAO_OpenKnowledge_Content_repaired.pdf",
+      "url": "https://drive.google.com/file/d/10MkL5qBTfgsTYROhqDoZ4_Kz1oY0Lsfu/view",
+      "checked_at_utc": "2026-09-05T06:33:26.145869+00:00",
+      "http_status": 200,
+      "title": "FAO_OpenKnowledge_Content_repaired.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "GLA_Data_Sarker_693.xlsx",
+      "url": "https://drive.google.com/file/d/1y_RDokv2zsf9BYZ07ZotBxlVUT7aoUQa/view",
+      "checked_at_utc": "2026-09-05T06:33:26.154754+00:00",
+      "http_status": 200,
+      "title": "GLA_Data_Sarker_693.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "GLA_researchdata_eprint_693.csv",
+      "url": "https://drive.google.com/file/d/1DnB8lRwXbxV6hP207LdZvYC9oM17DoIr/view",
+      "checked_at_utc": "2026-09-05T06:33:26.655237+00:00",
+      "http_status": 200,
+      "title": "GLA_researchdata_eprint_693.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "GW_locations_metadata.csv",
+      "url": "https://drive.google.com/file/d/1xsee5lOMXabdyGXPR54eb2DkvSyq06d0/view",
+      "checked_at_utc": "2026-09-05T06:33:26.819071+00:00",
+      "http_status": 200,
+      "title": "GW_locations_metadata.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "MoEFCC_BCCSAP.pdf",
+      "url": "https://drive.google.com/file/d/1lnhJBO0OtxT3USDz7itsOY2yN8C05DLk/view",
+      "checked_at_utc": "2026-09-05T06:33:26.823196+00:00",
+      "http_status": 200,
+      "title": "MoEFCC_BCCSAP.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "MoEFCC_Bangladesh_Climate_Change_and_Gender_Action_Plan.pdf",
+      "url": "https://drive.google.com/file/d/1652NdTpYmI4oSMyTom6TL7XtGIGi3Bgt/view",
+      "checked_at_utc": "2026-09-05T06:33:26.849910+00:00",
+      "http_status": 200,
+      "title": "MoEFCC_Bangladesh_Climate_Change_and_Gender_Action_Plan.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "MoEFCC_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf",
+      "url": "https://drive.google.com/file/d/1bdGnX1oN7XwPZ8E9ZKuF4rtKqvIB-WNA/view",
+      "checked_at_utc": "2026-09-05T06:33:27.461545+00:00",
+      "http_status": 200,
+      "title": "MoEFCC_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "MoEFCC_Bangladesh_National_Conservation_Strategy_2021_2036.pdf",
+      "url": "https://drive.google.com/file/d/1rCypmT_Z2DYOjLvHDfLwkcrvSsUXm0cM/view",
+      "checked_at_utc": "2026-09-05T06:33:27.575461+00:00",
+      "http_status": 200,
+      "title": "MoEFCC_Bangladesh_National_Conservation_Strategy_2021_2036.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "MoEFCC_Country_Investment_Plan.pdf",
+      "url": "https://drive.google.com/file/d/1LlAe03H0oteerYSxePKelVv9lcKlk7hF/view",
+      "checked_at_utc": "2026-09-05T06:33:27.583034+00:00",
+      "http_status": 200,
+      "title": "MoEFCC_Country_Investment_Plan.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Monthly Humidity Normal Data.pdf",
+      "url": "https://drive.google.com/file/d/1msxBByogKInpf7ZMGHq_H32L_lmzJvtf/view",
+      "checked_at_utc": "2026-09-05T06:33:27.610709+00:00",
+      "http_status": 200,
+      "title": "Monthly Humidity Normal Data.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Monthly Maximum Temperature.pdf",
+      "url": "https://drive.google.com/file/d/1wuO9_6theRaiZrTaizAzRrWqV8o5PcmU/view",
+      "checked_at_utc": "2026-09-05T06:33:28.204704+00:00",
+      "http_status": 200,
+      "title": "Monthly Maximum Temperature.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Monthly Minimum Temperature.pdf",
+      "url": "https://drive.google.com/file/d/1feFL2ZS-b6FX_-S6BtWHcXSD6ZGwef8e/view",
+      "checked_at_utc": "2026-09-05T06:33:28.309748+00:00",
+      "http_status": 200,
+      "title": "Monthly Minimum Temperature.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Normal Monthly Rainfall.pdf",
+      "url": "https://drive.google.com/file/d/1-bwoyULTei-jnXWMpi_NDiL332PAncvy/view",
+      "checked_at_utc": "2026-09-05T06:33:28.367881+00:00",
+      "http_status": 200,
+      "title": "Normal Monthly Rainfall.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Normal Monthly Rainy Day.pdf",
+      "url": "https://drive.google.com/file/d/1xomXDPBvKogxnxiYTO2DS0V1i1BbeRMj/view",
+      "checked_at_utc": "2026-09-05T06:33:28.385978+00:00",
+      "http_status": 200,
+      "title": "Normal Monthly Rainy Day.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Normal Wind Speed.pdf",
+      "url": "https://drive.google.com/file/d/1r7szerCyJ3AFxnYXxlGS4O54GxGjtmhj/view",
+      "checked_at_utc": "2026-09-05T06:33:28.987898+00:00",
+      "http_status": 200,
+      "title": "Normal Wind Speed.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Sunshine.xls",
+      "url": "https://drive.google.com/file/d/1FJ7lDH8NVXlcljQvnuYc02U9bhhx881B/view",
+      "checked_at_utc": "2026-09-05T06:33:29.089451+00:00",
+      "http_status": 200,
+      "title": "Sunshine.xls - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Temperature Data.pdf",
+      "url": "https://drive.google.com/file/d/1koM8lZ4V4BZ7A_oBqwXXaCgj5cREoGuk/view",
+      "checked_at_utc": "2026-09-05T06:33:29.138116+00:00",
+      "http_status": 200,
+      "title": "Temperature Data.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "Temperature Data.xlsx",
+      "url": "https://drive.google.com/file/d/1CQqLWn1Oyat9435qsa6Y3ouUGtDRNqcv/view",
+      "checked_at_utc": "2026-09-05T06:33:29.142754+00:00",
+      "http_status": 200,
+      "title": "Temperature Data.xlsx - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "UNESCO_Reactive_Monitoring_Mission_The_Sundarbans_2019.pdf",
+      "url": "https://drive.google.com/file/d/1Cw9l5E-fbL3zcYMk8Viuaz5WqJ4Ui23m/view",
+      "checked_at_utc": "2026-09-05T06:33:29.750501+00:00",
+      "http_status": 200,
+      "title": "UNESCO_Reactive_Monitoring_Mission_The_Sundarbans_2019.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "UNESCO_State_Party_Report_The_Sundarbans_2016.pdf",
+      "url": "https://drive.google.com/file/d/1iCb343uxMC-ZzYnxdw0wpdFgwU8N5g0w/view",
+      "checked_at_utc": "2026-09-05T06:33:29.812224+00:00",
+      "http_status": 200,
+      "title": "UNESCO_State_Party_Report_The_Sundarbans_2016.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "UNESCO_State_of_Conservation_Report_The_Sundarbans_2025.pdf",
+      "url": "https://drive.google.com/file/d/18XS6b3tLCzJJqEvzgPXI0aMH0Zzi3Jjx/view",
+      "checked_at_utc": "2026-09-05T06:33:29.817178+00:00",
+      "http_status": 200,
+      "title": "UNESCO_State_of_Conservation_Report_The_Sundarbans_2025.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "UNESCO_The_Sundarbans_Bangladesh_Report_2022.pdf",
+      "url": "https://drive.google.com/file/d/1e34wj_DBOtDJgrj0IS4hhFkHJqN51GRm/view",
+      "checked_at_utc": "2026-09-05T06:33:29.924831+00:00",
+      "http_status": 200,
+      "title": "UNESCO_The_Sundarbans_Bangladesh_Report_2022.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "UNSD_Bangladesh_Environmental_Statistics_Framework_2016_2030.pdf",
+      "url": "https://drive.google.com/file/d/12Ievycum8CSO6Q9PqzdXlUCjsXJEZYtD/view",
+      "checked_at_utc": "2026-09-05T06:33:30.501267+00:00",
+      "http_status": 200,
+      "title": "UNSD_Bangladesh_Environmental_Statistics_Framework_2016_2030.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "UNSD_Bangladesh_Pilot_Survey_SADDD_CCA_DRR.pdf",
+      "url": "https://drive.google.com/file/d/1YqsK_H57pcoctv3ngqlzMTiOdejWFepr/view",
+      "checked_at_utc": "2026-09-05T06:33:30.604729+00:00",
+      "http_status": 200,
+      "title": "UNSD_Bangladesh_Pilot_Survey_SADDD_CCA_DRR.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "VTechWorks_Bangladesh_Item_Download.pdf",
+      "url": "https://drive.google.com/file/d/1n7XqVCvEkxKoaNlI2uHAzchOVUzK5D9D/view",
+      "checked_at_utc": "2026-09-05T06:33:30.616576+00:00",
+      "http_status": 200,
+      "title": "VTechWorks_Bangladesh_Item_Download.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "WDPA_WDOECM_May2026_Public_BGD_csv.csv",
+      "url": "https://drive.google.com/file/d/1FunNxlEOzWHlteKJGKb3Kedlc8Uw6EoT/view",
+      "checked_at_utc": "2026-09-05T06:33:30.761568+00:00",
+      "http_status": 200,
+      "title": "WDPA_WDOECM_May2026_Public_BGD_csv.csv - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "WHO_Bangladesh_Climate_Change_WASH.pdf",
+      "url": "https://drive.google.com/file/d/1_-9v8hoq0FS5a9v0rNagfE0CjBApvBSD/view",
+      "checked_at_utc": "2026-09-05T06:33:31.279116+00:00",
+      "http_status": 200,
+      "title": "WHO_Bangladesh_Climate_Change_WASH.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "WHO_Health_and_Climate_Change_Country_Profile_Bangladesh_2015.pdf",
+      "url": "https://drive.google.com/file/d/1GvfVsrj0S39mIfzp5uyUPQ4IF9yG1N9q/view",
+      "checked_at_utc": "2026-09-05T06:33:31.323843+00:00",
+      "http_status": 200,
+      "title": "WHO_Health_and_Climate_Change_Country_Profile_Bangladesh_2015.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "WorldBank_Urban_Bangladesh_Country_Environmental_Analysis_2018.pdf",
+      "url": "https://drive.google.com/file/d/1v-tlCJ8rmHm2GBEI7jK4LVwj-ehIAvxQ/view",
+      "checked_at_utc": "2026-09-05T06:33:31.410204+00:00",
+      "http_status": 200,
+      "title": "WorldBank_Urban_Bangladesh_Country_Environmental_Analysis_2018.pdf - Google Drive",
+      "accessible": true
+    },
+    {
+      "file": "monthly_groundwater_levels.xlsx",
+      "url": "https://drive.google.com/file/d/1bRVXxqtLg0k1g8itRZQpi8Z7OQiIIDEK/view",
+      "checked_at_utc": "2026-09-05T06:33:31.571948+00:00",
+      "http_status": 200,
+      "title": "monthly_groundwater_levels.xlsx - Google Drive",
+      "accessible": true
+    }
+  ],
+  "supporting_links": [
+    {
+      "url": "https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q",
+      "checked_at_utc": "2026-09-05T06:38:14.515521+00:00",
+      "http_status": 200,
+      "title": "Selected_Source_Files - Google \u09a1\u09cd\u09b0\u09be\u0987\u09ad",
+      "accessible": true
+    },
+    {
+      "url": "https://drive.google.com/file/d/1UB5vrVxfrtvFXZUDgvV4bsBDaMcvC2sw/view",
+      "checked_at_utc": "2026-09-05T06:38:15.333117+00:00",
+      "http_status": 200,
+      "title": "Team-7_BD_Environment_Data_Resources.xlsx - Google Drive",
+      "accessible": true
+    }
+  ]
+}

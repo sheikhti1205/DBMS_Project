@@ -12,6 +12,14 @@ observation grains and some lack identifiers required by the final model. The
 pipeline therefore treats reconciliation as an explicit transformation rather
 than assuming that similarly named columns represent the same fact.
 
+The BMD temperature input is a project-formatted workbook made from the
+retained PDF publication. The committed extraction code starts from that
+workbook; the original conversion procedure was not recorded. A separate
+comparison checks the first, middle and last station rows on all 18 workbook
+sheets against the PDF: all 1,296 sampled monthly values agree. This is a
+sample check, not an exhaustive verification of every cell. The comparison
+script and file hashes are supplied with the normalization evidence.
+
 \subsection{ETL Process}
 \label{subsec:etl-process}
 

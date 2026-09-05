@@ -1,76 +1,76 @@
-is_source,org,file,ext,author,recorded_review_date
-True,BBS,BBS_HBES_2024.pdf,.pdf,Syed Hossain,03/04/2026
-True,BBS,BBS_Time_Series_Environmental_Database.xlsx,.xlsx,Md. Rafiqul Islam,03/04/2026
-True,BMD,Daily Normal Maximum Temperature.pdf,.pdf,met1,07/04/2026
-True,BMD,Daily Normal Minimum Temperature.pdf,.pdf,met1,02/04/2026
-True,BMD,Daily Normal Rainfall.pdf,.pdf,met1,07/04/2026
-True,BMD,Monthly Humidity Normal Data.pdf,.pdf,met1,02/04/2026
-True,BMD,Monthly Maximum Temperature.pdf,.pdf,met1,04/04/2026
-True,BMD,Monthly Minimum Temperature.pdf,.pdf,met1,05/04/2026
-True,BMD,Normal Monthly Rainfall.pdf,.pdf,met1,05/04/2026
-True,BMD,Normal Monthly Rainy Day.pdf,.pdf,met1,03/04/2026
-True,BMD,Normal Wind Speed.pdf,.pdf,,02/04/2026
-True,BMD,Sunshine.xls,.xls,,04/04/2026
-True,BMD,Temperature Data.pdf,.pdf,,02/04/2026
-True,BRRI,BRRI_Additional_Climate_File_1.xlsx,.xlsx,Head_Stat,03/04/2026
-True,BRRI,BRRI_Additional_Climate_File_2.xlsx,.xlsx,Head_Stat,03/04/2026
-True,BRRI,BRRI_Additional_Climate_File_3.xls,.xls,,05/04/2026
-True,BRRI,BRRI_Additional_Climate_File_4.xls,.xls,,12/04/2026
-True,BRRI,BRRI_Daily_Average_Humidity.xlsx,.xlsx,Asadullah,06/04/2026
-True,BRRI,BRRI_Daily_Maximum_Temperature.xlsx,.xlsx,Asadullah,03/04/2026
-True,BRRI,BRRI_Daily_Minimum_Temperature.xlsx,.xlsx,Asadullah,03/04/2026
-True,BRRI,BRRI_Daily_Sunshine.xlsx,.xlsx,Asadullah,03/04/2026
-True,BRRI,BRRI_Daily_Total_Rainfall.xlsx,.xlsx,Asadullah,10/04/2026
-True,BWDB,BWDB_Groundwater_Weekly_Data_2018.pdf,.pdf,,08/04/2026
-True,BWDB,BWDB_Rainfall_In_Bangladesh_2017_2018.pdf,.pdf,XEN-SWPB,05/04/2026
-True,BWDB,BWDB_Rivers_Information.csv,.csv,,09/04/2026
-True,BWDB,BWDB_Trend_of_Water_Level_of_Major_Rivers_2014_2019.pdf,.pdf,SWPB Server,07/04/2026
-True,DoE,DoE_Ambient_Air_Quality_2018_2023.pdf,.pdf,,10/04/2026
-True,DoE,DoE_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf,.pdf,,14/04/2026
-True,DoE,DoE_Surface_and_Ground_Water_Quality_Report_2023.pdf,.pdf,Home,12/04/2026
-True,HDX,Air Pollution Indicator BGD.csv,.csv,,05/04/2026
-True,HDX,BGD CH4 Admin 01.csv,.csv,,11/04/2026
-True,HDX,BGD CH4 City.csv,.csv,,16/04/2026
-True,HDX,BGD CH4 Source.csv,.csv,,07/04/2026
-True,HDX,BGD CO2 20y Admin 01.csv,.csv,,08/04/2026
-True,HDX,BGD CO2 20y City.csv,.csv,,17/04/2026
-True,HDX,BGD CO2 20y Source.csv,.csv,,07/04/2026
-True,HDX,BGD PM25 Source.csv,.csv,,14/04/2026
-True,HDX,BGD Rainfall Subnat 5ytd.csv,.csv,,06/04/2026
-True,HDX,BGD Rainfall Subnat Full.csv,.csv,,10/04/2026
-True,HDX,Climate Change BGD.csv,.csv,,16/04/2026
-True,HDX,Environment BGD.csv,.csv,,09/04/2026
-True,MoEFCC,MoEFCC_BCCSAP.pdf,.pdf,IBM,13/04/2026
-True,MoEFCC,MoEFCC_Bangladesh_Climate_Change_and_Gender_Action_Plan.pdf,.pdf,,11/04/2026
-True,MoEFCC,MoEFCC_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf,.pdf,,06/04/2026
-True,MoEFCC,MoEFCC_Bangladesh_National_Conservation_Strategy_2021_2036.pdf,.pdf,,10/04/2026
-True,MoEFCC,MoEFCC_Country_Investment_Plan.pdf,.pdf,,13/04/2026
-True,Other,2021_Henry_Forest_Ecosys.pdf,.pdf,"Matieu Henry, Zaheer Iqbal, Kristofer Johnson, Mariam Akhter, Liam Costello, Charles Scott, Rashed Jalal, Md. Akhter Hossain, Nikhil Chakma, Olaf Kuegler, Hossain Mahmood, Rajib Mahamud, Mohammad Raqibul Hasan Siddique, Khaled Misbahuzzaman, Mohammad Main Uddin, Mohammed Al Amin, Farid Uddin Ahmed, Gael Sola, Md. Baktiar Siddiqui, Luca Birigazzi, Mahmudur Rahman, Ilias Animon, Saimunnahar Ritu, Laskar Muqsudur Rahman, Aminul Islam, Heather Hayden, Frida Sidik, Mondal Falgoonee Kumar, Rakibul Hassan Mukul, Hossain Nishad, Ariful Hoque Belal, Asif Reza Anik, Abdul Khaleque, Md. Shaheduzzaman, Syed Shahadat Hossain, Tariq Aziz, Md. Tauhidor Rahaman, Ruhul Mohaiman, Patrick Meyer, Purnata Chakma, A. Rashid, Sourav Das, Shrabanti Hira, Mohammed Jashimuddin, Mohammad Mahfuzur Rahman, Karl Wurster, Sarder Nasir Uddin, Abul Kalam Azad, S. Islam, Laurent Saint-André",08/04/2026
-True,Other,EnergyData_Cyclonic_Storm_Landfalls_File_1.xlsx,.xlsx,David,19/04/2026
-True,Other,EnergyData_Dhaka_Operations_Report.pdf,.pdf,Fabian Enßle | GAF AG,05/04/2026
-True,Other,FAO_3148.pdf,.pdf,"Chakma, Nikhil (FAOBD)",14/04/2026
-True,Other,FAO_384b.pdf,.pdf,User,29/04/2026
-True,Other,FAO_6086-f.pdf,.pdf,,20/04/2026
-True,Other,FAO_6087.pdf,.pdf,,24/04/2026
-True,Other,FAO_9001.pdf,.pdf,Falgoonee Kumar,11/04/2026
-True,Other,FAO_966.pdf,.pdf,"Chakma, Nikhil (FAOBD)",02/04/2026
-True,Other,FAO_BFI-Report_final_08_02_2021.pdf,.pdf,,16/04/2026
-True,Other,FAO_BFI_analysis_document_final_v4.pdf,.pdf,FAO-NFI,27/04/2026
-True,Other,FAO_BFI_manual.pdf,.pdf,,06/04/2026
-True,Other,FAO_OpenKnowledge_Content.pdf,.pdf,,17/04/2026
-True,Other,FAO_OpenKnowledge_Content_repaired.pdf,.pdf,,20/04/2026
-True,Other,GLA_Data_Sarker_693.xlsx,.xlsx,SK,19/04/2026
-True,Other,GLA_researchdata_eprint_693.csv,.csv,,20/04/2026
-True,Other,GW_locations_metadata.csv,.csv,,18/04/2026
-True,Other,VTechWorks_Bangladesh_Item_Download.pdf,.pdf,Sharif Islam,03/04/2026
-True,Other,WDPA_WDOECM_May2026_Public_BGD_csv.csv,.csv,,29/04/2026
-True,Other,monthly_groundwater_levels.xlsx,.xlsx,Microsoft Office User,25/04/2026
-True,UN,UNSD_Bangladesh_Environmental_Statistics_Framework_2016_2030.pdf,.pdf,,09/04/2026
-True,UN,UNSD_Bangladesh_Pilot_Survey_SADDD_CCA_DRR.pdf,.pdf,,12/04/2026
-True,UNESCO,UNESCO_Reactive_Monitoring_Mission_The_Sundarbans_2019.pdf,.pdf,World Heritage Centre,14/04/2026
-True,UNESCO,UNESCO_State_Party_Report_The_Sundarbans_2016.pdf,.pdf,,12/04/2026
-True,UNESCO,UNESCO_State_of_Conservation_Report_The_Sundarbans_2025.pdf,.pdf,,08/04/2026
-True,UNESCO,UNESCO_The_Sundarbans_Bangladesh_Report_2022.pdf,.pdf,,08/04/2026
-True,WHO,WHO_Bangladesh_Climate_Change_WASH.pdf,.pdf,Rory Moses McKeown,14/04/2026
-True,WHO,WHO_Health_and_Climate_Change_Country_Profile_Bangladesh_2015.pdf,.pdf,admin,16/04/2026
-True,WorldBank,WorldBank_Urban_Bangladesh_Country_Environmental_Analysis_2018.pdf,.pdf,World Bank Group,20/04/2026
+is_source,org,file,ext,author
+True,BBS,BBS_HBES_2024.pdf,.pdf,Syed Hossain
+True,BBS,BBS_Time_Series_Environmental_Database.xlsx,.xlsx,Md. Rafiqul Islam
+True,BMD,Daily Normal Maximum Temperature.pdf,.pdf,met1
+True,BMD,Daily Normal Minimum Temperature.pdf,.pdf,met1
+True,BMD,Daily Normal Rainfall.pdf,.pdf,met1
+True,BMD,Monthly Humidity Normal Data.pdf,.pdf,met1
+True,BMD,Monthly Maximum Temperature.pdf,.pdf,met1
+True,BMD,Monthly Minimum Temperature.pdf,.pdf,met1
+True,BMD,Normal Monthly Rainfall.pdf,.pdf,met1
+True,BMD,Normal Monthly Rainy Day.pdf,.pdf,met1
+True,BMD,Normal Wind Speed.pdf,.pdf,
+True,BMD,Sunshine.xls,.xls,
+True,BMD,Temperature Data.pdf,.pdf,
+True,BRRI,BRRI_Additional_Climate_File_1.xlsx,.xlsx,Head_Stat
+True,BRRI,BRRI_Additional_Climate_File_2.xlsx,.xlsx,Head_Stat
+True,BRRI,BRRI_Additional_Climate_File_3.xls,.xls,
+True,BRRI,BRRI_Additional_Climate_File_4.xls,.xls,
+True,BRRI,BRRI_Daily_Average_Humidity.xlsx,.xlsx,Asadullah
+True,BRRI,BRRI_Daily_Maximum_Temperature.xlsx,.xlsx,Asadullah
+True,BRRI,BRRI_Daily_Minimum_Temperature.xlsx,.xlsx,Asadullah
+True,BRRI,BRRI_Daily_Sunshine.xlsx,.xlsx,Asadullah
+True,BRRI,BRRI_Daily_Total_Rainfall.xlsx,.xlsx,Asadullah
+True,BWDB,BWDB_Groundwater_Weekly_Data_2018.pdf,.pdf,
+True,BWDB,BWDB_Rainfall_In_Bangladesh_2017_2018.pdf,.pdf,XEN-SWPB
+True,BWDB,BWDB_Rivers_Information.csv,.csv,
+True,BWDB,BWDB_Trend_of_Water_Level_of_Major_Rivers_2014_2019.pdf,.pdf,SWPB Server
+True,DoE,DoE_Ambient_Air_Quality_2018_2023.pdf,.pdf,
+True,DoE,DoE_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf,.pdf,
+True,DoE,DoE_Surface_and_Ground_Water_Quality_Report_2023.pdf,.pdf,Home
+True,HDX,Air Pollution Indicator BGD.csv,.csv,
+True,HDX,BGD CH4 Admin 01.csv,.csv,
+True,HDX,BGD CH4 City.csv,.csv,
+True,HDX,BGD CH4 Source.csv,.csv,
+True,HDX,BGD CO2 20y Admin 01.csv,.csv,
+True,HDX,BGD CO2 20y City.csv,.csv,
+True,HDX,BGD CO2 20y Source.csv,.csv,
+True,HDX,BGD PM25 Source.csv,.csv,
+True,HDX,BGD Rainfall Subnat 5ytd.csv,.csv,
+True,HDX,BGD Rainfall Subnat Full.csv,.csv,
+True,HDX,Climate Change BGD.csv,.csv,
+True,HDX,Environment BGD.csv,.csv,
+True,MoEFCC,MoEFCC_BCCSAP.pdf,.pdf,IBM
+True,MoEFCC,MoEFCC_Bangladesh_Climate_Change_and_Gender_Action_Plan.pdf,.pdf,
+True,MoEFCC,MoEFCC_Bangladesh_National_Air_Quality_Management_Plan_2024_2030.pdf,.pdf,
+True,MoEFCC,MoEFCC_Bangladesh_National_Conservation_Strategy_2021_2036.pdf,.pdf,
+True,MoEFCC,MoEFCC_Country_Investment_Plan.pdf,.pdf,
+True,Other,2021_Henry_Forest_Ecosys.pdf,.pdf,"Matieu Henry, Zaheer Iqbal, Kristofer Johnson, Mariam Akhter, Liam Costello, Charles Scott, Rashed Jalal, Md. Akhter Hossain, Nikhil Chakma, Olaf Kuegler, Hossain Mahmood, Rajib Mahamud, Mohammad Raqibul Hasan Siddique, Khaled Misbahuzzaman, Mohammad Main Uddin, Mohammed Al Amin, Farid Uddin Ahmed, Gael Sola, Md. Baktiar Siddiqui, Luca Birigazzi, Mahmudur Rahman, Ilias Animon, Saimunnahar Ritu, Laskar Muqsudur Rahman, Aminul Islam, Heather Hayden, Frida Sidik, Mondal Falgoonee Kumar, Rakibul Hassan Mukul, Hossain Nishad, Ariful Hoque Belal, Asif Reza Anik, Abdul Khaleque, Md. Shaheduzzaman, Syed Shahadat Hossain, Tariq Aziz, Md. Tauhidor Rahaman, Ruhul Mohaiman, Patrick Meyer, Purnata Chakma, A. Rashid, Sourav Das, Shrabanti Hira, Mohammed Jashimuddin, Mohammad Mahfuzur Rahman, Karl Wurster, Sarder Nasir Uddin, Abul Kalam Azad, S. Islam, Laurent Saint-André"
+True,Other,EnergyData_Cyclonic_Storm_Landfalls_File_1.xlsx,.xlsx,David
+True,Other,EnergyData_Dhaka_Operations_Report.pdf,.pdf,Fabian Enßle | GAF AG
+True,Other,FAO_3148.pdf,.pdf,"Chakma, Nikhil (FAOBD)"
+True,Other,FAO_384b.pdf,.pdf,User
+True,Other,FAO_6086-f.pdf,.pdf,
+True,Other,FAO_6087.pdf,.pdf,
+True,Other,FAO_9001.pdf,.pdf,Falgoonee Kumar
+True,Other,FAO_966.pdf,.pdf,"Chakma, Nikhil (FAOBD)"
+True,Other,FAO_BFI-Report_final_08_02_2021.pdf,.pdf,
+True,Other,FAO_BFI_analysis_document_final_v4.pdf,.pdf,FAO-NFI
+True,Other,FAO_BFI_manual.pdf,.pdf,
+True,Other,FAO_OpenKnowledge_Content.pdf,.pdf,
+True,Other,FAO_OpenKnowledge_Content_repaired.pdf,.pdf,
+True,Other,GLA_Data_Sarker_693.xlsx,.xlsx,SK
+True,Other,GLA_researchdata_eprint_693.csv,.csv,
+True,Other,GW_locations_metadata.csv,.csv,
+True,Other,VTechWorks_Bangladesh_Item_Download.pdf,.pdf,Sharif Islam
+True,Other,WDPA_WDOECM_May2026_Public_BGD_csv.csv,.csv,
+True,Other,monthly_groundwater_levels.xlsx,.xlsx,Microsoft Office User
+True,UN,UNSD_Bangladesh_Environmental_Statistics_Framework_2016_2030.pdf,.pdf,
+True,UN,UNSD_Bangladesh_Pilot_Survey_SADDD_CCA_DRR.pdf,.pdf,
+True,UNESCO,UNESCO_Reactive_Monitoring_Mission_The_Sundarbans_2019.pdf,.pdf,World Heritage Centre
+True,UNESCO,UNESCO_State_Party_Report_The_Sundarbans_2016.pdf,.pdf,
+True,UNESCO,UNESCO_State_of_Conservation_Report_The_Sundarbans_2025.pdf,.pdf,
+True,UNESCO,UNESCO_The_Sundarbans_Bangladesh_Report_2022.pdf,.pdf,
+True,WHO,WHO_Bangladesh_Climate_Change_WASH.pdf,.pdf,Rory Moses McKeown
+True,WHO,WHO_Health_and_Climate_Change_Country_Profile_Bangladesh_2015.pdf,.pdf,admin
+True,WorldBank,WorldBank_Urban_Bangladesh_Country_Environmental_Analysis_2018.pdf,.pdf,World Bank Group

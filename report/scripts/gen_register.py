@@ -7,9 +7,9 @@
 
 Reads register_data.csv, the minimal committed register input: one row per
 collected source or data file with its family (org), file name, type (ext),
-embedded author or creator, and recorded review date.  Those dates follow the
-verified 2-29 April 2026 discovery and verification schedule used throughout
-the report; this script never uses a run-time date.  The official and unofficial
+embedded author or creator. Last access dates come from source_access_checks.json,
+which records successful anonymous access to each retained Drive copy. These
+are final link-check dates, not historical publisher-site visits. The official and unofficial
 longtables together partition the 75 collected files exactly.  The selected
 table lists the deliberate set of 9 structured files selected for processing;
 one of them (Temperature Data.xlsx) is the project-formatted derivative of the
@@ -23,6 +23,7 @@ File-name cells break at underscores and spaces but keep the extension on one
 line, so the generator does not use \\seqsplit.
 """
 import csv
+from datetime import datetime, timedelta, timezone
 import json
 import os
 
@@ -107,8 +108,7 @@ PIPELINE = (
 )
 
 # Processing inputs that are project-formatted derivatives of a collected file
-# rather than collected source files themselves.  The recorded review date is
-# inherited from the retained source row so that no date is invented.
+# rather than collected source files themselves. Each has its own access check.
 DERIVED_INPUTS = {
     "Temperature Data.xlsx": {
         "org": "BMD",
@@ -207,6 +207,16 @@ def rank(label, order):
 
 def main():
     rows = load()
+    checks = json.load(open(os.path.join(HERE, "source_access_checks.json")))
+    access = {r["file"]: r for r in checks["files"]}
+
+    def access_date(f):
+        record = access.get(f, {})
+        expected_url = "https://drive.google.com/file/d/" + drive_map[f]["id"] + "/view"
+        if not record.get("accessible") or record.get("url") != expected_url:
+            raise SystemExit(f"no successful access check for {f}")
+        return datetime.fromisoformat(record["checked_at_utc"]).astimezone(
+            timezone(timedelta(hours=6))).strftime("%d/%m/%Y")
     with open(DRIVE) as f:
         drive_map = json.load(f)
     missing = [f for f in rows if f not in drive_map]
@@ -220,18 +230,13 @@ def main():
     def rec(f):
         if f in DERIVED_INPUTS:
             spec = DERIVED_INPUTS[f]
-            parent = rows[spec["metadata_from"]]
-            date = parent["recorded_review_date"].strip()
-            if not date:
-                raise SystemExit(f"missing recorded review date for {f}")
+            date = access_date(f)
             return {"file": f, "org": spec["org"], "label": ORG_FULL[spec["org"]],
                     "official": True, "type": spec["ext"][1:].upper(),
                     "author": spec["author"], "date": date, "url": drive_url(f)}
         r = rows[f]
         label, official = publisher_of(r)
-        date = r["recorded_review_date"].strip()
-        if not date:
-            raise SystemExit(f"missing recorded review date for {f}")
+        date = access_date(f)
         return {"file": f, "org": r["org"], "label": label, "official": official,
                 "type": r["ext"][1:].upper(), "author": clean_author(r["author"]),
                 "date": date, "url": drive_url(f)}
@@ -250,7 +255,7 @@ def main():
     unofficial = sorted((e for e in full if not e["official"]), key=sort_key)
 
     head = ("No. & Source & Source file & Type & Embedded author / creator & "
-            "Recorded review date \\\\")
+            "Last access date \\\\")
     cols = "{c L{2.35cm} L{4.05cm} C{0.9cm} L{2.3cm} C{1.7cm}}"
 
     def tex_row(i, e):
