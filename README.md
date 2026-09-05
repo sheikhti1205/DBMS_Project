@@ -1,20 +1,33 @@
 # Bangladesh Environmental Data Integration Model
 
-A relational database project for collecting, organizing, and integrating environmental data about Bangladesh.
+A relational database project for collecting, organizing, and integrating
+environmental data about Bangladesh. It turns data scattered across different
+organisations and file formats into a single structured, BCNF-normalized
+relational database (SQLite, with a MySQL/MariaDB clone). Developed for the
+Database Systems Lab course at the Department of Computer Science and
+Engineering, University of Chittagong.
 
-This project was developed as part of the Database Systems Lab course at the Department of Computer Science and Engineering, University of Chittagong. Our goal was to take environmental data from different sources, process it, and turn it into a single structured and normalized relational database.
-
----
-
-## Reviewer Quick Access
+## Quick Access
 
 - **Final report (PDF):** [Group-07_Environmental_DBMS_Final_Report.pdf](https://drive.google.com/file/d/1KjoO2aXPX3MEvbx64_3Viq4KVtmV7cKm/view?usp=sharing)
 - **Collected source files (public Drive folder):** [Selected_Source_Files](https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q)
 - **Complete source register with original URLs:** [Team-7_BD_Environment_Data_Resources.xlsx](https://drive.google.com/file/d/1UB5vrVxfrtvFXZUDgvV4bsBDaMcvC2sw/view)
 - **Final ERD:** [`ERD/Final_ERD.png`](ERD/Final_ERD.png)
 - **SQLite database:** [`schema/environment.db`](schema/environment.db)
-- **Normalization evidence:** [`normalization/`](normalization/)
+- **MySQL / MariaDB setup:** [`MySQL/README.md`](MySQL/README.md)
 - **Database verification:** [`schema/scripts/setup/verify_database.py`](schema/scripts/setup/verify_database.py)
+
+## Repository map
+
+| Path | What it is |
+|---|---|
+| `ERD/` | Final entity-relationship diagram; authority for the database structure. |
+| `schema/sql/` | `schema.sql` (final schema), `queries.sql` (saved read-only queries), `complete_data/` (bulk inserts). |
+| `schema/scripts/` | Python tooling: database build/verify, saved-query runner, competency benchmark, maintenance, tests. |
+| `normalization/` | 0NF-to-BCNF workbook and CSVs; `STATISTICS.md` (load statistics), `DATA_REVIEW.md` (data-cleaning decisions), `BMD_DERIVATIVE.md` (BMD PDF/workbook check), `exclusions/` (excluded items). |
+| `MySQL/` | MySQL/MariaDB clone of the database; `README.md` is its setup guide. |
+| `report/` | LaTeX report sources; the compiled PDF is linked above. |
+| `docs/DEVELOPMENT.md` | Developer guide: queries per OS, VS Code on WSL, backup/restore, refresh steps. |
 
 ## Verified facts
 
@@ -38,363 +51,44 @@ violations. The views are query conveniences, not ERD entities.
 Regeneration needs the retained sources plus the project-formatted BMD
 workbook (`Temperature Data.xlsx`); retained PDFs are not automatically
 converted. Outside the Drive project folder set `DBMS_SOURCE_DIR`. Full
-commands: [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md). The
-[BMD comparison](normalization/BMD_DERIVATIVE.md) documents the PDF-to-workbook
-verification boundary.
+commands are in [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
-## Verify the database (read-only)
+## Run and query
 
-Checks tables, relationships, views, rows and the schema definition file:
+Verify the delivered database read-only (tables, relationships, views, rows
+and the schema definition):
 
 ```bash
 python3 -B -m schema.scripts.setup.verify_database
 ```
-## Automatic setup
 
-The launchers need Python 3.10+ and keep a private environment outside the
-project folder. Each prepares `schema/environment.db`, verifies it and runs
-the read-only saved `table-counts` query, asking before installing missing
-packages or replacing an existing database.
+Build it from scratch with `setup_windows.bat` (Windows) or
+`./setup_linux.sh` (Linux, WSL or macOS); add `/yes` or `--yes` for an
+unattended run and `/replace` or `--replace` only to rebuild an existing
+database. The launchers need Python 3.10+, keep a private environment outside
+the project folder, verify the database and print the saved read-only
+`table-counts` query.
 
-Windows:
-
-```bat
-setup_windows.bat
-```
-
-Linux, WSL or macOS:
+Saved queries live in [`schema/sql/queries.sql`](schema/sql/queries.sql) and
+run read-only against the database with:
 
 ```bash
-./setup_linux.sh
+python3 -B -m schema.scripts.queries.query_database saved
 ```
 
-Add `/yes` or `--yes` for an unattended run; add `/replace` or `--replace`
-only to rebuild the existing database.
-
-
-## 1. Problem Statement
-
-Environmental information about Bangladesh is available from many different organizations, but it is often scattered across reports, spreadsheets, PDFs, and other formats. Different sources also organize their data differently, use different time periods, and follow different structures.
-
-This makes it difficult to work with the information as one dataset.
-
-The goal of this project was to collect a selected set of environmental data, clean and structure it, identify the relationships between different types of information, and integrate everything into a single relational database.
-
----
-
-## 2. Project Overview
-
-The project follows the data from its original source to the final database.
-
-We started by finding and reviewing environmental datasets from different organizations. The selected data was then extracted and converted into structured formats. After cleaning and reviewing the data, we designed ER models for the different datasets and combined them into an integrated model.
-
-The resulting relations were then normalized from 0NF through 1NF, 2NF, 3NF, and finally BCNF before being implemented as the final database.
-
-The final database contains:
-
-| Metric | Value |
-|---|---:|
-| Relations | 21 |
-| Columns | 75 |
-| Records | 730,337 |
-| Foreign-key definitions | 27 |
-| Integrity violations | 0 |
-
-The database covers several areas of environmental information, including climate, rainfall, humidity, wind, sunshine, radiation, water quality, rivers, forest area, and industrial data.
-
----
-
-## 3. Project Objectives
-
-The main objectives of the project were to:
-
-- Collect relevant environmental data from reliable sources.
-- Convert data from different source formats into structured datasets.
-- Clean and standardize the collected data while preserving its original meaning.
-- Identify entities, attributes, keys, and relationships across the datasets.
-- Design and integrate the individual ER models.
-- Normalize the resulting relations up to Boyce-Codd Normal Form (BCNF).
-- Implement the final relational schema and load the processed data.
-- Verify the database structure and relationships using SQL and integrity checks.
-
----
-
-## 4. Project Structure
-
-The repository is organized around the major stages of the project.
-
-```text
-DBMS_Project/
-│
-├── ERD/
-│   └── Final_ERD.png
-│
-├── normalization/
-│   ├── csv/
-│   ├── exclusions/
-│   ├── review/
-│   ├── scripts/
-│   └── Environmental_Normalization_0NF_to_BCNF.xlsx
-│
-├── schema/
-│   ├── sql/
-│   ├── scripts/
-│   └── environment.db
-│
-├── MySQL/
-│   └── MySQL/MariaDB version
-│
-├── report/
-│   └── Project report
-│
-├── requirements.txt
-├── setup_linux.sh
-├── setup_windows.bat
-└── README.md
-````
-
-### Main directories
-
-* **`ERD/`** contains the final Entity-Relationship Diagram.
-* **`normalization/`** contains the normalization workbook, processed CSV files, review material, exclusions, and related scripts.
-* **`schema/`** contains the SQLite database, SQL schema, saved queries, and database scripts.
-* **`MySQL/`** contains the MySQL/MariaDB version of the database.
-* **`report/`** contains the detailed project report.
-
----
-
-## 5. Data Collection & Data Pipeline
-
-Data collection the first major stage  of the project.
-
-We reviewed environmental information from different organizations and selected sources that were relevant and usable for the final database. The main sources used in the implemented database include:
-
-* Bangladesh Bureau of Statistics (BBS)
-* Bangladesh Meteorological Department (BMD)
-* Bangladesh Rice Research Institute (BRRI)
-* Bangladesh Water Development Board (BWDB)
-
-Other sources were also considered during the source discovery process, including international organizations like World Bank, WHO and public data platforms like Mendeley and Kaggle.
-
-After selecting the sources, the data was extracted from its original formats and converted into structured data. The collected material produced 68 structured data blocks that were then cleaned, modeled and normalized.
-### Data Pipeline
-
-```text
-              Data Sources
-                   │
-                   ▼
-        Source Review & Selection
-                   │
-                   ▼
-             Data Extraction
-                   │
-                   ▼
-          Structured 0NF Data
-                   │
-                   ▼
-        Cleaning & Transformation
-                   │
-                   ▼
-          Dataset ER Modelling
-                   │
-                   ▼
-        Integrated ER Model
-                   │
-                   ▼
-         1NF → 2NF → 3NF → BCNF
-                   │
-                   ▼
-        Final Relational Schema
-                   │
-                   ▼
-          Database Construction
-                   │
-                   ▼
-        Verification & SQL Queries
-```
-
-The source data was not ready to be inserted directly into a database. Some spreadsheets were designed for human reading, with months or days represented as separate columns. Other datasets contained differences in naming, structure, time periods, or missing values.
-
-During the transformation stage, these structures were reshaped so that each record were represented properly. For example, monthly measurements were converted into rows containing the station, year, month, and corresponding value instead of keeping each month as a separate column.
-
-The data was then reviewed and prepared for the database design stage.
-
----
-
-## 6. Normalization
-
-After the data was structured, we needed to design relations to avoid unnecessary repetition and dependency problems.
-
-The normalization process followed:
-
-```text
-0NF → 1NF → 2NF → 3NF → BCNF
-```
-
-At each stage, the structure of the data was examined for repeated values, partial dependencies, transitive dependencies, and unsuitable determinants.
-
-### Example: Temperature Records
-
-A temperature observation is identified by:
-
-```text
-Station Name + Year + Month + Temperature Type
-```
-
-This combination became the composite primary key of the `Temperature_Record` relation.
-
-Instead of storing station information repeatedly inside every temperature record, station information is kept separately in the `Station` relation.
-
-```text
-Station
----------
-Station_Name
-District_Name
-
-        │
-        │ 1
-        │
-        │
-        │ N
-        ▼
-
-Temperature_Record
-------------------
-Station_Name
-Year
-Month
-Type
-Temp
-```
-
-The same idea was applied to the other environmental measurements. Information describing a station, district, time period, river, category, or industry was separated from the actual observations that depend on it.
-
-The final relations were then checked under BCNF to ensure that every determinant in the retained relations was a candidate key.
-
----
-
-## 7. Entity-Relationship Diagram
-
-The final ERD represents the integrated database model produced after the data collection, modelling, and normalization stages.
-
-![Final Entity-Relationship Diagram](ERD/Final_ERD.png)
-
-The model separates different types of environmental information into focused relations while connecting them through shared entities such as stations, rivers, districts, and time.
-
-The database uses different time relations for yearly, monthly, daily, and fiscal-year data because the original datasets do not all use the same observation period.
-
----
-
-## 8. Final Schema
-
-The final database contains 21 relations. Each relation has a defined primary key, with composite keys being used where multiple attributes are needed to uniquely identify an observation.
-
-### Reference and Time Relations
-
-| Relation        | Primary Key            |
-| --------------- | ---------------------- |
-| `Station`       | `Station_Name`         |
-| `District`      | `District_Name`        |
-| `River`         | `River_Name`           |
-| `River_Station` | `WQ_Station_Name`      |
-| `Year_Time`     | `Year`                 |
-| `Month_Time`    | `Year, Month`          |
-| `Day_Time`      | `Year, Month, Day`     |
-| `Fiscal_Year`   | `Start_Year, End_Year` |
-| `Size`          | `Size_Name`            |
-| `Industry_Type` | `Industry_Name`        |
-
-### Environmental and Observation Relations
-
-| Relation                 | Primary Key                                         |
-| ------------------------ | --------------------------------------------------- |
-| `Temperature_Record`     | `Station_Name, Year, Month, Type`                   |
-| `Humidity_Record`        | `Station_Name, Year, Month`                         |
-| `Rainfall_Record`        | `Station_Name, Year, Month`                         |
-| `Wind_Record`            | `Station_Name, Year, Month, Type`                   |
-| `Climatic_Event_Record`  | `Station_Name, Year, Month`                         |
-| `Sunshine_Record`        | `Station_Name, Year, Month, Day`                    |
-| `Radiation_Record`       | `Station_Name, Year, Month, Day, Sample_No`         |
-| `Water_Quality`          | `WQ_Station_Name, Year, Parameter_Type`             |
-| `Forest_Area_Record`     | `District_Name, Fiscal_Start_Year, Fiscal_End_Year` |
-| `Type_Of_Establishments` | `Size_Name, Start_Year, End_Year`                   |
-| `Industry_Usage`         | `Industry_Name, Start_Year, End_Year`               |
-
-The final design keeps reference information separate from observations while still allowing the different parts of the database to be connected through foreign keys.
-
----
-
-## 9. Database Implementation
-
-The main implementation of the final database is **SQLite**.
-
-SQLite was used because it provided a lightweight and portable relational database that could be built directly from the processed CSV files using our Python scripts.
-
-The database is created from the committed SQL schema and populated through the project scripts rather than being manually filled. Foreign-key enforcement and database integrity checks are also enabled during the build and verification process.
-
-A MySQL/MariaDB version of the database is also included in the repository.
-
----
-
-## 10. Example Queries
-
-The database can be queried to retrieve information across the different environmental datasets.
-
-### Find rainfall records for a station
-
-```sql
-SELECT Station_Name, Year, Month, Rainfall
-FROM Rainfall_Record
-WHERE Station_Name = 'Dhaka'
-  AND Year BETWEEN 2020 AND 2022;
-```
-
-### Find temperature records
-
-```sql
-SELECT Station_Name, Year, Month, Type, Temp
-FROM Temperature_Record
-WHERE Year = 2020
-ORDER BY Station_Name, Month;
-```
-
-### Join water-quality data with river information
-
-```sql
-SELECT
-    w.WQ_Station_Name,
-    r.River_Name,
-    w.Year,
-    w.Parameter_Type,
-    w.Value
-FROM Water_Quality AS w
-JOIN River_Station AS rs
-    ON w.WQ_Station_Name = rs.WQ_Station_Name
-JOIN River AS r
-    ON rs.River_Name = r.River_Name;
-```
-
-### Count records by rainfall year
-
-```sql
-SELECT
-    Year,
-    COUNT(*) AS Record_Count
-FROM Rainfall_Record
-GROUP BY Year
-ORDER BY Year;
-```
-
-These queries demonstrate how the normalized relations can be used individually and together to retrieve environmental information.
-
----
-
-## 11. Conclusion
-
-This project took environmental information that was scattered across different sources and gradually turned it into one structured relational database.
-
-The database design was only one part of the work. We first had to find suitable sources, understand how their data was organized, clean and reshape the records, identify entities and relationships, and then apply normalization to reach the final BCNF design.
-
-The result is a database containing 21 relations and more than 730,000 records, with the relationships and integrity constraints needed to keep the data connected and consistent.
-
-More importantly, the project gave us practical experience applying database concepts such as ER modelling, functional dependencies, normalization, primary keys, foreign keys, relational integrity, and SQL to real-world data.
+For a MySQL/MariaDB deployment instead of SQLite, follow
+[`MySQL/README.md`](MySQL/README.md); the SQLite route above is the default.
+
+## Documentation
+
+The problem statement, objectives, data pipeline and normalization
+methodology, schema design, example queries and conclusion are documented in
+the [final report](https://drive.google.com/file/d/1KjoO2aXPX3MEvbx64_3Viq4KVtmV7cKm/view?usp=sharing).
+Everything else is kept close to the artifacts it describes:
+
+- `docs/DEVELOPMENT.md` — query recipes per OS, VS Code on WSL, backup and
+  restore, and refreshing the normalization and benchmark outputs.
+- `normalization/STATISTICS.md` — how much each source contributes.
+- `normalization/DATA_REVIEW.md` — decisions that change which values load.
+- `normalization/BMD_DERIVATIVE.md` — PDF-to-workbook verification boundary.
+- `normalization/exclusions/` — every excluded item, with its reason.
