@@ -6,6 +6,72 @@ This project was developed as part of the Database Systems Lab course at the Dep
 
 ---
 
+## Reviewer Quick Access
+
+- **Final report (PDF):** [Group-07_Environmental_DBMS_Final_Report.pdf](https://drive.google.com/file/d/1KjoO2aXPX3MEvbx64_3Viq4KVtmV7cKm/view?usp=sharing)
+- **Collected source files (public Drive folder):** [Selected_Source_Files](https://drive.google.com/drive/folders/1SSdmo-VFQ6leS7Gp8hItmksg_SxRMl3q)
+- **Complete source register with original URLs:** [Team-7_BD_Environment_Data_Resources.xlsx](https://drive.google.com/file/d/1UB5vrVxfrtvFXZUDgvV4bsBDaMcvC2sw/view)
+- **Final ERD:** [`ERD/Final_ERD.png`](ERD/Final_ERD.png)
+- **SQLite database:** [`schema/environment.db`](schema/environment.db)
+- **Normalization evidence:** [`normalization/`](normalization/)
+- **Database verification:** [`schema/scripts/setup/verify_database.py`](schema/scripts/setup/verify_database.py)
+
+## Verified facts
+
+`schema/environment.db` has 21 tables, 2 query views, 730,324 rows and
+28 foreign-key relationships. Integrity checks pass with zero foreign-key
+violations. The views are query conveniences, not ERD entities.
+
+## Source to SQLite pipeline
+
+1. **Source** — originals stay in the public Drive folder
+   `Selected_Source_Files/`, not in this repository; retained PDFs are
+   evidence.
+2. **Extraction and normalization** — `normalization/scripts/extract.py`
+   reads the processing workbooks and CSV, applies the documented cleaning
+   rules, and writes the 0NF-to-BCNF CSVs and quality evidence.
+3. **Review outputs** — `exclusions.py` documents excluded data;
+   `workbook.py` packages the normalization stages into an Excel workbook.
+4. **SQLite** — `schema/scripts/setup/build_database.py` loads the final
+   BCNF CSVs into `schema/environment.db`.
+
+Regeneration needs the retained sources plus the project-formatted BMD
+workbook (`Temperature Data.xlsx`); retained PDFs are not automatically
+converted. Outside the Drive project folder set `DBMS_SOURCE_DIR`. Full
+commands: [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md). The
+[BMD comparison](normalization/BMD_DERIVATIVE.md) documents the PDF-to-workbook
+verification boundary.
+
+## Verify the database (read-only)
+
+Checks tables, relationships, views, rows and the schema definition file:
+
+```bash
+python3 -B -m schema.scripts.setup.verify_database
+```
+## Automatic setup
+
+The launchers need Python 3.10+ and keep a private environment outside the
+project folder. Each prepares `schema/environment.db`, verifies it and runs
+the read-only saved `table-counts` query, asking before installing missing
+packages or replacing an existing database.
+
+Windows:
+
+```bat
+setup_windows.bat
+```
+
+Linux, WSL or macOS:
+
+```bash
+./setup_linux.sh
+```
+
+Add `/yes` or `--yes` for an unattended run; add `/replace` or `--replace`
+only to rebuild the existing database.
+
+
 ## 1. Problem Statement
 
 Environmental information about Bangladesh is available from many different organizations, but it is often scattered across reports, spreadsheets, PDFs, and other formats. Different sources also organize their data differently, use different time periods, and follow different structures.
@@ -99,7 +165,7 @@ DBMS_Project/
 
 ## 5. Data Collection & Data Pipeline
 
-Data collection was one of the first major stages of the project.
+Data collection the first major stage  of the project.
 
 We reviewed environmental information from different organizations and selected sources that were relevant and usable for the final database. The main sources used in the implemented database include:
 
@@ -108,10 +174,9 @@ We reviewed environmental information from different organizations and selected 
 * Bangladesh Rice Research Institute (BRRI)
 * Bangladesh Water Development Board (BWDB)
 
-Other sources were also considered during the source discovery process, including international organizations and public data platforms.
+Other sources were also considered during the source discovery process, including international organizations like World Bank, WHO and public data platforms like Mendeley and Kaggle.
 
-After selecting the sources, the data was extracted from its original formats and converted into structured data. The collected material produced 68 structured data blocks that were then taken through the cleaning, modelling, and normalization process.
-
+After selecting the sources, the data was extracted from its original formats and converted into structured data. The collected material produced 68 structured data blocks that were then cleaned, modeled and normalized.
 ### Data Pipeline
 
 ```text
@@ -148,9 +213,9 @@ After selecting the sources, the data was extracted from its original formats an
         Verification & SQL Queries
 ```
 
-The source data was not always ready to be inserted directly into a database. Some spreadsheets were designed for human reading, with months or days represented as separate columns. Other datasets contained differences in naming, structure, time periods, or missing values.
+The source data was not ready to be inserted directly into a database. Some spreadsheets were designed for human reading, with months or days represented as separate columns. Other datasets contained differences in naming, structure, time periods, or missing values.
 
-During the transformation stage, these structures were reshaped so that each record represented a meaningful observation. For example, monthly measurements were converted into rows containing the station, year, month, and corresponding value instead of keeping each month as a separate column.
+During the transformation stage, these structures were reshaped so that each record were represented properly. For example, monthly measurements were converted into rows containing the station, year, month, and corresponding value instead of keeping each month as a separate column.
 
 The data was then reviewed and prepared for the database design stage.
 
@@ -158,7 +223,7 @@ The data was then reviewed and prepared for the database design stage.
 
 ## 6. Normalization
 
-After the data was structured, we needed to design relations that avoided unnecessary repetition and dependency problems.
+After the data was structured, we needed to design relations to avoid unnecessary repetition and dependency problems.
 
 The normalization process followed:
 
@@ -333,10 +398,3 @@ The database design was only one part of the work. We first had to find suitable
 The result is a database containing 21 relations and more than 730,000 records, with the relationships and integrity constraints needed to keep the data connected and consistent.
 
 More importantly, the project gave us practical experience applying database concepts such as ER modelling, functional dependencies, normalization, primary keys, foreign keys, relational integrity, and SQL to real-world data.
-
-```
-
-This version is intentionally **leaner than the previous one**. I also removed some things that were starting to make it feel like a second report.
-
-One small recommendation before you commit it: **replace the ASCII data-pipeline diagram with a proper image**. Keep the repository structure as code because that is actually easier to read, but a clean pipeline graphic will make the README feel much more polished.
-```
